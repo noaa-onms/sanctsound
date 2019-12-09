@@ -1,0 +1,151 @@
+---
+title: "streamgraphs"
+output:
+  html_document:
+    code_folding: hide
+    toc: true
+    toc_depth: 2
+    toc_float: true    
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = F, error = F, warning = F)
+```
+
+## data
+
+**Source**: https://files.axds.co/portals/sanctsound/plots/manifest.html by Brian Stone <brian@axiomdatascience.com>
+
+**Files**, per [NCEI products Readme.docx](https://files.axds.co/portals/sanctsound/data/SanctSoundProducts/WCR/NCEI%20products%20Readme.docx):
+
+- `SanctSound_CI01_01_BB_1h.csv`
+  Channel Islands NMS, site 1, deployment 1, **Broadband** Sound Pressure Level, hourly
+- `SanctSound_CI01_01_OL_1h.csv`
+  Channel Islands NMS, site 1, deployment 1, **Octave Level**, hourly
+- `SanctSound_CI01_01_PSD_1h.csv`
+  Channel Islands NMS, site 1, deployment 1, **Power Spectral Density**, hourly
+
+```{r}
+library(readr)
+library(dplyr)
+library(tidyr)
+library(purrr)
+library(here)
+library(DT)
+# install.packages("ggplot2movies")
+
+csvs <- list(
+  bb  = here("data/SanctSound_CI01_01_BB_1h.csv"),
+  ol  = here("data/SanctSound_CI01_01_OL_1h.csv"),
+  psd = here("data/SanctSound_CI01_01_PSD_1h.csv"))
+
+d <- map(csvs, read_csv)
+
+d_smry <- tibble(
+  dataset = names(d),
+  cols    = map(dataset, function(x) names(d[[x]])),
+  cols13  = map_chr(cols, function(x) paste(x[1:min(length(x),13)], collapse = ",")),
+  dim     = map_chr(dataset, function(x) paste(dim(d[[x]]), collapse = " x ")))
+
+d_smry %>% 
+  select(dataset, dim, cols13) %>% 
+  datatable()
+```
+
+### octave level
+
+```{r}
+ol <- d[["ol"]] %>% 
+  rename(hour = `yyyy-mm-ddTHH:MM:SSZ`) %>% 
+  select(-X13) %>% 
+  pivot_longer(-hour, names_to = "octave", values_to = "level") %>% 
+  mutate(
+    hour_int  = as.double(hour - min(hour), units = "hours") %>%
+      as.integer(),
+    level_int = as.integer(level))
+
+ol %>% 
+  head(1000) %>% 
+  datatable()
+```
+
+### movies example
+
+```{r}
+data(movies, package = "ggplot2movies")
+movies_long <- movies  %>%
+  dplyr::select(year, Action, Animation, Comedy, Drama, Documentary, Romance, Short) %>%
+  tidyr::gather(genre, value, -year) %>%
+  group_by(year, genre) %>%
+  summarise(n = sum(value)) %>% 
+  ungroup()
+
+movies_long %>% 
+  head(1000) %>% 
+  datatable()
+```
+
+
+## `streamgraph`
+
+- [Introduction to the streamgraph htmlwidgtet R Package](https://hrbrmstr.github.io/streamgraph/)
+
+### movies example
+
+```{r}
+library(streamgraph)
+
+movies_long %>%
+  streamgraph("genre", "n", "year") %>%
+  sg_axis_x(20, "year", "%Y") %>%
+  sg_fill_brewer("PuOr") %>%
+  sg_legend(show=TRUE, label="Genres: ")
+```
+
+### octave level
+
+```{r}
+ol %>% 
+  streamgraph(date = "hour", value = "level_int", key = "octave") %>%
+  sg_axis_x(1, "month", "%Y-%m") %>%
+  sg_fill_brewer("Spectral") %>%
+  #sg_fill_brewer("PuOr") %>%
+  sg_legend(show=TRUE, label="Octaves: ")
+```
+
+## `highcharter`
+
+* [Highcharter](http://jkunst.com/highcharter/)
+* [Highcharts demos | Highcharts](https://www.highcharts.com/demo)
+
+### movies example
+
+- [dev/examples-charts/**streamgraph.R** · jbkunst/highcharter](https://github.com/jbkunst/highcharter/blob/bbd3fccecef05428e1028ac2df8e3cf46ecdc282/dev/examples-charts/streamgraph.R)
+
+```{r}
+library(highcharter)
+
+movies_long %>% 
+  hchart("streamgraph", hcaes(year, n, group = genre)) %>% 
+  hc_yAxis(visible = FALSE)
+```
+
+### octave level
+
+```{r}
+ol %>% 
+  hchart("streamgraph", hcaes(hour_int, level, group = octave))
+```
+
+## `plotly` - skip
+
+* [Streamgraph with min wiggle layout | line chart made by Empet | plotly](https://plot.ly/~empet/13409.embed) nice
+* [Streamgraph with ThemeRiver Layout [1] [2] | line chart made by Empet | plotly](https://plot.ly/~empet/13411/streamgraph-with-themeriver-layout-1-2.embed)
+* [Streamgraph with ThemeRiver Layout [1] [2] | line chart made by Dkoffler | plotly](https://plot.ly/~dkoffler/1//#/)
+  * [code](https://plot.ly/~dkoffler/1//#/code)
+* issue: [Add streamgraph - Graphing Library / Plotly.py - Plotly Community Forum](https://community.plot.ly/t/add-streamgraph/12851)
+
+  > plotly.py doesn’t have a streamgraph trace type or figure factory. To make one, you would need to compute the line locations yourself an then draw it using filled area scatter traces (https://plot.ly/python/filled-area-plots) 
+
