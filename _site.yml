@@ -6,12 +6,25 @@ navbar:
     - text: "Home"
       icon: fa-home
       href: index.html
-    - text: "Sites"
-      icon: fa-globe
-      href: sites.html
+    - text: "Questions"
+      icon: fa-question
+      href: more.html
       menu:
-        - text: "All Sites"
-          href: sites.html
+        - text: "How did we listen?"
+          href: q_how-listen.html
+        - text: "What did we measure?"
+          href: q_what-measure.html
+        - text: "What did we hear?"
+          href: q_what-hear.html
+        - text: "How far could we hear?"
+          href: q_how-far.html
+        - text: "What did we learn?"
+          href: q_what-learn.html
+    - text: "Sanctuaries"
+      icon: fa-globe
+      menu:
+        - text: "All Sanctuaries"
+          href: sanctuaries.html
         - text: "---------"
         - text: "Channel Islands"
           href: s_cinms.html
@@ -29,20 +42,30 @@ navbar:
           href: s_pmnm.html
         - text: "Stellwagen Bank"
           href: s_sbnms.html
-    - text: "Questions"
-      icon: fa-question
-      href: more.html
+    - text: "Sounds"
+      icon: fa-file-audio
       menu:
-        - text: "How did we listen?"
-          href: q_how-listen.html
-        - text: "What did we measure?"
-          href: q_what-measure.html
-        - text: "What did we hear?"
-          href: q_what-hear.html
-        - text: "How far could we hear?"
-          href: q_how-far.html
-        - text: "What did we learn?"
-          href: q_what-learn.html
+        - text: "All Sounds"
+          href: sounds.html
+        - text: "---------"
+        - text: "Baleen Whales"
+          href: o_baleen.html
+        - text: "Toothed Whales"
+          href: o_tootheds-whales.html
+        - text: "Pinnipeds"
+          href: o_pinnipeds.html
+        - text: "Sirenians"
+          href: o_sirenians.html
+        - text: "Invertebrates"
+          href: o_inverts.html
+        - text: "Fish"
+          href: o_fish.html
+        - text: "---------"
+        - text: "Anthropogenic"
+          href: o_anthro.html
+    - text: "Stories"
+      icon: fa-bullhorn
+      href: stories.html
 output:
   html_document:
     theme: yeti # https://bootswatch.com/
