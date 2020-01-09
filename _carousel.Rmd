@@ -10,27 +10,53 @@
 <!-- Wrapper for slides -->
 <div class="carousel-inner" role="listbox">
   <div class="item active">
+  <a href="q-how-listen.html"> 
   <img src="figs/fieldwork_fulmar.jpg" alt="...">
   <div class="carousel-caption">
   <h3>How did we listen?</h3>
-  <p>And then some...</p>
+  <p>Using acoustic receivers...</p>
   </div>
-  </div>
-
-  <div class="item">
-  <img src="figs/carousel_kelp.jpg" alt="...">
-  <div class="carousel-caption">
-  <h3>Pelagic Life in Kelp Forests</h3>
-  <p>Photo credit: Brett Seymour (NPS)</p>
-  </div>
+  </a>
   </div>
 
   <div class="item">
-  <img src="figs/carousel_anemone.jpg" alt="...">
+  <a href="q-what-measure.html.html"> 
+  <img src="figs/streamgraph.png" alt="...">
   <div class="carousel-caption">
-  <h3>Benthic Life in Kelp Forests</h3>
-  <p>Photo credit: Submerged Resources Center</p>
+  <h3>What did we measure?</h3>
+  <p>Measuring sound levels at different octaves over time...</p>
   </div>
+  </a>
+  </div>
+
+  <div class="item">
+  <a href="q-what-hear.html"> 
+  <img src="figs/infographic.jpg" alt="...">
+  <div class="carousel-caption">
+  <h3>What did we hear?</h3>
+  <p>Natural and man-made noise from various sources...</p>
+  </div>
+  </a>
+  </div>
+  
+  <div class="item">
+  <a href="q-how-far.html"> 
+  <img src="figs/sound_propogation.png" alt="...">
+  <div class="carousel-caption">
+  <h3>How far could we hear?</h3>
+  <p>Based on sound profile of water...</p>
+  </div>
+  </a>
+  </div>
+
+  <div class="item">
+  <a href="q-what-learn.html"> 
+  <img src="figs/infographic.jpg" alt="...">
+  <div class="carousel-caption">
+  <h3>What did we learn?</h3>
+  <p>How do we advise human activities...</p>
+  </div>
+  </a>
   </div>
 
 </div>

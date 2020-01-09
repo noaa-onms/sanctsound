@@ -1,11 +1,31 @@
 name: "my-website"
 navbar:
   title: "SanctSound"
+  type: inverse # inverse or default
   left:
     - text: "Home"
+      icon: fa-home
       href: index.html
     - text: "Map"
-      href: about.html
+      icon: fa-globe
+      href: map.html
+    - text: "Questions"
+      icon: fa-question
+      href: more.html
+      menu:
+        - text: "How did we listen?"
+          href: q-how-listen.html
+        - text: "What did we measure?"
+          href: q-what-measure.html
+        - text: "What did we hear?"
+          href: q-what-hear.html
+        - text: "How far could we hear?"
+          href: q-how-far.html
+        - text: "What did we learn?"
+          href: q-what-learn.html
     - text: "Streamgraphs"
       href: streamgraphs.html
+output:
+  html_document:
+    theme: yeti # https://bootswatch.com/
 output_dir: "docs"

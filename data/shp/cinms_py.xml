@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<origin>NOAA / National Marine Sanctuaries Program
+</origin>
+<pubdate>200806
+</pubdate>
+<title>cinms_py
+</title>
+<edition>200806
+</edition>
+<geoform>vector digital data
+</geoform>
+<pubinfo>
+<pubplace>Silver Spring, MD
+</pubplace>
+<publish>NOAA / National Marine Sanctuary Program
+</publish>
+</pubinfo>
+<othercit>none
+</othercit>
+<onlink>http://www.sanctuaries.noaa.gov/
+</onlink>
+<lworkcit>
+<citeinfo>
+<origin>NOAA / National Marine Sanctuaries Program
+</origin>
+<pubdate>2004
+</pubdate>
+<title>National Marine Sanctuary Program Digital Boundary Files
+</title>
+<pubinfo>
+<pubplace>Silver Spring, Maryland
+</pubplace>
+<publish>NOAA / National Marine Sanctuary Program
+</publish>
+</pubinfo>
+<onlink>http://www.sanctuaries.noaa.gov/
+</onlink>
+</citeinfo>
+</lworkcit>
+</citeinfo>
+</citation>
+<descript>
+<abstract>The National Marine Sanctuary Program manages a system of sanctuaries and othermanaged areas around the country.  The legal boundaries of these sanctuaries aredefined within the Code of Federal Regulations, at 15 C.F.R. Part 922 and thesubparts for each national marine sanctuary.  The GIS compatible digital boundaryfiles for each national marine sanctuary are representations of those legalboundaries and are based on the best available data.  These files are availablefor public use at locations defined in this metadata record.
+</abstract>
+<purpose>These GIS compatible digital files are provided to promote an understanding of theboundaries of each national marine sanctuary.  They are based on the legaldefinition of each sanctuary as defined in the Code of Federal Regulations, at 15C.F.R. Part 922 and the subparts for each national marine sanctuary.  These digitalfiles are not intended and should not be relied upon for use in navigation or legalpurposes.  For legal questions relating to the digital files, please contact theNMSP at the information provided in this metadata record.
+</purpose>
+</descript>
+<timeperd>
+<timeinfo>
+<sngdate>
+<caldate>200606
+</caldate>
+<time>Unknown
+</time>
+</sngdate>
+</timeinfo>
+<current>200806
+</current>
+</timeperd>
+<status>
+<progress>Complete
+</progress>
+<update>Continually on varying schedule
+</update>
+</status>
+<spdom>
+<bounding>
+<westbc>-120.642080
+</westbc>
+<eastbc>-118.907120
+</eastbc>
+<northbc>34.207070
+</northbc>
+<southbc>33.362410
+</southbc>
+</bounding>
+</spdom>
+<keywords>
+<theme>
+<themekt>None
+</themekt>
+<themekey>CFR
+</themekey>
+<themekey>Code of Federal Regulations
+</themekey>
+<themekey>marine protected area
+</themekey>
+<themekey>MPA
+</themekey>
+<themekey>National Marine Sanctuary
+</themekey>
+<themekey>NMS
+</themekey>
+<themekey>NMSP
+</themekey>
+</theme>
+<place>
+<placekt>None
+</placekt>
+<placekey>California
+</placekey>
+<placekey>Marine
+</placekey>
+<placekey>Channel Islands
+</placekey>
+<placekey>National Marine Sanctuary
+</placekey>
+<placekey>NMS
+</placekey>
+<placekey>Pacific Ocean
+</placekey>
+</place>
+</keywords>
+<accconst>To Be Determined
+</accconst>
+<useconst>NOT FOR LEGAL USE
+</useconst>
+<ptcontac>
+<cntinfo>
+<cntorgp>
+<cntorg>NOAA / National Marine Sanctuary Program
+</cntorg>
+<cntper>NMSP Boundary Coordinator
+</cntper>
+</cntorgp>
+<cntpos>NMSP Boundary Coordinator
+</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address
+</addrtype>
+<address>N/ORM-62, SSMC-4
+</address>
+<address>1305 East West Highway
+</address>
+<city>Silver Spring
+</city>
+<state>Maryland
+</state>
+<postal>20910
+</postal>
+<country>United States
+</country>
+</cntaddr>
+<cntvoice>(301) 713-3125
+</cntvoice>
+<cntfax>(301) 713-0404
+</cntfax>
+<cntemail>sanctuaries@noaa.gov
+</cntemail>
+<hours>9:00AM to 4:00PM EST; Monday - Friday
+</hours>
+</cntinfo>
+</ptcontac>
+<browse>
+<browsen>http://sanctuaries.noaa.gov/visit/images/ci_map_big.jpg
+</browsen>
+<browsed>Channel Islands National Marine Sanctuary Boundary and Surrounds
+</browsed>
+<browset>JPEG
+</browset>
+</browse>
+<native>Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 2; ESRI ArcCatalog 9.2.5.1450
+</native>
+</idinfo>
+<dataqual>
+<attracc>
+<attraccr>Attributes were standardized by feature type (point, line, and polygon)across all sanctuary boundaries.  The values recorded for each attributewere quality assured and believed to be accurate.
+</attraccr>
+</attracc>
+<logic>The data were topologically cleaned.
+</logic>
+<complete>Where possible, the entire boundary for the sanctuary is represented by this digital file.
+</complete>
+<posacc>
+<horizpa>
+<horizpar>Positional accuracy will vary depending on source
+</horizpar>
+</horizpa>
+<vertacc>
+<vertaccr>Positional accuracy will vary
+</vertaccr>
+</vertacc>
+</posacc>
+<lineage>
+<srcinfo>
+<srccite>
+<citeinfo>
+<origin>NOAA Office of Coast Survey
+</origin>
+<pubdate>200806
+</pubdate>
+<title>U.S. Vector Shoreline Extracted from NOAA Nautical Charts
+</title>
+<edition>First
+</edition>
+<geoform>vector digital data
+</geoform>
+<pubinfo>
+<pubplace>Silver Spring, MD
+</pubplace>
+<publish>NOAA's Ocean Service, Office of Coast Survey (OCS)
+</publish>
+</pubinfo>
+<onlink>http://nauticalcharts.noaa.gov
+</onlink>
+</citeinfo>
+</srccite>
+<srcscale>20000
+</srcscale>
+<typesrc>vector digital data
+</typesrc>
+<srctime>
+<timeinfo>
+<rngdates>
+<begdate>200110
+</begdate>
+<enddate>200806
+</enddate>
+</rngdates>
+</timeinfo>
+<srccurr>publication date
+</srccurr>
+</srctime>
+<srccitea>NOAA Extracted Vector Shoreline
+</srccitea>
+<srccontr>Extracted vector shoreline files were used to delineate the shoreline component, where applicable, of the Sanctuary boundary.
+</srccontr>
+</srcinfo>
+<srcinfo>
+<srccite>
+<citeinfo>
+<origin>NOAA Office of Coast Survey (OCS)
+</origin>
+<pubdate>20010110
+</pubdate>
+<title>Raster Coastal Map Series Showing Hydrography and TopographyFound on NOAA's Charted Nautical Charts for All Near-Shore GeographicAreas of the U.S.
+</title>
+<geoform>raster digital data
+</geoform>
+<serinfo>
+<sername>Coastal Map Series
+</sername>
+<issue>kapp number
+</issue>
+</serinfo>
+<pubinfo>
+<pubplace>Silver Spring, MD
+</pubplace>
+<publish>NOAA's Ocean Service, Office of Coast Survey (OCS)
+</publish>
+</pubinfo>
+<othercit>Scale of source material ranges from 1:20000to 1:80000
+</othercit>
+<onlink>http://chartmaker.ncd.noaa.gov/
+</onlink>
+<lworkcit>
+<citeinfo>
+<origin>NOAA, NOS, OCS, Marine Charting Division
+</origin>
+<pubdate>19950101
+</pubdate>
+<title>Nautical Charts
+</title>
+<geoform>raster digital data
+</geoform>
+<serinfo>
+<sername>NOAA Nautical Charts
+</sername>
+<issue>kapp number
+</issue>
+</serinfo>
+<pubinfo>
+<pubplace>Silver Spring, MD
+</pubplace>
+<publish>NOAA's Ocean Service, Office of Coast Survey
+</publish>
+</pubinfo>
+</citeinfo>
+</lworkcit>
+</citeinfo>
+</srccite>
+<typesrc>Raster Images
+</typesrc>
+<srctime>
+<timeinfo>
+<rngdates>
+<begdate>19950101
+</begdate>
+<enddate>present
+</enddate>
+</rngdates>
+</timeinfo>
+<srccurr>publication date
+</srccurr>
+</srctime>
+<srccitea>Source Nautical Chart
+</srccitea>
+<srccontr>All information in Coastal Maps is derived from the Source NauticalChart.
+</srccontr>
+</srcinfo>
+<srcinfo>
+<srccite>
+<citeinfo>
+<origin>US Federal Government
+</origin>
+<origin>US Department of Commerce
+</origin>
+<origin>National Oceanic and Atmospheric Administration
+</origin>
+<pubdate>20030101
+</pubdate>
+<title>Code of Federal Regulations, Title 15, Volume 3
+</title>
+<pubinfo>
+<pubplace>Washington, DC
+</pubplace>
+<publish>US Dept. of Commerce
+</publish>
+</pubinfo>
+<othercit>The Code of Federal Regulations (CFR) is the codification of thegeneral and permanentrules published in the Federal Register by the executive departmentsand agenciesof the Federal Government.
+</othercit>
+<onlink>http://www.gpoaccess.gov/cfr/
+</onlink>
+</citeinfo>
+</srccite>
+<typesrc>paper
+</typesrc>
+<srctime>
+<timeinfo>
+<rngdates>
+<begdate>1996
+</begdate>
+<enddate>2003
+</enddate>
+</rngdates>
+</timeinfo>
+<srccurr>Publication date
+</srccurr>
+</srctime>
+<srccitea>15CFR922
+</srccitea>
+<srccontr>The depicted shoreline of the sanctuary boundary was derived in part from information contained within the CFR.
+</srccontr>
+</srcinfo>
+<procstep>
+<procdesc>The geographic boundary coordinates listed within the United States Code of Federal Regulations (CFR) were converted to decimal degrees and a text file was created. A point coverage was then generatedusing ArcInfo GIS. The coverage was projected into the Geographic Coordinate System and overlaid on large scale nautical charts and analyzed with additional data such as adjacent sanctuaries and shorelines. Specific attention was given to analysis of inconsistencies between textual descriptions and listed coordinates. The polyline files were created using a combination of the coordinate list from the CFR and applicable shoreline vector files. Forpoint files, two methods were used. If the sanctuary had a shoreline component, a polyline to point script was used to create a point for each vertex. If a shoreline component was not present, then the original coordinates from the CFR were used to create a point shapefile.Polygon files were created by converting polylines to polygons.  For more detailed process description, please use contact information below.
+</procdesc>
+<procdate>200606
+</procdate>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>NOAA / National Marine Sanctuary Program
+</cntorg>
+<cntper>NMSP Boundary Coordinator
+</cntper>
+</cntorgp>
+<cntpos>NMSP Boundary Coordinator
+</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address
+</addrtype>
+<address>N/ORM-2, SSMC-4, #11542
+</address>
+<address>1305 East West Highway
+</address>
+<city>Silver Spring
+</city>
+<state>Maryland
+</state>
+<postal>20910
+</postal>
+<country>United States
+</country>
+</cntaddr>
+<cntvoice>(301) 713-3125
+</cntvoice>
+<cntfax>(301) 713-0404
+</cntfax>
+<cntemail>sanctuaries@noaa.gov
+</cntemail>
+<hours>9:00AM to 4:00PM EST; Monday - Friday
+</hours>
+</cntinfo>
+</proccont>
+</procstep>
+<procstep>
+<procdesc>Metadata imported.
+</procdesc>
+<srcused>C:\DOCUME~1\DDOSRE~1.PAL\LOCALS~1\Temp\xml2A.tmp
+</srcused>
+<procdate>200606
+</procdate>
+</procstep>
+<procstep>
+<procdesc>Metadata imported.
+</procdesc>
+<srcused>C:\DOCUME~1\NATALI~1.SEN\LOCALS~1\Temp\xml49A.tmp
+</srcused>
+<procdate>200606
+</procdate>
+</procstep>
+<procstep>
+<procdesc>Dataset copied.
+</procdesc>
+<procdate>200606
+</procdate>
+</procstep>
+<procstep>
+<procdesc>Dataset copied.
+</procdesc>
+<srcused>H:\NMSPIMSbuild\nmspboundaries\CINMS2008\CINMS_Boundary_6_08
+</srcused>
+<procdate>200606
+</procdate>
+</procstep>
+</lineage>
+</dataqual>
+<spdoinfo>
+<direct>Vector
+</direct>
+<ptvctinf>
+<sdtsterm>
+<sdtstype>G-polygon
+</sdtstype>
+<ptvctcnt>2
+</ptvctcnt>
+</sdtsterm>
+</ptvctinf>
+</spdoinfo>
+<spref>
+<horizsys>
+<geograph>
+<latres>0.000001
+</latres>
+<longres>0.000001
+</longres>
+<geogunit>Decimal degrees
+</geogunit>
+</geograph>
+<geodetic>
+<horizdn>North American Datum of 1983
+</horizdn>
+<ellips>Geodetic Reference System 80
+</ellips>
+<semiaxis>6378137.000000
+</semiaxis>
+<denflat>298.257222
+</denflat>
+</geodetic>
+</horizsys>
+</spref>
+<eainfo>
+<detailed>
+<enttyp>
+<enttypl>cinms_py
+</enttypl>
+<enttypd>Polygon depicting the boundaries as referenced in the most recent edition Code of Federal Regulations as of June 2008 for the Channel Islands National Marine Sanctuary.
+</enttypd>
+<enttypds>Office of National Marine Sanctuaries, NOAA
+</enttypds>
+</enttyp>
+<attr>
+<attrlabl>FID
+</attrlabl>
+<attrdef>Internal feature number.
+</attrdef>
+<attrdefs>ESRI
+</attrdefs>
+<attrdomv>
+<udom>Sequential unique whole numbers that are automatically generated.
+</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>Shape
+</attrlabl>
+<attrdef>Feature geometry.
+</attrdef>
+<attrdefs>ESRI
+</attrdefs>
+<attrdomv>
+<udom>Coordinates defining the features.
+</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>SANCTUARY
+</attrlabl>
+<attrdef>National Marine Sanctuary Name
+</attrdef>
+<attrdefs>Office of National Marine Sanctuaries, NOAA
+</attrdefs>
+</attr>
+<attr>
+<attrlabl>AREA_NAME
+</attrlabl>
+<attrdef>Name of the National Marine Sanctuary represented in this file
+</attrdef>
+<attrdefs>Office of National Marine Sanctuaries, NOAA
+</attrdefs>
+</attr>
+<attr>
+<attrlabl>POLY_ID
+</attrlabl>
+<attrdef>Unique ID number for each polygon in the shape file
+</attrdef>
+<attrdefs>Office of National Marine Sanctuaries, NOAA
+</attrdefs>
+</attr>
+<attr>
+<attrlabl>DATUM
+</attrlabl>
+<attrdef>Geographic Horizontal Datum Being used to represent the data
+</attrdef>
+<attrdefs>ESRI
+</attrdefs>
+</attr>
+</detailed>
+<overview>
+</overview>
+</eainfo>
+<distinfo>
+<distrib>
+<cntinfo>
+<cntorgp>
+<cntorg>NOAA / National Marine Sanctuary Program
+</cntorg>
+<cntper>NMSP Boundary Coordinator
+</cntper>
+</cntorgp>
+<cntpos>NMSP Boundary Coordinator
+</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address
+</addrtype>
+<address>N/ORM-62, SSMC-4
+</address>
+<address>1305 East West Highway
+</address>
+<city>Silver Spring
+</city>
+<state>Maryland
+</state>
+<postal>20910
+</postal>
+<country>United States
+</country>
+</cntaddr>
+<cntvoice>(301) 713-3125
+</cntvoice>
+<cntfax>(301) 713-0404
+</cntfax>
+<cntemail>sanctuaries@noaa.gov
+</cntemail>
+<hours>9:00AM to 4:00PM EST; Monday - Friday
+</hours>
+</cntinfo>
+</distrib>
+<resdesc>Downloadable Data
+</resdesc>
+<distliab>Digital boundary files are available for public consumption from the National MarineSanctuary Program in hard copy or digital formats.  See Distributor Contact Informationfor contact details.
+</distliab>
+<stdorder>
+<digform>
+<digtinfo>
+<formname>ESRI Arc GIS Shape Files
+</formname>
+<formvern>ArcMap 9.2
+</formvern>
+<transize>0.121
+</transize>
+</digtinfo>
+</digform>
+<fees>none
+</fees>
+<ordering>On-line download
+</ordering>
+</stdorder>
+</distinfo>
+<metainfo>
+<metd>20080618
+</metd>
+<metc>
+<cntinfo>
+<cntorgp>
+<cntorg>NOAA / National Marine Sanctuary Program
+</cntorg>
+<cntper>NMSP Boundary Coordinator
+</cntper>
+</cntorgp>
+<cntpos>NMSP Boundary Coordinator
+</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address
+</addrtype>
+<address>N/ORM62, SSMC-4
+</address>
+<address>1305 East West Highway
+</address>
+<city>Silver Spring
+</city>
+<state>Maryland
+</state>
+<postal>20910
+</postal>
+<country>United States
+</country>
+</cntaddr>
+<cntvoice>(301) 713-3125
+</cntvoice>
+<cntfax>(301) 713-0404
+</cntfax>
+<cntemail>sanctuaries@noaa.gov
+</cntemail>
+<hours>9:00AM to 4:00PM EST; Monday - Friday
+</hours>
+</cntinfo>
+</metc>
+<metstdn>FGDC Content Standards for Digital Geospatial Metadata
+</metstdn>
+<metstdv>FGDC-STD-001-1998
+</metstdv>
+<mettc>local time
+</mettc>
+<metextns>
+<onlink>http://www.esri.com/metadata/esriprof80.html
+</onlink>
+<metprof>ESRI Metadata Profile
+</metprof>
+</metextns>
+</metainfo>
+</metadata>

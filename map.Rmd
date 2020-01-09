@@ -1,0 +1,23 @@
+---
+title: "Map"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+```
+
+```{r}
+source(here::here("functions.R"))
+library(leaflet)
+
+sites <- sf::read_sf(sites_geo)
+
+leaflet(
+  data = sites,
+  width = "100%") %>% 
+  addProviderTiles(providers$Esri.OceanBasemap) %>% 
+  addPolygons(
+    label = ~name, 
+    labelOptions = labelOptions(noHide = T))
+```
