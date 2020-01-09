@@ -333,13 +333,47 @@ $(document).ready(function () {
 </div>
 
 
-<iframe class="vimeo-embed" src="https://player.vimeo.com/video/195622451" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
 <p><em>Ever moved to a new place and had to get used to how it sounds? Sometimes you know what is producing the sounds you hear right away as they are relatively common and sound about the same wherever you are (fire engine sirens, airplanes taking off, truck backing up). Other sounds might be harder to identify a source for: what bird makes that call? Is that a donkey braying in the distance?</em></p>
+<div id="infographic" class="section level2">
+<h2>Infographic</h2>
+<script src="libs/d3.v5.min.js"></script>
+<script src="libs/infographiq.js"></script>
+<link href="libs/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="libs/bootstrap-toggle.min.js"></script>
+<div class="col-md-9">
+<div id="svg">
+
+</div>
+</div>
+<div class="col-md-3">
+Text: <input id="toggle-text" type="checkbox" data-toggle="toggle" data-size="mini">
+<div id="toggle-text-event">
+
+</div>
+<ul id="svg_list">
+</ul>
+</div>
+<script>
+link_svg(svg = "svg/cinms_pelagic.svg", csv = "svg/svg_links.csv", debug = true);
+</script>
+<script>
+$(function() {
+$('#toggle-text').change(function() {
+  display = this.checked ? "inline" : "none";
+  d3.select("#text").attr("display", display);
+})
+})
+</script>
 <p>The 30 locations in 7 US National Marine Sanctuaries and 1 National Marine Monument in this project were selected to record ocean sounds over several years. We chose spots most likely to have sounds made by reef-living invertebrates like snapping shrimp, calling fish and whales, boats, explosions from fishing activities, sonars used in military training, to name a few expected and relatively well-characterized sources of sound in the ocean.</p>
 <p>There are many more sounds of unknown origin in our data, but those that are well described and relatively consistent can be “detected” by automated processes. Because computers aren’t perfect, scientists verify the automated detection results. This process allows us to determine how the automated detector performed in different places, including how well it worked in a louder environment or for specific types of sound.</p>
 <p>Only a few types of sounds were present at all recording locations. These include the underwater sound made by wind and waves, and boats. Some sounds were present over many locations, including sounds made by snapping shrimp and humpback whales. Still others were present in only one or a few locations, like calling groupers in the Florida Keys National Marine Sanctuary or calling Atlantic cod in the Stellwagen Bank National Marine Sanctuary. Interactive infographics for each sanctuary showcase specific sources of sound that we identified and tracked through our recording effort. You can then explore when and where these sounds were recorded. You can even listen to examples of sounds recorded at these sites!</p>
 <p>There are more ways to showcase the contributions of known sounds at recording locations. Sounds produced by animals often peak during specific hours of the day, month and year based on the roles the sound plays in the animals’ reproductive activity, feeding or migration. Sounds produced by animals are often constrained to specific tones or frequencies and tend to always sound the same. In other words, if you’ve heard one red grouper you’ve heard them all. Therefore, changes in levels or intensities of sound during different time periods can be linked to different animal sources. Similarly, the bursting of bubbles off boat propellers produce sounds with specific frequency content allowing levels of sound at lower frequencies to track boat presence around recording locations. Natural environmental forces like wind and wave activity produce sound underwater that is heightened at specific frequencies and can be used to track the presence of storm and other weather activity at recording locations.</p>
 <p>[IMAGERY: sample infographic, sample recordings]</p>
+</div>
+<div id="embed-video" class="section level2">
+<h2>Embed video</h2>
+<iframe class="vimeo-embed" src="https://player.vimeo.com/video/195622451" width="100%" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+</div>
 
 
 

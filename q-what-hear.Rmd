@@ -1,17 +1,20 @@
 ---
 title: "What did we hear?"
+params:
+  csv: "svg/svg_links.csv"
+  svg: "svg/cinms_pelagic.svg"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F)
 ```
 
-```{r}
-vembedr::embed_vimeo(195622451)
-```
-
-
 _Ever moved to a new place and had to get used to how it sounds? Sometimes you know what is producing the sounds you hear right away as they are relatively common and sound about the same wherever you are (fire engine sirens, airplanes taking off, truck backing up). Other sounds might be harder to identify a source for: what bird makes that call? Is that a donkey braying in the distance?_
+
+## Infographic
+
+```{r svg, child = '_svg-html_child.Rmd'}
+```
 
 The 30 locations in 7 US National Marine Sanctuaries and 1 National Marine Monument in this project were selected to record ocean sounds over several years. We chose spots most likely to have sounds made by reef-living invertebrates like snapping shrimp, calling fish and whales, boats, explosions from fishing activities, sonars used in military training, to name a few expected and relatively well-characterized sources of sound in the ocean.
 
@@ -24,5 +27,10 @@ There are more ways to showcase the contributions of known sounds at recording l
 
 [IMAGERY: sample infographic, sample recordings]
 
+## Embed video
+
+```{r}
+vembedr::embed_vimeo(195622451, width = "100%")
+```
 
 
