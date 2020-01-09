@@ -20,7 +20,7 @@
   </div>
 
   <div class="item">
-  <a href="q_what-measure.html.html"> 
+  <a href="q_what-measure.html"> 
   <img src="figs/streamgraph.png" alt="...">
   <div class="carousel-caption">
   <h3>What did we measure?</h3>
