@@ -6,25 +6,43 @@ navbar:
     - text: "Home"
       icon: fa-home
       href: index.html
-    - text: "Map"
+    - text: "Sites"
       icon: fa-globe
-      href: map.html
+      href: sites.html
+      menu:
+        - text: "All Sites"
+          href: sites.html
+        - text: "---------"
+        - text: "Channel Islands"
+          href: s_cinms.html
+        - text: "Florida Keys"
+          href: s_fknms.html
+        - text: "Gray’s Reef"
+          href: s_grnms.html
+        - text: "Hawaiian Islands Humpback Whale"
+          href: s_hihwnms.html
+        - text: "Monterey Bay"
+          href: s_mbnms.html
+        - text: "Olympic Coast"
+          href: s_ocnms.html
+        - text: "Papahānaumokuākea"
+          href: s_pmnm.html
+        - text: "Stellwagen Bank"
+          href: s_sbnms.html
     - text: "Questions"
       icon: fa-question
       href: more.html
       menu:
         - text: "How did we listen?"
-          href: q-how-listen.html
+          href: q_how-listen.html
         - text: "What did we measure?"
-          href: q-what-measure.html
+          href: q_what-measure.html
         - text: "What did we hear?"
-          href: q-what-hear.html
+          href: q_what-hear.html
         - text: "How far could we hear?"
-          href: q-how-far.html
+          href: q_how-far.html
         - text: "What did we learn?"
-          href: q-what-learn.html
-    - text: "Streamgraphs"
-      href: streamgraphs.html
+          href: q_what-learn.html
 output:
   html_document:
     theme: yeti # https://bootswatch.com/

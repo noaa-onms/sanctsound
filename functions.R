@@ -37,15 +37,15 @@ get_nms_ply <- function(nms, dir_pfx = here::here()){
 
 if (!file.exists(sites_csv)){
   sites <- tibble::tribble(
-    ~code, ~name,
-    "sbnms", "Stellwagen Bank",
-    "grnms", "Gray’s Reef",
-    "fknms", "Florida Keys",
-    "ocnms", "Olympic Coast",
-    "mbnms", "Monterey Bay",
-    "cinms", "Channel Islands",
-    "pmnm", "Papahānaumokuākea",
-    "hihwnms", "Hawaiian Islands Humpback Whale") %>% 
+    ~code    , ~name,
+    "cinms"  , "Channel Islands",
+    "fknms"  , "Florida Keys",
+    "grnms"  , "Gray’s Reef",
+    "hihwnms", "Hawaiian Islands Humpback Whale",
+    "mbnms"  , "Monterey Bay",
+    "ocnms"  , "Olympic Coast",
+    "pmnm"   , "Papahānaumokuākea",
+    "sbnms"  , "Stellwagen Bank") %>% 
     dplyr::mutate(
       sf       = purrr::map(code, get_nms_ply),
       geometry = purrr::map(sf, function(x) sf::st_cast(sf::st_combine(x), "MULTIPOLYGON") %>% .[[1]])) %>% 
@@ -60,5 +60,61 @@ if (!file.exists(sites_csv)){
   sites %>% 
     sf::st_drop_geometry() %>% 
     readr::write_csv(sites_csv)
+  
 }
+
+if (F){
+  sites <- readr::read_csv(sites_csv)
+  
+  site_rmd <- function(code, name){
+    rmd <- glue::glue("s_{code}.Rmd")
+    
+    lns <- glue::glue('
+      ---
+      title: "{{name}}"
+      params:
+        site_code: "{{code}}"
+      ---
+      ```{r setup, include=FALSE}
+      knitr::opts_chunk$set(echo = F)
+      ```
+      ```{r}
+      source(here::here("functions.R"))
+      map_site(params$site_code)
+      ```
+      ', .open = "{{", .close = "}}")
+    
+    writeLines(lns,rmd)
+  }
+  purrr::walk2(sites$code, sites$name, site_rmd)
+}
+
+map_site <- function(site_code){
+  library(leaflet)
+  
+  site <- sf::read_sf(sites_geo) %>% 
+    dplyr::filter(code == params$site_code)
+  
+  leaflet(
+    data = site,
+    width = "100%") %>% 
+    addProviderTiles(providers$Esri.OceanBasemap) %>% 
+    addPolygons()
+}
+
+map_sites <- function(){
+  library(leaflet)
+  
+  sites <- sf::read_sf(sites_geo)
+  
+  leaflet(
+    data = sites,
+    width = "100%") %>% 
+    addProviderTiles(providers$Esri.OceanBasemap) %>% 
+    addPolygons(
+      label = ~name, 
+      labelOptions = labelOptions(noHide = T),
+      popup = ~glue::glue("<a href='s_{code}.html'><b>{name}</b></a>"))
+}
+
 

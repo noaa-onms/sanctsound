@@ -1,0 +1,12 @@
+---
+title: "Monterey Bay"
+params:
+  site_code: "mbnms"
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+```
+```{r}
+source(here::here("functions.R"))
+map_site(params$site_code)
+```

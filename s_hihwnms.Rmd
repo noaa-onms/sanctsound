@@ -1,0 +1,12 @@
+---
+title: "Hawaiian Islands Humpback Whale"
+params:
+  site_code: "hihwnms"
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+```
+```{r}
+source(here::here("functions.R"))
+map_site(params$site_code)
+```
