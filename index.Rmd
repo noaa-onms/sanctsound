@@ -1,9 +1,11 @@
 ---
-title: "My Website"
+title: "Sanctuaries & Sound"
+subtitle: "Exploring underwater sounds within US national marine sanctuaries"
 ---
 
-Hello, Website!
+NOAA and the U.S. Navy are working to better understand underwater sound within the National Marine Sanctuary System. For the next few years, these agencies will work with numerous scientific partners to study sound within seven national marine sanctuaries and one marine
+national monument, which includes waters off Hawai'i and the east and west coasts. Standardized measurements will assess sounds produced by marine animals, physical processes (e.g., wind and waves), and human activities. Collectively, this information will help NOAA and the Navy measure sound levels and baseline acoustic conditions in sanctuaries. This work is a continuation of ongoing [Navy](https://www.navy.mil) and NOAA monitoring and research, including efforts by [NOAA's Office of National Marine Sanctuaries](https://sanctuaries.noaa.gov).
 
-For more information about simple R Markdown websites, please read the documentation at https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html.
 
-Please also note that simple R Markdown sites are _not_ based on **blogdown**. They are probably good for websites with only a few Rmd documents. For larger-scale and more sophisticated websites (such as blogs), you may want to use **blogdown** instead: https://github.com/rstudio/blogdown.
+```{r carousel, child="_carousel.Rmd"}
+```

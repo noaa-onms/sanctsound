@@ -1,10 +1,10 @@
 name: "my-website"
 navbar:
-  title: "My Website"
+  title: "SanctSound"
   left:
     - text: "Home"
       href: index.html
-    - text: "About"
+    - text: "Map"
       href: about.html
     - text: "Streamgraphs"
       href: streamgraphs.html
