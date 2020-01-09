@@ -10,7 +10,7 @@
 <!-- Wrapper for slides -->
 <div class="carousel-inner" role="listbox">
   <div class="item active">
-  <a href="q-how-listen.html"> 
+  <a href="q_how-listen.html"> 
   <img src="figs/fieldwork_fulmar.jpg" alt="...">
   <div class="carousel-caption">
   <h3>How did we listen?</h3>
@@ -20,7 +20,7 @@
   </div>
 
   <div class="item">
-  <a href="q-what-measure.html.html"> 
+  <a href="q_what-measure.html.html"> 
   <img src="figs/streamgraph.png" alt="...">
   <div class="carousel-caption">
   <h3>What did we measure?</h3>
@@ -30,7 +30,7 @@
   </div>
 
   <div class="item">
-  <a href="q-what-hear.html"> 
+  <a href="q_what-hear.html"> 
   <img src="figs/infographic.jpg" alt="...">
   <div class="carousel-caption">
   <h3>What did we hear?</h3>
@@ -40,7 +40,7 @@
   </div>
   
   <div class="item">
-  <a href="q-how-far.html"> 
+  <a href="q_how-far.html"> 
   <img src="figs/sound_propogation.png" alt="...">
   <div class="carousel-caption">
   <h3>How far could we hear?</h3>
@@ -50,7 +50,7 @@
   </div>
 
   <div class="item">
-  <a href="q-what-learn.html"> 
+  <a href="q_what-learn.html"> 
   <img src="figs/infographic.jpg" alt="...">
   <div class="carousel-caption">
   <h3>What did we learn?</h3>

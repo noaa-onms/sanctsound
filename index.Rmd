@@ -1,5 +1,5 @@
 ---
-title: "Sanctuaries & Sound"
+title: "Sanctuary Soundscapes"
 subtitle: "Exploring underwater sounds within US national marine sanctuaries"
 ---
 
