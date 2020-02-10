@@ -41,7 +41,7 @@
   
   <div class="item">
   <a href="q_how-far.html"> 
-  <img src="figs/sound_propogation.png" alt="...">
+  <img src="figs/sound propagation.png" alt="...">
   <div class="carousel-caption">
   <h3>How far could we hear?</h3>
   <p>Based on sound profile of water...</p>

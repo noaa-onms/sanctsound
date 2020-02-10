@@ -51,7 +51,7 @@ navbar:
         - text: "Baleen Whales"
           href: o_baleen.html
         - text: "Toothed Whales"
-          href: o_tootheds-whales.html
+          href: o_toothed-whales.html
         - text: "Pinnipeds"
           href: o_pinnipeds.html
         - text: "Sirenians"
