@@ -69,4 +69,5 @@ navbar:
 output:
   html_document:
     theme: yeti # https://bootswatch.com/
+    css: styles.css
 output_dir: "docs"
