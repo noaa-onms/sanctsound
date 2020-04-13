@@ -43,6 +43,7 @@ vembedr::embed_vimeo(195622451, width = "100%")
 
 ```{r, warning=FALSE, message=F}
 library(here)
+library(glue)
 library(fs)
 library(htmltools)
 library(av)  # install.packages("av")
@@ -53,29 +54,15 @@ wavs <- list.files(dir_wav, full.names = T)
 
 wav <- wavs[1]
 
-# Demo sound included with av
-wonderland <- system.file('samples/Synapsis-Wonderland.mp3', package='av')
-
-if (F){
-#if (!file.exists('spectrogram.mp4')){
-  # Read first 5 sec of demo
-  fft_data <- read_audio_fft(wonderland, end_time = 5.0)
-  plot(fft_data)
+for (wav in wavs){
+  mp3 <- glue("{path_ext_remove(wav)}_3s.mp4")
+  mp4 <- glue("{path_ext_remove(wav)}_3s.mp4")
   
-  # Create new audio file with first 5 sec
-  av_audio_convert(wonderland, 'test.mp3', total_time = 5)
-  
-  #> [1] "short.mp3"
-  av_spectrogram_video(
-    wonderland, output = 'spectrogram.mp4', width = 1280, height = 720, res = 144)
+  if (!file.exists(mp4)){
+    av_audio_convert(wav, mp3, total_time = 3)
+    av_spectrogram_video(mp3, output = mp4, width = 1280, height = 720, res = 144)
+  }
 }
-
-if (F){
-  mp4 <- path_ext_set(wav, "mp4")
-  av_spectrogram_video(wav, output = mp4, width = 1280, height = 720, res = 144)
-}
-
-#tags$video(id='spectrogram.mp4', type = "video/mp4",src = 'spectrogram.mp4', controls = "controls")
 
 mp4 <- file.path("data/wav", basename(path_ext_set(wav, "mp4")))
 tags$video(id=basename(mp4), type = "video/mp4",src = mp4, controls = "controls")

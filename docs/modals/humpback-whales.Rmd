@@ -1,0 +1,8 @@
+```{r, include=F}
+knitr::opts_chunk$set(echo=F, message=F, warning=F, error=F)
+```
+
+```{r}
+mp4 <- here::here("data/wav/SanctSound_HI03_01_HWsong_20190130T144409Z_3s.mp4")
+htmltools::tags$video(id=basename(mp4), type = "video/mp4",src = mp4, controls = "controls")
+```
