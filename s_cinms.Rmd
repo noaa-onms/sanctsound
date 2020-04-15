@@ -4,8 +4,9 @@ params:
   site_code: "cinms"
 ---
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F)
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```
+
 ```{r}
 source(here::here("functions.R"))
 map_site(params$site_code)

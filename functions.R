@@ -1,11 +1,12 @@
-# library(here)
-# library(glue)
-# library(dplyr)
-# library(purrr)
-# library(fs)
-# library(sf)
-# library(sp)
-# library(readr)
+library(here)
+library(glue)
+library(dplyr)
+library(purrr)
+library(fs)
+library(sf)
+library(sp)
+library(readr)
+library(leaflet)
 
 #library(mapview)
 #library(leaflet)
@@ -90,16 +91,36 @@ if (F){
 }
 
 map_site <- function(site_code){
-  library(leaflet)
+  
+  # site_code = "cinms"
+  
+  # SanctSound_DeploymentLocations v2 - Google Sheet
+  sensors_csv = "https://docs.google.com/spreadsheets/d/1kU4mxt3W3fVd4T_L86ybxCkeaxILEZ1hmyu9r47X6JA/gviz/tq?tqx=out:csv&sheet=0"
+
+  sensors <- read_csv(sensors_csv) %>% 
+    filter(sanctuary_id == site_code) %>% 
+    st_as_sf(coords = c("lon","lat"), crs = 4326, remove = F)
+  
+  #library(leaflet)
   
   site <- sf::read_sf(sites_geo) %>% 
-    dplyr::filter(code == params$site_code)
+    dplyr::filter(code == site_code) %>% 
+    mutate(
+      geometry = (geometry + c(360,90)) %% c(-360) - c(0,-360+90)) %>%
+    st_set_geometry("geometry") %>%
+    st_set_crs(4326)  
   
-  leaflet(
-    data = site,
-    width = "100%") %>% 
+  leaflet(width = "100%") %>% 
     addProviderTiles(providers$Esri.OceanBasemap) %>% 
-    addPolygons()
+    addPolygons(data = site) %>% 
+    addAwesomeMarkers(
+      data = sensors, 
+      icon = awesomeIcons(
+        icon = 'microphone', library = 'fa',
+        iconColor = 'black',
+        markerColor = 'pink'), 
+      label=~as.character(site_id))
+    #addMarkers(data = sensors, options = markerOptions())
 }
 
 map_sites <- function(){
