@@ -1,0 +1,74 @@
+---
+title: "Tile Demo"
+output:
+  html_document:
+    css: ioos_main.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+<div id="grid-container" class="container"><div class="row"><div class="col-md-12"><div class="grid" data-masonry='{"itemSelector": ".grid-item", "columnWidth": ".grid-item.onexone"}'>
+
+  <a class="grid-item twoxone ioos-eds" href="https://eds.ioos.us/">
+  <div class="tile-wrap"><h1>IOOS Model Viewer</h1></div>
+  </a>
+  
+  <a class="grid-item onexone metrics orange" href="//ioos.noaa.gov/about/ioos-by-the-numbers/" target="_blank">
+  <div class="tile-wrap"><h1>IOOS By The Numbers</h1><span class="glyphicon glyphicon-signal" aria-hidden="true"></span></div>
+  </a>
+  
+  <a class="grid-item onexone data-discovery aqua" href="https://data.ioos.us">
+  <div class="tile-wrap"><h1>Data Discovery</h1><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+  </a>
+  
+  <a class="grid-item twoxone glider-dac" href="https://gliders.ioos.us/">
+  <div class="tile-wrap"><h1>Profiling Gliders</h1></div>
+  </a>
+  
+  <a class="grid-item twoxtwo sensor-map" href="https://sensors.ioos.us/">
+  <div class="tile-wrap"><h1>Environmental Sensor Map</h1></div>
+  </a>
+  
+  <a class="grid-item onexone mbon" href="https://mbon.ioos.us">
+  <div class="tile-wrap"><h1>Marine Biodiversity (MBON) Data</h1></div>
+  </a>
+  
+  <a class="grid-item onexone comt aqua" href="https://comt.ioos.us">
+  <div class="tile-wrap"><h1>Coastal and Ocean Modeling Testbed</h1></div>
+  </a>
+  
+  <a class="grid-item twoxone atn" href="//atn.ioos.us">
+  <div class="tile-wrap"><h1>Animal Telemetry Network</h1></div>
+  </a>
+  
+  <a class="grid-item onexone surf-cam" href="/surf-cam">
+  <div class="tile-wrap"><h1>Live Surf Camera</h1></div>
+  </a>
+  
+  <a class="grid-item onexone regional-associations orange" href="/regions">
+  <div class="tile-wrap"><h1>Regional Associations</h1></div>
+  </a>
+  
+  <a class="grid-item onexone data-demo-center" href="https://ioos.github.io/notebooks_demos/" target="_blank">
+  <div class="tile-wrap"><h1>Data Demo Center</h1></div>
+  </a>
+  
+  <a class="grid-item twoxone hf-radar" href="//hfradar.ioos.us">
+  <div class="tile-wrap"><h1>HF Radar</h1></div>
+  </a>
+  
+  <a class="grid-item onexone compliance-checker aqua" href="/compliance-checker">
+  <div class="tile-wrap"><h1>Compliance Checker</h1><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></div>
+  </a>
+  
+  <a class="grid-item twoxone osmc" href="//osmc.ioos.us">
+  <div class="tile-wrap"><h1>NOAA Observing System Monitoring Center</h1></div>
+  </a>
+  
+  <a class="grid-item twoxone ocean-acidification" href="//oa.ioos.us">
+  <div class="tile-wrap"><h1>Ocean Acidification</h1></div>
+  </a>
+</div></div></div></div>

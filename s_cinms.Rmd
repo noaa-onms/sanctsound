@@ -2,9 +2,14 @@
 title: "Channel Islands"
 params:
   site_code: "cinms"
+  csv: "svg/svg_links.csv"
+  svg: "svg/cinms_pelagic.svg"
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F, message = F, warning = F)
+```
+
+```{r svg, child = '_svg-html_child.Rmd'}
 ```
 
 ```{r}
