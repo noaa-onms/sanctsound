@@ -99,6 +99,9 @@ map_site <- function(site_code){
 
   sensors <- read_csv(sensors_csv) %>% 
     filter(sanctuary_id == site_code) %>% 
+    mutate(
+      popup_md   = glue("**{site_id}**: {tagline}"),
+      popup_html = map_chr(popup_md, function(x) markdown::markdownToHTML(text = x, fragment.only=T))) %>% 
     st_as_sf(coords = c("lon","lat"), crs = 4326, remove = F)
   
   #library(leaflet)
@@ -113,13 +116,18 @@ map_site <- function(site_code){
   leaflet(width = "100%") %>% 
     addProviderTiles(providers$Esri.OceanBasemap) %>% 
     addPolygons(data = site) %>% 
-    addAwesomeMarkers(
-      data = sensors, 
-      icon = awesomeIcons(
-        icon = 'microphone', library = 'fa',
-        iconColor = 'black',
-        markerColor = 'pink'), 
-      label=~as.character(site_id))
+    addCircleMarkers(
+      data = sensors,
+      color = "yellow", opacity = 0.7, fillOpacity = 0.5,
+      popup = ~popup_html, label = ~site_id)
+  
+    # addAwesomeMarkers(
+    #   data = sensors, 
+    #   icon = awesomeIcons(
+    #     icon = 'microphone', library = 'fa',
+    #     iconColor = 'black',
+    #     markerColor = 'pink'), 
+    #   label = ~label_html)
     #addMarkers(data = sensors, options = markerOptions())
 }
 
