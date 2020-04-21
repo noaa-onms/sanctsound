@@ -93,12 +93,15 @@ if (F){
 map_site <- function(site_code){
   
   # site_code = "cinms"
+  # site_code = "fknms"
   
   # SanctSound_DeploymentLocations v2 - Google Sheet
   sensors_csv = "https://docs.google.com/spreadsheets/d/1kU4mxt3W3fVd4T_L86ybxCkeaxILEZ1hmyu9r47X6JA/gviz/tq?tqx=out:csv&sheet=0"
 
   sensors <- read_csv(sensors_csv) %>% 
-    filter(sanctuary_id == site_code) %>% 
+    filter(
+      sanctuary_id == site_code,
+      !is.na(lon), !is.na(lat)) %>% 
     mutate(
       popup_md   = glue("**{site_id}**: {tagline}"),
       popup_html = map_chr(popup_md, function(x) markdown::markdownToHTML(text = x, fragment.only=T))) %>% 
@@ -113,14 +116,18 @@ map_site <- function(site_code){
     st_set_geometry("geometry") %>%
     st_set_crs(4326)  
   
-  leaflet(width = "100%") %>% 
+  map <- leaflet(width = "100%") %>% 
     addProviderTiles(providers$Esri.OceanBasemap) %>% 
-    addPolygons(data = site) %>% 
-    addCircleMarkers(
-      data = sensors,
-      color = "yellow", opacity = 0.7, fillOpacity = 0.5,
-      popup = ~popup_html, label = ~site_id)
+    addPolygons(data = site)
   
+  if (nrow(sensors) > 0){
+    map <- map %>% 
+      addCircleMarkers(
+        data = sensors,
+        color = "yellow", opacity = 0.7, fillOpacity = 0.5,
+        popup = ~popup_html, label = ~site_id)
+  }
+  map
     # addAwesomeMarkers(
     #   data = sensors, 
     #   icon = awesomeIcons(

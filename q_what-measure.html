@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>What did we measure?</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h2 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h3 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h4 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h6 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">SanctSound</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-question"></span>
+     
+    Questions
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="q_how-listen.html">How did we listen?</a>
+    </li>
+    <li>
+      <a href="q_what-measure.html">What did we measure?</a>
+    </li>
+    <li>
+      <a href="q_what-hear.html">What did we hear?</a>
+    </li>
+    <li>
+      <a href="q_how-far.html">How far could we hear?</a>
+    </li>
+    <li>
+      <a href="q_what-learn.html">What did we learn?</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-globe"></span>
+     
+    Sanctuaries
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="sanctuaries.html">All Sanctuaries</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="s_cinms.html">Channel Islands</a>
+    </li>
+    <li>
+      <a href="s_fknms.html">Florida Keys</a>
+    </li>
+    <li>
+      <a href="s_grnms.html">Gray’s Reef</a>
+    </li>
+    <li>
+      <a href="s_hihwnms.html">Hawaiian Islands Humpback Whale</a>
+    </li>
+    <li>
+      <a href="s_mbnms.html">Monterey Bay</a>
+    </li>
+    <li>
+      <a href="s_ocnms.html">Olympic Coast</a>
+    </li>
+    <li>
+      <a href="s_pmnm.html">Papahānaumokuākea</a>
+    </li>
+    <li>
+      <a href="s_sbnms.html">Stellwagen Bank</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-file-audio"></span>
+     
+    Sounds
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="sounds.html">All Sounds</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="o_baleen.html">Baleen Whales</a>
+    </li>
+    <li>
+      <a href="o_toothed-whales.html">Toothed Whales</a>
+    </li>
+    <li>
+      <a href="o_pinnipeds.html">Pinnipeds</a>
+    </li>
+    <li>
+      <a href="o_sirenians.html">Sirenians</a>
+    </li>
+    <li>
+      <a href="o_inverts.html">Invertebrates</a>
+    </li>
+    <li>
+      <a href="o_fish.html">Fish</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="o_anthro.html">Anthropogenic</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="stories.html">
+    <span class="fa fa-bullhorn"></span>
+     
+    Stories
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">What did we measure?</h1>
+
+</div>
+
+
+<p><em>Ever tried to negotiate where to sit at a concert with a friend who thinks it’s much louder than you do up front? Or wondered what goes into reviewers reporting on how loud or how quiet specific cars are? What was it about what you heard, or didn’t hear, that you noticed? Common measurement methods are key to providing a baseline for comparing the acoustic attributes of different places before taking into account differences in how we each experience them.</em></p>
+<p>This project recorded underwater sound continuously at 30 locations in US National Marine Sanctuaries over 2-3 years. This effort resulted in a very large amount of information. In fact, this project generated ~25 terabytes of data. For context, approximately 500 hours’ worth of movies can fit in one terabyte. The goal of this portal is to make a dataset of that size more easily explorable, and to showcase the types of information that sound can provide to help us understand and protect our oceans and its inhabitants.</p>
+<p>Here you can explore how loud or quiet each US National Marine Sanctuaries is, and make comparisons among locations to understand what makes the sounds of these places special, as well as what makes them similar and different from each other. To do this, we not only have to collect sound information in a comparable way [link to #1], we need to make the same measurements from these recordings. Sound can be described in a variety of different ways [link to DOSITS and don’t duplicate this level of coverage]. Two key attributes of sounds are their intensity (how much pressure or energy they contain, which we experience as “loudness”) and their frequency content (the mix of lower and higher pitches or tones that are contained in a sound). Other attributes describe how the sound occurred over time: was it a short burst of sound or a long-lasting hum? Our measurements of “levels” of sounds need to summarize all these attributes: intensity, frequency content, and duration.</p>
+<p>At each of our sites, we use stream graphs to provide a summary of the levels of sound. For all long-term (multiyear) measurement projects, it’s important to know both what the average condition was as well as how conditions varied around that average over time. If there was a lot of change in sound levels over time, we need to understand if it was louder across all frequencies or did a specific range of frequencies (and usually a specific source of sound) drive those changes. Stream graphs allow us to summarize those differences all in one image. For example, here are two stream graphs for two different locations in this project XX and YY. Notice how the width of the XX stream is relatively consistent, with changes from average conditions moderate with ….. In contrast, at YY notice how there are big changes in levels in XX and XX seen by the large amount of QQ color which contains tones in the XX range. This coincides with XX.</p>
+<p>If you click on the stream graph, you are invited to further explore the details of the variability in the levels of sound we recorded at this location. Reported measurements are informed by efforts to harmonize data products from international projects [link to IWC and COL report?] and project objectives to support web-based exploration.</p>
+<p>[more discussion here about how to compare sites deeper into the portal—select as many as you want and plot etc?]</p>
+<p>[IMAGERY: some cartoon showing how much data this is, conceptual drawings of sound waves and base measurements, two very different stream graphs]</p>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

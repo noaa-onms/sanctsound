@@ -8,7 +8,7 @@ library(dplyr)
 here = here::here
 
 # parameters
-csv         <- here("svg/svg_links_cinms.csv")
+csv         <- here("svg/svg_links.csv")
 redo_modals <- F
 
 # read in links for svg
