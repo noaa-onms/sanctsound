@@ -31,8 +31,7 @@ map_site(params$site_code)
 
 ### **What** did we measure?
 
-[TODO: slide 9 from
-[SanctSound_Figures_Pilot&Test_extended - Google Slides](https://docs.google.com/presentation/d/1-cK9DodV3hrmvyXZFXVNkgwb0pAr0XWNMk8ZtLpjKG4/edit#slide=id.g7e9c6ecc51_0_161)]
+![](./images/cinms_ex-what-measure.png)
 
 ### **What** did we learn?
 
