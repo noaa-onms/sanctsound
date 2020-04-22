@@ -6,4 +6,16 @@ title: "Stories"
 knitr::opts_chunk$set(echo = F)
 ```
 
-TBD
+- Overall
+  - How loud is my sanctuary?
+  - COVID-19 signals/impacts
+- East Coast
+  - Baleen whale & dolphin regional presence
+  - COVID-19 signals/impacts
+- Pacific Islands
+  - Humpback whale-song occurrence
+  - Human-made sound occurence
+- West Coast
+  - Ships & whales in OCNMS
+  - Seal bombs in Monterey
+  

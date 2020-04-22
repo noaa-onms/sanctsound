@@ -19,7 +19,7 @@ Click on an element to see & hear more.
 ```{r svg, child = '_svg-html_child.Rmd'}
 ```
 
-### **Where** did we listen? {.active}
+### **Where** did we listen?
 
 Here is a map of listening device locations. Hover on a location to see its site id and click on it to see the rationale for its placement.
 <!-- `r shiny::icon("map")` -->
