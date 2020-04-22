@@ -47,22 +47,32 @@ navbar:
       menu:
         - text: "All Sounds"
           href: sounds.html
-        - text: "---------"
-        - text: "Baleen Whales"
-          href: o_baleen.html
-        - text: "Toothed Whales"
-          href: o_toothed-whales.html
-        - text: "Pinnipeds"
-          href: o_pinnipeds.html
-        - text: "Sirenians"
-          href: o_sirenians.html
-        - text: "Invertebrates"
-          href: o_inverts.html
-        - text: "Fish"
-          href: o_fish.html
-        - text: "---------"
-        - text: "Anthropogenic"
-          href: o_anthro.html
+        - text: "-----"
+        - text: "Animal Sounds"
+          menu:
+          - text: "Baleen Whales"
+            href: o_baleen.html
+          - text: "Toothed Whales"
+            href: o_toothed-whales.html
+          - text: "Pinnipeds"
+            href: o_pinnipeds.html
+          - text: "Sirenians"
+            href: o_sirenians.html
+          - text: "Invertebrates"
+            href: o_inverts.html
+          - text: "Fish"
+            href: o_fish.html
+        - text: "Physical"
+          href: o_phys.html
+          menu:
+          - text: "Wind"
+            href: o_phys_wind.html
+        - text: "Human-made"
+          href: o_human.html
+          menu:
+          - text: "Large Vessel"
+            href: o_human_large-vessel.html
+
     - text: "Stories"
       icon: fa-bullhorn
       href: stories.html
