@@ -58,3 +58,33 @@ body {
   color: Coral;
   font-weight: bold;
 }
+
+.map-tiles {
+  display: inline-grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(400px, 1fr);
+  grid-template-rows: minmax(200px, 1fr) minmax(200px, 1fr);
+  grid-gap: 0.1rem;
+}
+
+.map-tiles > div {
+  padding: 0.15rem;
+  border-radius: 0.2rem;
+}
+
+.map-tiles > div {
+  /*background: #EDE7F6; */
+  padding: 0.15rem;
+  border-radius: 0.2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.map-tile-west {
+}
+.map-tile-hawaii {
+}
+.map-tile-east {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}

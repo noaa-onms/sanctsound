@@ -40,8 +40,33 @@ knitr::opts_chunk$set(echo = F, warning = F, message = F)
 NOAA and the U.S. Navy are working to better understand underwater sound within the National Marine Sanctuary System. For the next few years, these agencies will work with numerous scientific partners to study sound within seven national marine sanctuaries and one marine national monument, which includes waters off Hawai'i and the east and west coasts. Standardized measurements will assess sounds produced by marine animals, physical processes (e.g., wind and waves), and human activities. Collectively, this information will help NOAA and the Navy measure sound levels and baseline acoustic conditions in sanctuaries. This work is a continuation of ongoing [Navy](https://www.navy.mil) and NOAA monitoring and research, including efforts by [NOAA's Office of National Marine Sanctuaries](https://sanctuaries.noaa.gov).
 
 
-```{r}
+<div class="map-tiles">
+
+<div class="map-tile-west">
+West
+```{r, eval=T}
 source(here::here("functions.R"))
 
 map_sites()
 ```
+</div>
+
+<div class="map-tile-hawaii">
+Hawaii
+```{r, eval=T}
+source(here::here("functions.R"))
+
+map_sites()
+```
+</div>
+
+<div class="map-tile-east">
+East
+```{r, eval=T}
+source(here::here("functions.R"))
+
+map_sites()
+```
+</div>
+
+</div>
