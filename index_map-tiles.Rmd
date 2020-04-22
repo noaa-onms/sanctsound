@@ -8,6 +8,20 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F, warning = F, message = F)
+
+# TODO
+# - highlight on hover
+#
+# Resources:
+# - examples:
+#   - https://ioos.us/
+# - css:
+#   - https://css-tricks.com/snippets/css/complete-guide-grid/
+#   - https://css-tricks.com/things-ive-learned-css-grid-layout/
+# - rmd css:
+#   - https://bookdown.org/yihui/rmarkdown-cookbook/chunk-styling.html
+#   - https://bookdown.org/yihui/rmarkdown/layout.html
+#   - https://bookdown.org/yihui/rmarkdown-cookbook/multi-column-layout.html
 ```
 
 <div class="tiles">
@@ -45,6 +59,7 @@ NOAA and the U.S. Navy are working to better understand underwater sound within 
 <div class="map-tile-west">
 West
 ```{r, eval=T}
+# https://bookdown.org/yihui/rmarkdown-cookbook/chunk-styling.html
 source(here::here("functions.R"))
 
 map_sites()
