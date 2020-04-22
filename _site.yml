@@ -72,10 +72,36 @@ navbar:
           menu:
           - text: "Large Vessel"
             href: o_human_large-vessel.html
-
     - text: "Stories"
       icon: fa-bullhorn
-      href: stories.html
+      menu:
+      - text: "All Stories"
+        href: stories.html
+      - text: "-----"
+      - text: "Overall"
+        menu:
+        - text: "How loud is my sanctuary?"
+          href: y_overall-how-loud.html
+        - text: "COVID-19 signals/impacts"
+          href: y_overall-covid.html
+      - text: "East Coast"
+        menu:
+          - text: "Baleen whale & dolphin regional presence"
+            href: y_east-baleen.html
+          - text: "COVID-19 signals/impacts"
+            href: y_covid.html
+      - text: "Pacific Islands"
+        menu:
+          - text: "Humpback whale-song occurrence"
+            href: y_pacific-hw.html
+          - text: "Human-made sound occurence"
+            href: y_pacific-anthro.html
+      - text: "West Coast"
+        menu:
+          - text: "Ships & whales in OCNMS"
+            href: y_west-ships-whales.html
+          - text: "Seal bombs in Monterey"
+            href: y_west-seal-bombs.html
 output:
   html_document:
     theme: yeti # https://bootswatch.com/

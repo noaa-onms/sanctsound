@@ -1,36 +1,19 @@
 ---
-title: "Sounds"
-params:
-  csv: "svg/svg_links.csv"
-  svg: "svg/cinms_pelagic.svg"
+title: "All Sounds"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F)
 ```
 
-[Audio Gallery – Discovery of Sound in the Sea](https://dosits.org/galleries/audio-gallery/):
-
-- BALEEN WHALES
-- TOOTHED WHALES
-- PINNIPEDS
-- SIRENIANS
-- MARINE INVERTEBRATES
-- FISHES
-- OTHER NATURAL SOUNDS
-- ANTHROPOGENIC SOUNDS
-
-## Infographic
-
-```{r svg, child = '_svg-html_child.Rmd'}
-```
-
-## Embed video
-
-```{r}
-vembedr::embed_vimeo(195622451, width = "100%")
-```
-
-## Streamgraphs
-
-[streamgraphs.html](modals/streamgraphs.html)
+- Animal Sounds
+  - [Baleen Whales](./o_baleen.html)
+  - Toothed Whales
+  - Pinnipeds
+  - Sirenians
+  - Invertebrates
+  - Fish
+- Physical
+  - Wind
+- Human-made
+  - Large Vessel

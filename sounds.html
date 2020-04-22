@@ -11,7 +11,7 @@
 
 
 
-<title>Sounds</title>
+<title>All Sounds</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -358,36 +358,105 @@ $(document).ready(function () {
       <a href="sounds.html">All Sounds</a>
     </li>
     <li class="divider"></li>
-    <li>
-      <a href="o_baleen.html">Baleen Whales</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Animal Sounds</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="o_baleen.html">Baleen Whales</a>
+        </li>
+        <li>
+          <a href="o_toothed-whales.html">Toothed Whales</a>
+        </li>
+        <li>
+          <a href="o_pinnipeds.html">Pinnipeds</a>
+        </li>
+        <li>
+          <a href="o_sirenians.html">Sirenians</a>
+        </li>
+        <li>
+          <a href="o_inverts.html">Invertebrates</a>
+        </li>
+        <li>
+          <a href="o_fish.html">Fish</a>
+        </li>
+      </ul>
     </li>
-    <li>
-      <a href="o_toothed-whales.html">Toothed Whales</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Physical</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="o_phys_wind.html">Wind</a>
+        </li>
+      </ul>
     </li>
-    <li>
-      <a href="o_pinnipeds.html">Pinnipeds</a>
-    </li>
-    <li>
-      <a href="o_sirenians.html">Sirenians</a>
-    </li>
-    <li>
-      <a href="o_inverts.html">Invertebrates</a>
-    </li>
-    <li>
-      <a href="o_fish.html">Fish</a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="o_anthro.html">Anthropogenic</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Human-made</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="o_human_large-vessel.html">Large Vessel</a>
+        </li>
+      </ul>
     </li>
   </ul>
 </li>
-<li>
-  <a href="stories.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-bullhorn"></span>
      
     Stories
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="stories.html">All Stories</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Overall</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="y_overall-how-loud.html">How loud is my sanctuary?</a>
+        </li>
+        <li>
+          <a href="y_overall-covid.html">COVID-19 signals/impacts</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">East Coast</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="y_east-baleen.html">Baleen whale &amp; dolphin regional presence</a>
+        </li>
+        <li>
+          <a href="y_covid.html">COVID-19 signals/impacts</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pacific Islands</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="y_pacific-hw.html">Humpback whale-song occurrence</a>
+        </li>
+        <li>
+          <a href="y_pacific-anthro.html">Human-made sound occurence</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">West Coast</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="y_west-ships-whales.html">Ships &amp; whales in OCNMS</a>
+        </li>
+        <li>
+          <a href="y_west-seal-bombs.html">Seal bombs in Monterey</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -401,61 +470,30 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Sounds</h1>
+<h1 class="title toc-ignore">All Sounds</h1>
 
 </div>
 
 
-<p><a href="https://dosits.org/galleries/audio-gallery/">Audio Gallery – Discovery of Sound in the Sea</a>:</p>
 <ul>
-<li>BALEEN WHALES</li>
-<li>TOOTHED WHALES</li>
-<li>PINNIPEDS</li>
-<li>SIRENIANS</li>
-<li>MARINE INVERTEBRATES</li>
-<li>FISHES</li>
-<li>OTHER NATURAL SOUNDS</li>
-<li>ANTHROPOGENIC SOUNDS</li>
+<li>Animal Sounds
+<ul>
+<li><a href="./o_baleen.html">Baleen Whales</a></li>
+<li>Toothed Whales</li>
+<li>Pinnipeds</li>
+<li>Sirenians</li>
+<li>Invertebrates</li>
+<li>Fish</li>
+</ul></li>
+<li>Physical
+<ul>
+<li>Wind</li>
+</ul></li>
+<li>Human-made
+<ul>
+<li>Large Vessel</li>
+</ul></li>
 </ul>
-<div id="infographic" class="section level2">
-<h2>Infographic</h2>
-<script src="libs/d3.v5.min.js"></script>
-<script src="libs/infographiq.js"></script>
-<link href="libs/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="libs/bootstrap-toggle.min.js"></script>
-<div class="col-md-9">
-<div id="svg">
-
-</div>
-</div>
-<div class="col-md-3">
-Text: <input id="toggle-text" type="checkbox" data-toggle="toggle" data-size="mini">
-<div id="toggle-text-event">
-
-</div>
-<ul id="svg_list">
-</ul>
-</div>
-<script>
-link_svg(svg = "svg/cinms_pelagic.svg", csv = "svg/svg_links.csv", debug = true);
-</script>
-<script>
-$(function() {
-$('#toggle-text').change(function() {
-  display = this.checked ? "inline" : "none";
-  d3.select("#text").attr("display", display);
-})
-})
-</script>
-</div>
-<div id="embed-video" class="section level2">
-<h2>Embed video</h2>
-<iframe class="vimeo-embed" src="https://player.vimeo.com/video/195622451" width="100%" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-</div>
-<div id="streamgraphs" class="section level2">
-<h2>Streamgraphs</h2>
-<p><a href="modals/streamgraphs.html">streamgraphs.html</a></p>
-</div>
 
 
 
