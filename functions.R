@@ -153,4 +153,27 @@ map_sites <- function(){
       popup = ~glue::glue("<a href='s_{code}.html'><b>{name}</b></a>"))
 }
 
-
+img_convert <- function(path_from, path_to, overwrite=F, width_in=6.5, dpi=150){
+  width <- width_in * dpi
+  
+  if(is.na(path_from) | is.na(path_to)) return(NA)
+  
+  #browser()
+  
+  cmd <- glue('
+  in="{path_from}"
+  out_jpg="{path_to}"
+  convert "$in" -trim -units pixelsperinch -density {dpi} -resize {width} "$out_jpg"')
+  
+  if (file.exists(path_to) & !overwrite) return(F)
+  
+  message(cmd)
+  system(cmd)
+  
+  paths_01 <- glue("{path_ext_remove(path_to)}-{c(0,1)}.jpg")
+  if (all(file.exists(paths_01))){
+    file_copy(paths_01[2], path_to, overwrite = T)
+    file_delete(paths_01)
+  }
+  #message(glue("{path_from}\t\n -> {path_to}\n", .trim = F))
+}

@@ -2,7 +2,7 @@
 title: "Channel Islands"
 params:
   site_code: "cinms"
-  csv: "svg/svg_links.csv"
+  csv: "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=s_cinms"
   svg: "svg/cinms_pelagic.svg"
 ---
 ```{r setup, include=FALSE}

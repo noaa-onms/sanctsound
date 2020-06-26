@@ -70,7 +70,7 @@ Because of [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) restri
 source("render_site.R")
 
 # serve website
-servr::httd("docs")
+servr::httd(".")
 ```
 
 or using Python:

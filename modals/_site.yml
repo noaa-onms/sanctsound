@@ -1,0 +1,9 @@
+name: "CINMS info"
+output_dir: "."
+output:
+  html_document:
+    theme: lumen # darkly # cosmo # https://bootswatch.com
+    self_contained: false
+    lib_dir: modal_libs
+    mathjax: null
+    css: _modal_styles.css

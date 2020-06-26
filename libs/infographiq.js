@@ -23,6 +23,8 @@ function basename(path) {
 // main function to link svg elements to modal popups with data in csv
 function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%', height = '100%', modal_id = 'modal') {
   
+  var meta;
+  
 
   //  var f_child = div.node().appendChild(f.documentElement);
   d3.xml(svg).then((f) => {
@@ -41,10 +43,33 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
     h.attr('width', width)
      .attr('height', height);
     
+    // get meta_csv url from same Google Sheet with tab having "metadata"
+    var meta_csv = new URL(csv);
+    var meta_params = meta_csv.searchParams;
+    meta_params.set('sheet', 'metadata');
+    meta_csv.search = meta_params.toString();
+    meta_csv = meta_csv.toString();
+    if (debug){ 
+      console.log('meta_csv: ' + meta_csv);
+    }
+    // meta_csv = 'https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out%3Acsv&sheet=metadata'
+    //meta = d3.csv.parse(meta_csv);
+    var meta = [];
+    d3.csv(meta_csv).then(function(mdata) {
+      console.log("meta mdata");
+      console.log(mdata);
+      
+      mdata.forEach(function(d) {
+        meta.push([ +d.variable, +d.value ]);
+      });
+    });
+    console.log('meta' + meta);
+
     if (debug){ 
       console.log('before data.forEach');
     }
     
+    console.log('csv:' + csv);
     d3.csv(csv).then(function(data) {
       
       if (debug){ 
