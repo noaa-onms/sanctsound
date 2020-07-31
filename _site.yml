@@ -73,7 +73,7 @@ navbar:
           - text: "Large Vessel"
             href: o_human_large-vessel.html
     - text: "Stories"
-      icon: fa-bullhorn
+      icon: fa-newspaper-o
       menu:
       - text: "All Stories"
         href: stories.html
@@ -102,6 +102,28 @@ navbar:
             href: y_west-ships-whales.html
           - text: "Seal bombs in Monterey"
             href: y_west-seal-bombs.html
+    - text: "Statistics"
+      icon: fa-bar-chart
+      menu:
+        - text: "Statistics home"
+          href: stats.html
+        - text: "---------"
+        - text: "AIS comparisons"
+          href: z_ais-comparisons.html
+        - text: "Anomaly plots"
+          href: z_anomaly-plots.html
+        - text: "Box plots"
+          href: z_box-plots.html
+        - text: "Detections"
+          href: z_detections.html
+        - text: "Line plots"
+          href: z_line-plots.html
+        - text: "Power spectrum"
+          href: z_power-spectrum.html
+        - text: "Spectrograms"
+          href: z_spectrograms.html
+        - text: "Stream plots"
+          href: z_stream-plots.html
 output:
   html_document:
     theme: yeti # https://bootswatch.com/

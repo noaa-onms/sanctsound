@@ -8,12 +8,13 @@ library(dplyr)
 here = here::here
 
 # parameters
-csv         <- here("svg/svg_links.csv")
+csv         <- "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=scenes"
 redo_modals <- F
 
 # read in links for svg
 d <- read_csv(csv) %>% 
-  mutate(dir = dirname(link))
+  mutate(dir = dirname(link)) %>% 
+  select(-starts_with("X"))
 
 d_modals <- d %>% 
   filter(dir != ".")
@@ -54,7 +55,7 @@ render_modal <- function(rmd){
 # render_modal("modals/key-climate-ocean.Rmd")
 
 # create/render modals by iterating over svg links in csv ----
-for (i in 1:nrow(d_modals)){ # i=1
+for (i in 1:nrow(d_modals)){ # i=5
   # paths
   htm <- d_modals$link[i]
   rmd <- path_ext_set(htm, "Rmd")
