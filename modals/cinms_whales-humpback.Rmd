@@ -8,10 +8,11 @@ knitr::opts_chunk$set(echo=F, message=F, warning=F, error=F)
 ```
 
 ```{r}
-source(here("functions.R"))
+source(here::here("functions.R"))
 
-current_rmd <- current_input()
-message(glue("current_rmd: {current_rmd}"))
+imgs_snds <- get_modal_imgs_snds(modals_csv, rmd = knitr::current_input())
+imgs      <- imgs_snds$imgs
+snds      <- imgs_snds$snds
 ```
 
 ## {.tabset}
@@ -22,9 +23,7 @@ message(glue("current_rmd: {current_rmd}"))
 <div class="col-xs-6">
 ```{r, results = "asis"}
 img <- imgs %>% 
-  filter(
-    modal_rmd == current_rmd,
-    tab == "Sights & Sounds")
+  filter(tab_name == "Sights & Sounds")
 glue("![{img$caption}]({img$path_r})")
 ```
 </div>
@@ -37,22 +36,18 @@ vembedr::embed_url("https://youtu.be/AHnpFwunPKA")
 </div>
 </div>
 
-### Patterns, daily
+### Daily Patterns
 
 ```{r, results = "asis"}
 img <- imgs %>% 
-  filter(
-    modal_rmd == current_rmd,
-    tab == "Patterns, daily")
+  filter(tab_name == "Daily patterns")
 glue("![{img$caption}]({img$path_r})")
 ```
 
-### Patterns, hourly
+### Monthly Patterns
 
 ```{r, results = "asis"}
 img <- imgs %>% 
-  filter(
-    modal_rmd == current_rmd,
-    tab == "Patterns, hourly")
+  filter(tab_name == "Monthly patterns")
 glue("![{img$caption}]({img$path_r})")
 ```

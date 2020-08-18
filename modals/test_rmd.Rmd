@@ -1,0 +1,15 @@
+---
+title: "test_rmd"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r cars}
+current_rmd <- knitr::current_input()
+
+message(glue::glue("current_rmd: {current_rmd}"))
+```

@@ -6,10 +6,14 @@ library(glue)
 library(purrr)
 library(dplyr)
 here = here::here
+source(here("functions.R"))
 
 # parameters
 csv         <- "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=scenes"
 redo_modals <- F
+
+# download any missing images & sounds
+get_gsheet_modals(modals_csv)
 
 # read in links for svg
 d <- read_csv(csv) %>% 

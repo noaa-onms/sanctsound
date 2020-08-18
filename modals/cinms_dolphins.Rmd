@@ -8,10 +8,14 @@ knitr::opts_chunk$set(echo=F, message=F, warning=F, error=F)
 ```
 
 ```{r}
-source(here("functions.R"))
+source(here::here("functions.R"))
 
-current_rmd <- current_input()
-message(glue("current_rmd: {current_rmd}"))
+#current_rmd <- knitr::current_input()
+current_rmd <- "cinms_dolphins.Rmd"
+
+imgs_snds <- get_modal_imgs_snds(modals_csv, rmd = current_rmd)
+imgs      <- imgs_snds$imgs
+snds      <- imgs_snds$snds
 ```
 
 ## {.tabset}
@@ -22,9 +26,7 @@ message(glue("current_rmd: {current_rmd}"))
 <div class="col-xs-6">
 ```{r, results = "asis"}
 img <- imgs %>% 
-  filter(
-    modal_rmd == current_rmd,
-    tab == "Sights & Sounds")
+  filter(tab_name == "Sights & Sounds")
 glue("![{img$caption}]({img$path_r})")
 ```
 </div>
@@ -32,27 +34,33 @@ glue("![{img$caption}]({img$path_r})")
 ```{r}
 # mp4 <- here::here("data/wav/SanctSound_HI03_01_HWsong_20190130T144409Z_3s.mp4")
 # htmltools::tags$video(id=basename(mp4), type = "video/mp4",src = mp4, controls = "controls")
-vembedr::embed_url("https://youtu.be/AHnpFwunPKA")
+#vembedr::embed_url("https://youtu.be/AHnpFwunPKA")
+
+snds <- snds %>% 
+  filter(tab_name == "Sights & Sounds")
+#glue("![{snds$caption}]({snds$path_r})")
 ```
+<video width="440" height="440" controls>
+  <source src="`r snds$path_r`" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+`r snds$caption`
+
 </div>
 </div>
 
-### Patterns, daily
+### Daily Patterns [ TODO: turn off if not present]
 
 ```{r, results = "asis"}
 img <- imgs %>% 
-  filter(
-    modal_rmd == current_rmd,
-    tab == "Patterns, daily")
+  filter(tab_name == "Daily patterns")
 glue("![{img$caption}]({img$path_r})")
 ```
 
-### Patterns, hourly
+### Monthly Patterns
 
 ```{r, results = "asis"}
 img <- imgs %>% 
-  filter(
-    modal_rmd == current_rmd,
-    tab == "Patterns, hourly")
+  filter(tab_name == "Monthly patterns")
 glue("![{img$caption}]({img$path_r})")
 ```
