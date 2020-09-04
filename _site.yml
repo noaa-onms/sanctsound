@@ -78,7 +78,7 @@ navbar:
       - text: "All Stories"
         href: stories.html
       - text: "-----"
-      - text: "Overall"
+      - text: "National"
         menu:
         - text: "How loud is my sanctuary?"
           href: y_overall-how-loud.html

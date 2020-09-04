@@ -1,0 +1,81 @@
+---
+title: "`r params$modal_title`"
+output: html_document
+params:
+  modal_title: "Humpback whales"
+editor_options: 
+  chunk_output_type: console
+---
+```{r, include=F}
+knitr::opts_chunk$set(echo=F, message=F, warning=F, error=F)
+```
+
+## {.tabset}
+
+```{r sight_sound, results = "asis"}
+# params <- list(
+#   modal_title = "Humpback whales")
+
+source(here::here("functions.R"))
+
+get_modal_file_tbl <- function(tab_name, modal_title = params$modal_title){
+  tbl <- modals %>% 
+    filter(
+      modal_title == !!modal_title,
+      tab_name    == !!tab_name,
+      !is.na(gdrive_shareable_link)) %>% 
+    mutate(
+      path_relative = map_chr(gdrive_shareable_link, gdrive2path)) %>% 
+    filter(
+      !is.na(path_relative))
+  tbl
+}
+
+sight <- get_modal_file_tbl("Sight")
+sound <- get_modal_file_tbl("Sound")
+
+# sight <- modals %>% 
+#   filter(
+#     modal_title == params$modal_title,
+#     tab_name    == "Sight",
+#     !is.na(gdrive_shareable_link)) %>% 
+#   mutate(
+#     path_relative = map_chr(gdrive_shareable_link, gdrive2path))
+# 
+# sound <- modals %>% 
+#   filter(
+#     modal_title == params$modal_title,
+#     tab_name    == "Sound",
+#     !is.na(gdrive_shareable_link)) %>% 
+#   mutate(
+#     path_relative = map_chr(gdrive_shareable_link, gdrive2path))
+
+sight_sound_md(sight, sound)
+```
+
+```{r daily, results = "asis"}
+daily <- get_modal_file_tbl("Daily patterns")
+# sound <- modals %>% 
+#   filter(
+#     modal_title == params$modal_title,
+#     tab_name    == "Daily",
+#     !is.na(gdrive_shareable_link)) %>% 
+#   mutate(
+#     path_relative = map_chr(gdrive_shareable_link, gdrive2path))
+if (nrow(daily) == 1)
+  glue("
+  ### Daily Patterns 
+  
+  ![{daily$caption}]({daily$path_relative})
+  ")
+```
+
+```{r monthly, results = "asis"}
+monthly <- get_modal_file_tbl("Monthly patterns")
+if (nrow(daily) == 1)
+  glue("
+  ### Monthly Patterns 
+  
+  ![{monthly$caption}]({monthly$path_relative})
+  ")
+```

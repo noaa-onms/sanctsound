@@ -21,13 +21,23 @@ scenes_csv    <- glue("{gsheet_pfx}&sheet=scenes")
 locations_csv <- glue("{gsheet_pfx}&sheet=locations")
 metadata_csv  <- glue("{gsheet_pfx}&sheet=metadata")
 
-modals    <- read_csv(modals_csv)
-scenes    <- read_csv(scenes_csv)
-locations <- read_csv(locations_csv)
-metadata  <- read_csv(metadata_csv)
-
 sites_csv <- here("data/nms_sites.csv")
 sites_geo <- here("data/nms_sites.geojson")
+
+get_sheet <- function(sheet, redo = F){
+  # sheet = "modals"
+  if (!exists(sheet, envir = globalenv()) | redo){
+    sheet_csv <- get(glue("{sheet}_csv"))
+    d <- read_csv(sheet_csv) %>% 
+      select(-starts_with("X"))
+    assign(sheet, d, envir = globalenv())}
+  get(sheet)
+}
+
+modals    <- get_sheet("modals")
+scenes    <- get_sheet("scenes")
+locations <- get_sheet("locations")
+metadata  <- get_sheet("metadata")
 
 get_nms_ply <- function(nms, dir_pfx = here()){
   # get polygon for National Marine Sanctuary
@@ -79,7 +89,7 @@ if (!file.exists(sites_csv)){
   
 }
 
-if (F){
+create_sanctuary_pages <- function(){
   sites <- readr::read_csv(sites_csv)
   
   site_rmd <- function(code, name){
@@ -105,6 +115,102 @@ if (F){
   purrr::walk2(sites$code, sites$name, site_rmd)
 }
 
+get_modal_tbl <- function(modal_title = NULL, rmd = NULL){
+  # rmd = "cinms_dolphins.Rmd"; modal_title = NULL
+
+  stopifnot(sum(!is.null(modal_title), !is.null(rmd)) == 1)
+  
+  modals    <- get_sheet("modals")
+  scenes    <- get_sheet("scenes")
+  
+  if (!is.null(modal_title)){
+    modal_tbl <- modals %>% 
+      filter(modal_title == !!modal_title)
+  }
+  
+  if (!is.null(rmd)){
+    fname <- path_ext_remove(rmd)
+    
+    modal_title <- scenes %>% 
+      filter(file_name == fname) %>% 
+      pull(modal_title)
+    
+    modal_tbl <- modals %>% 
+      filter(modal_title == !!modal_title)
+  }
+  modal_tbl
+}
+
+get_modal_tab_content <- function(tab_name, modal_title = NULL, rmd = NULL){
+  
+  # tab_name <- "Sight"; rmd = "cinms_dolphins.Rmd"; modal_title = NULL; 
+  modal_tbl <- get_modal_tbl(modal_title = modal_title, rmd = rmd)
+  
+  # Sight
+  # modal_tbl %>% 
+  #   filter(tab_name == !!tab_name)
+  
+  imgs <- modals %>% 
+    filter(tolower(path_ext(filename)) %in% exts$imgs) %>% 
+    mutate(
+      gdrive_id = str_replace(
+        gdrive_shareable_link, 
+        "https://drive.google.com/file/d/(.*)/view\\?usp=sharing", 
+        "\\1"),
+      gdrive_dl = glue("https://drive.google.com/uc?id={gdrive_id}&export=download"),
+      path_0    = here(glue("images/{filename}")),
+      path_w    = glue("{path_ext_remove(path_0)}_w{image_width_inches}in.{path_ext(path_0)}"),
+      path_r    = glue("../images/{basename(path_w)}"))
+  
+  snds <- modals %>% 
+    filter(tolower(path_ext(filename)) %in% exts$snds) %>% 
+    mutate(
+      gdrive_id = str_replace(
+        gdrive_shareable_link, 
+        "https://drive.google.com/file/d/(.*)/view\\?usp=sharing", 
+        "\\1"),
+      gdrive_dl = glue("https://drive.google.com/uc?id={gdrive_id}&export=download"),
+      path_0    = here(glue("sounds/{filename}")),
+      path_m    = glue("{path_ext_remove(path_0)}.mp4"), # movie
+      path_r    = glue("../sounds/{basename(path_m)}"))  # relative path
+  
+  list(imgs=imgs, snds=snds)
+}
+
+glink_to_gid <- function(glink){
+  # expecting from gdrive_shareable_link
+  # glink = "https://drive.google.com/file/d/1_wWLplFmhEAEqmbsTA0D85yuAhmapc5a/view?usp=sharing" 
+  str_replace(
+    glink, 
+    "https://drive.google.com/file/d/(.*)/view\\?usp=sharing", 
+    "\\1")
+}
+
+img_convert <- function(path_from, path_to, overwrite=F, width_in=6.5, dpi=150){
+  width <- width_in * dpi
+  
+  if(is.na(path_from) | is.na(path_to)) return(NA)
+  
+  #browser()
+  
+  cmd <- glue('
+  in="{path_from}"
+  out_jpg="{path_to}"
+  convert "$in" -trim -units pixelsperinch -density {dpi} -resize {width} "$out_jpg"')
+  
+  if (file.exists(path_to) & !overwrite) return(F)
+  
+  message(cmd)
+  system(cmd)
+  
+  paths_01 <- glue("{path_ext_remove(path_to)}-{c(0,1)}.jpg")
+  if (all(file.exists(paths_01))){
+    file_copy(paths_01[2], path_to, overwrite = T)
+    file_delete(paths_01)
+  }
+  #message(glue("{path_from}\t\n -> {path_to}\n", .trim = F))
+}
+
 map_site <- function(site_code){
   
   # site_code = "cinms"
@@ -112,7 +218,7 @@ map_site <- function(site_code){
   
   # SanctSound_DeploymentLocations v2 - Google Sheet
   sensors_csv = "https://docs.google.com/spreadsheets/d/1kU4mxt3W3fVd4T_L86ybxCkeaxILEZ1hmyu9r47X6JA/gviz/tq?tqx=out:csv&sheet=0"
-
+  
   sensors <- read_csv(sensors_csv) %>% 
     filter(
       sanctuary_id == site_code,
@@ -143,14 +249,14 @@ map_site <- function(site_code){
         popup = ~popup_html, label = ~site_id)
   }
   map
-    # addAwesomeMarkers(
-    #   data = sensors, 
-    #   icon = awesomeIcons(
-    #     icon = 'microphone', library = 'fa',
-    #     iconColor = 'black',
-    #     markerColor = 'pink'), 
-    #   label = ~label_html)
-    #addMarkers(data = sensors, options = markerOptions())
+  # addAwesomeMarkers(
+  #   data = sensors, 
+  #   icon = awesomeIcons(
+  #     icon = 'microphone', library = 'fa',
+  #     iconColor = 'black',
+  #     markerColor = 'pink'), 
+  #   label = ~label_html)
+  #addMarkers(data = sensors, options = markerOptions())
 }
 
 map_sites <- function(){
@@ -168,105 +274,91 @@ map_sites <- function(){
       popup = ~glue::glue("<a href='s_{code}.html'><b>{name}</b></a>"))
 }
 
-img_convert <- function(path_from, path_to, overwrite=F, width_in=6.5, dpi=150){
-  width <- width_in * dpi
+render_modal <- function(rmd){
+  rmds_theme_white <- c(
+    "modals/barnacles.Rmd",
+    "modals/mussels.Rmd")
   
-  if(is.na(path_from) | is.na(path_to)) return(NA)
+  site_theme <- site_config()$output$html_document$theme
+  rmd_theme  <- ifelse(rmd %in% rmds_theme_white, "cosmo", site_theme)
   
-  #browser()
+  render(rmd, html_document(
+    theme = rmd_theme, 
+    self_contained=F, lib_dir = here("modals/modal_libs"), 
+    # toc=T, toc_depth=3, toc_float=T,
+    mathjax = NULL))
   
-  cmd <- glue('
-  in="{path_from}"
-  out_jpg="{path_to}"
-  convert "$in" -trim -units pixelsperinch -density {dpi} -resize {width} "$out_jpg"')
-  
-  if (file.exists(path_to) & !overwrite) return(F)
-  
-  message(cmd)
-  system(cmd)
-  
-  paths_01 <- glue("{path_ext_remove(path_to)}-{c(0,1)}.jpg")
-  if (all(file.exists(paths_01))){
-    file_copy(paths_01[2], path_to, overwrite = T)
-    file_delete(paths_01)
-  }
-  #message(glue("{path_from}\t\n -> {path_to}\n", .trim = F))
+  htm <- fs::path_ext_set(rmd, "html")
+  docs_htm <- glue("docs/{htm}")
+  docs_rmd <- glue("docs/{rmd}")
+  file.copy(rmd, docs_rmd, overwrite = T)
+  file.copy(htm, docs_htm, overwrite = T)
 }
 
-get_modal_tbl <- function(modals_csv = modals_csv, modal_title = NULL, rmd = NULL){
-  
-  # rmd = "cinms_dolphins.Rmd"; modal_title = NULL
-
-  modals <- read_csv(modals_csv)
-  
-  if (!is.null(modal_title)){
-    modal <- modals %>% 
-      filter(modal_title == !!modal_title)
-  }
-  
-  if (!is.null(rmd)){
-    fname <- path_ext_remove(rmd)
-    
-    modal_title <- read_csv(scenes_csv) %>% 
-      filter(file_name == fname) %>% 
-      pull(modal_title)
-    
-    modal <- modals %>% 
-      filter(modal_title == !!modal_title)
-  }
-  modal
+render_page <- function(rmd){
+  render(rmd, html_document(
+    theme = site_config()$output$html_document$theme, 
+    self_contained=F, lib_dir = here("modals/modal_libs"), 
+    mathjax = NULL))
 }
 
-get_modal_imgs_snds <- function(modals_csv = modals_csv, modal_title = NULL, rmd = NULL){
+gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, redo = F){
   
-  # rmd = "cinms_dolphins.Rmd"; modal_title = NULL
-  # exts <- list(
-  #   imgs = c("png","jpg","jpeg"),
-  #   snds = c("wav"))
+  #gdrive_shareable_link <- "https://drive.google.com/file/d/1_wWLplFmhEAEqmbsTA0D85yuAhmapc5a/view?usp=sharing"
+  regex <- ifelse(
+    str_detect(gdrive_shareable_link, "/file/"),
+    "https://drive.google.com/file/d/(.*)/view.*",
+    "https://drive.google.com/open\\?id=(.*)")
+  gid <- str_replace(gdrive_shareable_link, regex, "\\1") %>%
+    str_trim()
+  
+  message(glue("gdrive_shareable_link: {gdrive_shareable_link}"))
+  message(glue("gid: {gid}"))
+  
+  fname <- try(drive_get(as_id(gid))$name)
+  
+  if (class(fname) == "try-error")
+    return(NA)
+  
+  fname_ok      <- fname %>% str_replace_all("/", "_")
+  path          <- here(glue("files/{fname_ok}"))
+  path_relative <- glue("../files/{fname_ok}")
+  
+  if (!file.exists(path) | redo)
+    drive_download(as_id(gid), path)
+  
+  if (path_ext(path) %in% c("mp3","wav")){
+    
+    # path <- "/Users/bbest/github/sanctsound/files/SanctSound_CI02_01_HumpbackWhale_20181103T074755.wav"
+    # path = "/Users/bbest/github/sanctsound/files/output.mp3"
+    path_mp4 <- path_ext_set(path, "mp4")
+    
+    if (!file.exists(path_mp4) | redo){
+      
+      path_mp3 <- glue("{path_ext_remove(path)}_ffmpeg-clean.mp3")
+      cmd <- glue("ffmpeg -y -i {path} -codec:a libmp3lame -qscale:a 2 {path_mp3}")
+      res <- system(cmd)
+      if (res != 0)
+        return(NA)
 
-  modals <- read_csv(modals_csv)
-  
-  if (!is.null(modal_title)){
-    modals <- modals %>% 
-      filter(modal_title == !!modal_title)
+      out <- try(
+        av_spectrogram_video(
+          path_mp3, path_mp4, 
+          width = 720, height = 480, res = 144, framerate = 25))
+      # TODO: change color ramp inside this function around line: graphics::plot(fftdata, vline = i)
+      
+      if (class(out) == "try-error")
+        return(NA)
+    }
+    
+    path          <- path_mp4
+    path_relative <- glue("../files/{basename(path_mp4)}")
   }
   
-  if (!is.null(rmd)){
-    fname <- path_ext_remove(rmd)
-    
-    modal_title <- read_csv(scenes_csv) %>% 
-      filter(file_name == fname) %>% 
-      pull(modal_title)
-    
-    modals <- modals %>% 
-      filter(modal_title == !!modal_title)
-  }
+  if (get_relative_path)
+    return(path_relative)
   
-  imgs <- modals %>% 
-    filter(tolower(path_ext(filename)) %in% exts$imgs) %>% 
-    mutate(
-      gdrive_id = str_replace(
-        gdrive_shareable_link, 
-        "https://drive.google.com/file/d/(.*)/view\\?usp=sharing", 
-        "\\1"),
-      gdrive_dl = glue("https://drive.google.com/uc?id={gdrive_id}&export=download"),
-      path_0    = here(glue("images/{filename}")),
-      path_w    = glue("{path_ext_remove(path_0)}_w{image_width_inches}in.{path_ext(path_0)}"),
-      path_r    = glue("../images/{basename(path_w)}"))
-  
-  snds <- modals %>% 
-    filter(tolower(path_ext(filename)) %in% exts$snds) %>% 
-    mutate(
-      gdrive_id = str_replace(
-        gdrive_shareable_link, 
-        "https://drive.google.com/file/d/(.*)/view\\?usp=sharing", 
-        "\\1"),
-      gdrive_dl = glue("https://drive.google.com/uc?id={gdrive_id}&export=download"),
-      path_0    = here(glue("sounds/{filename}")),
-      path_m    = glue("{path_ext_remove(path_0)}.mp4"), # movie
-      path_r    = glue("../sounds/{basename(path_m)}"))  # relative path
-  
-  list(imgs=imgs, snds=snds)
+  path
 }
 
 update_modal_imgs_snds <- function(modals_csv = modals_csv){
@@ -374,4 +466,50 @@ update_modal_imgs_snds <- function(modals_csv = modals_csv){
   
 }
 
-
+sight_sound_md <- function(sight, sound, type = "header"){
+  
+  has_sight = F
+  has_sound = F
+  if (nrow(sight) > 0) has_sight = T
+  if (nrow(sound) > 0) has_sound = T
+  
+  md <- case_when(
+    has_sound & has_sight ~ glue(
+      "
+      ### Sights & Sounds
+      
+      <div class='row'>
+      
+      <div class='col-xs-6'>
+        ![{sight$caption}]({sight$path_relative})
+      </div>
+      
+      <div class='col-xs-6'>
+        <video controls>
+        <source src='{sound$path_relative}' type='video/mp4'>
+        Your browser does not support the video tag.
+        </video>
+        {sound$caption}
+      </div>
+      
+      </div>
+      "),
+    has_sight & !has_sound ~ glue(
+      "
+      ### Sights & Sounds
+      
+      ![{sight$caption}]({sight$path_relative})
+      "),
+    has_sound & !has_sight ~ glue(
+      "
+      ### Sounds
+      
+      <video controls>
+      <source src='{sound$path_relative}' type='video/mp4'>
+      Your browser does not support the video tag.
+      </video>
+      {sound$caption}
+      "),
+    TRUE ~ "")
+  md
+}

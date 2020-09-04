@@ -1,62 +1,15 @@
-library(rmarkdown)
-library(here)
-library(readr)
-library(fs)
-library(glue)
-library(purrr)
-library(dplyr)
-here = here::here
-source(here("functions.R"))
+source(here::here("functions.R"))
 
-# parameters
-csv         <- "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=scenes"
 redo_modals <- F
 
-# download any missing images & sounds
-get_gsheet_modals(modals_csv)
+modal_pages <- modals %>% 
+  group_by(modal_title) %>% 
+  mutate(
+    modal_html = modal_title %>% 
+      str_replace_all(" ", "-") %>% 
+      path_ext_set("html"))
 
-# read in links for svg
-d <- read_csv(csv) %>% 
-  mutate(dir = dirname(link)) %>% 
-  select(-starts_with("X"))
-
-d_modals <- d %>% 
-  filter(dir != ".")
-
-render_page <- function(rmd){
-  render(rmd, html_document(
-    theme = site_config()$output$html_document$theme, 
-    self_contained=F, lib_dir = here("modals/modal_libs"), 
-    mathjax = NULL))
-}
-
-render_modal <- function(rmd){
-  rmds_theme_white <- c(
-    "modals/barnacles.Rmd",
-    "modals/mussels.Rmd")
-  
-  site_theme <- site_config()$output$html_document$theme
-  rmd_theme  <- ifelse(rmd %in% rmds_theme_white, "cosmo", site_theme)
-  
-  render(rmd, html_document(
-    theme = rmd_theme, 
-    self_contained=F, lib_dir = here("modals/modal_libs"), 
-    # toc=T, toc_depth=3, toc_float=T,
-    mathjax = NULL))
-  
-  htm <- fs::path_ext_set(rmd, "html")
-  docs_htm <- glue("docs/{htm}")
-  docs_rmd <- glue("docs/{rmd}")
-  file.copy(rmd, docs_rmd, overwrite = T)
-  file.copy(htm, docs_htm, overwrite = T)
-}
-
-# render_modal("modals/key-human-activities.Rmd")
-# render_modal("modals/rocky-map.Rmd")
-# render_modal("modals/barnacles.Rmd")
-# render_modal("modals/mussels.Rmd")
-# render_modal("modals/halibut.Rmd")
-# render_modal("modals/key-climate-ocean.Rmd")
+pwalk(modal_pages, render_modal)
 
 # create/render modals by iterating over svg links in csv ----
 for (i in 1:nrow(d_modals)){ # i=5
@@ -93,4 +46,5 @@ fs::file_touch("docs/.nojekyll")
 # file.copy("libs", "docs", recursive=T)
 # file.copy("svg", "docs", recursive=T)
 # file.copy("modals", "docs", recursive=T)
+
 
