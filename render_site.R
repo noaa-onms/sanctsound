@@ -2,12 +2,20 @@ source(here::here("functions.R"))
 
 redo_modals <- F
 
+modals    <- get_sheet("modals", redo = T)
+
 modal_pages <- modals %>% 
-  group_by(modal_title) %>% 
+  group_by(sanctuary_code, modal_title) %>% 
+  summarize() %>% 
   mutate(
-    modal_html = modal_title %>% 
-      str_replace_all(" ", "-") %>% 
-      path_ext_set("html"))
+    modal_html  = map2_chr(sanctuary_code, modal_title, modal_title_to_html_path)) %>% 
+  select(sanctuary_code, modal_title, modal_html) # modal_pages 
+
+# modals %>% 
+#   #filter(modal_title == "Seal bombs") %>% 
+#   filter(modal_title == "Giant sea bass") %>% 
+#   View()
+modal_pages <- filter(modal_pages, modal_title == "Seal bombs")
 
 pwalk(modal_pages, render_modal)
 

@@ -186,6 +186,27 @@ glink_to_gid <- function(glink){
     "\\1")
 }
 
+get_modal_file_tbl <- function(
+  tab_name, 
+  sanctuary_code = params$sanctuary_code,
+  modal_title    = params$modal_title){
+  
+  # tab_name = "Sound"; sanctuary_code = params$sanctuary_code; modal_title = params$modal_title
+  
+  tbl <- modals %>% 
+    filter(
+      sanctuary_code == !!sanctuary_code,
+      modal_title    == !!modal_title,
+      tab_name       == !!tab_name,
+      !is.na(gdrive_shareable_link)) %>% 
+    mutate(
+      path_relative = map_chr(gdrive_shareable_link, gdrive2path)) %>% 
+    filter(
+      !is.na(path_relative))
+  tbl
+}
+
+
 img_convert <- function(path_from, path_to, overwrite=F, width_in=6.5, dpi=150){
   width <- width_in * dpi
   
@@ -274,25 +295,27 @@ map_sites <- function(){
       popup = ~glue::glue("<a href='s_{code}.html'><b>{name}</b></a>"))
 }
 
-render_modal <- function(rmd){
-  rmds_theme_white <- c(
-    "modals/barnacles.Rmd",
-    "modals/mussels.Rmd")
+modal_title_to_html_path <- function(sanctuary_code, modal_title, pfx = here("modals")){
   
-  site_theme <- site_config()$output$html_document$theme
-  rmd_theme  <- ifelse(rmd %in% rmds_theme_white, "cosmo", site_theme)
+  modal_html <- glue("{sanctuary_code}_{modal_title}") %>% 
+    str_replace_all(" ", "-") %>% 
+    str_to_lower() %>% 
+    path_ext_set("html")
+  path(pfx, modal_html)
   
-  render(rmd, html_document(
-    theme = rmd_theme, 
-    self_contained=F, lib_dir = here("modals/modal_libs"), 
-    # toc=T, toc_depth=3, toc_float=T,
-    mathjax = NULL))
+}
+
+
+render_modal <- function(sanctuary_code, modal_title, modal_html, rmd = here("modals/_modal_template.Rmd")){
   
-  htm <- fs::path_ext_set(rmd, "html")
-  docs_htm <- glue("docs/{htm}")
-  docs_rmd <- glue("docs/{rmd}")
-  file.copy(rmd, docs_rmd, overwrite = T)
-  file.copy(htm, docs_htm, overwrite = T)
+  message(glue("RENDER {basename(modal_html)}: {modal_title}"))
+  
+  render(
+    rmd, 
+    params = list(
+      sanctuary_code = sanctuary_code,
+      modal_title    = modal_title),
+    output_file   = modal_html)
 }
 
 render_page <- function(rmd){
@@ -302,9 +325,29 @@ render_page <- function(rmd){
     mathjax = NULL))
 }
 
+audio_to_spectrogram_video <- function(path, path_mp4){
+  path_mp3 <- glue("{path_ext_remove(path)}_ffmpeg-clean.mp3")
+  cmd <- glue("ffmpeg -y -i {path} -codec:a libmp3lame -qscale:a 2 {path_mp3}")
+  res <- system(cmd)
+  if (res != 0)
+    return(NA)
+  
+  out <- try(
+    av_spectrogram_video(
+      path_mp3, path_mp4, 
+      width = 720, height = 480, res = 144, framerate = 25))
+  # TODO: change color ramp inside this function around line: graphics::plot(fftdata, vline = i)
+  
+  if (class(out) == "try-error")
+    return(NA)
+  
+  path_mp4
+}
 gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, redo = F){
   
-  #gdrive_shareable_link <- "https://drive.google.com/file/d/1_wWLplFmhEAEqmbsTA0D85yuAhmapc5a/view?usp=sharing"
+  # gdrive_shareable_link <- "https://drive.google.com/file/d/1_wWLplFmhEAEqmbsTA0D85yuAhmapc5a/view?usp=sharing"
+  # gdrive_shareable_link <- tbl$gdrive_shareable_link; get_relative_path = T; redo = F
+  
   regex <- ifelse(
     str_detect(gdrive_shareable_link, "/file/"),
     "https://drive.google.com/file/d/(.*)/view.*",
@@ -312,10 +355,11 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, redo = F){
   gid <- str_replace(gdrive_shareable_link, regex, "\\1") %>%
     str_trim()
   
-  message(glue("gdrive_shareable_link: {gdrive_shareable_link}"))
-  message(glue("gid: {gid}"))
-  
   fname <- try(drive_get(as_id(gid))$name)
+  
+  message(glue("gdrive_shareable_link: {gdrive_shareable_link}"))
+  message(glue("  gid: {gid}"))
+  
   
   if (class(fname) == "try-error")
     return(NA)
@@ -323,6 +367,7 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, redo = F){
   fname_ok      <- fname %>% str_replace_all("/", "_")
   path          <- here(glue("files/{fname_ok}"))
   path_relative <- glue("../files/{fname_ok}")
+  message(glue("  fname_ok: {fname}"))
   
   if (!file.exists(path) | redo)
     drive_download(as_id(gid), path)
@@ -333,23 +378,8 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, redo = F){
     # path = "/Users/bbest/github/sanctsound/files/output.mp3"
     path_mp4 <- path_ext_set(path, "mp4")
     
-    if (!file.exists(path_mp4) | redo){
-      
-      path_mp3 <- glue("{path_ext_remove(path)}_ffmpeg-clean.mp3")
-      cmd <- glue("ffmpeg -y -i {path} -codec:a libmp3lame -qscale:a 2 {path_mp3}")
-      res <- system(cmd)
-      if (res != 0)
-        return(NA)
-
-      out <- try(
-        av_spectrogram_video(
-          path_mp3, path_mp4, 
-          width = 720, height = 480, res = 144, framerate = 25))
-      # TODO: change color ramp inside this function around line: graphics::plot(fftdata, vline = i)
-      
-      if (class(out) == "try-error")
-        return(NA)
-    }
+    if (!file.exists(path_mp4) | redo)
+      path_mp4 <- audio_to_spectrogram_video(path, path_mp4)
     
     path          <- path_mp4
     path_relative <- glue("../files/{basename(path_mp4)}")
@@ -473,8 +503,12 @@ sight_sound_md <- function(sight, sound, type = "header"){
   if (nrow(sight) > 0) has_sight = T
   if (nrow(sound) > 0) has_sound = T
   
-  md <- case_when(
-    has_sound & has_sight ~ glue(
+  if(nrow(sound) == 1 && is.na(sound$caption))
+    sound$caption <- ""
+  
+  md <- ""
+  if (has_sound & has_sight)
+    md <- glue(
       "
       ### Sights & Sounds
       
@@ -493,14 +527,16 @@ sight_sound_md <- function(sight, sound, type = "header"){
       </div>
       
       </div>
-      "),
-    has_sight & !has_sound ~ glue(
+      ")
+  if (has_sight & !has_sound)
+    md <- glue(
       "
-      ### Sights & Sounds
+      ### Sights
       
       ![{sight$caption}]({sight$path_relative})
-      "),
-    has_sound & !has_sight ~ glue(
+      ")
+  if (has_sound & !has_sight)
+    md <- glue(
       "
       ### Sounds
       
@@ -509,7 +545,8 @@ sight_sound_md <- function(sight, sound, type = "header"){
       Your browser does not support the video tag.
       </video>
       {sound$caption}
-      "),
-    TRUE ~ "")
+      ")
+
+  #browser()
   md
 }
