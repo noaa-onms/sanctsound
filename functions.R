@@ -16,21 +16,33 @@ shelf(
 here <- here::here
 
 gsheet_pfx    <- "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv"
-modals_csv    <- glue("{gsheet_pfx}&sheet=modals")
-scenes_csv    <- glue("{gsheet_pfx}&sheet=scenes")
-locations_csv <- glue("{gsheet_pfx}&sheet=locations")
-metadata_csv  <- glue("{gsheet_pfx}&sheet=metadata")
+# modals_csv    <- glue("{gsheet_pfx}&sheet=modals")
+# scenes_csv    <- glue("{gsheet_pfx}&sheet=scenes")
+# locations_csv <- glue("{gsheet_pfx}&sheet=locations")
+# metadata_csv  <- glue("{gsheet_pfx}&sheet=metadata")
+# metadata_csv  <- glue("{gsheet_pfx}&sheet=metadata")
 
 sites_csv <- here("data/nms_sites.csv")
 sites_geo <- here("data/nms_sites.geojson")
 
+get_sheet_csv <- function(sheet){
+  glue("{gsheet_pfx}&sheet={sheet}")
+}
+
 get_sheet <- function(sheet, redo = F){
   # sheet = "modals"
+  
   if (!exists(sheet, envir = globalenv()) | redo){
-    sheet_csv <- get(glue("{sheet}_csv"))
-    d <- read_csv(sheet_csv) %>% 
+    
+    d <- get_sheet_csv(sheet) %>% 
+      read_csv() %>% 
       select(-starts_with("X"))
-    assign(sheet, d, envir = globalenv())}
+    msg <- glue("get_sheet(): read_csv(URL), assign to variable '{sheet}'\n  URL: {get_sheet_csv(sheet)}", .trim = F)
+    message(as.character(msg))
+    assign(sheet, d, envir = globalenv())
+  } else {
+    message(glue("get_sheet(): return variable '{sheet}' which already exists"))
+  }
   get(sheet)
 }
 
@@ -343,7 +355,7 @@ audio_to_spectrogram_video <- function(path, path_mp4){
   
   path_mp4
 }
-gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, redo = F){
+gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_pfx = "../", redo = F){
   
   # gdrive_shareable_link <- "https://drive.google.com/file/d/1_wWLplFmhEAEqmbsTA0D85yuAhmapc5a/view?usp=sharing"
   # gdrive_shareable_link <- tbl$gdrive_shareable_link; get_relative_path = T; redo = F
@@ -366,7 +378,7 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, redo = F){
   
   fname_ok      <- fname %>% str_replace_all("/", "_")
   path          <- here(glue("files/{fname_ok}"))
-  path_relative <- glue("../files/{fname_ok}")
+  path_relative <- glue("{relative_pfx}files/{fname_ok}")
   message(glue("  fname_ok: {fname}"))
   
   if (!file.exists(path) | redo)

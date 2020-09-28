@@ -26,12 +26,92 @@ Here is a map of listening device locations. Hover on a location to see its site
 
 ```{r}
 source(here::here("functions.R"))
+# params = list(site_code = "cinms")
+sanctuary_code = toupper(params$site_code)
+
 map_site(params$site_code)
 ```
 
+
+```{r}
+# rm(listen)
+tbl_listen <- get_sheet("listen") %>% 
+  filter(
+    sanctuary_code == !!sanctuary_code,
+    !is.na(gdrive_shareable_link)) %>% 
+  mutate(
+    img_rel = map_chr(gdrive_shareable_link, gdrive2path, relative_pfx = "")) %>% 
+  filter(
+    !is.na(img_rel))
+# TODO: resize images to specified width
+# imgs %>% 
+#   filter(!file_exists(path_w) | redo) %>% 
+#   select(path_0, path_w, image_width_inches) %>% 
+#   pwalk(~img_convert(..1, ..2, width_in = ..3))  
+
+propagation <- filter(tbl_listen, file_type == "propagation")
+duration    <- filter(tbl_listen, file_type == "duration")
+```
+
+<div class='row'>
+<div class='col-xs-4'>
+  ![`r propagation$caption`](`r propagation$img_rel`)
+</div>
+<div class='col-xs-8'>
+  ![`r duration$caption`](`r duration$img_rel`)
+</div>
+</div>
+
+
 ### **What** did we measure?
 
-![](./images/cinms_ex-what-measure.png)
+```{r}
+tbl_measure <- get_sheet("measure") %>% 
+  filter(
+    sanctuary_code == !!sanctuary_code,
+    !is.na(gdrive_shareable_link)) %>% 
+  mutate(
+    img_rel = map_chr(gdrive_shareable_link, gdrive2path, relative_pfx = "")) %>% 
+  filter(
+    !is.na(img_rel))
+# TODO: resize images to specified width
+# imgs %>% 
+#   filter(!file_exists(path_w) | redo) %>% 
+#   select(path_0, path_w, image_width_inches) %>% 
+#   pwalk(~img_convert(..1, ..2, width_in = ..3))  
+
+streamplot  <- filter(tbl_measure, file_type == "streamplot")
+spectrogram <- filter(tbl_measure, file_type == "spectrogram")
+anomaly     <- filter(tbl_measure, file_type == "anomaly")
+power_spec  <- filter(tbl_measure, file_type == "power_spec")
+```
+
+<div class='row'>
+<div class='col-xs-6 well'>
+  **Spectrogram**: _intensity of different pitches over time_
+  
+  ![`r streamplot$caption`](`r streamplot$img_rel`)
+</div>
+<div class='col-xs-6 well'>
+  **Streamplot**: _loudness and contribution of different pitches_
+  
+  ![`r spectrogram$caption`](`r spectrogram$img_rel`)
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-6 well'>
+  **Power spec**: _variability of loudness across pitch_
+  
+  ![`r anomaly$caption`](`r anomaly$img_rel`)
+</div>
+<div class='col-xs-6 well'>
+  **Anomaly plot**: _deviation of loudness from average_
+  
+  ![`r power_spec$caption`](`r power_spec$img_rel`)
+</div>
+</div>
+
+<!-- ![](./images/cinms_ex-what-measure.png) -->
 
 ### **What** did we learn?
 

@@ -37,13 +37,7 @@ sight_sound_md(sight, sound)
 
 ```{r daily, results = "asis"}
 daily <- get_modal_file_tbl("Daily patterns", params$sanctuary_code, params$modal_title)
-# sound <- modals %>% 
-#   filter(
-#     modal_title == params$modal_title,
-#     tab_name    == "Daily",
-#     !is.na(gdrive_shareable_link)) %>% 
-#   mutate(
-#     path_relative = map_chr(gdrive_shareable_link, gdrive2path))
+
 if (nrow(daily) == 1)
   glue("
   ### Daily Patterns 
@@ -54,6 +48,7 @@ if (nrow(daily) == 1)
 
 ```{r monthly, results = "asis"}
 monthly <- get_modal_file_tbl("Monthly patterns", params$sanctuary_code, params$modal_title)
+
 if (nrow(daily) == 1)
   glue("
   ### Monthly Patterns 
