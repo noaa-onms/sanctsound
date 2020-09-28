@@ -62,6 +62,9 @@ duration    <- filter(tbl_listen, file_type == "duration")
 </div>
 </div>
 
+`r shiny::icon("question-circle")` _[Click here](https://en.wikipedia.org/wiki/To_be_announced) to learn more about how we listened to and recorded soundscapes._
+ 
+`r shiny::icon("chart-bar")` _[Click here](https://en.wikipedia.org/wiki/To_be_announced) to see similar maps of the listening range for the other hydrophones in this sanctuary and in other sanctuaries._
 
 ### **What** did we measure?
 
@@ -88,28 +91,32 @@ power_spec  <- filter(tbl_measure, file_type == "power_spec")
 
 <div class='row'>
 <div class='col-xs-6 well'>
-  **Spectrogram**: _intensity of different pitches over time_
-  
-  ![`r streamplot$caption`](`r streamplot$img_rel`)
-</div>
-<div class='col-xs-6 well'>
   **Streamplot**: _loudness and contribution of different pitches_
   
   ![`r spectrogram$caption`](`r spectrogram$img_rel`)
 </div>
+<div class='col-xs-6 well'>
+  **Spectrogram**: _intensity of different pitches over time_
+  
+  ![`r streamplot$caption`](`r streamplot$img_rel`)
+</div>
 </div>
 <div class='row'>
-<div class='col-xs-6 well'>
-  **Power spec**: _variability of loudness across pitch_
-  
-  ![`r anomaly$caption`](`r anomaly$img_rel`)
-</div>
 <div class='col-xs-6 well'>
   **Anomaly plot**: _deviation of loudness from average_
   
   ![`r power_spec$caption`](`r power_spec$img_rel`)
 </div>
+<div class='col-xs-6 well'>
+  **Power spec**: _variability of loudness across pitch_
+  
+  ![`r anomaly$caption`](`r anomaly$img_rel`)
 </div>
+</div>
+
+`r shiny::icon("question-circle")` _[Click here](https://en.wikipedia.org/wiki/To_be_announced) to learn more about what we measured and how to read and understand these summary graphs._
+ 
+`r shiny::icon("chart-bar")` _[Click here](https://en.wikipedia.org/wiki/To_be_announced) to see similar summary graphs for the other stations in this sanctuary and here for data available in other sanctuaries._
 
 <!-- ![](./images/cinms_ex-what-measure.png) -->
 

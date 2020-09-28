@@ -1,11 +1,68 @@
 ---
 title: "Stories"
+output:
+  html_document:
+    css: 
+      - libs/masonry.css
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F)
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```
 
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+<div class="grid">
+
+```{r, results='asis'}
+source("functions.R")
+
+# rm(stories)
+tbl_stories <- get_sheet("stories") %>% 
+  filter(
+    !is.na(image_gdrive_sharable_link)) %>% 
+  mutate(
+    img_rel = map_chr(image_gdrive_sharable_link, gdrive2path, relative_pfx = "")) %>% 
+  filter(
+    !is.na(img_rel))
+
+story_grid_item <- function(title, img_rel, story_link, ...){
+  if(is.na(story_link)){
+     glue("
+      <div class='grid-item'>
+        <img src='{img_rel}'>
+        <div class='grid-text'><span>{title}</span></div>
+      </div>")
+  } else {
+    glue("
+      <div class='grid-item'>
+        <a href='{story_link}'>
+        <img src='{img_rel}'>
+        <div class='grid-text'><span>{title}</span></div>
+        </a>
+      </div>")
+  }
+}
+
+pmap_chr(tbl_stories, story_grid_item) %>% 
+  paste(collapse = "\n\n") %>% 
+  cat()
+```
+</div>
+
+<script>
+$('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
+</script>
+
+```{r, eval=F}
+DT::datatable(tbl_stories)
+```
+
+<!--
 - Overall
   - How loud is my sanctuary?
   - COVID-19 signals/impacts
@@ -18,4 +75,4 @@ knitr::opts_chunk$set(echo = F)
 - West Coast
   - Ships & whales in OCNMS
   - Seal bombs in Monterey
-  
+-->

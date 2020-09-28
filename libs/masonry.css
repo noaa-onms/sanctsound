@@ -1,0 +1,10 @@
+.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }
+
+.grid-text { position:absolute; top: 0; left: 5px; right:0; bottom:0; color:#fff;}
+.grid-text span{ 
+  position:absolute; top: 50%; 
+  transform: translateY(-50%); 
+  left:0 ; right:0; 
+  color: black; background: rgba(255, 255, 255, 0.75);
+  font-size:12px;}

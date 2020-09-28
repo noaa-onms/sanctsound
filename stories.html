@@ -70,6 +70,7 @@ h6 {
 }
 </style>
 
+<link rel="stylesheet" href="libs/masonry.css" type="text/css" />
 
 
 
@@ -401,7 +402,7 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fa fa-bullhorn"></span>
+    <span class="fa fa-newspaper-o"></span>
      
     Stories
      
@@ -413,7 +414,7 @@ $(document).ready(function () {
     </li>
     <li class="divider"></li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Overall</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">National</a>
       <ul class="dropdown-menu" role="menu">
         <li>
           <a href="y_overall-how-loud.html">How loud is my sanctuary?</a>
@@ -458,6 +459,45 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-bar-chart"></span>
+     
+    Statistics
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="stats.html">Statistics home</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="z_ais-comparisons.html">AIS comparisons</a>
+    </li>
+    <li>
+      <a href="z_anomaly-plots.html">Anomaly plots</a>
+    </li>
+    <li>
+      <a href="z_box-plots.html">Box plots</a>
+    </li>
+    <li>
+      <a href="z_detections.html">Detections</a>
+    </li>
+    <li>
+      <a href="z_line-plots.html">Line plots</a>
+    </li>
+    <li>
+      <a href="z_power-spectrum.html">Power spectrum</a>
+    </li>
+    <li>
+      <a href="z_spectrograms.html">Spectrograms</a>
+    </li>
+    <li>
+      <a href="z_stream-plots.html">Stream plots</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -475,28 +515,62 @@ $(document).ready(function () {
 </div>
 
 
-<ul>
-<li>Overall
-<ul>
-<li>How loud is my sanctuary?</li>
-<li>COVID-19 signals/impacts</li>
-</ul></li>
-<li>East Coast
-<ul>
-<li>Baleen whale &amp; dolphin regional presence</li>
-<li>COVID-19 signals/impacts</li>
-</ul></li>
-<li>Pacific Islands
-<ul>
-<li>Humpback whale-song occurrence</li>
-<li>Human-made sound occurence</li>
-</ul></li>
-<li>West Coast
-<ul>
-<li>Ships &amp; whales in OCNMS</li>
-<li>Seal bombs in Monterey</li>
-</ul></li>
-</ul>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<div class="grid">
+<div class="grid-item">
+<img src='files/Cruise_ship_Southall_MontereyHerald.jpg'>
+<div class="grid-text">
+<span>How do cruise ships contribute to the Monterey Bay soundscape?</span>
+</div>
+</div>
+<div class="grid-item">
+<img src='files/rockfish_SIMoN_RickStarr.jpg'>
+<div class="grid-text">
+<span>Chorusing behavior of fish in CINMS</span>
+</div>
+</div>
+<div class="grid-item">
+<img src='files/vessel_strikes_GFNMS_Calambokidis.jpg'>
+<div class="grid-text">
+<span>Whales and Shipping Lanes in OCNMS</span>
+</div>
+</div>
+<div class="grid-item">
+<a href='https://sanctuaries.noaa.gov/news/dec18/return-of-the-king-giant-sea-bass-research.html'> <img src='files/GianSeaBass_SIMoN_RobertSchwemmer_NOAA_CINMS.jpg'>
+<div class="grid-text">
+<span>Return of the king: what can we learn about abundance and movement of giant sea bass in CINMS using vocalizations and telemetry</span>
+</div>
+<p></a></p>
+</div>
+<div class="grid-item">
+<a href='https://www.mbari.org/harbor-porpoise-seal-bombs/'> <img src='files/sealbomb_SimoneBaumann-Pickering-SIO.JPG'>
+<div class="grid-text">
+<span>Seal bombs in MBNMS</span>
+</div>
+<p></a></p>
+</div>
+</div>
+<script>
+$('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
+</script>
+<!--
+- Overall
+  - How loud is my sanctuary?
+  - COVID-19 signals/impacts
+- East Coast
+  - Baleen whale & dolphin regional presence
+  - COVID-19 signals/impacts
+- Pacific Islands
+  - Humpback whale-song occurrence
+  - Human-made sound occurence
+- West Coast
+  - Ships & whales in OCNMS
+  - Seal bombs in Monterey
+-->
 
 
 

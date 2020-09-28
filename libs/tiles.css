@@ -1,0 +1,90 @@
+.tiles {
+  display: grid;
+  /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/
+  grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+  grid-template-rows: minmax(200px, 1fr) minmax(200px, 1fr);
+  grid-gap: 0.1rem;
+  /*
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  align-content: stretch;
+  grid-template-rows: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  justify-items: center;
+  */
+}
+.tiles > div {
+  /*background: #EDE7F6; */
+  padding: 0.15rem;
+  border-radius: 0.2rem;
+  background-size: cover;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*
+body {
+  margin: 0.2rem;
+  font: 12px system-ui;
+}
+*/
+.tile-what {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  background-image: url(./images/CINMS_infographic_draft.png);
+}
+
+.tile-listen {
+  background-image: url(./images/photo_hydrophone_fish.png);
+}
+
+.tile-measure {
+  background-image: url(./images/CINMS05_01_streamgraph.png);
+}
+
+.tile-far {
+  background-image: url(./images/Sound_propagation_MB01.png);
+}
+
+.tile-learn {
+  background-image: url(./images/photo_ship-whale_Calambokidis.jpg);
+}
+
+.tiles div h4 {
+  color: Coral;
+  font-weight: bold;
+}
+
+.map-tiles {
+  display: inline-grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(400px, 1fr);
+  grid-template-rows: minmax(200px, 1fr) minmax(200px, 1fr);
+  grid-gap: 0.1rem;
+}
+
+.map-tiles > div {
+  padding: 0.15rem;
+  border-radius: 0.2rem;
+}
+
+.map-tiles > div {
+  /*background: #EDE7F6; */
+  padding: 0.15rem;
+  border-radius: 0.2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.map-tile-west {
+}
+.map-tile-hawaii {
+}
+.map-tile-east {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}

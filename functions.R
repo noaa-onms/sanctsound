@@ -10,7 +10,7 @@ shelf(
   # tidyverse
   dplyr, googledrive, purrr, readr, tibble, tidyr,
   # report
-  DT, knitr, rmarkdown,
+  DT, htmltools, knitr, rmarkdown, shiny,
   # utility
   fs, glue, here, stringr)
 here <- here::here
