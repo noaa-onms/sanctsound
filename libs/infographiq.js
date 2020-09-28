@@ -86,23 +86,29 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
 
       // iterate through rows of csv
       data.forEach(function(d) {
+        
+        d.svg_id     = d.modal_title.toLowerCase().replace(/\s/g, '-')
+        d.modal_link = './modals/' + d.sanctuary_code.toLowerCase() + '_' + d.svg_id + '.html'
+        
         if (debug){ 
-          console.log('forEach d.id: ' + d.id);
+          console.log('forEach d.modal_title: ' + d.modal_title);
+          console.log('        d.svg_id: '        + d.svg_id);
+          console.log('        d.modal_link: '    + d.modal_link);
         }
       
         function handleClick(){
           if (d.not_modal == 'T'){
-            window.location = d.link;
+            window.location = d.modal_link;
           } else {
             
             if (debug){ 
-              console.log('  link:' + d.link);
+              console.log('  link:' + d.modal_link);
             }
             
             $('#'+ modal_id).find('iframe')
-              .prop('src', function(){ return d.link });
+              .prop('src', function(){ return d.modal_link });
             
-            $('#'+ modal_id + '-title').html( d.title );
+            $('#'+ modal_id + '-title').html( d.modal_title );
             
             $('#'+ modal_id).on('show.bs.modal', function () {
               $('.modal-content').css('height',$( window ).height()*0.9);
@@ -114,37 +120,37 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
         }
         function handleMouseOver(){
           if (debug){ 
-              console.log('  mouseover():' + d.id);
+              console.log('  mouseover():' + d.svg_id);
           }
            
-          d3.select('#' + d.id)
+          d3.select('#' + d.svg_id)
             .style("stroke-width", 2)
             .style("stroke", hover_color);
           
           tooltip_div.transition()
             .duration(200)
             .style("opacity", 0.8);
-          tooltip_div.html(d.title + "<br/>")
+          tooltip_div.html(d.modal_title + "<br/>")
             .style("left", (d3.event.pageX) + "px")
             .style("top", (d3.event.pageY - 28) + "px");
         }
         function handleMouseOverSansTooltip(){
           if (debug){ 
-              console.log(' handleMouseOverSansTooltip():' + d.id);
+              console.log(' handleMouseOverSansTooltip():' + d.svg_id);
           }
            
-          d3.select('#' + d.id)
+          d3.select('#' + d.svg_id)
             .style("stroke-width", 2)
             .style("stroke", hover_color);
           
         }
         function handleMouseOut(){
           if (debug){ 
-              console.log('  mouseout():' + d.id);
+              console.log('  mouseout():' + d.svg_id);
             }
             
             //d3.select(this)
-            d3.select('#' + d.id)
+            d3.select('#' + d.svg_id)
               .style("stroke-width",0);
   
             tooltip_div.transition()
@@ -152,18 +158,18 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
             tooltip_div.style("opacity", 0);
         }
         
-        h.select('#' + d.id)
+        h.select('#' + d.svg_id)
           .on("click", handleClick)
           .on('mouseover', handleMouseOver)
           .on('mouseout', handleMouseOut);
           
         // set outline of paths within group to null
-        d3.select('#' + d.id).selectAll("path")
+        d3.select('#' + d.svg_id).selectAll("path")
             .style("stroke-width", null)
             .style("stroke", null);
           
         // add to bulleted list of svg elements
-        list_text = d.title ? d.title : d.id;  // fall back on id if title not set
+        list_text = d.modal_title ? d.modal_title : d.svg_id;  // fall back on id if modal_title not set
         d3.select("#svg_list").append("li").append("a")
           .text(list_text)
           .on("click", handleClick)
