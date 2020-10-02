@@ -2,6 +2,8 @@
 title: "Stories"
 output:
   html_document:
+    toc: true
+    toc_depth: 2
     css: 
       - libs/masonry.css
 ---
@@ -11,8 +13,6 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-
-<div class="grid">
 
 ```{r, results='asis'}
 source("functions.R")
@@ -31,22 +31,40 @@ story_grid_item <- function(title, img_rel, story_link, ...){
      glue("
       <div class='grid-item'>
         <img src='{img_rel}' target='_blank'>
-        <div class='grid-text'><span>{title}</span></div>
+        <!--div class='grid-text'><span>{title}</span></div-->
       </div>")
   } else {
     glue("
       <div class='grid-item'>
         <a href='{story_link}'>
         <img src='{img_rel}'>
-        <div class='grid-text'><span>{title}</span></div>
+        <!--div class='grid-text'><span>{title}</span></div-->
         </a>
       </div>")
   }
 }
 
-pmap_chr(tbl_stories, story_grid_item) %>% 
-  paste(collapse = "\n\n") %>% 
-  cat()
+regions_tbl <- tbl_stories %>% distinct(region) %>% pull(region)
+regions <- c("National", "East Coast", "Hawaii", "West Coast")
+stopifnot(length(setdiff(regions, regions_tbl)) == 0)
+stopifnot(length(setdiff(regions_tbl, regions)) == 0)
+
+for (rgn in regions){
+  rgn_stories <- tbl_stories %>% 
+    filter(region == rgn)
+  
+  if (nrow(rgn_stories) == 0) 
+    next()
+  
+  cat(glue("\n\n\n## {rgn}\n\n<div class='grid'>\n\n", .trim = F))
+  
+  rgn_stories %>% 
+    pmap_chr(story_grid_item) %>% 
+    paste(collapse = "\n\n") %>% 
+    cat()
+  
+  cat("\n\n</div>\n\n")
+}
 ```
 </div>
 

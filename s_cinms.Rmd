@@ -91,24 +91,24 @@ power_spec  <- filter(tbl_measure, file_type == "power_spec")
 
 <div class='row'>
 <div class='col-xs-6 well'>
-  **Streamplot**: _loudness and contribution of different pitches_
+  **Spectrogram**: _intensity of different pitches over time_
   
   ![`r spectrogram$caption`](`r spectrogram$img_rel`)
 </div>
 <div class='col-xs-6 well'>
-  **Spectrogram**: _intensity of different pitches over time_
+  **Streamplot**: _loudness and contribution of different pitches_
   
   ![`r streamplot$caption`](`r streamplot$img_rel`)
 </div>
 </div>
 <div class='row'>
 <div class='col-xs-6 well'>
-  **Anomaly plot**: _deviation of loudness from average_
+  **Power spec**: _variability of loudness across pitch_
   
   ![`r power_spec$caption`](`r power_spec$img_rel`)
 </div>
 <div class='col-xs-6 well'>
-  **Power spec**: _variability of loudness across pitch_
+  **Anomaly plot**: _deviation of loudness from average_
   
   ![`r anomaly$caption`](`r anomaly$img_rel`)
 </div>
