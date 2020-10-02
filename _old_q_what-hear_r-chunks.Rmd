@@ -1,0 +1,53 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Embed video
+
+```{r}
+vembedr::embed_vimeo(195622451, width = "100%")
+```
+
+## Streamgraphs
+
+[streamgraphs.html](modals/streamgraphs.html)
+
+## Infographic
+
+```{r svg, child = '_svg-html_child.Rmd'}
+```
+
+## Generating spectrogram videos
+
+```{r, warning=FALSE, message=F}
+library(here)
+library(glue)
+library(fs)
+library(htmltools)
+library(av)  # install.packages("av")
+
+dir_wav <- here("data/wav")
+
+wavs <- list.files(dir_wav, full.names = T)
+
+wav <- wavs[1]
+
+for (wav in wavs){
+  mp3 <- glue("{path_ext_remove(wav)}_3s.mp4")
+  mp4 <- glue("{path_ext_remove(wav)}_3s.mp4")
+  
+  #if (!file.exists(mp4)){
+  if (F){
+    av_audio_convert(wav, mp3, total_time = 3)
+    av_spectrogram_video(mp3, output = mp4, width = 1280, height = 720, res = 144)
+  }
+}
+
+mp4 <- file.path("data/wav", basename(path_ext_set(wav, "mp4")))
+tags$video(id=basename(mp4), type = "video/mp4",src = mp4, controls = "controls")
+```

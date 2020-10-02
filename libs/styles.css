@@ -10,3 +10,16 @@
   pointer-events: none;
   color: gray;
 }
+
+p.caption {
+  font-size: 0.9em;
+  font-style: italic;
+  color: #505050; /* dark grey */
+  margin-right: 10%;
+  margin-left: 10%;  
+  text-align: justify;
+}
+
+.section h3 {
+    clear: both;
+}

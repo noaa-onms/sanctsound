@@ -127,5 +127,5 @@ navbar:
 output:
   html_document:
     theme: yeti # https://bootswatch.com/
-    #css: styles.css
+    css: libs/styles.css
 output_dir: "."
