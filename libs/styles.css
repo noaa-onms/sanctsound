@@ -23,3 +23,7 @@ p.caption {
 .section h3 {
     clear: both;
 }
+
+.leaflet-tooltip {
+  pointer-events: auto;
+}

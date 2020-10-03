@@ -294,17 +294,21 @@ map_site <- function(site_code){
 
 map_sites <- function(){
   library(leaflet)
+  library(htmltools)
   
-  sites <- sf::read_sf(sites_geo)
-  
+  sites <- sf::read_sf(sites_geo) %>% 
+    mutate(
+      lbl = glue::glue("<a href='./s_{code}.html'><b>{name}</b></a>"))
+  # to make clickable: add `.leaflet-tooltip { pointer-events: auto; }` to libs/styles.css
+  site_labels <- sites$lbl %>% lapply(HTML)
+
   leaflet(
-    data = sites,
-    width = "100%") %>% 
+    data = sites, width = "100%") %>% 
     addProviderTiles(providers$Esri.OceanBasemap) %>% 
     addPolygons(
-      label = ~name, 
-      labelOptions = labelOptions(noHide = T),
-      popup = ~glue::glue("<a href='s_{code}.html'><b>{name}</b></a>"))
+      label = site_labels, 
+      labelOptions = labelOptions(noHide = T))
+
 }
 
 modal_title_to_html_path <- function(sanctuary_code, modal_title, pfx = here("modals")){
