@@ -398,7 +398,7 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_p
       path_mp4 <- audio_to_spectrogram_video(path, path_mp4)
     
     path          <- path_mp4
-    path_relative <- glue("../files/{basename(path_mp4)}")
+    path_relative <- glue("{relative_pfx}files/{basename(path_mp4)}")
   }
   
   if (get_relative_path)
