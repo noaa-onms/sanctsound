@@ -380,6 +380,33 @@ import_sounds <- function(redo = T){
   read_csv(sounds_csv)
 }
 
+import_stories <- function(redo = T){
+  stories_csv <- here("data/stories.csv")
+  
+  if (!file.exists(stories_csv) | redo){
+  tbl_stories <- get_sheet("stories") %>% 
+    filter(
+      !is.na(image_gdrive_sharable_link)) %>% 
+    mutate(
+      img_rel = map_chr(image_gdrive_sharable_link, gdrive2path, relative_pfx = "")) %>% 
+    filter(
+      !is.na(img_rel))
+    
+    write_csv(tbl_stories, stories_csv)
+  }
+  
+  read_csv(stories_csv)
+}
+
+header2anchor <- function(header, pfx="stories.html"){
+  # header <- "Bocaccio (CINMS)"
+  
+  anchor <- header %>% 
+    tolower() %>% 
+    str_replace_all(" ", "-") %>% 
+    str_replace_all("[^A-z-]", "")
+  glue("{pfx}#{anchor}")
+}
 
 update_sounds_menu <- function(){
   
@@ -389,37 +416,66 @@ update_sounds_menu <- function(){
   
   idx_sounds <- which(map_chr(site$navbar$left, "text") == "Sounds")
   
-  # update teams nav menu ----
   sounds_menu <- tbl_sounds %>% 
+    arrange(sound_category, modal_title, sanctuary_code) %>% 
     mutate(
-      text_href = map2(
-        team_name, team_htm, 
-        function(x,y) 
+      text_href = pmap(
+        ., 
+        function(modal_title, sanctuary_code, snd_rel, ...){
+          txt <- glue("{modal_title} ({sanctuary_code})")
           list(
-            text = x, 
-            href = y))) %>%
-    group_by(area_name) %>% 
+            text = txt, 
+            href = header2anchor(txt, pfx = "sounds.html"))})) %>%
+    group_by(sound_category) %>% 
     summarize(
       list_text_href = list(text_href)) %>% 
     mutate(
-      area_menu = map2(
-        area_name, list_text_href,
+      category_menu = map2(
+        sound_category, list_text_href,
         function(x, y)
           list(
             text = x,
             menu = y))) %>%
-    bind_rows(
-      teams_area %>% 
-        filter(is.na(area_key)) %>% 
-        mutate(
-          area_menu = map2(
-            team_name, team_htm, 
-            function(x,y) 
-              list(
-                text = x, 
-                href = y)))) %>% 
-    pull(area_menu)
-  site$navbar$left[[idx_teams]]$menu = teams_menu
+    pull(category_menu)
+  site$navbar$left[[idx_sounds]]$menu = sounds_menu
+  write_yaml(site, here("_site.yml"))
+}
+
+update_stories_menu <- function(){
+  
+  tbl_stories <- import_stories()
+  
+  site <- read_yaml(here("_site.yml"))
+  
+  idx_stories <- which(map_chr(site$navbar$left, "text") == "Stories")
+  
+  stories_menu <- tbl_stories %>%
+    arrange(region, title, sanctuary_code) %>% 
+    mutate(
+      text_href = pmap(
+        ., 
+        function(region, title, sanctuary, ...){
+          txt_sanctuary <- ifelse(
+            is.na(sanctuary),
+            "",
+            glue(" ({sanctuary})"))
+          txt <- glue("{title}{txt_sanctuary}")
+          
+          list(
+            text = txt, 
+            href = header2anchor(region, pfx = "stories.html"))})) %>%
+    group_by(region) %>% 
+    summarize(
+      list_text_href = list(text_href)) %>% 
+    mutate(
+      region_menu = map2(
+        region, list_text_href,
+        function(x, y)
+          list(
+            text = x,
+            menu = y))) %>%
+    pull(region_menu)
+  site$navbar$left[[idx_stories]]$menu = stories_menu
   write_yaml(site, here("_site.yml"))
 }
 

@@ -80,6 +80,7 @@ h6 {
 }
 </style>
 
+<link rel="stylesheet" href="libs/styles.css" type="text/css" />
 
 
 
@@ -364,38 +365,26 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="sounds.html">All Sounds</a>
-    </li>
-    <li class="divider"></li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Animal Sounds</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Animals</a>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <a href="o_baleen.html">Baleen Whales</a>
+          <a href="sounds.html#bocaccio-cinms">Bocaccio (CINMS)</a>
         </li>
         <li>
-          <a href="o_toothed-whales.html">Toothed Whales</a>
+          <a href="sounds.html#snapping-shrimp-cinms">Snapping shrimp (CINMS)</a>
         </li>
         <li>
-          <a href="o_pinnipeds.html">Pinnipeds</a>
+          <a href="sounds.html#blue-whales-cinms">Blue whales (CINMS)</a>
         </li>
         <li>
-          <a href="o_sirenians.html">Sirenians</a>
+          <a href="sounds.html#dolphins-cinms">Dolphins (CINMS)</a>
         </li>
         <li>
-          <a href="o_inverts.html">Invertebrates</a>
+          <a href="sounds.html#fin-whales-cinms">Fin whales (CINMS)</a>
         </li>
         <li>
-          <a href="o_fish.html">Fish</a>
-        </li>
-      </ul>
-    </li>
-    <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Physical</a>
-      <ul class="dropdown-menu" role="menu">
-        <li>
-          <a href="o_phys_wind.html">Wind</a>
+          <a href="sounds.html#humpback-whales-cinms">Humpback whales (CINMS)</a>
         </li>
       </ul>
     </li>
@@ -403,7 +392,10 @@ $(document).ready(function () {
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Human-made</a>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <a href="o_human_large-vessel.html">Large Vessel</a>
+          <a href="sounds.html#seal-bombs-cinms">Seal bombs (CINMS)</a>
+        </li>
+        <li>
+          <a href="sounds.html#vessels-cinms">Vessels (CINMS)</a>
         </li>
       </ul>
     </li>
@@ -411,7 +403,7 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fa fa-bullhorn"></span>
+    <span class="fa fa-newspaper-o"></span>
      
     Stories
      
@@ -423,7 +415,7 @@ $(document).ready(function () {
     </li>
     <li class="divider"></li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Overall</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">National</a>
       <ul class="dropdown-menu" role="menu">
         <li>
           <a href="y_overall-how-loud.html">How loud is my sanctuary?</a>
@@ -468,6 +460,45 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-bar-chart"></span>
+     
+    Statistics
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="stats.html">Statistics home</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="z_ais-comparisons.html">AIS comparisons</a>
+    </li>
+    <li>
+      <a href="z_anomaly-plots.html">Anomaly plots</a>
+    </li>
+    <li>
+      <a href="z_box-plots.html">Box plots</a>
+    </li>
+    <li>
+      <a href="z_detections.html">Detections</a>
+    </li>
+    <li>
+      <a href="z_line-plots.html">Line plots</a>
+    </li>
+    <li>
+      <a href="z_power-spectrum.html">Power spectrum</a>
+    </li>
+    <li>
+      <a href="z_spectrograms.html">Spectrograms</a>
+    </li>
+    <li>
+      <a href="z_stream-plots.html">Stream plots</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -485,8 +516,8 @@ $(document).ready(function () {
 </div>
 
 
-<div id="htmlwidget-b08535a7fcf7e3d5a6d0" style="width:100%;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b08535a7fcf7e3d5a6d0">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-80.921201,-80.8281449999999,-80.828143,-80.9212,-80.921201],"lat":[31.4210639912502,31.4210639912502,31.3627319912123,31.3627319912123,31.4210639912502]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[31.396417,-80.8904,10,null,null,{"interactive":true,"className":"","stroke":true,"color":"yellow","weight":5,"opacity":0.7,"fill":true,"fillColor":"yellow","fillOpacity":0.5},null,null,"<p><strong>GR01<\/strong>: Historical monitoring sites; large complex reef site and a fished area<\/p>\n",null,"GR01",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[31.3627319912123,31.4210639912502],"lng":[-80.921201,-80.828143]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0d6bd3a6a8bf3e6ea448" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0d6bd3a6a8bf3e6ea448">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-80.921201,-80.8281449999999,-80.828143,-80.9212,-80.921201],"lat":[31.4210639912502,31.4210639912502,31.3627319912123,31.3627319912123,31.4210639912502]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[31.396417,-80.8904,10,null,null,{"interactive":true,"className":"","stroke":true,"color":"yellow","weight":5,"opacity":0.7,"fill":true,"fillColor":"yellow","fillOpacity":0.5},null,null,"<p><strong>GR01<\/strong>: Historical monitoring sites; large complex reef site and a fished area<\/p>\n",null,"GR01",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[31.3627319912123,31.4210639912502],"lng":[-80.921201,-80.828143]}},"evals":[],"jsHooks":[]}</script>
 
 
 

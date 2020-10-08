@@ -19,13 +19,8 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 source("functions.R")
 
 # rm(stories)
-tbl_stories <- get_sheet("stories") %>% 
-  filter(
-    !is.na(image_gdrive_sharable_link)) %>% 
-  mutate(
-    img_rel = map_chr(image_gdrive_sharable_link, gdrive2path, relative_pfx = "")) %>% 
-  filter(
-    !is.na(img_rel))
+
+tbl_stories <- import_stories()
 
 story_grid_item <- function(title, img_rel, story_link, ...){
   if(is.na(story_link)){

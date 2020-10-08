@@ -1,131 +1,124 @@
-name: "my-website"
+name: my-website
 navbar:
-  title: "SanctSound"
-  type: inverse # inverse or default
+  title: SanctSound
+  type: inverse
   left:
-    - text: "Home"
-      icon: fa-home
-      href: index.html
-    - text: "Questions"
-      icon: fa-question
-      href: more.html
+  - text: Home
+    icon: fa-home
+    href: index.html
+  - text: Questions
+    icon: fa-question
+    href: more.html
+    menu:
+    - text: How did we listen?
+      href: q_how-listen.html
+    - text: What did we measure?
+      href: q_what-measure.html
+    - text: What did we hear?
+      href: q_what-hear.html
+    - text: How far could we hear?
+      href: q_how-far.html
+    - text: What did we learn?
+      href: q_what-learn.html
+  - text: Sanctuaries
+    icon: fa-globe
+    menu:
+    - text: All Sanctuaries
+      href: sanctuaries.html
+    - text: '---------'
+    - text: Channel Islands
+      href: s_cinms.html
+    - text: Florida Keys
+      href: s_fknms.html
+    - text: Gray’s Reef
+      href: s_grnms.html
+    - text: Hawaiian Islands Humpback Whale
+      href: s_hihwnms.html
+    - text: Monterey Bay
+      href: s_mbnms.html
+    - text: Olympic Coast
+      href: s_ocnms.html
+    - text: Papahānaumokuākea
+      href: s_pmnm.html
+    - text: Stellwagen Bank
+      href: s_sbnms.html
+  - text: Sounds
+    icon: fa-file-audio
+    menu:
+    - text: Animals
       menu:
-        - text: "How did we listen?"
-          href: q_how-listen.html
-        - text: "What did we measure?"
-          href: q_what-measure.html
-        - text: "What did we hear?"
-          href: q_what-hear.html
-        - text: "How far could we hear?"
-          href: q_how-far.html
-        - text: "What did we learn?"
-          href: q_what-learn.html
-    - text: "Sanctuaries"
-      icon: fa-globe
+      - text: Bocaccio (CINMS)
+        href: sounds.html#bocaccio-cinms
+      - text: Snapping shrimp (CINMS)
+        href: sounds.html#snapping-shrimp-cinms
+      - text: Blue whales (CINMS)
+        href: sounds.html#blue-whales-cinms
+      - text: Dolphins (CINMS)
+        href: sounds.html#dolphins-cinms
+      - text: Fin whales (CINMS)
+        href: sounds.html#fin-whales-cinms
+      - text: Humpback whales (CINMS)
+        href: sounds.html#humpback-whales-cinms
+    - text: Human-made
       menu:
-        - text: "All Sanctuaries"
-          href: sanctuaries.html
-        - text: "---------"
-        - text: "Channel Islands"
-          href: s_cinms.html
-        - text: "Florida Keys"
-          href: s_fknms.html
-        - text: "Gray’s Reef"
-          href: s_grnms.html
-        - text: "Hawaiian Islands Humpback Whale"
-          href: s_hihwnms.html
-        - text: "Monterey Bay"
-          href: s_mbnms.html
-        - text: "Olympic Coast"
-          href: s_ocnms.html
-        - text: "Papahānaumokuākea"
-          href: s_pmnm.html
-        - text: "Stellwagen Bank"
-          href: s_sbnms.html
-    - text: "Sounds"
-      icon: fa-file-audio
+      - text: Seal bombs (CINMS)
+        href: sounds.html#seal-bombs-cinms
+      - text: Vessels (CINMS)
+        href: sounds.html#vessels-cinms
+  - text: Stories
+    icon: fa-newspaper-o
+    menu:
+    - text: All Stories
+      href: stories.html
+    - text: '-----'
+    - text: National
       menu:
-        - text: "All Sounds"
-          href: sounds.html
-        - text: "-----"
-        - text: "Animal Sounds"
-          menu:
-          - text: "Baleen Whales"
-            href: o_baleen.html
-          - text: "Toothed Whales"
-            href: o_toothed-whales.html
-          - text: "Pinnipeds"
-            href: o_pinnipeds.html
-          - text: "Sirenians"
-            href: o_sirenians.html
-          - text: "Invertebrates"
-            href: o_inverts.html
-          - text: "Fish"
-            href: o_fish.html
-        - text: "Physical"
-          href: o_phys.html
-          menu:
-          - text: "Wind"
-            href: o_phys_wind.html
-        - text: "Human-made"
-          href: o_human.html
-          menu:
-          - text: "Large Vessel"
-            href: o_human_large-vessel.html
-    - text: "Stories"
-      icon: fa-newspaper-o
+      - text: How loud is my sanctuary?
+        href: y_overall-how-loud.html
+      - text: COVID-19 signals/impacts
+        href: y_overall-covid.html
+    - text: East Coast
       menu:
-      - text: "All Stories"
-        href: stories.html
-      - text: "-----"
-      - text: "National"
-        menu:
-        - text: "How loud is my sanctuary?"
-          href: y_overall-how-loud.html
-        - text: "COVID-19 signals/impacts"
-          href: y_overall-covid.html
-      - text: "East Coast"
-        menu:
-          - text: "Baleen whale & dolphin regional presence"
-            href: y_east-baleen.html
-          - text: "COVID-19 signals/impacts"
-            href: y_covid.html
-      - text: "Pacific Islands"
-        menu:
-          - text: "Humpback whale-song occurrence"
-            href: y_pacific-hw.html
-          - text: "Human-made sound occurence"
-            href: y_pacific-anthro.html
-      - text: "West Coast"
-        menu:
-          - text: "Ships & whales in OCNMS"
-            href: y_west-ships-whales.html
-          - text: "Seal bombs in Monterey"
-            href: y_west-seal-bombs.html
-    - text: "Statistics"
-      icon: fa-bar-chart
+      - text: Baleen whale & dolphin regional presence
+        href: y_east-baleen.html
+      - text: COVID-19 signals/impacts
+        href: y_covid.html
+    - text: Pacific Islands
       menu:
-        - text: "Statistics home"
-          href: stats.html
-        - text: "---------"
-        - text: "AIS comparisons"
-          href: z_ais-comparisons.html
-        - text: "Anomaly plots"
-          href: z_anomaly-plots.html
-        - text: "Box plots"
-          href: z_box-plots.html
-        - text: "Detections"
-          href: z_detections.html
-        - text: "Line plots"
-          href: z_line-plots.html
-        - text: "Power spectrum"
-          href: z_power-spectrum.html
-        - text: "Spectrograms"
-          href: z_spectrograms.html
-        - text: "Stream plots"
-          href: z_stream-plots.html
+      - text: Humpback whale-song occurrence
+        href: y_pacific-hw.html
+      - text: Human-made sound occurence
+        href: y_pacific-anthro.html
+    - text: West Coast
+      menu:
+      - text: Ships & whales in OCNMS
+        href: y_west-ships-whales.html
+      - text: Seal bombs in Monterey
+        href: y_west-seal-bombs.html
+  - text: Statistics
+    icon: fa-bar-chart
+    menu:
+    - text: Statistics home
+      href: stats.html
+    - text: '---------'
+    - text: AIS comparisons
+      href: z_ais-comparisons.html
+    - text: Anomaly plots
+      href: z_anomaly-plots.html
+    - text: Box plots
+      href: z_box-plots.html
+    - text: Detections
+      href: z_detections.html
+    - text: Line plots
+      href: z_line-plots.html
+    - text: Power spectrum
+      href: z_power-spectrum.html
+    - text: Spectrograms
+      href: z_spectrograms.html
+    - text: Stream plots
+      href: z_stream-plots.html
 output:
   html_document:
-    theme: yeti # https://bootswatch.com/
+    theme: yeti
     css: libs/styles.css
-output_dir: "."
+output_dir: '.'
