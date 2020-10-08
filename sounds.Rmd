@@ -1,9 +1,43 @@
 ---
 title: "All Sounds"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F)
+```
+
+
+```{r}
+source("functions.R")
+
+tbl_sounds <- get_sheet("modals") %>% 
+    filter(
+      tab_name == "Sound",
+      !is.na(gdrive_shareable_link)) %>% 
+    mutate(
+      snd_rel = map_chr(gdrive_shareable_link, gdrive2path, relative_pfx = "")) %>% 
+    filter(
+      !is.na(snd_rel))
+
+tbl_sounds %>% View()
+snd2md <- function(modal_title){
+  tbl_sounds
+  
+  md <- glue(
+      "
+      ### Sounds
+      
+      <video controls>
+      <source src='{sound$path_relative}' type='video/mp4'>
+      Your browser does not support the video tag.
+      </video>
+      {sound$caption}
+      ")
+}
+
+
 ```
 
 - Animal Sounds

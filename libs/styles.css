@@ -11,7 +11,7 @@
   color: gray;
 }
 
-p.caption {
+.caption {
   font-size: 0.9em;
   font-style: italic;
   color: #505050; /* dark grey */
@@ -21,7 +21,7 @@ p.caption {
 }
 
 .section h3 {
-    clear: both;
+  clear: both;
 }
 
 .leaflet-tooltip {
