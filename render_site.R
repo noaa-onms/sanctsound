@@ -4,6 +4,9 @@ redo_modals <- F
 
 modals    <- get_sheet("modals", redo = T)
 
+tbl_sounds <- import_sounds()
+update_sounds_menu()
+
 modal_pages <- modals %>% 
   group_by(sanctuary_code, modal_title) %>% 
   summarize() %>% 

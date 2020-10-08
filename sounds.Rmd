@@ -5,6 +5,7 @@ output:
     # keep_md: yes
     toc: true
     toc_depth: 4
+    toc_float: true
 editor_options: 
   chunk_output_type: console
 ---
@@ -17,32 +18,7 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```{r, results='asis'}
 source("functions.R")
 
-tbl_sounds <- get_sheet("modals") %>% 
-    filter(
-      tab_name == "Sound",
-      !is.na(gdrive_shareable_link)) %>% 
-    mutate(
-      snd_rel = map_chr(gdrive_shareable_link, gdrive2path, relative_pfx = "")) %>% 
-    filter(
-      !is.na(snd_rel)) %>% 
-  arrange(sound_category, sound_subcategory, modal_title)
-
-
-snd2md <- function(modal_title){
-  with(
-    tbl_sounds %>% 
-      filter(modal_title == !!modal_title),
-    glue(
-      "
-      ### {modal_title}
-      
-      <video controls>
-      <source src='{snd_rel}' type='video/mp4'>
-      Your browser does not support the video tag.
-      </video>
-      {caption}
-      "))
-}
+tbl_sounds <- import_sounds()
 
 categories <- tbl_sounds %>% 
   distinct(sound_category) %>% 

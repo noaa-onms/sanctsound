@@ -10,7 +10,7 @@ shelf(
   # tidyverse
   dplyr, googledrive, purrr, readr, tibble, tidyr,
   # report
-  DT, htmltools, knitr, rmarkdown, shiny,
+  DT, htmltools, knitr, rmarkdown, shiny, yaml,
   # utility
   fs, glue, here, stringr)
 here <- here::here
@@ -359,6 +359,70 @@ audio_to_spectrogram_video <- function(path, path_mp4){
   
   path_mp4
 }
+
+import_sounds <- function(redo = T){
+  sounds_csv <- here("data/sounds.csv")
+  
+  if (!file.exists(sounds_csv) | redo){
+    tbl_sounds <- get_sheet("modals") %>% 
+      filter(
+        tab_name == "Sound",
+        !is.na(gdrive_shareable_link)) %>% 
+      mutate(
+        snd_rel = map_chr(gdrive_shareable_link, gdrive2path, relative_pfx = "")) %>% 
+      filter(
+        !is.na(snd_rel)) %>% 
+      arrange(sound_category, sound_subcategory, modal_title)
+    
+    write_csv(tbl_sounds, sounds_csv)
+  }
+
+  read_csv(sounds_csv)
+}
+
+
+update_sounds_menu <- function(){
+  
+  tbl_sounds <- import_sounds()
+  
+  site <- read_yaml(here("_site.yml"))
+  
+  idx_sounds <- which(map_chr(site$navbar$left, "text") == "Sounds")
+  
+  # update teams nav menu ----
+  sounds_menu <- tbl_sounds %>% 
+    mutate(
+      text_href = map2(
+        team_name, team_htm, 
+        function(x,y) 
+          list(
+            text = x, 
+            href = y))) %>%
+    group_by(area_name) %>% 
+    summarize(
+      list_text_href = list(text_href)) %>% 
+    mutate(
+      area_menu = map2(
+        area_name, list_text_href,
+        function(x, y)
+          list(
+            text = x,
+            menu = y))) %>%
+    bind_rows(
+      teams_area %>% 
+        filter(is.na(area_key)) %>% 
+        mutate(
+          area_menu = map2(
+            team_name, team_htm, 
+            function(x,y) 
+              list(
+                text = x, 
+                href = y)))) %>% 
+    pull(area_menu)
+  site$navbar$left[[idx_teams]]$menu = teams_menu
+  write_yaml(site, here("_site.yml"))
+}
+
 gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_pfx = "../", redo = F){
   
   # gdrive_shareable_link <- "https://drive.google.com/file/d/1_wWLplFmhEAEqmbsTA0D85yuAhmapc5a/view?usp=sharing"
