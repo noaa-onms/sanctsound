@@ -133,6 +133,7 @@ power_spec  <- filter(tbl_measure, file_type == "power_spec")
 ### **What** did we learn?
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
 ```{r, results='asis'}
 
@@ -156,19 +157,14 @@ if (nrow(snc_stories) > 0){
 
 
 <script>
-$('.grid').masonry({
-  // options
-  itemSelector: '.grid-item',
-  columnWidth: 200
-});
+var $container = $('.grid');
+$container.imagesLoaded( function () {
+  $container.masonry({
+    columnWidth: 200,
+    itemSelector: '.grid-item'
+  });   
+});  
 </script>
 
-<!--
-**Stories**
 
-- What do humming sounds detected at Santa Rosa Island tell us?
-- Listening to and tracking movements of giant sea bass reveal their habits
-
-[TODO: add to Stories]
--->
 

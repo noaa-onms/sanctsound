@@ -14,6 +14,7 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
 ```{r, results='asis'}
 source("functions.R")
@@ -22,10 +23,10 @@ source("functions.R")
 
 tbl_stories <- import_stories()
 
-regions_tbl <- tbl_stories %>% distinct(region) %>% pull(region)
-regions <- c("National", "East Coast", "Hawaii", "West Coast")
-stopifnot(length(setdiff(regions, regions_tbl)) == 0)
-stopifnot(length(setdiff(regions_tbl, regions)) == 0)
+regions <- tbl_stories %>% 
+  distinct(region) %>% 
+  arrange(desc(region)) %>% 
+  pull(region)
 
 for (rgn in regions){
   rgn_stories <- tbl_stories %>% 
@@ -45,12 +46,36 @@ for (rgn in regions){
 }
 ```
 
+<!--
+# OLD ways of loading that stacked images over one another
 <script>
 $('.grid').masonry({
   // options
   itemSelector: '.grid-item',
   columnWidth: 200
 });
+</script>
+
+<script>
+$('.grid').each(function( idx ) {
+  $( this ).masonry({
+    // options
+    itemSelector: '.grid-item',
+    columnWidth: 200 
+    // position: 'static'
+  });
+});
+</script>
+-->
+
+<script>
+var $container = $('.grid');
+$container.imagesLoaded( function () {
+  $container.masonry({
+    columnWidth: 200,
+    itemSelector: '.grid-item'
+  });   
+});  
 </script>
 
 ```{r, eval=F}
