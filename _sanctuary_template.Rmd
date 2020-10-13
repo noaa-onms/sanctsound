@@ -18,6 +18,9 @@ editor_options:
 knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```
 
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
 ## {.tabset}
 
 ### **What** did we hear?
@@ -132,9 +135,6 @@ power_spec  <- filter(tbl_measure, file_type == "power_spec")
 
 ### **What** did we learn?
 
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-
 ```{r, results='asis'}
 
 tbl_stories <- import_stories()
@@ -155,15 +155,40 @@ if (nrow(snc_stories) > 0){
 }
 ```
 
-
 <script>
-var $container = $('.grid');
-$container.imagesLoaded( function () {
-  $container.masonry({
-    columnWidth: 200,
-    itemSelector: '.grid-item'
-  });   
-});  
+// Getting Bootstrap Tabs to Play Nice with Masonry
+// https://www.sitepoint.com/bootstrap-tabs-play-nice-with-masonry/
+
+function gridMasonryLayoutForTabset() {
+  
+  /*
+  var $container = $('.grid');
+  $container.imagesLoaded( function () {
+    $container.masonry({
+      columnWidth: 200,
+      itemSelector: '.grid-item'
+    });   
+  });  
+  */
+  
+  //Reinitialize masonry inside each panel after the relative tab link is clicked
+  $('a[data-toggle=tab]').each(function () {
+    var $this = $(this);
+  
+    $this.on('shown.bs.tab', function () {
+      var $container = $('.grid');
+      $container.imagesLoaded( function () {
+        $container.masonry({
+          columnWidth: 200,
+          itemSelector: '.grid-item'
+        });   
+      });  
+    });
+  });
+}
+$(document).ready(function () {
+  gridMasonryLayoutForTabset();
+});
 </script>
 
 

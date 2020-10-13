@@ -151,4 +151,5 @@ output:
     css: libs/styles.css
     self_contained: no
     lib_dir: site_libs
+    mathjax: null
 output_dir: '.'

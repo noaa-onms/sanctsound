@@ -421,14 +421,12 @@ story_grid_item <- function(title, img_rel, story_link, ...){
     glue("
       <div class='grid-item'>
         <img src='{img_rel}' target='_blank'>
-        <!--div class='grid-text'><span>{title}</span></div-->
       </div>")
   } else {
     glue("
       <div class='grid-item'>
         <a href='{story_link}'>
         <img src='{img_rel}'>
-        <!--div class='grid-text'><span>{title}</span></div-->
         </a>
       </div>")
   }
