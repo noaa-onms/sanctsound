@@ -1,8 +1,5 @@
 ---
 title: "What did we hear?"
-params:
-  csv: "svg/svg_links.csv"
-  svg: "svg/cinms_pelagic.svg"
 editor_options: 
   chunk_output_type: console
 ---

@@ -1,7 +1,0 @@
-```{r, include=F}
-knitr::opts_chunk$set(echo=F, message=F, warning=F, error=F)
-```
-
-```{r}
-vembedr::embed_vimeo(195622451, width = "100%")
-```

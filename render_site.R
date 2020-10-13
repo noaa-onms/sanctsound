@@ -2,11 +2,52 @@ source(here::here("functions.R"))
 
 redo_modals <- F
 
-modals    <- get_sheet("modals", redo = T)
+# nav menus in _site.yml ----
 
-tbl_sounds <- import_sounds()
 update_sounds_menu()
+update_stories_menu()
 
+# sanctuaries ----
+sites <- read_csv(here("data/nms_sites.csv")) %>% 
+  arrange(code)
+
+#sites <- sites %>% filter(code == "fknms")
+#sites <- sites %>% filter(code == "cinms")
+
+pwalk(
+  sites, 
+  function(code, name, type, ...){
+    in_rmd  <- here("_sanctuary_template.Rmd")
+    out_htm <- here(glue("s_{code}.html"))
+    message(glue("RENDER SANCTUARY: {basename(in_rmd)} -> {basename(out_htm)}"))
+    
+    #browser()
+    
+    render(
+      input       = in_rmd, 
+      output_file = out_htm,
+      clean       = F,
+      params      = list(
+        main      = glue("{name} {type}"),
+        site_code = code,
+        # scenes tab in [sanctsound_website-content - Google Sheets](https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/edit#gid=0)                    
+        csv       = "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=scenes",
+        svg       = glue("svg/{code}.svg")))})
+
+
+# rmarkdown render
+# File  not found in resource path
+# Error: pandoc document conversion failed with error 99
+# Called from: pandoc_convert
+
+# /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS _sanctuary_template.utf8.md --to html4 --from markdown+autolink_bare_uris+tex_math_single_backslash --output s_fknms.html --email-obfuscation none --self-contained --standalone --section-divs --template /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmd/h/default.html --no-highlight --variable highlightjs=1 --css libs/styles.css --include-before-body /var/folders/2r/grqvdjfn04361tzk8mh60st40000gn/T//RtmpNpYAlp/rmarkdown-str1a8356c7bd87.html --variable navbar=1 --variable body_padding=45 --variable header_padding=50 --variable 'theme:yeti' --include-in-header /var/folders/2r/grqvdjfn04361tzk8mh60st40000gn/T//RtmpNpYAlp/rmarkdown-str1a83536c1693.html --mathjax --variable 'mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+# --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmd/lua/pagebreak.lua --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmd/lua/latex-div.lua
+
+# TODO: make update_sites_menu() so menu could be dynamic 
+    
+# modals ----
+
+modals    <- get_sheet("modals", redo = redo_modals)
 modal_pages <- modals %>% 
   group_by(sanctuary_code, modal_title) %>% 
   summarize() %>% 
@@ -14,47 +55,10 @@ modal_pages <- modals %>%
     modal_html  = map2_chr(sanctuary_code, modal_title, modal_title_to_html_path)) %>% 
   select(sanctuary_code, modal_title, modal_html) # modal_pages 
 
-# modals %>% 
-#   #filter(modal_title == "Seal bombs") %>% 
-#   filter(modal_title == "Giant sea bass") %>% 
-#   View()
-# modal_pages <- filter(modal_pages, modal_title == "Seal bombs")
 pwalk(modal_pages, render_modal)
 
-# create/render modals by iterating over svg links in csv ----
-# for (i in 1:nrow(d_modals)){ # i=5
-#   # paths
-#   htm <- d_modals$link[i]
-#   rmd <- path_ext_set(htm, "Rmd")
-#   
-#   #if (htm == "modals/ca-sheephead.html") browser()
-#   
-#   # create Rmd, if doesn't exist
-#   if (!file.exists(rmd)) file.create(rmd)
-#   
-#   # render Rmd to html, if Rmd newer or redoing
-#   if (file.exists(htm)){
-#     rmd_newer <- file_info(rmd)$modification_time > file_info(htm)$modification_time
-#   } else {
-#     rmd_newer <- T
-#   }
-#   if (rmd_newer | redo_modals){
-#     render_modal(rmd)
-#   }
-# }
-
-# render website, ie Rmds in root ----
-# walk(list.files(".", "*\\.md$"), render_page)
-# walk(
-#   list.files(".", "*\\.html$"), 
-#   function(x) file.copy(x, file.path("docs", x)))
+# *.Rmd's ----
 rmarkdown::render_site()
 
-# fs::file_touch("docs/.nojekyll")
-
-# shortcuts w/out full render:
-# file.copy("libs", "docs", recursive=T)
-# file.copy("svg", "docs", recursive=T)
-# file.copy("modals", "docs", recursive=T)
 
 

@@ -45,20 +45,23 @@ navbar:
   - text: Sounds
     icon: fa-file-audio
     menu:
+    - text: All Sounds
+      href: sounds.html
+    - text: '---------'
     - text: Animals
       menu:
-      - text: Bocaccio (CINMS)
-        href: sounds.html#bocaccio-cinms
-      - text: Snapping shrimp (CINMS)
-        href: sounds.html#snapping-shrimp-cinms
       - text: Blue whales (CINMS)
         href: sounds.html#blue-whales-cinms
+      - text: Bocaccio (CINMS)
+        href: sounds.html#bocaccio-cinms
       - text: Dolphins (CINMS)
         href: sounds.html#dolphins-cinms
       - text: Fin whales (CINMS)
         href: sounds.html#fin-whales-cinms
       - text: Humpback whales (CINMS)
         href: sounds.html#humpback-whales-cinms
+      - text: Snapping shrimp (CINMS)
+        href: sounds.html#snapping-shrimp-cinms
     - text: Human-made
       menu:
       - text: Seal bombs (CINMS)
@@ -70,31 +73,56 @@ navbar:
     menu:
     - text: All Stories
       href: stories.html
-    - text: '-----'
+    - text: '---------'
     - text: National
       menu:
-      - text: How loud is my sanctuary?
-        href: y_overall-how-loud.html
-      - text: COVID-19 signals/impacts
-        href: y_overall-covid.html
+      - text: Did changes in offshore human activities during the COVID pandemic result
+          in changes in underwater soundscapes in sanctuaries?
+        href: stories.html#national
+      - text: How do measurements of sound compare among the sanctuaries we monitored?
+        href: stories.html#national
     - text: East Coast
       menu:
-      - text: Baleen whale & dolphin regional presence
-        href: y_east-baleen.html
-      - text: COVID-19 signals/impacts
-        href: y_covid.html
-    - text: Pacific Islands
+      - text: Acoustic monitoring enhances our understanding of site visitation at
+          Gray's Reef NMS (GRNMS)
+        href: stories.html#east-coast
+      - text: Baleen whale and regional dolphin presence in east coast National Marine
+          Sanctuaries
+        href: stories.html#east-coast
+      - text: Development of a call catalog to support automated acoustic data processing
+          techniques for coral reef soundscapes (FKNMS)
+        href: stories.html#east-coast
+      - text: Haddock and cod detection and vessel noise in SBNMS (SBNMS)
+        href: stories.html#east-coast
+    - text: Hawaii
       menu:
-      - text: Humpback whale-song occurrence
-        href: y_pacific-hw.html
-      - text: Human-made sound occurence
-        href: y_pacific-anthro.html
+      - text: Acoustic activity of reef biota in PMNM
+        href: stories.html#hawaii
+      - text: Anthropogenic noise in HIHW and PMNM
+        href: stories.html#hawaii
+      - text: How is song chorusing related to whale abundance?
+        href: stories.html#hawaii
+      - text: Humpback whale song occurrence across the archipelago
+        href: stories.html#hawaii
+      - text: Waveglider mission to PMNM
+        href: stories.html#hawaii
     - text: West Coast
       menu:
-      - text: Ships & whales in OCNMS
-        href: y_west-ships-whales.html
-      - text: Seal bombs in Monterey
-        href: y_west-seal-bombs.html
+      - text: Chorusing behavior of fish in CINMS (CINMS)
+        href: stories.html#west-coast
+      - text: Giant sea bass in Santa Barbara Island (CINMS)
+        href: stories.html#west-coast
+      - text: How cruise ships contribute to the Monterey Bay soundscape (MBNMS)
+        href: stories.html#west-coast
+      - text: How often do large ships exceed noise levels of X threshold at MB03
+          vs OC02 vs CI05?
+        href: stories.html#west-coast
+      - text: Seal bombs in Monterey Bay (MBNMS)
+        href: stories.html#west-coast
+      - text: Ships & whales in OCNMS (OCNMS)
+        href: stories.html#west-coast
+      - text: Vocalizing patterns of resident killer whales (OCNMS)
+        href: stories.html#west-coast
   - text: Statistics
     icon: fa-bar-chart
     menu:
@@ -121,4 +149,6 @@ output:
   html_document:
     theme: yeti
     css: libs/styles.css
+    self_contained: no
+    lib_dir: site_libs
 output_dir: '.'

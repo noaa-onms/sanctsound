@@ -395,7 +395,15 @@ import_stories <- function(redo = T){
     write_csv(tbl_stories, stories_csv)
   }
   
-  read_csv(stories_csv)
+  tbl_stories <- read_csv(stories_csv)
+  
+  tbl_stories$region <- factor(
+    tbl_stories$region,
+    levels = c("National", "East Coast", "Hawaii", "West Coast"),
+    ordered = T)
+  
+  tbl_stories %>% 
+    arrange(region, title, sanctuary)
 }
 
 header2anchor <- function(header, pfx="stories.html"){
@@ -408,6 +416,23 @@ header2anchor <- function(header, pfx="stories.html"){
   glue("{pfx}#{anchor}")
 }
 
+story_grid_item <- function(title, img_rel, story_link, ...){
+  if(is.na(story_link)){
+    glue("
+      <div class='grid-item'>
+        <img src='{img_rel}' target='_blank'>
+        <!--div class='grid-text'><span>{title}</span></div-->
+      </div>")
+  } else {
+    glue("
+      <div class='grid-item'>
+        <a href='{story_link}'>
+        <img src='{img_rel}'>
+        <!--div class='grid-text'><span>{title}</span></div-->
+        </a>
+      </div>")
+  }
+}
 update_sounds_menu <- function(){
   
   tbl_sounds <- import_sounds()
@@ -437,6 +462,13 @@ update_sounds_menu <- function(){
             text = x,
             menu = y))) %>%
     pull(category_menu)
+  
+  sounds_menu <- c(list(list(
+    text = "All Sounds",
+    href = "sounds.html"),
+    list(text = "---------")),
+    sounds_menu)
+  
   site$navbar$left[[idx_sounds]]$menu = sounds_menu
   write_yaml(site, here("_site.yml"))
 }
@@ -475,6 +507,13 @@ update_stories_menu <- function(){
             text = x,
             menu = y))) %>%
     pull(region_menu)
+  
+  stories_menu <- c(list(list(
+    text = "All Stories",
+    href = "stories.html"),
+    list(text = "---------")),
+    stories_menu)
+    
   site$navbar$left[[idx_stories]]$menu = stories_menu
   write_yaml(site, here("_site.yml"))
 }
