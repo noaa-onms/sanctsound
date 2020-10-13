@@ -25,7 +25,7 @@ tbl_stories <- import_stories()
 
 regions <- tbl_stories %>% 
   distinct(region) %>% 
-  arrange(desc(region)) %>% 
+  # arrange(desc(region)) %>% 
   pull(region)
 
 for (rgn in regions){
