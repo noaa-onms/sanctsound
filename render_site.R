@@ -1,6 +1,6 @@
 source(here::here("functions.R"))
 
-redo_modals <- F
+redo_modals <- T
 
 # nav menus in _site.yml ----
 
