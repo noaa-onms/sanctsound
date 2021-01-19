@@ -151,5 +151,6 @@ output:
     css: libs/styles.css
     self_contained: no
     lib_dir: site_libs
-    mathjax: null
+    mathjax: ~
+    #template: libs/default_sanctsound.html
 output_dir: '.'

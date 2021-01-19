@@ -1,3 +1,14 @@
+.ioos-logo {
+  display: block;
+  padding: 0px 40px;
+  box-sizing: border-box;
+  top: -1;
+}
+
+.main-container {
+  max-width: 80% !important;;
+}
+
 .tooltip {
   position: absolute;
   text-align: center;

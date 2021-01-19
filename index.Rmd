@@ -5,7 +5,7 @@ output:
   html_document:
     css: 
       - libs/tiles.css
-      - libs/styles.css
+#      - libs/styles.css
 ---
 
 ```{r setup, include=FALSE}
