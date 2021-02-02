@@ -152,5 +152,6 @@ output:
     self_contained: no
     lib_dir: site_libs
     mathjax: ~
-    #template: libs/default_sanctsound.html
+    includes:
+      in_header: libs/header.html
 output_dir: '.'

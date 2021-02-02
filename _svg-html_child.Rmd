@@ -9,8 +9,8 @@
 
 <div class = "col-md-3">
 
-  Text: <input id="toggle-text" type="checkbox" data-toggle="toggle" data-size="mini">
-  <div id="toggle-text-event"></div>
+  <!--Text: <input id="toggle-text" type="checkbox" data-toggle="toggle" data-size="mini">
+  <div id="toggle-text-event"></div-->
   <ul id = "svg_list"></ul>
 </div>
 

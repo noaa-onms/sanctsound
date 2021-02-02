@@ -6,6 +6,9 @@ redo_modals <- T
 
 update_sounds_menu()
 update_stories_menu()
+# Error: arrange() failed at implicit mutate() step. 
+# x Could not create a temporary column for `..3`.
+# ℹ `..3` is `sanctuary_code`.
 
 # sanctuaries ----
 sites <- read_csv(here("data/nms_sites.csv")) %>% 
@@ -55,7 +58,8 @@ modal_pages <- modals %>%
     modal_html  = map2_chr(sanctuary_code, modal_title, modal_title_to_html_path)) %>% 
   select(sanctuary_code, modal_title, modal_html) # modal_pages 
 
-pwalk(modal_pages, render_modal)
+if (redo_modals)
+  pwalk(modal_pages, render_modal)
 
 # *.Rmd's ----
 rmarkdown::render_site()

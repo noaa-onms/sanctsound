@@ -1,14 +1,3 @@
-.ioos-logo {
-  display: block;
-  padding: 0px 40px;
-  box-sizing: border-box;
-  top: -1;
-}
-
-.main-container {
-  max-width: 80% !important;;
-}
-
 .tooltip {
   position: absolute;
   text-align: center;
@@ -37,4 +26,53 @@
 
 .leaflet-tooltip {
   pointer-events: auto;
+}
+
+.custom-header .custom-logo {
+    display: block;
+    padding: 0 40px;
+}
+
+.custom-header {
+    position: fixed;
+    top: 0;
+    height: 145px;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    z-index: 1030;
+}
+
+.custom-header .custom-logo img {
+    margin: 15px auto;
+    max-height: 63px;
+}
+
+.navbar {
+    border: none;
+    font-size: 13px;
+    font-weight: 300;
+    position: fixed;
+    top: 93px;
+}
+
+.navbar-inverse {
+    background-color: #013088;
+    box-shadow: none;
+    border: none;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>li>a:focus {
+    background-color: #122b4d
+}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>.active>a:focus {
+    background-color: #122b4d
+}
+
+.main-container {
+  max-width: 80% !important;
+  margin-left: 10% !important;
+  margin-right: 10% !important;
+  position: absolute;
+  top: 138px;
 }

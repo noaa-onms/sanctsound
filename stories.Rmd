@@ -7,6 +7,7 @@ output:
     toc_float: true
     css: 
       - libs/masonry.css
+      - libs/styles.css      
 ---
 
 ```{r setup, include=FALSE}

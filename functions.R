@@ -480,7 +480,7 @@ update_stories_menu <- function(){
   idx_stories <- which(map_chr(site$navbar$left, "text") == "Stories")
   
   stories_menu <- tbl_stories %>%
-    arrange(region, title, sanctuary_code) %>% 
+    arrange(region, title, sanctuary) %>% 
     mutate(
       text_href = pmap(
         ., 
