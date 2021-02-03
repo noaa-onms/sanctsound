@@ -10,7 +10,7 @@ params:
 output:
   html_document:
     css: 
-      - libs/masonry.css
+      #- libs/masonry.css
       - libs/styles.css
 editor_options: 
   chunk_output_type: console
