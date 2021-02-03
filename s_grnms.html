@@ -93,7 +93,6 @@ h6 {
 </style>
 
 
-<link rel="stylesheet" href="libs/masonry.css" type="text/css" />
 <link rel="stylesheet" href="libs/styles.css" type="text/css" />
 
 
@@ -570,12 +569,13 @@ $(document).ready(function () {
 <h2></h2>
 <div id="what-did-we-hear" class="section level3">
 <h3><strong>What</strong> did we hear?</h3>
-<!-- `<i class="fa fa-info-circle"></i>`{=html} -->
+<!-- `<i class="fa fa-info-circle" role="presentation" aria-label="info-circle icon"></i>`{=html} -->
 <p>Click on an element to see &amp; hear more.</p>
 <script src = "libs/d3.v5.min.js"></script>
 <script src = "libs/infographiq.js"></script>
 <link href  = "libs/bootstrap-toggle.min.css" rel = "stylesheet">
 <script src = "libs/bootstrap-toggle.min.js"></script>
+<div class="row">
 <div class="col-md-9">
 <div id="svg">
 
@@ -586,6 +586,7 @@ $(document).ready(function () {
   <div id="toggle-text-event"></div-->
 <ul id="svg_list">
 </ul>
+</div>
 </div>
 <script>
 link_svg(svg = "svg/grnms.svg", csv = "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=scenes", debug = true);
@@ -601,9 +602,9 @@ $('#toggle-text').change(function() {
 </div>
 <div id="where-did-we-listen" class="section level3">
 <h3><strong>Where</strong> did we listen?</h3>
-<p>Here is a map of listening device locations. Hover on a location to see its site id and click on it to see the rationale for its placement. <!-- `<i class="fa fa-map"></i>`{=html} --></p>
-<div id="htmlwidget-eef7b36bfbd684d63374" style="width:100%;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-eef7b36bfbd684d63374">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-80.921201,-80.8281449999999,-80.828143,-80.9212,-80.921201],"lat":[31.4210639912502,31.4210639912502,31.3627319912123,31.3627319912123,31.4210639912502]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[31.396417,-80.8904,10,null,null,{"interactive":true,"className":"","stroke":true,"color":"yellow","weight":5,"opacity":0.7,"fill":true,"fillColor":"yellow","fillOpacity":0.5},null,null,"<p><strong>GR01<\/strong>: Historical monitoring sites; large complex reef site and a fished area<\/p>\n",null,"GR01",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[31.3627319912123,31.4210639912502],"lng":[-80.921201,-80.828143]}},"evals":[],"jsHooks":[]}</script>
+<p>Here is a map of listening device locations. Hover on a location to see its site id and click on it to see the rationale for its placement. <!-- `<i class="fa fa-map" role="presentation" aria-label="map icon"></i>`{=html} --></p>
+<div id="htmlwidget-58b8a7a9df67cd71e5e3" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-58b8a7a9df67cd71e5e3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-80.921201,-80.8281449999999,-80.828143,-80.9212,-80.921201],"lat":[31.4210639912502,31.4210639912502,31.3627319912123,31.3627319912123,31.4210639912502]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[31.396417,-80.8904,10,null,null,{"interactive":true,"className":"","stroke":true,"color":"yellow","weight":5,"opacity":0.7,"fill":true,"fillColor":"yellow","fillOpacity":0.5},null,null,"<p><strong>GR01<\/strong>: Historical monitoring sites; large complex reef site and a fished area<\/p>\n",null,"GR01",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[31.3627319912123,31.4210639912502],"lng":[-80.921201,-80.828143]}},"evals":[],"jsHooks":[]}</script>
 <div class="row">
 <div class="col-xs-4">
 
@@ -612,8 +613,8 @@ $('#toggle-text').change(function() {
 
 </div>
 </div>
-<p><i class="fa fa-question-circle"></i> <em><a href="https://en.wikipedia.org/wiki/To_be_announced">Click here</a> to learn more about how we listened to and recorded soundscapes.</em></p>
-<p><i class="fa fa-chart-bar"></i> <em><a href="https://en.wikipedia.org/wiki/To_be_announced">Click here</a> to see similar maps of the listening range for the other hydrophones in this sanctuary and in other sanctuaries.</em></p>
+<p><i class="fa fa-question-circle" role="presentation" aria-label="question-circle icon"></i> <em><a href="https://en.wikipedia.org/wiki/To_be_announced">Click here</a> to learn more about how we listened to and recorded soundscapes.</em></p>
+<p><i class="fa fa-chart-bar" role="presentation" aria-label="chart-bar icon"></i> <em><a href="https://en.wikipedia.org/wiki/To_be_announced">Click here</a> to see similar maps of the listening range for the other hydrophones in this sanctuary and in other sanctuaries.</em></p>
 </div>
 <div id="what-did-we-measure" class="section level3">
 <h3><strong>What</strong> did we measure?</h3>
@@ -633,8 +634,8 @@ $('#toggle-text').change(function() {
 <p><strong>Anomaly plot</strong>: <em>deviation of loudness from average</em></p>
 </div>
 </div>
-<p><i class="fa fa-question-circle"></i> <em><a href="https://en.wikipedia.org/wiki/To_be_announced">Click here</a> to learn more about what we measured and how to read and understand these summary graphs.</em></p>
-<p><i class="fa fa-chart-bar"></i> <em><a href="https://en.wikipedia.org/wiki/To_be_announced">Click here</a> to see similar summary graphs for the other stations in this sanctuary and here for data available in other sanctuaries.</em></p>
+<p><i class="fa fa-question-circle" role="presentation" aria-label="question-circle icon"></i> <em><a href="https://en.wikipedia.org/wiki/To_be_announced">Click here</a> to learn more about what we measured and how to read and understand these summary graphs.</em></p>
+<p><i class="fa fa-chart-bar" role="presentation" aria-label="chart-bar icon"></i> <em><a href="https://en.wikipedia.org/wiki/To_be_announced">Click here</a> to see similar summary graphs for the other stations in this sanctuary and here for data available in other sanctuaries.</em></p>
 <!-- ![](./images/cinms_ex-what-measure.png) -->
 </div>
 <div id="what-did-we-learn" class="section level3">
