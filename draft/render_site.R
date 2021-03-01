@@ -1,6 +1,6 @@
-source(here::here("functions.R"))
+source(here::here("draft/functions.R"))
 
-redo_modals <- T
+redo_modals <- F
 
 # nav menus in _site.yml ----
 
@@ -11,32 +11,32 @@ update_stories_menu()
 # ℹ `..3` is `sanctuary_code`.
 
 # sanctuaries ----
-sites <- read_csv(here("data/nms_sites.csv")) %>% 
+sites <- read_csv(here("draft/data/nms_sites.csv")) %>% 
   arrange(code)
 
+render_sanctuary <- function(code, name, type, ...){
+  in_rmd  <- here("draft/_sanctuary_template.Rmd")
+  out_htm <- here(glue("draft/s_{code}.html"))
+  message(glue("RENDER SANCTUARY: {basename(in_rmd)} -> {basename(out_htm)}"))
+  
+  #browser()
+  
+  render(
+    input       = in_rmd, 
+    output_file = out_htm,
+    clean       = F,
+    params      = list(
+      main      = glue("{name} {type}"),
+      site_code = code,
+      # scenes tab in [sanctsound_website-content - Google Sheets](https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/edit#gid=0)                    
+      csv       = "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=modals",
+      svg       = glue("svg/{code}.svg")))}
+
 #sites <- sites %>% filter(code == "fknms")
-#sites <- sites %>% filter(code == "cinms")
-
-pwalk(
-  sites, 
-  function(code, name, type, ...){
-    in_rmd  <- here("_sanctuary_template.Rmd")
-    out_htm <- here(glue("s_{code}.html"))
-    message(glue("RENDER SANCTUARY: {basename(in_rmd)} -> {basename(out_htm)}"))
-    
-    #browser()
-    
-    render(
-      input       = in_rmd, 
-      output_file = out_htm,
-      clean       = F,
-      params      = list(
-        main      = glue("{name} {type}"),
-        site_code = code,
-        # scenes tab in [sanctsound_website-content - Google Sheets](https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/edit#gid=0)                    
-        csv       = "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=scenes",
-        svg       = glue("svg/{code}.svg")))})
-
+#sites <- sites %>% 
+sites %>% 
+  filter(code == "cinms") %>% 
+  pwalk(render_sanctuary)
 
 # rmarkdown render
 # File  not found in resource path

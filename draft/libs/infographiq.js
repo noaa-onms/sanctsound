@@ -25,6 +25,10 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
   
   var meta;
   
+  var toc_header_colors = {
+    'Animals':    '#8DC63F80', 
+    'Human-made': '#A8509F80',
+    'Physical':   '#F2652280'};
 
   //  var f_child = div.node().appendChild(f.documentElement);
   d3.xml(svg).then((f) => {
@@ -77,23 +81,32 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
         console.log(data);
       }
       
-      data = data.filter(function(d){ return basename(d.svg) == basename(svg) });
+      data = data.filter(function(d){ 
+        return basename(d.sanctuary_code).toLowerCase() == basename(svg).slice(0, -4) &
+          d.tab_name == "ICON.svg" });
       
+      // TODO: if has section column in argument to fxn
+      data = data.sort(
+        function(a,b) { return d3.ascending(a.sound_category, b.sound_category) ||  d3.ascending(a.sound_category, b.modal_title) });
+
       if (debug){ 
-        console.log("data after filter");
+        console.log("data after filter and sort");
         console.log(data);
       }
 
+      var category_now = null;
+      
       // iterate through rows of csv
       data.forEach(function(d) {
         
-        d.svg_id     = d.modal_title.toLowerCase().replace(/\s/g, '-')
-        d.modal_link = './modals/' + d.sanctuary_code.toLowerCase() + '_' + d.svg_id + '.html'
+        d.svg_id     = d.modal_title.toLowerCase().replace(/\s/g, '-');
+        d.modal_link = './modals/' + d.sanctuary_code.toLowerCase() + '_' + d.svg_id + '.html';
+        d.sound_category = d.sound_category.trim();
         
         if (debug){ 
           console.log('forEach d.modal_title: ' + d.modal_title);
-          console.log('        d.svg_id: '        + d.svg_id);
-          console.log('        d.modal_link: '    + d.modal_link);
+          console.log('        d.svg_id: '      + d.svg_id);
+          console.log('        d.modal_link: '  + d.modal_link);
         }
       
         function handleClick(){
@@ -170,7 +183,18 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
           
         // add to bulleted list of svg elements
         list_text = d.modal_title ? d.modal_title : d.svg_id;  // fall back on id if modal_title not set
-        d3.select("#svg_list").append("li").append("a")
+        
+        // if first in section, then add header
+        if (d.sound_category != category_now){
+          // F26522
+          category_list = d3.select("#svg_list").append("li").
+            append("xhtml:span").
+              attr("style", "background-color:"+ toc_header_colors[d.sound_category] + ";").
+              text(d.sound_category).
+            append("ul");
+          category_now = d.sound_category;
+        }
+        category_list.append("li").append("a")
           .text(list_text)
           .on("click", handleClick)
           .on('mouseover', handleMouseOverSansTooltip)
