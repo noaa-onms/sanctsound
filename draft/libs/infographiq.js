@@ -189,7 +189,8 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
           // F26522
           category_list = d3.select("#svg_list").append("li").
             append("xhtml:span").
-              attr("style", "background-color:"+ toc_header_colors[d.sound_category] + ";font-weight:bold;").
+              //attr("style", "background-color:"+ toc_header_colors[d.sound_category] + ";font-weight:bold;").
+              attr("style", "background-color:"+ toc_header_colors[d.sound_category] + ";").
               text(d.sound_category).
             append("ul");
           category_now = d.sound_category;
