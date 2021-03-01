@@ -22,8 +22,8 @@ gsheet_pfx    <- "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPX
 # metadata_csv  <- glue("{gsheet_pfx}&sheet=metadata")
 # metadata_csv  <- glue("{gsheet_pfx}&sheet=metadata")
 
-sites_csv <- here("data/nms_sites.csv")
-sites_geo <- here("data/nms_sites.geojson")
+sites_csv <- here("draft/data/nms_sites.csv")
+sites_geo <- here("draft/data/nms_sites.geojson")
 
 get_sheet_csv <- function(sheet){
   glue("{gsheet_pfx}&sheet={sheet}")
@@ -51,7 +51,7 @@ scenes    <- get_sheet("scenes")
 locations <- get_sheet("locations")
 metadata  <- get_sheet("metadata")
 
-get_nms_ply <- function(nms, dir_pfx = here()){
+get_nms_ply <- function(nms, dir_pfx = here("draft")){
   # get polygon for National Marine Sanctuary
   
   nms_shp <- glue("{dir_pfx}/data/shp/{nms}_py.shp")
@@ -61,8 +61,8 @@ get_nms_ply <- function(nms, dir_pfx = here()){
     
     # https://sanctuaries.noaa.gov/library/imast_gis.html
     nms_url <- glue::glue("https://sanctuaries.noaa.gov/library/imast/{nms}_py2.zip")
-    nms_zip <- here::here(glue::glue("data/{nms}.zip"))
-    shp_dir <- here::here("data/shp")
+    nms_zip <- here::here(glue::glue("draft/data/{nms}.zip"))
+    shp_dir <- here::here("draft/data/shp")
     
     download.file(nms_url, nms_zip)
     unzip(nms_zip, exdir = shp_dir)
@@ -117,7 +117,7 @@ create_sanctuary_pages <- function(){
       knitr::opts_chunk$set(echo = F)
       ```
       ```{r}
-      source(here::here("functions.R"))
+      source(here::here("draft/functions.R"))
       map_site(params$site_code)
       ```
       ', .open = "{{", .close = "}}")
@@ -170,7 +170,7 @@ get_modal_tab_content <- function(tab_name, modal_title = NULL, rmd = NULL){
         "https://drive.google.com/file/d/(.*)/view\\?usp=sharing", 
         "\\1"),
       gdrive_dl = glue("https://drive.google.com/uc?id={gdrive_id}&export=download"),
-      path_0    = here(glue("images/{filename}")),
+      path_0    = here(glue("draft/images/{filename}")),
       path_w    = glue("{path_ext_remove(path_0)}_w{image_width_inches}in.{path_ext(path_0)}"),
       path_r    = glue("../images/{basename(path_w)}"))
   
@@ -311,7 +311,7 @@ map_sites <- function(){
 
 }
 
-modal_title_to_html_path <- function(sanctuary_code, modal_title, pfx = here("modals")){
+modal_title_to_html_path <- function(sanctuary_code, modal_title, pfx = here("draft/modals")){
   
   modal_html <- glue("{sanctuary_code}_{modal_title}") %>% 
     str_replace_all(" ", "-") %>% 
@@ -322,7 +322,7 @@ modal_title_to_html_path <- function(sanctuary_code, modal_title, pfx = here("mo
 }
 
 
-render_modal <- function(sanctuary_code, modal_title, modal_html, rmd = here("modals/_modal_template.Rmd")){
+render_modal <- function(sanctuary_code, modal_title, modal_html, rmd = here("draft/modals/_modal_template.Rmd")){
   
   message(glue("RENDER {basename(modal_html)}: {modal_title}"))
   
@@ -337,7 +337,7 @@ render_modal <- function(sanctuary_code, modal_title, modal_html, rmd = here("mo
 render_page <- function(rmd){
   render(rmd, html_document(
     theme = site_config()$output$html_document$theme, 
-    self_contained=F, lib_dir = here("modals/modal_libs"), 
+    self_contained=F, lib_dir = here("draft/modals/modal_libs"), 
     mathjax = NULL))
 }
 
@@ -361,7 +361,7 @@ audio_to_spectrogram_video <- function(path, path_mp4){
 }
 
 import_sounds <- function(redo = T){
-  sounds_csv <- here("data/sounds.csv")
+  sounds_csv <- here("draft/data/sounds.csv")
   
   if (!file.exists(sounds_csv) | redo){
     tbl_sounds <- get_sheet("modals") %>% 
@@ -381,7 +381,7 @@ import_sounds <- function(redo = T){
 }
 
 import_stories <- function(redo = T){
-  stories_csv <- here("data/stories.csv")
+  stories_csv <- here("draft/data/stories.csv")
   
   if (!file.exists(stories_csv) | redo){
   tbl_stories <- get_sheet("stories") %>% 
@@ -435,7 +435,7 @@ update_sounds_menu <- function(){
   
   tbl_sounds <- import_sounds()
   
-  site <- read_yaml(here("_site.yml"))
+  site <- read_yaml(here("draft/_site.yml"))
   
   idx_sounds <- which(map_chr(site$navbar$left, "text") == "Sounds")
   
@@ -468,14 +468,14 @@ update_sounds_menu <- function(){
     sounds_menu)
   
   site$navbar$left[[idx_sounds]]$menu = sounds_menu
-  write_yaml(site, here("_site.yml"))
+  write_yaml(site, here("draft/_site.yml"))
 }
 
 update_stories_menu <- function(){
   
   tbl_stories <- import_stories()
   
-  site <- read_yaml(here("_site.yml"))
+  site <- read_yaml(here("draft/_site.yml"))
   
   idx_stories <- which(map_chr(site$navbar$left, "text") == "Stories")
   
@@ -513,7 +513,7 @@ update_stories_menu <- function(){
     stories_menu)
     
   site$navbar$left[[idx_stories]]$menu = stories_menu
-  write_yaml(site, here("_site.yml"))
+  write_yaml(site, here("draft/_site.yml"))
 }
 
 gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_pfx = "../", redo = F){
@@ -538,7 +538,7 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_p
     return(NA)
   
   fname_ok      <- fname %>% str_replace_all("/", "_")
-  path          <- here(glue("files/{fname_ok}"))
+  path          <- here(glue("draft/files/{fname_ok}"))
   path_relative <- glue("{relative_pfx}files/{fname_ok}")
   message(glue("  fname_ok: {fname}"))
   
@@ -616,7 +616,7 @@ update_modal_imgs_snds <- function(modals_csv = modals_csv){
         "https://drive.google.com/file/d/(.*)/view\\?usp=sharing", 
         "\\1"),
       gdrive_dl = glue("https://drive.google.com/uc?id={gdrive_id}&export=download"),
-      path_0    = here(glue("images/{filename}")),
+      path_0    = here(glue("draft/images/{filename}")),
       path_w    = glue("{path_ext_remove(path_0)}_w{image_width_inches}in.{path_ext(path_0)}"),
       path_r    = glue("../images/{basename(path_w)}"))
   
