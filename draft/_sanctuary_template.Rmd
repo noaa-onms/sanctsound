@@ -9,6 +9,8 @@ params:
   svg: "svg/cinms.svg"
 output:
   html_document:
+    mathjax: null
+    self_contained: false    
     css: 
       - libs/masonry.css
       - libs/styles.css

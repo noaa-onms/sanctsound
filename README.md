@@ -71,6 +71,7 @@ source("render_site.R")
 
 # serve website
 servr::httd(".")
+# servr::httd("draft")
 ```
 
 or using Python:

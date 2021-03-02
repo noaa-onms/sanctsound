@@ -35,7 +35,7 @@ get_sheet <- function(sheet, redo = F){
   if (!exists(sheet, envir = globalenv()) | redo){
     
     d <- get_sheet_csv(sheet) %>% 
-      read_csv() %>% 
+      read_csv(col_types = cols()) %>% 
       select(-starts_with("X"))
     msg <- glue("get_sheet(): read_csv(URL), assign to variable '{sheet}'\n  URL: {get_sheet_csv(sheet)}", .trim = F)
     message(as.character(msg))
@@ -102,7 +102,7 @@ if (!file.exists(sites_csv)){
 }
 
 create_sanctuary_pages <- function(){
-  sites <- readr::read_csv(sites_csv)
+  sites <- readr::read_csv(sites_csv, col_types = cols())
   
   site_rmd <- function(code, name){
     rmd <- glue::glue("s_{code}.Rmd")
@@ -252,7 +252,7 @@ map_site <- function(site_code){
   # SanctSound_DeploymentLocations v2 - Google Sheet
   sensors_csv = "https://docs.google.com/spreadsheets/d/1kU4mxt3W3fVd4T_L86ybxCkeaxILEZ1hmyu9r47X6JA/gviz/tq?tqx=out:csv&sheet=0"
   
-  sensors <- read_csv(sensors_csv) %>% 
+  sensors <- read_csv(sensors_csv, col_types = cols()) %>% 
     filter(
       sanctuary_id == site_code,
       !is.na(lon), !is.na(lat)) %>% 
@@ -377,7 +377,7 @@ import_sounds <- function(redo = T){
     write_csv(tbl_sounds, sounds_csv)
   }
 
-  read_csv(sounds_csv)
+  read_csv(sounds_csv, col_types = cols())
 }
 
 import_stories <- function(redo = T){
@@ -395,7 +395,7 @@ import_stories <- function(redo = T){
     write_csv(tbl_stories, stories_csv)
   }
   
-  tbl_stories <- read_csv(stories_csv)
+  tbl_stories <- read_csv(stories_csv, col_types = cols())
   
   tbl_stories$region <- factor(
     tbl_stories$region,
