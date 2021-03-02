@@ -26,7 +26,7 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
   var meta;
   
   var toc_header_colors = {
-    'Animals':    '#8DC63F80', 
+    'Animal':    '#8DC63F80', 
     'Human-made': '#A8509F80',
     'Physical':   '#F2652280'};
 
