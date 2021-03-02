@@ -16,6 +16,8 @@ params:
   #https://docs.google.com/drawings/d/10-2gjxCoxeszyxbujC6Jby5GZ-ppTvC1hblljLEybOA/edit?usp=sharing
 output:
   html_document:
+    mathjax: null
+    self_contained: false    
     css: 
       - libs/masonry.css
       - libs/styles.css

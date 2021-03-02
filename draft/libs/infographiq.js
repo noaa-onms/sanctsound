@@ -88,7 +88,7 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
       
       // TODO: if has section column in argument to fxn
       data = data.sort(
-        function(a,b) { return d3.ascending(a.sound_category, b.sound_category) ||  d3.ascending(a.sound_category, b.modal_title) });
+        function(a,b) { return d3.ascending(a.sound_category, b.sound_category) ||  d3.ascending(a.sound_category, b.sound_category) });
 
       if (debug){ 
         console.log("data after filter and sort");
