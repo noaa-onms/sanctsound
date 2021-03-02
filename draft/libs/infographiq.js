@@ -82,7 +82,8 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
       }
       
       data = data.filter(function(d){ 
-        return basename(d.sanctuary_code).toLowerCase() == basename(svg).slice(0, -4) &
+        //return basename(d.sanctuary_code).toLowerCase() == basename(svg).slice(0, -4) &
+        return basename(d.sanctuary_code).toLowerCase() == "fknms" &
           d.tab_name == "ICON.svg" });
       
       // TODO: if has section column in argument to fxn
@@ -171,15 +172,32 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
             tooltip_div.style("opacity", 0);
         }
         
-        h.select('#' + d.svg_id)
+        //h.select('#' + d.svg_id)
+        h.select('svg a[*|href*="' + d.illustration_link + '"] path')
+          .attr("id", d.svg_id);
+        h.select('svg a[*|href*="' + d.illustration_link + '"]')
+          .attr('xlink:href', null)
+          .attr('target', null)
+          .attr('rel', null);
+        // TODO: notice svg has repeat linked shapes: 
+        //         <path fill="transparent" fill-opacity="0" d=...
+        icon = h.select('#' + d.svg_id);
+        
+        //icon = a_icon.select('path').node();
+        //a_icon.html("");
+        //a_icon.remove();
+        //h.append(icon);
+        
+        icon
           .on("click", handleClick)
           .on('mouseover', handleMouseOver)
           .on('mouseout', handleMouseOut);
           
         // set outline of paths within group to null
-        d3.select('#' + d.svg_id).selectAll("path")
-            .style("stroke-width", null)
-            .style("stroke", null);
+        //d3.select('#' + d.svg_id).selectAll("path")
+        icon
+          .style("stroke-width", null)
+          .style("stroke", null);
           
         // add to bulleted list of svg elements
         list_text = d.modal_title ? d.modal_title : d.svg_id;  // fall back on id if modal_title not set

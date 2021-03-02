@@ -1,12 +1,19 @@
 ---
 title: "`r params$main`"
 params:
-  main: "Channel Islands National Marine Sanctuary"
-  site_code: "cinms"
+  main: "Florida Keys National Marine Sanctuary"
+  site_code: "fknms"
   # main: "Florida Keys National Marine Sanctuary"
   # site_code: "fknms"
   csv: "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=modals"
-  svg: "svg/cinms.svg"
+  #svg: "svg/cinms.svg"
+  # 1. cmd: inkscape dolphin_PIFSC_BB-AI-unite-simplify.svg -o dolphin_PIFSC_BB-AI-unite-simplify.wmf # rm outline
+  # 2. [fknms - Google Drawings](https://docs.google.com/drawings/d/10-2gjxCoxeszyxbujC6Jby5GZ-ppTvC1hblljLEybOA/edit)
+  # 3. notice svg: repeat linked shapes <path fill="transparent" fill-opacity="0" d=...
+  svg: "https://docs.google.com/drawings/d/10-2gjxCoxeszyxbujC6Jby5GZ-ppTvC1hblljLEybOA/export/svg"
+  # "https://docs.google.com/drawings/d/1bdxDXTdjTMUZVlGWtjLdT6QP3m7NwnLF/export/svg"
+  # https://drive.google.com/file/d/1bdxDXTdjTMUZVlGWtjLdT6QP3m7NwnLF/view?usp=sharing
+  #https://docs.google.com/drawings/d/10-2gjxCoxeszyxbujC6Jby5GZ-ppTvC1hblljLEybOA/edit?usp=sharing
 output:
   html_document:
     css: 
