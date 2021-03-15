@@ -1,0 +1,28 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Test
+
+- 
+
+```{r}
+
+library(webshot) # http://wch.github.io/webshot/
+
+url <- "https://sanctsound.portal.axds.co/#sanctsound/sanctuary/channel-islands/site/CI01/method_type/combined"
+webshot(url, "CI01.png", delay=5, useragent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36")
+
+download.file(url, "test.html")
+
+, selector = "div.spectrogram_low_res", delay = 5,, debug = T)
+webshot(url, "ci_spectrogram.png", selector = "#combined > div > div > div.selected.col-sm-7.col-md-8.col-lg-9 > div > div.spectrogram_low_res > div > div > div > div > div > div.content-display > div > div > div > div > div > div.chartLayout.clearfix", delay = 2)
+
+
+```
+

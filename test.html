@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- no cache headers -->
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="preconnect" href="https://files.axds.co">
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="assets/styles/app.css?v=2021.02.16.00.15" type="text/css" media="all" />
+		<script type="text/javascript">
+			function inIframe () {
+			    try {
+			        return window.self !== window.top;
+			    } catch (e) {
+			        return true;
+			    }
+			}
+
+			if(inIframe()){
+				window.onload = function() {
+					document.body.className += ' ' + 'iframed';
+				}
+			}
+
+			var require = {urlArgs : "v=2021.02.16.00.15",waitSeconds:0}
+			window.settings = {"oot_service_domain":null,"oot_analyzer_domain":null,"oot_gridded_wms_endpoint":null,"oot_gis_wms_endpoint":null,"oot_scuttle_dataset":null,"oot_scuttle_dataset_query":null,"oot_scuttle_dataset_url":null,"oot_command_url":null,"oot_test_command_url":null,"oot_trigger_driftworker_url":null,"oikos_service_domain":null,"app_state_server_domain":null,"error_reporting_server_domain":null,"static_file_domain":null,"searchv2_domain":null,"oikos_thumbnail_domain":null,"platformsv2_geoserver_domain":null,"sensors_domain":null,"sensorsv2_domain":null,"platforms_domain":null,"platformsv2_domain":null,"wms_feature_service_domain":null,"data_commons_domain":null,"screenshot_service_domain":null,"server_side_hex_domain":null,"events_service_domain":null,"portal_id":"140","save_state":true,"portal":[],"stage_config":false,"version":"2021.02.16.00.15"}		</script>
+		<script data-main="app/apps/portal/load" src="lib/requirejs/require.js"></script>
+
+		<style type="text/css">
+			.uaa-dhs-event-portal #feedback{
+				display:none;
+			}
+
+			.uaa-dhs-event-portal .navbar-brand{
+				padding:7px 0px 0px 15px;
+			}
+
+			.uaa-dhs-event-portal .full-page-map-layout .layer-debug {
+				display:none;
+			}
+
+			.uaa-dhs-event-portal #logo
+			{
+				position:absolute;
+			}
+
+			.uaa-dhs-event-portal #portal_logo{
+				margin-left:60px;
+				padding-top:5px;
+				display:block;
+			}
+
+			.uaa-dhs-event-portal .navbar-inverse{
+				background: #174355;
+	    		border-bottom: 2px solid #ad1d40;
+			}
+
+			.uaa-dhs-event-portal .leaflet-control-container .leaflet-top.leaflet-left{
+    			margin-top:25px;
+			}
+
+			.uaa-dhs-event-portal .layers-menu-item,
+			.uaa-dhs-event-portal .settings-menu-item{
+				display:none;
+			}
+		</style>
+	</head>
+
+	<body class="portal-140 portal-loading">
+		<header></header>
+		<div id="app_root" class="container"></div>
+		<div id="downloads-queue"></div>
+		<div id="modal_target"></div>
+		<div id="hover_wrap"><div id="hover_target" class="hidden"></div></div>
+		<div id="feedback"></div>
+		<div id="flash_error_target"></div>
+
+        <div class="alert alert-warning alert-dismissible" role="alert" style="position:fixed;bottom:10px;left:50%;margin-left:-45%;width:90%;max-width:500px;z-index:2000;box-shadow:0 0 15px #666;display:none;" id="browser-notice">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+              <div style="width:50px;float:right;margin:10px;margin-left:20px;text-align:center">
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="//files.axds.co/portals/assets/ff-icon.png" width="30" height="30"><br>
+                    Firefox
+                </a>
+            </div>
+
+            <div style="width:50px;float:right;margin:10px;margin-left:20px;text-align:center;">
+                <a href="https://www.google.com/chrome/browser/features.html">
+                    <img src="//files.axds.co/portals/assets/chrome-icon.png" width="30" height="30"><br>
+                    Chrome
+                </a>
+			</div>
+			
+
+			
+
+
+            <p style="padding-top:15px;"><em>For best results, use the latest version of these browsers.</em></p>
+		</div>
+		<div id="flash_message_target"></div>
+		<div id="pre-load-message">Loading</div>
+
+        <script type="text/javascript">
+            // Opera 8.0+
+            var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+            // Firefox 1.0+
+            var isFirefox = typeof InstallTrigger !== 'undefined';
+
+            // Safari 3.0+ "[object HTMLElementConstructor]"
+            var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+
+            // Internet Explorer 6-11
+            var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+            // Edge 20+
+            var isEdge = !isIE && !!window.StyleMedia;
+
+            // Chrome 1+
+            var isChrome = !!window.chrome;
+
+            // Blink engine detection
+            var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+            var isWebdriver = navigator.webdriver;
+
+            if(!isFirefox && !isChrome && !isWebdriver){
+                document.getElementById('browser-notice').style.display = 'block';
+            }
+        </script>
+	</body>
+
+</html>

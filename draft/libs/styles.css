@@ -201,3 +201,35 @@ footer path {
     fill: #003087
 }
 
+.card-hov:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card-img-wrap div h4 {
+  color: Coral;
+  font-weight: bold;
+}
+
+.card-img-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.card-img-wrap:after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.3);
+  opacity: 0;
+  transition: opacity .25s;
+}
+.card-img-wrap img {
+  transition: transform .25s;
+  width: 100%;
+}
+.card-img-wrap:hover img {
+  transform: scale(1.2);
+}
+.card-img-wrap:hover:after {
+  opacity: 1;
+}

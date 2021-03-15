@@ -48,26 +48,6 @@ navbar:
     - text: All Sounds
       href: sounds.html
     - text: '---------'
-    - text: Animals
-      menu:
-      - text: Blue whales (CINMS)
-        href: sounds.html#blue-whales-cinms
-      - text: Bocaccio (CINMS)
-        href: sounds.html#bocaccio-cinms
-      - text: Dolphins (CINMS)
-        href: sounds.html#dolphins-cinms
-      - text: Fin whales (CINMS)
-        href: sounds.html#fin-whales-cinms
-      - text: Humpback whales (CINMS)
-        href: sounds.html#humpback-whales-cinms
-      - text: Snapping shrimp (CINMS)
-        href: sounds.html#snapping-shrimp-cinms
-    - text: Human-made
-      menu:
-      - text: Seal bombs (CINMS)
-        href: sounds.html#seal-bombs-cinms
-      - text: Vessels (CINMS)
-        href: sounds.html#vessels-cinms
   - text: Stories
     icon: fa-newspaper-o
     menu:
@@ -147,7 +127,9 @@ navbar:
       href: z_stream-plots.html
 output:
   html_document:
-    theme: yeti
+    theme:
+      version: 4
+      bootswatch: yeti
     css: libs/styles.css
     self_contained: no
     lib_dir: site_libs

@@ -11,7 +11,7 @@ update_stories_menu()
 # ℹ `..3` is `sanctuary_code`.
 
 # sanctuaries ----
-sites <- read_csv(here("draft/data/nms_sites.csv")) %>% 
+sites <- read_csv(here("draft/data/nms_sites.csv"), col_types = cols()) %>% 
   arrange(code)
 
 render_sanctuary <- function(code, name, type, ...){
@@ -35,7 +35,7 @@ render_sanctuary <- function(code, name, type, ...){
 #sites <- sites %>% filter(code == "fknms")
 #sites <- sites %>% 
 sites %>% 
-  filter(code == "cinms") %>% 
+  filter(code %in% c("cinms", "hihwnms")) %>% 
   pwalk(render_sanctuary)
 
 # rmarkdown render
@@ -62,6 +62,7 @@ if (redo_modals)
   pwalk(modal_pages, render_modal)
 
 # *.Rmd's ----
+setwd(here("draft"))
 rmarkdown::render_site()
 
 

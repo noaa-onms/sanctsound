@@ -82,8 +82,8 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
       }
       
       data = data.filter(function(d){ 
-        //return basename(d.sanctuary_code).toLowerCase() == basename(svg).slice(0, -4) &
-        return basename(d.sanctuary_code).toLowerCase() == "fknms" &
+        return basename(d.sanctuary_code).toLowerCase() == basename(svg).slice(0, -4) &
+        //return basename(d.sanctuary_code).toLowerCase() == "fknms" &
           d.tab_name == "ICON.svg" });
       
       // TODO: if has section column in argument to fxn
