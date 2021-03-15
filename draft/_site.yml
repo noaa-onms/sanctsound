@@ -59,8 +59,6 @@ navbar:
       - text: Did changes in offshore human activities during the COVID pandemic result
           in changes in underwater soundscapes in sanctuaries?
         href: stories.html#national
-      - text: How do measurements of sound compare among the sanctuaries we monitored?
-        href: stories.html#national
     - text: East Coast
       menu:
       - text: Acoustic monitoring enhances our understanding of site visitation at

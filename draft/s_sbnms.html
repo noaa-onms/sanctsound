@@ -13,21 +13,12 @@
 
 <title>Stellwagen Bank National Marine Sanctuary</title>
 
-<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link href="site_libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script>
+<script src="site_libs/bs3compat-0.2.4/tabs.js"></script>
+<script src="site_libs/bs3compat-0.2.4/bs3compat.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -71,8 +62,6 @@ if (window.hljs) {
 
 
 
-<link rel="stylesheet" href="libs/masonry.css" type="text/css" />
-<link rel="stylesheet" href="libs/styles.css" type="text/css" />
 
 
 
@@ -342,40 +331,6 @@ $(document).ready(function () {
       <a href="sounds.html">All Sounds</a>
     </li>
     <li class="divider"></li>
-    <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Animals</a>
-      <ul class="dropdown-menu" role="menu">
-        <li>
-          <a href="sounds.html#blue-whales-cinms">Blue whales (CINMS)</a>
-        </li>
-        <li>
-          <a href="sounds.html#bocaccio-cinms">Bocaccio (CINMS)</a>
-        </li>
-        <li>
-          <a href="sounds.html#dolphins-cinms">Dolphins (CINMS)</a>
-        </li>
-        <li>
-          <a href="sounds.html#fin-whales-cinms">Fin whales (CINMS)</a>
-        </li>
-        <li>
-          <a href="sounds.html#humpback-whales-cinms">Humpback whales (CINMS)</a>
-        </li>
-        <li>
-          <a href="sounds.html#snapping-shrimp-cinms">Snapping shrimp (CINMS)</a>
-        </li>
-      </ul>
-    </li>
-    <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Human-made</a>
-      <ul class="dropdown-menu" role="menu">
-        <li>
-          <a href="sounds.html#seal-bombs-cinms">Seal bombs (CINMS)</a>
-        </li>
-        <li>
-          <a href="sounds.html#vessels-cinms">Vessels (CINMS)</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -396,9 +351,6 @@ $(document).ready(function () {
       <ul class="dropdown-menu" role="menu">
         <li>
           <a href="stories.html#national">Did changes in offshore human activities during the COVID pandemic result in changes in underwater soundscapes in sanctuaries?</a>
-        </li>
-        <li>
-          <a href="stories.html#national">How do measurements of sound compare among the sanctuaries we monitored?</a>
         </li>
       </ul>
     </li>
@@ -549,7 +501,7 @@ $(document).ready(function () {
 </div>
 </div>
 <script>
-link_svg(svg = "svg/sbnms.svg", csv = "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=scenes", debug = true);
+link_svg(svg = "svg/sbnms.svg", csv = "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=modals", debug = true);
 </script>
 <script>
 $(function() {
@@ -563,8 +515,8 @@ $('#toggle-text').change(function() {
 <div id="where-did-we-listen" class="section level3">
 <h3><strong>Where</strong> did we listen?</h3>
 <p>Here is a map of listening device locations. Hover on a location to see its site id and click on it to see the rationale for its placement. <!-- `<i class="fa fa-map" role="presentation" aria-label="map icon"></i>`{=html} --></p>
-<div id="htmlwidget-3ca2e01bca9b68efc4cf" style="width:100%;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3ca2e01bca9b68efc4cf">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-70.2166402161427,-70.0350637207954,-70.0543430182693,-70.0670701164006,-70.0865842759506,-70.1060679302054,-70.1238849557436,-70.1400463265968,-70.1549660589103,-70.1729163405436,-70.1960471919708,-70.2170697366175,-70.2388922123962,-70.2558479494517,-70.2780037462046,-70.4704323410656,-70.5973663102739,-70.5869748228149,-70.5838775955699,-70.5725358024329,-70.5555771094719,-70.5417879616627,-70.5284293738702,-70.5158680975916,-70.5058763813936,-70.5013180918313,-70.5013015638658,-70.5026211638085,-70.2166402161427],"lat":[42.7667152239149,42.0932996466952,42.1051704520315,42.108303108231,42.1175187749471,42.1203798361712,42.1267547486849,42.1285269353494,42.1334185375076,42.1348101672552,42.1320990695115,42.1333907079638,42.1296990621911,42.1243491292171,42.1152326246524,42.1292384737109,42.5510749564745,42.5584964289772,42.5634686080956,42.5752213140129,42.580754672673,42.5878963377024,42.5950407719394,42.6065073861096,42.6210711744163,42.6331182904779,42.642445969862,42.6512291971351,42.7667152239149]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[42.0932996466952,42.7667152239149],"lng":[-70.5973663102739,-70.0350637207954]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c6f76307cfd70d249ced" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c6f76307cfd70d249ced">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-70.2166402161427,-70.0350637207954,-70.0543430182693,-70.0670701164006,-70.0865842759506,-70.1060679302054,-70.1238849557436,-70.1400463265968,-70.1549660589103,-70.1729163405436,-70.1960471919708,-70.2170697366175,-70.2388922123962,-70.2558479494517,-70.2780037462046,-70.4704323410656,-70.5973663102739,-70.5869748228149,-70.5838775955699,-70.5725358024329,-70.5555771094719,-70.5417879616627,-70.5284293738702,-70.5158680975916,-70.5058763813936,-70.5013180918313,-70.5013015638658,-70.5026211638085,-70.2166402161427],"lat":[42.7667152239149,42.0932996466952,42.1051704520315,42.108303108231,42.1175187749471,42.1203798361712,42.1267547486849,42.1285269353494,42.1334185375076,42.1348101672552,42.1320990695115,42.1333907079638,42.1296990621911,42.1243491292171,42.1152326246524,42.1292384737109,42.5510749564745,42.5584964289772,42.5634686080956,42.5752213140129,42.580754672673,42.5878963377024,42.5950407719394,42.6065073861096,42.6210711744163,42.6331182904779,42.642445969862,42.6512291971351,42.7667152239149]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[42.0932996466952,42.7667152239149],"lng":[-70.5973663102739,-70.0350637207954]}},"evals":[],"jsHooks":[]}</script>
 <div class="row">
 <div class="col-xs-4">
 
@@ -600,12 +552,7 @@ $('#toggle-text').change(function() {
 </div>
 <div id="what-did-we-learn" class="section level3">
 <h3><strong>What</strong> did we learn?</h3>
-<div class="grid">
-<div class="grid-item">
-<p><img src='files/SBNMS_map_SQ_title.png' target='_blank'></p>
-</div>
-</div>
-<script>
+<!--script>
 // Getting Bootstrap Tabs to Play Nice with Masonry
 // https://www.sitepoint.com/bootstrap-tabs-play-nice-with-masonry/
 
@@ -639,7 +586,14 @@ function gridMasonryLayoutForTabset() {
 $(document).ready(function () {
   gridMasonryLayoutForTabset();
 });
-</script>
+</script-->
+<div class="row">
+<div class="col-sm-3">
+<div class="card">
+<a href="#" class="stretched-link" target="_blank"> <img class="card-img" src="files/SBNMS_map_SQ_title.png"></a>
+</div>
+</div>
+</div>
 </div>
 </div>
 

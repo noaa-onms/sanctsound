@@ -145,7 +145,7 @@ power_spec  <- filter(tbl_measure, file_type == "power_spec")
 
 ### **What** did we learn?
 
-```{r, results='asis'}
+```{r stories-masonry-old, results='asis', eval=F}
 
 tbl_stories <- import_stories()
 
@@ -164,8 +164,7 @@ if (nrow(snc_stories) > 0){
   cat("\n\n</div>\n\n")
 }
 ```
-
-<script>
+<!--script>
 // Getting Bootstrap Tabs to Play Nice with Masonry
 // https://www.sitepoint.com/bootstrap-tabs-play-nice-with-masonry/
 
@@ -199,7 +198,28 @@ function gridMasonryLayoutForTabset() {
 $(document).ready(function () {
   gridMasonryLayoutForTabset();
 });
-</script>
+</script-->
+
+```{r, results='asis'}
+
+tbl_stories <- import_stories()
+
+snc_stories <- tbl_stories %>% 
+    filter(sanctuary == !!sanctuary_code)
+  
+if (nrow(snc_stories) > 0){
+
+  cat(glue("\n\n<div class='row'>\n\n", .trim = F))
+  
+  snc_stories %>% 
+    pmap_chr(story_card_item) %>% 
+    paste(collapse = "\n\n") %>% 
+    cat()
+  
+  cat("\n\n</div>\n\n")
+}
+```
+
 
 
 

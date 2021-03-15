@@ -35,7 +35,7 @@ render_sanctuary <- function(code, name, type, ...){
 #sites <- sites %>% filter(code == "fknms")
 #sites <- sites %>% 
 sites %>% 
-  filter(code %in% c("cinms", "hihwnms")) %>% 
+  #filter(code %in% c("cinms", "hihwnms")) %>% 
   pwalk(render_sanctuary)
 
 # rmarkdown render

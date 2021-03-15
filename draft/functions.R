@@ -431,6 +431,25 @@ story_grid_item <- function(title, img_rel, story_link, ...){
       </div>")
   }
 }
+story_card_item <- function(title, img_rel, story_link, ...){
+  if(is.na(story_link)){
+    glue('
+      <div class="col-sm-3">
+        <div class="card">
+        <a href="#" class="stretched-link" target="_blank">
+        <img class="card-img" src="{img_rel}"></a>
+        </div>
+      </div>')
+  } else {
+    glue('
+      <div class="col-sm-3">
+        <div class="card">
+        <a href="{story_link}" class="stretched-link" target="_blank">
+        <img class="card-img" src="{img_rel}"></a>
+        </div>
+      </div>')
+  }
+}
 update_sounds_menu <- function(){
   
   tbl_sounds <- import_sounds()
