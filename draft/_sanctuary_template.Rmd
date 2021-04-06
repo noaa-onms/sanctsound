@@ -46,6 +46,22 @@ source(here::here("draft/functions.R"))
 sanctuary_code = toupper(params$site_code)
 
 map_site(params$site_code)
+
+# soundprop_wms_url <- "https://data.axds.co/gs/sanctsound/wms?styles=&reusetiles=true&unloadInvisibleTiles=true&ENV=min:-72.55591730004457;max:86.51321488678781&STYLES=sanctsound:sanctsound_sound_propagation"
+# 
+# map_site(params$site_code) %>% 
+#   addWMSTiles(
+#     soundprop_wms_url,
+#     layers = "sanctsound:SanctSound_CI01_prompmodeling_SD0020m_192dBre1uPa_63Hz_January_radarformat_highres_signal_to_noise_ratio",
+#     options = WMSTileOptions(
+#       format = "image/png", 
+#       transparent = T),
+#     group = "Sound Propogation",
+#     attribution = "Axiom Data Science © 2021") %>% 
+#   addLayersControl(
+#     # baseGroups = c("Ocean Basemap", "Toner Lite"),
+#     overlayGroups = c("Sound Propogation"),
+#     options = layersControlOptions(collapsed = F))
 ```
 
 
