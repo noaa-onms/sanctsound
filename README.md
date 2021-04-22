@@ -72,6 +72,9 @@ source("render_site.R")
 # serve website
 #servr::httd(".")
 servr::httd(here::here("draft"))
+
+# stop website
+servr::daemon_stop(1)
 ```
 
 or using Python:
