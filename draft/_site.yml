@@ -194,6 +194,9 @@ navbar:
 output:
   html_document:
     theme: yeti
+    # theme:
+    #   version: 4
+    #   bootswatch: 
     css: libs/styles.css
     self_contained: no
     lib_dir: site_libs
