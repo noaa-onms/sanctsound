@@ -19,6 +19,15 @@
 <script src="modal_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="modal_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="modal_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="modal_libs/navigation-1.1/tabsets.js"></script>
 <link href="modal_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="modal_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -33,11 +42,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -50,32 +54,6 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 <link rel="stylesheet" href="_modal_styles.css" type="text/css" />
@@ -87,10 +65,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -107,6 +81,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -119,7 +96,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -183,7 +159,7 @@ summary {
 
 
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -194,11 +170,18 @@ summary {
 
 <div id="section" class="section level2 tabset">
 <h2></h2>
-<div id="sights" class="section level3">
-<h3>Sights</h3>
+<div id="sights-sounds" class="section level3">
+<h3>Sights &amp; Sounds</h3>
+<div class="row">
+<div class="col-xs-6">
 <div class="figure">
 <img src="../files/dolphin-bottlenose_FKNMS_NOAA_cropped.jpg" alt="" />
-<p class="caption">Dolphins, including the icon bottlenose dolphin, are commonly seen and heard in FKNMS. Photo: NOAA</p>
+<p class="caption">Dolphins, including the iconic bottlenose dolphin, are commonly seen and heard in FKNMS. Photo: NOAA</p>
+</div>
+</div>
+<div class="col-xs-6">
+<p><video controls> <source src='../files/SanctSound_FK03_01_dolphins_20190301T042106Z.mp4' type='video/mp4'> Your browser does not support the video tag. </video></p>
+</div>
 </div>
 </div>
 </div>
@@ -230,7 +213,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

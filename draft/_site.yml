@@ -48,6 +48,72 @@ navbar:
     - text: All Sounds
       href: sounds.html
     - text: '---------'
+    - text: Animal
+      menu:
+      - text: Black grouper (FKNMS)
+        href: sounds.html#black-grouper-fknms
+      - text: Blue whales (CINMS)
+        href: sounds.html#blue-whales-cinms
+      - text: Bocaccio (CINMS)
+        href: sounds.html#bocaccio-cinms
+      - text: Dolphins (CINMS)
+        href: sounds.html#dolphins-cinms
+      - text: Dolphins (FKNMS)
+        href: sounds.html#dolphins-fknms
+      - text: Dolphins (HIHWNMS)
+        href: sounds.html#dolphins-hihwnms
+      - text: Fin whales (CINMS)
+        href: sounds.html#fin-whales-cinms
+      - text: Humpback whales (CINMS)
+        href: sounds.html#humpback-whales-cinms
+      - text: Humpback whales (HIHWNMS)
+        href: sounds.html#humpback-whales-hihwnms
+      - text: Minke whales (HIHWNMS)
+        href: sounds.html#minke-whales-hihwnms
+      - text: Plainfin midshipman (CINMS)
+        href: sounds.html#plainfin-midshipman-cinms
+      - text: Red grouper (FKNMS)
+        href: sounds.html#red-grouper-fknms
+      - text: Sea lions (CINMS)
+        href: sounds.html#sea-lions-cinms
+      - text: Snapping shrimp (CINMS)
+        href: sounds.html#snapping-shrimp-cinms
+      - text: Snapping shrimp (FKNMS)
+        href: sounds.html#snapping-shrimp-fknms
+      - text: Sperm whales (HIHWNMS)
+        href: sounds.html#sperm-whales-hihwnms
+    - text: Human-made
+      menu:
+      - text: Container Ships (CINMS)
+        href: sounds.html#container-ships-cinms
+      - text: Container Ships (HIHWNMS)
+        href: sounds.html#container-ships-hihwnms
+      - text: Explosions (FKNMS)
+        href: sounds.html#explosions-fknms
+      - text: Military sonar (CINMS)
+        href: sounds.html#military-sonar-cinms
+      - text: Military sonar (HIHWNMS)
+        href: sounds.html#military-sonar-hihwnms
+      - text: Other human-made (CINMS)
+        href: sounds.html#other-human-made-cinms
+      - text: Seal bombs (CINMS)
+        href: sounds.html#seal-bombs-cinms
+      - text: Smaller Boats (HIHWNMS)
+        href: sounds.html#smaller-boats-hihwnms
+      - text: Smaller Vessels (CINMS)
+        href: sounds.html#smaller-vessels-cinms
+      - text: Vessels (FKNMS)
+        href: sounds.html#vessels-fknms
+    - text: Physical
+      menu:
+      - text: Rain (FKNMS)
+        href: sounds.html#rain-fknms
+      - text: Rain (HIHWNMS)
+        href: sounds.html#rain-hihwnms
+      - text: Waves (FKNMS)
+        href: sounds.html#waves-fknms
+      - text: Wind (FKNMS)
+        href: sounds.html#wind-fknms
   - text: Stories
     icon: fa-newspaper-o
     menu:

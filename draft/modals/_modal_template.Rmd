@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo=F, message=F, warning=F, error=F)
 #   modal_title = "Seal bombs")
 #   modal_title = "Giant sea bass")
 
-source(here::here("functions.R"))
+source(here::here("draft/functions.R"))
 
 sight <- get_modal_file_tbl("Sight", params$sanctuary_code, params$modal_title)
 sound <- get_modal_file_tbl("Sound", params$sanctuary_code, params$modal_title)
