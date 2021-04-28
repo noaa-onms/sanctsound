@@ -52,11 +52,11 @@ modal_pages <- modals %>%
 if (redo_modals){
   modal_pages %>%
     # "Daily patterns" -> "Time series"
-    inner_join(
-      get_sheet("modals") %>% 
-        filter(tab_name == "Time series") %>% 
-        select(sanctuary_code, modal_title),
-      by = c("sanctuary_code", "modal_title")) %>% 
+    # inner_join(
+    #   get_sheet("modals") %>% 
+    #     filter(tab_name == "Time series") %>% 
+    #     select(sanctuary_code, modal_title),
+    #   by = c("sanctuary_code", "modal_title")) %>% 
     pwalk(render_modal)
 }
   
