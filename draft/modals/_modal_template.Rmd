@@ -1,6 +1,9 @@
 ---
 title: "`r params$modal_title` in `r params$sanctuary_code`"
 output: html_document
+# output:
+#   html_document:
+#     keep_md: yes
 params:
   sanctuary_code: "CINMS"
   #modal_title: "Dolphins"
@@ -49,7 +52,7 @@ if (nrow(ts) == 1)
 ```{r monthly, results = "asis"}
 monthly <- get_modal_file_tbl("Monthly patterns", params$sanctuary_code, params$modal_title)
 
-if (nrow(daily) == 1)
+if (nrow(monthly) == 1)
   glue("
   ### Monthly Patterns 
   

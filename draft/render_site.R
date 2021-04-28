@@ -39,6 +39,14 @@ if (redo_modals){
     #     filter(tab_name == "Time series") %>% 
     #     select(sanctuary_code, modal_title),
     #   by = c("sanctuary_code", "modal_title")) %>% 
+    # CINMS: Container Ships/Smaller Vessels: Monthly pattern -> Monthly patterns
+    inner_join(
+      get_sheet("modals") %>%
+        filter(
+          tab_name == "Monthly patterns",
+          !is.na(gdrive_shareable_link)) %>%
+        select(sanctuary_code, modal_title),
+      by = c("sanctuary_code", "modal_title")) %>%
     pwalk(render_modal)
 }
   
