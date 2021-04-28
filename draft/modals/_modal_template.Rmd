@@ -35,14 +35,14 @@ sound <- get_modal_file_tbl("Sound", params$sanctuary_code, params$modal_title)
 sight_sound_md(sight, sound)
 ```
 
-```{r daily, results = "asis"}
-daily <- get_modal_file_tbl("Daily patterns", params$sanctuary_code, params$modal_title)
+```{r ts, results = "asis"}
+ts <- get_modal_file_tbl("Time series", params$sanctuary_code, params$modal_title)
 
-if (nrow(daily) == 1)
+if (nrow(ts) == 1)
   glue("
-  ### Daily Patterns 
+  ### Time series
   
-  ![{daily$caption}]({daily$path_relative})
+  ![{ts$caption}]({ts$path_relative})
   ")
 ```
 

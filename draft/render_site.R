@@ -35,7 +35,7 @@ render_sanctuary <- function(code, name, type, ...){
 #sites <- sites %>% filter(code == "fknms")
 #sites <- sites %>% 
 sites %>% 
-  filter(code %in% c("hihwnms", "fknms")) %>% # "cinms","fknms","hihwnms"
+  # filter(code %in% c("hihwnms", "fknms")) %>% # "cinms","fknms","hihwnms"
   pwalk(render_sanctuary)
 
 # TODO: make update_sites_menu() so menu could be dynamic 
@@ -49,8 +49,17 @@ modal_pages <- modals %>%
     modal_html  = map2_chr(sanctuary_code, modal_title, modal_title_to_html_path)) %>% 
   select(sanctuary_code, modal_title, modal_html) # modal_pages 
 
-if (redo_modals)
-  pwalk(modal_pages, render_modal)
+if (redo_modals){
+  modal_pages %>%
+    # "Daily patterns" -> "Time series"
+    inner_join(
+      get_sheet("modals") %>% 
+        filter(tab_name == "Time series") %>% 
+        select(sanctuary_code, modal_title),
+      by = c("sanctuary_code", "modal_title")) %>% 
+    pwalk(render_modal)
+}
+  
 
 # *.Rmd's ----
 rmarkdown::render_site("./draft")
