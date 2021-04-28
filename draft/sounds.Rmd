@@ -2,7 +2,7 @@
 title: "All Sounds"
 output:
   html_document:
-    # keep_md: yes
+    keep_md: yes
     toc: true
     toc_depth: 4
     toc_float: true
@@ -37,7 +37,7 @@ for (cat in categories){ # cat = categories[1]
     distinct(sound_subcategory) %>% 
     pull(sound_subcategory)
     
-  for (subcat in subcategories){ # subcat = subcategories[4]
+  for (subcat in subcategories){ # subcat = subcategories[3]
     cat(glue("\n\n### {replace_na(subcat, 'Other')}\n\n", .trim = F))
     
     subcat_snds <- tbl_sounds %>% 
@@ -45,20 +45,19 @@ for (cat in categories){ # cat = categories[1]
         sound_category    == cat,
         sound_subcategory == subcat)
     
-    for (i in 1:nrow(subcat_snds)){
+    for (i in 1:nrow(subcat_snds)){ # i=1
+      cat("\n\n")
       with(
         subcat_snds[i,],
-        cat(glue(
-          "
+        cat(glue("
           #### {modal_title} ({sanctuary_code})
-          
-          <video controls>
+                    
+          <video width='360' height='240' controls>
           <source src='{snd_rel}' type='video/mp4'>
           Your browser does not support the video tag.
           </video>
-          {caption}
-          
-          ")))
+          {caption}")))
+      cat("\n\n")
     }
   }
 }
