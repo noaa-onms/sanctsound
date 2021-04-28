@@ -35,9 +35,7 @@ render_sanctuary <- function(code, name, type, ...){
 #sites <- sites %>% filter(code == "fknms")
 #sites <- sites %>% 
 sites %>% 
-  #filter(code == "hihwnms") %>% 
-  #filter(code == "cinms") %>% 
-  #filter(code == "fknms") %>% 
+  filter(code %in% c("hihwnms", "fknms")) %>% # "cinms","fknms","hihwnms"
   pwalk(render_sanctuary)
 
 # TODO: make update_sites_menu() so menu could be dynamic 
