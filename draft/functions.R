@@ -254,7 +254,8 @@ map_site <- function(site_code){
   sensors <- locations %>% 
     filter(
       sanctuary_id == site_code,
-      !is.na(lon), !is.na(lat)) %>% 
+      !is.na(lon), !is.na(lat),
+      use_for_map) %>% 
     mutate(
       popup_md   = glue("**{site_id}**: {tagline}"),
       popup_html = map_chr(popup_md, function(x) markdown::markdownToHTML(text = x, fragment.only=T))) %>% 
@@ -326,6 +327,24 @@ na_factor <- function(x, na_label = "Other"){
   y
 }
 
+render_sanctuary <- function(code, name, type, ...){
+  in_rmd  <- here("draft/_sanctuary_template.Rmd")
+  out_htm <- here(glue("draft/s_{code}.html"))
+  message(glue("RENDER SANCTUARY: {basename(in_rmd)} -> {basename(out_htm)}"))
+  
+  #browser()
+  
+  render(
+    input       = in_rmd, 
+    output_file = out_htm,
+    clean       = F,
+    params      = list(
+      main      = glue("{name} {type}"),
+      site_code = code,
+      # scenes tab in [sanctsound_website-content - Google Sheets](https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/edit#gid=0)                    
+      csv       = "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=modals",
+      svg       = glue("svg/{code}.svg")))
+  }
 render_modal <- function(sanctuary_code, modal_title, modal_html, rmd = here("draft/modals/_modal_template.Rmd")){
   
   message(glue("RENDER {basename(modal_html)}: {modal_title}"))
