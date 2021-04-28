@@ -43,6 +43,7 @@ Here is a map of listening device locations. Hover on a location to see its site
 source(here::here("draft/functions.R"))
 # params = list(site_code = "fknms", main = "Florida Keys National Marine Sanctuary")
 # params = list(site_code = "cinms", main = "Channel Islands National Marine Sanctuary")
+# params = list(site_code = "hihwnms", main = "Hawaiian Islands Humpback Whale National Marine Sanctuary")
 sanctuary_code = toupper(params$site_code)
 
 map_site(params$site_code)

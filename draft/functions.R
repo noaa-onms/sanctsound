@@ -249,10 +249,9 @@ map_site <- function(site_code){
   # site_code = "cinms"
   # site_code = "fknms"
   
-  # SanctSound_DeploymentLocations v2 - Google Sheet
-  sensors_csv = "https://docs.google.com/spreadsheets/d/1kU4mxt3W3fVd4T_L86ybxCkeaxILEZ1hmyu9r47X6JA/gviz/tq?tqx=out:csv&sheet=0"
+  locations <- get_sheet("locations")
   
-  sensors <- read_csv(sensors_csv, col_types = cols()) %>% 
+  sensors <- locations %>% 
     filter(
       sanctuary_id == site_code,
       !is.na(lon), !is.na(lat)) %>% 
