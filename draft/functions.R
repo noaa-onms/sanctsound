@@ -320,6 +320,11 @@ modal_title_to_html_path <- function(sanctuary_code, modal_title, pfx = here("dr
   
 }
 
+na_factor <- function(x, na_label = "Other"){
+  y <- factor(x, exclude=NULL)
+  levels(y)[is.na(levels(y))] <- na_label
+  y
+}
 
 render_modal <- function(sanctuary_code, modal_title, modal_html, rmd = here("draft/modals/_modal_template.Rmd")){
   

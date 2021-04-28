@@ -18,7 +18,11 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```{r, results='asis'}
 source("functions.R")
 
-tbl_sounds <- import_sounds()
+tbl_sounds <- import_sounds() %>% 
+  arrange(sound_category, sound_subcategory, modal_title, sanctuary_code)
+
+tbl_sounds$sound_category    <- na_factor(tbl_sounds$sound_category)
+tbl_sounds$sound_subcategory <- na_factor(tbl_sounds$sound_subcategory)
 
 categories <- tbl_sounds %>% 
   distinct(sound_category) %>% 
@@ -33,8 +37,8 @@ for (cat in categories){ # cat = categories[1]
     distinct(sound_subcategory) %>% 
     pull(sound_subcategory)
     
-  for (subcat in subcategories){
-    cat(glue("\n\n### {subcat}\n\n", .trim = F))
+  for (subcat in subcategories){ # subcat = subcategories[4]
+    cat(glue("\n\n### {replace_na(subcat, 'Other')}\n\n", .trim = F))
     
     subcat_snds <- tbl_sounds %>% 
       filter(
