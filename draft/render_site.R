@@ -17,7 +17,7 @@ sites <- read_csv(here("draft/data/nms_sites.csv"), col_types = cols()) %>%
 #sites <- sites %>% filter(code == "fknms")
 #sites <- sites %>% 
 sites %>% 
-  filter(code %in% c("cinms","hihwnms")) %>% # "cinms","fknms","hihwnms"
+  # filter(code %in% c("cinms","hihwnms")) %>% # "cinms","fknms","hihwnms"
   pwalk(render_sanctuary)
 
 # TODO: make update_sites_menu() so menu could be dynamic 
@@ -33,20 +33,30 @@ modal_pages <- modals %>%
 
 if (redo_modals){
   modal_pages %>%
-    # "Daily patterns" -> "Time series"
+    # "Time series"
     # inner_join(
-    #   get_sheet("modals") %>% 
-    #     filter(tab_name == "Time series") %>% 
+    #   get_sheet("modals") %>%
+    #     filter(
+    #       tab_name == "Time series",
+    #       !is.na(gdrive_shareable_link)) %>%
     #     select(sanctuary_code, modal_title),
-    #   by = c("sanctuary_code", "modal_title")) %>% 
-    # CINMS: Container Ships/Smaller Vessels: Monthly pattern -> Monthly patterns
+    #   by = c("sanctuary_code", "modal_title")) %>%
+    # "Daily patterns"
     inner_join(
       get_sheet("modals") %>%
         filter(
-          tab_name == "Monthly patterns",
+          tab_name == "Daily patterns",
           !is.na(gdrive_shareable_link)) %>%
         select(sanctuary_code, modal_title),
       by = c("sanctuary_code", "modal_title")) %>%
+    # CINMS: Container Ships/Smaller Vessels: Monthly pattern -> Monthly patterns
+    # inner_join(
+    #   get_sheet("modals") %>%
+    #     filter(
+    #       tab_name == "Monthly patterns",
+    #       !is.na(gdrive_shareable_link)) %>%
+    #     select(sanctuary_code, modal_title),
+    #   by = c("sanctuary_code", "modal_title")) %>%
     pwalk(render_modal)
 }
   

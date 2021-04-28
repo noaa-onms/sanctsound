@@ -204,7 +204,7 @@ get_modal_file_tbl <- function(
   modal_title    = params$modal_title){
   
   # tab_name = "Sight"; sanctuary_code = params$sanctuary_code; modal_title = params$modal_title
-  
+
   tbl <- modals %>% 
     filter(
       sanctuary_code == !!sanctuary_code,
