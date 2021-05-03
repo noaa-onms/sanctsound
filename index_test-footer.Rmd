@@ -1,0 +1,69 @@
+---
+title: "index_test-footer"
+output: html_document
+---
+
+```{css, echo=FALSE}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding: 20px 0;
+}
+```
+
+```{js, echo=FALSE}
+$(function() {
+  $('.main-container').after($('.footer'));
+})
+```
+
+Yay, this works!
+
+* [Include option for placing footer outside the main container · Issue #1761 · rstudio/rmarkdown](https://github.com/rstudio/rmarkdown/issues/1761#issuecomment-574875775)
+
+```
+---
+title: "A sticky footer"
+output: html_document
+---
+
+```{css, echo=FALSE}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding: 20px 0;
+}
+```
+
+```{js, echo=FALSE}
+$(function() {
+  $('.main-container').after($('.footer'));
+})
+```
+
+::: {.footer .text-muted .bg-info}
+Place your content here
+:::
+```
+
+::: {.footer .text-muted .bg-info}
+Place your content here
+:::

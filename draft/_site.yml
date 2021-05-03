@@ -194,6 +194,8 @@ navbar:
 output:
   html_document:
     # theme: yeti
+    # to avoid: [navbar-right flex css · Issue #316 · rstudio/flexdashboard](https://github.com/rstudio/flexdashboard/issues/316)
+    # get latest: devtools::install_github("rstudio/bslib")
     theme:
       version: 4
       bootswatch: yeti

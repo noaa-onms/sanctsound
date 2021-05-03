@@ -127,7 +127,17 @@
   top: 138px;
 }
 
-footer {
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 234px;
+}
+
+#footer {
     font-family: Roboto,sans-serif;
     background-color: #020e38;
     background-image: url(//ioos.us/images/bg_footer.png);
@@ -135,12 +145,15 @@ footer {
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    margin-top: 50px;
-    position: relative;
+    margin-top: 10px;
+    position: absolute;
+    width: 100%;
+    height: 234px;
+    padding: 20px 0;
     /*
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -149,18 +162,18 @@ footer {
     */
 }
 
-footer p{
+#footer p{
 	font-size:14px;
 }
 
-footer>.container>.row>.col-md-3 a {
+#footer>.container>.row>.col-md-3 a {
     color: #55d6f8;
     display: block;
     padding-bottom: 24px;
     transition: all .3s ease
 }
 
-footer>.container>.row>.col-md-3 a:hover {
+#footer>.container>.row>.col-md-3 a:hover {
     text-decoration: none;
     color: #fff!important
 }
@@ -238,7 +251,7 @@ footer>.container>.row>.col-md-3 a:hover {
     padding-top: 50px
 }
 
-footer path {
+#footer path {
     fill: #003087
 }
 
