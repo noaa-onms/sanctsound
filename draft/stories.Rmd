@@ -29,6 +29,8 @@ for (rgn in regions){ # rgn = regions[1]
   if (nrow(rgn_stories) == 0) 
     next()
   
+  # TODO: try fixing order w/ basic container layout: 
+  #   https://stackoverflow.com/questions/45687419/bootstrap-4-card-columns-behaviour
   cat(glue("\n\n\n## {rgn}\n\n<div class='card-columns'>\n\n", .trim = F))
   
   rgn_stories %>% 
