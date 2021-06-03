@@ -193,10 +193,11 @@ navbar:
       href: z_stream-plots.html
 output:
   html_document:
-    theme: yeti
-    # theme:
-    #   version: 4
-    #   bootswatch: 
+    theme:
+      version: 4
+      bootswatch: yeti
+      primary: '#013088'
+      secondary: '#FFF'
     css: libs/styles.css
     self_contained: no
     lib_dir: site_libs

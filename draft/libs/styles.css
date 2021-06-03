@@ -1,3 +1,58 @@
+/*
+.card-1h{
+  height:200px;
+}
+
+.card-2h{
+  height:418px;
+}
+
+.card-columns .card {
+  column-gap: 0 !important;
+  margin-bottom: 0 !important;
+}
+*/
+
+.card-columns {
+  column-gap: 0;      /* 0.25rem; */
+}
+.card-columns .card {
+  margin-bottom: 0; /* 0.75rem; */
+}
+
+.card-hov:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card-img-wrap div h4 {
+  color: Coral;
+  font-weight: bold;
+}
+
+.card-img-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.card-img-wrap:after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.3);
+  opacity: 0;
+  transition: opacity .25s;
+}
+.card-img-wrap img {
+  transition: transform .25s;
+  width: 100%;
+}
+.card-img-wrap:hover img {
+  transform: scale(1.2);
+}
+.card-img-wrap:hover:after {
+  opacity: 1;
+}
+
 .tooltip {
   position: absolute;
   text-align: center;
@@ -57,7 +112,7 @@
 }
 
 .navbar-inverse {
-    background-color: #013088;
+    background-color: #013088 !important;
     box-shadow: none;
     border: none;
 }
@@ -86,43 +141,57 @@
   top: 138px;
 }
 
-footer {
-    font-family: Roboto,sans-serif;
-    background-color: #020e38;
-    background-image: url(//ioos.us/images/bg_footer.png);
-    /* background-image: url("images/bg_footer.png"); */
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    margin-top: 50px;
-    position: relative;
-    /*
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    padding: 20px 0;
-    */
+
+html {
+  position: relative;
+  min-height: 100%;
 }
 
-footer p{
+body {
+  margin-bottom: 234px;
+}
+
+#footer {
+  font-family: Roboto,sans-serif;
+  background-color: #020e38;
+  background-image: url("https://ioos.us/images/bg_footer.png");
+  /* background-image: url("images/bg_footer.png"); */
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 10px;
+  position: absolute;
+  width: 100%;
+  height: 234px;
+  padding: 20px 0;
+  /*
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding: 20px 0;
+  */
+}
+
+#footer p{
 	font-size:14px;
 }
 
-footer>.container>.row>.col-md-3 a {
-    color: #55d6f8;
-    display: block;
-    padding-bottom: 24px;
-    transition: all .3s ease
+#footer a{
+  color: #55d6f8;
+  display: block;
+  /*padding-bottom: 24px; */
+  transition: all .3s ease
 }
 
-footer>.container>.row>.col-md-3 a:hover {
+#footer a:hover {
     text-decoration: none;
     color: #fff!important
 }
+
 
 #footer-col-3 .txt {
     line-height: 14px;
@@ -135,13 +204,14 @@ footer>.container>.row>.col-md-3 a:hover {
 
 #footer-col-2 {
     margin-left: 0;
-    margin-right: -20px
+    margin-right: -20px;
+    padding-left: 50px;
 }
 
 #footer-col-2 h5,#footer-col-3 h5 {
     color: #fff;
-    padding-top: 40px;
-    padding-bottom: 16px;
+    /* padding-top: 40px; 
+       padding-bottom: 16px; */
     font-size: 20px;
     font-weight: 400;
     font-family: 'Roboto Slab',Roboto,Times,serif!important
@@ -174,13 +244,13 @@ footer>.container>.row>.col-md-3 a:hover {
 }
 
 #footer-col-4 {
-    background-image: url(//ioos.us/images/logo-ioos-white.png);
-    background-position: 0 50px;
-    background-repeat: no-repeat;
-    background-size: 72px;
-    color: #fff;
-    line-height: 16px;
-    padding-left: 120px
+  background-image: url("https://ioos.us/images/logo-ioos-white.png");
+  background-position: 0 50px;
+  background-repeat: no-repeat;
+  background-size: 72px;
+  color: #fff;
+  line-height: 16px;
+  padding-left: 120px
 }
 
 #footer-col-4 a.btn {
@@ -194,10 +264,10 @@ footer>.container>.row>.col-md-3 a:hover {
 }
 
 #footer-col-4>div {
-    padding-top: 50px
+  /* padding-top: 50px */
 }
 
-footer path {
+#footer path {
     fill: #003087
 }
 

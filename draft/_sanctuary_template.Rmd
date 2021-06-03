@@ -12,7 +12,7 @@ output:
     mathjax: null
     self_contained: false    
     css: 
-      - libs/masonry.css
+      #- libs/masonry.css
       - libs/styles.css
 editor_options: 
   chunk_output_type: console
@@ -166,52 +166,17 @@ snc_stories <- tbl_stories %>%
   
 if (nrow(snc_stories) > 0){
 
-  cat(glue("\n\n<div class='grid'>\n\n", .trim = F))
+  cat(glue("\n\n<div class='card-columns'>\n\n", .trim = F))
   
   snc_stories %>% 
-    pmap_chr(story_grid_item) %>% 
+    pmap_chr(story_card) %>% 
     paste(collapse = "\n\n") %>% 
     cat()
   
   cat("\n\n</div>\n\n")
+
 }
 ```
-
-<script>
-// Getting Bootstrap Tabs to Play Nice with Masonry
-// https://www.sitepoint.com/bootstrap-tabs-play-nice-with-masonry/
-
-function gridMasonryLayoutForTabset() {
-  
-  /*
-  var $container = $('.grid');
-  $container.imagesLoaded( function () {
-    $container.masonry({
-      columnWidth: 200,
-      itemSelector: '.grid-item'
-    });   
-  });  
-  */
-  
-  //Reinitialize masonry inside each panel after the relative tab link is clicked
-  $('a[data-toggle=tab]').each(function () {
-    var $this = $(this);
-  
-    $this.on('shown.bs.tab', function () {
-      var $container = $('.grid');
-      $container.imagesLoaded( function () {
-        $container.masonry({
-          columnWidth: 200,
-          itemSelector: '.grid-item'
-        });   
-      });  
-    });
-  });
-}
-$(document).ready(function () {
-  gridMasonryLayoutForTabset();
-});
-</script>
 
 
 

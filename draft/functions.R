@@ -454,6 +454,16 @@ story_grid_item <- function(title, img_rel, story_link, ...){
       </div>")
   }
 }
+
+story_card <- function(title, img_rel, story_link, ...){
+  a <- ""
+  if(!is.na(story_link))
+    a <- "<a href='{story_link}' class='stretched-link'></a>"
+  glue("
+    <div class='card card-img-wrap'><img class='card-img' src='{img_rel}'>{a}</div>") %>% 
+    HTML() # .noWS="outside")
+
+}
 update_sounds_menu <- function(){
   
   tbl_sounds <- import_sounds()

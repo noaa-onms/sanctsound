@@ -4,7 +4,7 @@ subtitle: "Exploring underwater sounds within US national marine sanctuaries"
 output:
   html_document:
     css: 
-      - libs/tiles.css
+      #- libs/tiles.css
       - libs/styles.css
 ---
 
@@ -12,33 +12,9 @@ output:
 knitr::opts_chunk$set(echo = F, warning = F, message = F)
 ```
 
-<div class="tiles">
-<div class="tile-what overlay-tile">
-  <a href="q_what-hear.html"> 
-  <h4>What did we hear?</h4>
-  </a>
-  </div>
-<div class="tile-listen">
-  <a href="q_how-listen.html">
-  <h4>How did we listen?</h4>
-  </a>
-  </div>
-<div class="tile-measure">
-  <a href="q_what-measure.html"> 
-  <h4>What did we measure?</h4>
-  </a>
-  </div>
-<div class="tile-far">
-  <a href="q_how-far.html"> 
-  <h4>How far could we hear?</h4>
-  </a>
-  </div>
-<div class="tile-learn">
-  <a href="q_what-learn.html">
-  <h4>What did we learn?</h4>
-  </a>
-  </div>
-</div>
+```{r cards}
+htmltools::includeHTML("_cards.html")
+```
 
 NOAA and the U.S. Navy are working to better understand underwater sound within the National Marine Sanctuary System. For the next few years, these agencies will work with numerous scientific partners to study sound within seven national marine sanctuaries and one marine national monument, which includes waters off Hawai'i and the east and west coasts. Standardized measurements will assess sounds produced by marine animals, physical processes (e.g., wind and waves), and human activities. Collectively, this information will help NOAA and the Navy measure sound levels and baseline acoustic conditions in sanctuaries. This work is a continuation of ongoing [Navy](https://www.navy.mil) and NOAA monitoring and research, including efforts by [NOAA's Office of National Marine Sanctuaries](https://sanctuaries.noaa.gov).
 
