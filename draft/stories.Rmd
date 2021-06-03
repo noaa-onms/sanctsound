@@ -6,94 +6,36 @@ output:
     toc_depth: 2
     toc_float: true
     css: 
-      - libs/masonry.css
-      - libs/styles.css      
+      - libs/styles.css
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```
 
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-
 ```{r, results='asis'}
 source("functions.R")
-
-# rm(stories)
 
 tbl_stories <- import_stories()
 
 regions <- tbl_stories %>% 
   distinct(region) %>% 
-  # arrange(desc(region)) %>% 
   pull(region)
 
-for (rgn in regions){
+for (rgn in regions){ # rgn = regions[1]
   rgn_stories <- tbl_stories %>% 
     filter(region == rgn)
   
   if (nrow(rgn_stories) == 0) 
     next()
   
-  cat(glue("\n\n\n## {rgn}\n\n<div class='grid'>\n\n", .trim = F))
+  cat(glue("\n\n\n## {rgn}\n\n<div class='card-columns'>\n\n", .trim = F))
   
   rgn_stories %>% 
-    pmap_chr(story_grid_item) %>% 
+    pmap_chr(story_card) %>% 
     paste(collapse = "\n\n") %>% 
     cat()
   
   cat("\n\n</div>\n\n")
 }
 ```
-
-<!--
-# OLD ways of loading that stacked images over one another
-<script>
-$('.grid').masonry({
-  // options
-  itemSelector: '.grid-item',
-  columnWidth: 200
-});
-</script>
-
-<script>
-$('.grid').each(function( idx ) {
-  $( this ).masonry({
-    // options
-    itemSelector: '.grid-item',
-    columnWidth: 200 
-    // position: 'static'
-  });
-});
-</script>
--->
-
-<script>
-var $container = $('.grid');
-$container.imagesLoaded( function () {
-  $container.masonry({
-    columnWidth: 200,
-    itemSelector: '.grid-item'
-  });   
-});  
-</script>
-
-```{r, eval=F}
-DT::datatable(tbl_stories)
-```
-
-<!--
-- Overall
-  - How loud is my sanctuary?
-  - COVID-19 signals/impacts
-- East Coast
-  - Baleen whale & dolphin regional presence
-  - COVID-19 signals/impacts
-- Pacific Islands
-  - Humpback whale-song occurrence
-  - Human-made sound occurence
-- West Coast
-  - Ships & whales in OCNMS
-  - Seal bombs in Monterey
--->

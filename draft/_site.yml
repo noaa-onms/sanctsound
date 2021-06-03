@@ -52,8 +52,6 @@ navbar:
       menu:
       - text: Black grouper (FKNMS)
         href: sounds.html#black-grouper-fknms
-      - text: Blue whales (CINMS)
-        href: sounds.html#blue-whales-cinms
       - text: Bocaccio (CINMS)
         href: sounds.html#bocaccio-cinms
       - text: Dolphins (CINMS)
@@ -193,16 +191,11 @@ navbar:
       href: z_stream-plots.html
 output:
   html_document:
-    # theme: yeti
-    # to avoid: [navbar-right flex css · Issue #316 · rstudio/flexdashboard](https://github.com/rstudio/flexdashboard/issues/316)
-    # get latest: devtools::install_github("rstudio/bslib")
     theme:
       version: 4
       bootswatch: yeti
-      #bg: "white"
-      #fg: "black"
-      primary: "#013088"
-      secondary: "#FFF"
+      primary: '#013088'
+      secondary: '#FFF'
     css: libs/styles.css
     self_contained: no
     lib_dir: site_libs
