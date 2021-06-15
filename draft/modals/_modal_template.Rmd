@@ -24,9 +24,9 @@ knitr::knit_meta_add(list(rmarkdown::html_dependency_font_awesome()))
 ## {.tabset}
 
 ```{r sight_sound, results = "asis"}
-params <- list(
-  sanctuary_code = "CINMS",
-    modal_title = "Humpback whales")
+# params <- list(
+#   sanctuary_code = "CINMS",
+#     modal_title = "Humpback whales")
 #   modal_title = "Blue whales")
 #   modal_title = "Fin whales")
 #   modal_title = "Seal bombs")
@@ -59,6 +59,17 @@ if (nrow(daily) == 1)
   ### Daily Patterns 
   
   ![{daily$caption}]({daily$path_relative})
+  ")
+```
+
+```{r hourly, results = "asis"}
+hourly <- get_modal_file_tbl("Hourly patterns", params$sanctuary_code, params$modal_title)
+
+if (nrow(hourly) == 1)
+  glue("
+  ### Hourly Patterns 
+  
+  ![{hourly$caption}]({hourly$path_relative})
   ")
 ```
 
