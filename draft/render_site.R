@@ -33,6 +33,9 @@ modal_pages <- modals %>%
 
 if (redo_modals){
   modal_pages %>%
+    filter(
+      sanctuary_code == "CINMS",
+      modal_title    == "Humpback whales") %>% 
     # "Time series"
     # inner_join(
     #   get_sheet("modals") %>%
@@ -42,13 +45,13 @@ if (redo_modals){
     #     select(sanctuary_code, modal_title),
     #   by = c("sanctuary_code", "modal_title")) %>%
     # "Daily patterns"
-    inner_join(
-      get_sheet("modals") %>%
-        filter(
-          tab_name == "Daily patterns",
-          !is.na(gdrive_shareable_link)) %>%
-        select(sanctuary_code, modal_title),
-      by = c("sanctuary_code", "modal_title")) %>%
+    # inner_join(
+    #   get_sheet("modals") %>%
+    #     filter(
+    #       tab_name == "Daily patterns",
+    #       !is.na(gdrive_shareable_link)) %>%
+    #     select(sanctuary_code, modal_title),
+    #   by = c("sanctuary_code", "modal_title")) %>%
     # CINMS: Container Ships/Smaller Vessels: Monthly pattern -> Monthly patterns
     # inner_join(
     #   get_sheet("modals") %>%

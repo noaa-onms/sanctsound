@@ -1,0 +1,10 @@
+html_document:
+  theme:
+    version: 4
+    bootswatch: yeti
+    primary: '#013088'
+    secondary: '#FFF'
+  self_contained: no
+  lib_dir: modal_libs
+  mathjax: ~
+  css: _modal_styles.css

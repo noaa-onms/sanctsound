@@ -7,10 +7,10 @@ output: html_document
 params:
   sanctuary_code: "CINMS"
   #modal_title: "Dolphins"
-  #modal_title: "Humpback whales"
+  modal_title: "Humpback whales"
   #modal_title: "Bocaccio"
   #modal_title: "Fin whales"
-  modal_title: "Blue whales"
+  # modal_title: "Blue whales"
   #modal_title: "Seal bombs"
   #modal_title: "Giant sea bass"
 editor_options: 
@@ -24,10 +24,10 @@ knitr::knit_meta_add(list(rmarkdown::html_dependency_font_awesome()))
 ## {.tabset}
 
 ```{r sight_sound, results = "asis"}
-# params <- list(
-#   sanctuary_code = "CINMS",
+params <- list(
+  sanctuary_code = "CINMS",
+    modal_title = "Humpback whales")
 #   modal_title = "Blue whales")
-#   modal_title = "Humpback whales")
 #   modal_title = "Fin whales")
 #   modal_title = "Seal bombs")
 #   modal_title = "Giant sea bass")

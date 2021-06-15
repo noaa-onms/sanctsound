@@ -738,17 +738,17 @@ sight_sound_md <- function(sight, sound, type = "header"){
       "
       ### Sights & Sounds
       
-      <div class='row'>
+      <div class='container'><div class='row'>
       
-      <div class='col-xs-6'>
+      <div class='col'>
         {md_sight}
       </div>
       
-      <div class='col-xs-6'>
+      <div class='col'>
         {md_sound}
       </div>
       
-      </div>
+      </div></div>
       ")
   if (has_sight & !has_sound)
     md <- glue(
