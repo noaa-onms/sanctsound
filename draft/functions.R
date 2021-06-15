@@ -549,10 +549,11 @@ update_stories_menu <- function(){
   write_yaml(site, here("draft/_site.yml"))
 }
 
-gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_pfx = "../", redo = F){
+gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_pfx = "../", redo = F, skip_spectrogram = F){
   
   # gdrive_shareable_link <- "https://drive.google.com/file/d/1_wWLplFmhEAEqmbsTA0D85yuAhmapc5a/view?usp=sharing"
   # gdrive_shareable_link <- tbl$gdrive_shareable_link; get_relative_path = T; redo = F
+  # gdrive_shareable_link <- sound$sound_enhancement; get_relative_path = T; relative_pfx = "../", redo = F, skip_spectrogram = T; redo = F
   
   regex <- ifelse(
     str_detect(gdrive_shareable_link, "/file/"),
@@ -578,7 +579,7 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_p
   if (!file.exists(path) | redo)
     drive_download(as_id(gid), path)
   
-  if (path_ext(path) %in% c("mp3","wav")){
+  if (path_ext(path) %in% c("mp3","wav") & !skip_spectrogram){
     
     # path <- "/Users/bbest/github/sanctsound/files/SanctSound_CI02_01_HumpbackWhale_20181103T074755.wav"
     # path = "/Users/bbest/github/sanctsound/files/output.mp3"
@@ -704,15 +705,34 @@ update_modal_imgs_snds <- function(modals_csv = modals_csv){
 
 sight_sound_md <- function(sight, sound, type = "header"){
   
-  has_sight = F
-  has_sound = F
+  has_sight          = F
+  has_sound          = F
+  has_sound_enhanced = F
   if (nrow(sight) > 0) has_sight = T
   if (nrow(sound) > 0) has_sound = T
   
   if(nrow(sound) == 1 && is.na(sound$caption))
     sound$caption <- ""
   
-  md <- ""
+  md       <- ""
+  md_sight <- glue("![{sight$caption}]({sight$path_relative})")
+  md_sound <- glue("
+    <video controls>
+    <source src='{sound$path_relative}' type='video/mp4'>
+    Your browser does not support the video tag.
+    </video>
+    {sound$caption}")
+  
+  if (has_sound && !is.na(sound$sound_enhancement)){
+    snd_enh_lnk <- gdrive2path(sound$sound_enhancement, skip_spectrogram=T)
+    md_sound <- glue("
+      {md_sound}\
+      \
+      <i class='fas fa-assistive-listening-systems fa-3x'></i> <audio controls><source src='{snd_enh_lnk}' type='audio/wav'>Your browser does not support the audio element.</audio>\
+      \
+      Listen to the same sound clip optimized for human hearing. Many ocean animals can hear sounds that humans cannot, learn more <a href='..' target='_blank'>here<a/>.")
+  }
+
   if (has_sound & has_sight)
     md <- glue(
       "
@@ -721,15 +741,11 @@ sight_sound_md <- function(sight, sound, type = "header"){
       <div class='row'>
       
       <div class='col-xs-6'>
-        ![{sight$caption}]({sight$path_relative})
+        {md_sight}
       </div>
       
       <div class='col-xs-6'>
-        <video controls>
-        <source src='{sound$path_relative}' type='video/mp4'>
-        Your browser does not support the video tag.
-        </video>
-        {sound$caption}
+        {md_sound}
       </div>
       
       </div>
@@ -739,18 +755,14 @@ sight_sound_md <- function(sight, sound, type = "header"){
       "
       ### Sights
       
-      ![{sight$caption}]({sight$path_relative})
+      {md_sight}
       ")
   if (has_sound & !has_sight)
     md <- glue(
       "
       ### Sounds
       
-      <video controls>
-      <source src='{sound$path_relative}' type='video/mp4'>
-      Your browser does not support the video tag.
-      </video>
-      {sound$caption}
+      {md_sound}
       ")
 
   #browser()

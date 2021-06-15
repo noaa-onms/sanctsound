@@ -1,0 +1,16 @@
+---
+title: "Software"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+* [Marine Bioacoustics Research Collaborative](https://github.com/MarineBioAcousticsRC)
+  * [Airgun-Detector](https://github.com/MarineBioAcousticsRC/Airgun-Detector): Scripps Acoustic Ecology Lab - Tool for detecting airguns in decimated acoustic data.
+  * [DetEdit](https://github.com/MarineBioAcousticsRC/DetEdit): A graphical user interface for annotating and editing events detected in long-term acoustic monitoring data
+  * [Explosions-Detector](https://github.com/MarineBioAcousticsRC/Explosions-Detector): Tool for detecting explosions in decimated acoustic data.
+  * [GPLReview](https://github.com/MarineBioAcousticsRC/GPLReview): A graphical user interface for evaluating and editing individual, low-frequency acoustic events.
+  * [Triton](https://github.com/MarineBioAcousticsRC/Triton): Scripps Whale Acoustics Lab Scripps Acoustic Ecology Lab - Triton with remoras in development
+

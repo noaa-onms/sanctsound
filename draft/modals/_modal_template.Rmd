@@ -18,6 +18,7 @@ editor_options:
 ---
 ```{r, include=F}
 knitr::opts_chunk$set(echo=F, message=F, warning=F, error=F)
+knitr::knit_meta_add(list(rmarkdown::html_dependency_font_awesome()))
 ```
 
 ## {.tabset}

@@ -169,8 +169,14 @@ navbar:
         href: stories.html#west-coast
       - text: Vocalizing patterns of resident killer whales (OCNMS)
         href: stories.html#west-coast
+  - text: Fun
+    icon: fa-grin
+    href: fun.html
+  - text: Software
+    icon: fa-code
+    href: software.html
   - text: Statistics
-    icon: fa-bar-chart
+    icon: fa-chart-bar
     menu:
     - text: Statistics home
       href: stats.html
