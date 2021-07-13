@@ -17,8 +17,3 @@ knitr::opts_chunk$set(echo = TRUE)
     - Fish Detector: Detection of bocaccio calls
     - [GPLReview](https://github.com/MarineBioAcousticsRC/GPLReview): A graphical user interface for evaluating and editing acoustic detections (mostly used for low-frequency data).
   * [DetEdit](https://github.com/MarineBioAcousticsRC/DetEdit): A graphical user interface for annotating and editing events detected in long-term acoustic monitoring data
-
-
-  * [DetEdit](https://github.com/MarineBioAcousticsRC/DetEdit): A graphical user interface for annotating and editing events detected in long-term acoustic monitoring data
-  * [GPLReview](https://github.com/MarineBioAcousticsRC/GPLReview): A graphical user interface for evaluating and editing individual, low-frequency acoustic events.
-
