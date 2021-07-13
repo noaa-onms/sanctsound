@@ -6,11 +6,19 @@ title: "Software"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
+* [Marina](https://github.com/NEFSC/READ-PSB-Marina): Matlab GUI that houses all apps by the Passive Acoustic Research Group at the Northeast Fisheries Science Center
 * [Marine Bioacoustics Research Collaborative](https://github.com/MarineBioAcousticsRC)
-  * [Airgun-Detector](https://github.com/MarineBioAcousticsRC/Airgun-Detector): Scripps Acoustic Ecology Lab - Tool for detecting airguns in decimated acoustic data.
+  * [Triton](https://github.com/MarineBioAcousticsRC/Triton): Triton with Remoras in development
+    - Soundscape Metrics: Calculation of binned power spectral density and band level products.
+    - Logger: Manual logging of acoustic events.
+    - [Airgun-Detector](https://github.com/MarineBioAcousticsRC/Airgun-Detector): Detection of airgun shots in decimated acoustic data.
+    - [Explosions-Detector](https://github.com/MarineBioAcousticsRC/Explosions-Detector): Detection of explosions in decimated acoustic data.
+    - Blue Whale Detector: Detection of blue whale north-eastern Pacific B calls
+    - Fish Detector: Detection of bocaccio calls
+    - [GPLReview](https://github.com/MarineBioAcousticsRC/GPLReview): A graphical user interface for evaluating and editing acoustic detections (mostly used for low-frequency data).
   * [DetEdit](https://github.com/MarineBioAcousticsRC/DetEdit): A graphical user interface for annotating and editing events detected in long-term acoustic monitoring data
-  * [Explosions-Detector](https://github.com/MarineBioAcousticsRC/Explosions-Detector): Tool for detecting explosions in decimated acoustic data.
+
+
+  * [DetEdit](https://github.com/MarineBioAcousticsRC/DetEdit): A graphical user interface for annotating and editing events detected in long-term acoustic monitoring data
   * [GPLReview](https://github.com/MarineBioAcousticsRC/GPLReview): A graphical user interface for evaluating and editing individual, low-frequency acoustic events.
-  * [Triton](https://github.com/MarineBioAcousticsRC/Triton): Scripps Whale Acoustics Lab Scripps Acoustic Ecology Lab - Triton with remoras in development
 

@@ -730,7 +730,7 @@ sight_sound_md <- function(sight, sound, type = "header"){
       \
       <i class='fas fa-assistive-listening-systems fa-3x'></i> <audio controls><source src='{snd_enh_lnk}' type='audio/wav'>Your browser does not support the audio element.</audio>\
       \
-      Listen to the same sound clip optimized for human hearing. Many ocean animals can hear sounds that humans cannot, learn more <a href='..' target='_blank'>here<a/>.")
+      Listen to the same sound clip optimized for human hearing. Many ocean animals can hear and produce sounds that humans cannot, learn more <a href='..' target='_blank'>here<a/>.")
   }
 
   if (has_sound & has_sight)
