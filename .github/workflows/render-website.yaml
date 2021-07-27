@@ -1,0 +1,50 @@
+name: render-website
+
+on:
+  # push:
+  schedule:            
+  - cron: '0 0 * * *' # once per day
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    if: "!contains(github.event.head_commit.message, '[skip ${{ github.workflow }}]')"
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GOOGLE_SA: ${{ secrets.GOOGLE_SA }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v1
+
+      - name: Install pandoc
+        run: |
+          brew install pandoc
+
+      - name: Cache Renv packages
+        uses: actions/cache@v2
+        with:
+          path: $HOME/.local/share/renv
+          key: r-${{ hashFiles('renv.lock') }}
+          restore-keys: r-
+
+      - name: Install packages
+        run: |
+          R -e 'install.packages("renv")'
+          R -e 'renv::restore()'
+
+      - name: Render Rmarkdown website
+        run: |
+          Rscript -e 'setwd("draft");source("render_site.R")'
+
+      - name: Commit results
+        run: |
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git commit -am "∆'s from github.workflow ${{ github.workflow }} [skip ${{ github.workflow }}]" || echo "No changes to commit"
+          git push origin || echo "No changes to commit

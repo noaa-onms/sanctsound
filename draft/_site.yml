@@ -45,7 +45,7 @@ navbar:
   - text: Sounds
     icon: fa-file-audio
     menu:
-    - text: All Sounds
+    - text: Example Sounds
       href: sounds.html
     - text: '---------'
     - text: Animal

@@ -13,19 +13,20 @@
 
 <title>How did we listen?</title>
 
+<script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <link href="site_libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
-<script src="site_libs/bs3compat-0.2.4.9003/tabs.js"></script>
-<script src="site_libs/bs3compat-0.2.4.9003/bs3compat.js"></script>
+<script src="site_libs/bs3compat-0.2.5.1/tabs.js"></script>
+<script src="site_libs/bs3compat-0.2.5.1/bs3compat.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <div class="custom-header"><div><div class="wrap"><div><div class="custom-logo">
-	<a href="https://ioos.us/"><img src="https://cdn.ioos.noaa.gov/media/2017/12/IOOS_logo.png" class="img-responsive"></a>
+	<a href="https://ioos.us/"><img src="https://cdn.ioos.noaa.gov/media/2017/12/IOOS_logo.png" class="img-responsive d-block"></a>
 </div></div></div></div></div>
 
 <style type="text/css">
@@ -35,7 +36,8 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-    </style>
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
@@ -238,14 +240,14 @@ $(document).ready(function () {
       <ul class="nav navbar-nav">
         <li>
   <a href="index.html">
-    <span class="fas fa-home"></span>
+    <span class="fa fa-home"></span>
      
     Home
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-question"></span>
+    <span class="fa fa-question"></span>
      
     Questions
      
@@ -271,7 +273,7 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-globe"></span>
+    <span class="fa fa-globe"></span>
      
     Sanctuaries
      
@@ -310,7 +312,7 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-file-audio"></span>
+    <span class="fa fa-file-audio"></span>
      
     Sounds
      
@@ -318,7 +320,7 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="sounds.html">All Sounds</a>
+      <a href="sounds.html">Example Sounds</a>
     </li>
     <li class="divider"></li>
     <li class="dropdown-submenu">
@@ -430,7 +432,7 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-newspaper-o"></span>
+    <span class="fa fa-newspaper-o"></span>
      
     Stories
      
@@ -517,9 +519,23 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
+<li>
+  <a href="fun.html">
+    <span class="fa fa-grin"></span>
+     
+    Fun
+  </a>
+</li>
+<li>
+  <a href="software.html">
+    <span class="fa fa-code"></span>
+     
+    Software
+  </a>
+</li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-bar-chart"></span>
+    <span class="fa fa-chart-bar"></span>
      
     Statistics
      
@@ -632,6 +648,7 @@ $(function() {
   $('.main-container').after($('.footer'));
 })
 </script>
+
 
 
 

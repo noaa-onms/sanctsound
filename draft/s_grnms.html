@@ -13,12 +13,13 @@
 
 <title>Gray’s Reef National Marine Sanctuary</title>
 
+<script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <link href="site_libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
-<script src="site_libs/bs3compat-0.2.4.9003/tabs.js"></script>
-<script src="site_libs/bs3compat-0.2.4.9003/bs3compat.js"></script>
+<script src="site_libs/bs3compat-0.2.5.1/tabs.js"></script>
+<script src="site_libs/bs3compat-0.2.5.1/bs3compat.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -45,7 +46,8 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-    </style>
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
@@ -248,14 +250,14 @@ $(document).ready(function () {
       <ul class="nav navbar-nav">
         <li>
   <a href="index.html">
-    <span class="fas fa-home"></span>
+    <span class="fa fa-home"></span>
      
     Home
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-question"></span>
+    <span class="fa fa-question"></span>
      
     Questions
      
@@ -281,7 +283,7 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-globe"></span>
+    <span class="fa fa-globe"></span>
      
     Sanctuaries
      
@@ -320,7 +322,7 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-file-audio"></span>
+    <span class="fa fa-file-audio"></span>
      
     Sounds
      
@@ -328,7 +330,7 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="sounds.html">All Sounds</a>
+      <a href="sounds.html">Example Sounds</a>
     </li>
     <li class="divider"></li>
     <li class="dropdown-submenu">
@@ -440,7 +442,7 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-newspaper-o"></span>
+    <span class="fa fa-newspaper-o"></span>
      
     Stories
      
@@ -527,9 +529,23 @@ $(document).ready(function () {
     </li>
   </ul>
 </li>
+<li>
+  <a href="fun.html">
+    <span class="fa fa-grin"></span>
+     
+    Fun
+  </a>
+</li>
+<li>
+  <a href="software.html">
+    <span class="fa fa-code"></span>
+     
+    Software
+  </a>
+</li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-bar-chart"></span>
+    <span class="fa fa-chart-bar"></span>
      
     Statistics
      
@@ -586,7 +602,7 @@ $(document).ready(function () {
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <div id="section" class="section level2 tabset">
-<h2></h2>
+<h2 class="tabset"></h2>
 <div id="what-did-we-hear" class="section level3">
 <h3><strong>What</strong> did we hear?</h3>
 <!-- `<i class="fa fa-info-circle" role="presentation" aria-label="info-circle icon"></i>`{=html} -->
@@ -623,8 +639,8 @@ $('#toggle-text').change(function() {
 <div id="where-did-we-listen" class="section level3">
 <h3><strong>Where</strong> did we listen?</h3>
 <p>Here is a map of listening device locations. Hover on a location to see its site id and click on it to see the rationale for its placement. <!-- `<i class="fa fa-map" role="presentation" aria-label="map icon"></i>`{=html} --></p>
-<div id="htmlwidget-da87ebeeb55879a2d26e" style="width:100%;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-da87ebeeb55879a2d26e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-80.921201,-80.8281449999999,-80.828143,-80.9212,-80.921201],"lat":[31.4210639912502,31.4210639912502,31.3627319912123,31.3627319912123,31.4210639912502]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[31.396417,31.376133,31.36749],[-80.8904,-80.839133,-80.895],10,null,null,{"interactive":true,"className":"","stroke":true,"color":"yellow","weight":5,"opacity":0.7,"fill":true,"fillColor":"yellow","fillOpacity":0.5},null,null,["<p><strong>GR01<\/strong>: Historical monitoring sites; large complex reef site and a fished area<\/p>\n","<p><strong>GR02<\/strong>: Historical monitoring sites; long linear reef site and only research allowed (closed to fishing)<\/p>\n","<p><strong>GR03<\/strong>: Historical monitoring sites; patch reef site and only research allowed (closed to fishing)<\/p>\n"],null,["GR01","GR02","GR03"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[31.3627319912123,31.4210639912502],"lng":[-80.921201,-80.828143]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bf4275e4e0ff6369556c" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bf4275e4e0ff6369556c">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-80.921201,-80.8281449999999,-80.828143,-80.9212,-80.921201],"lat":[31.4210639912502,31.4210639912502,31.3627319912123,31.3627319912123,31.4210639912502]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[31.396417,31.376133,31.36749],[-80.8904,-80.839133,-80.895],10,null,null,{"interactive":true,"className":"","stroke":true,"color":"yellow","weight":5,"opacity":0.7,"fill":true,"fillColor":"yellow","fillOpacity":0.5},null,null,["<p><strong>GR01<\/strong>: Historical monitoring sites; large complex reef site and a fished area<\/p>\n","<p><strong>GR02<\/strong>: Historical monitoring sites; long linear reef site and only research allowed (closed to fishing)<\/p>\n","<p><strong>GR03<\/strong>: Historical monitoring sites; patch reef site and only research allowed (closed to fishing)<\/p>\n"],null,["GR01","GR02","GR03"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[31.3627319912123,31.4210639912502],"lng":[-80.921201,-80.828143]}},"evals":[],"jsHooks":[]}</script>
 <div class="row">
 <div class="col-xs-4">
 
@@ -714,6 +730,7 @@ $(function() {
   $('.main-container').after($('.footer'));
 })
 </script>
+
 
 
 

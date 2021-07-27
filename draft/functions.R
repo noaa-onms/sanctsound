@@ -495,7 +495,7 @@ update_sounds_menu <- function(){
     pull(category_menu)
   
   sounds_menu <- c(list(list(
-    text = "All Sounds",
+    text = "Example Sounds",
     href = "sounds.html"),
     list(text = "---------")),
     sounds_menu)
