@@ -1,5 +1,5 @@
-if (!require(librarian)){
-  install.packages("DesiQuintans/librarian")
+if (!require("librarian")){
+  install.packages("librarian")
   library(librarian)
 }
 shelf(here)
