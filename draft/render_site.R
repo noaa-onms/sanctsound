@@ -18,7 +18,7 @@ if (Sys.getenv("GITHUB_ACTIONS") == ""){
 } else {
   gsa_json_text <- Sys.getenv("GOOGLE_SA")
 }
-if (!skip_gsa){
+if (!skip_drive_auth){
   message("non-interactively authenticating to GoogleDrive with Google Service Account")
   drive_auth(path = gsa_json_text)
 }
