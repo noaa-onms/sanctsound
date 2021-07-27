@@ -17,6 +17,7 @@ if (Sys.getenv("GITHUB_ACTIONS") == ""){
   gsa_json_text <- readLines(google_sa_json) %>% paste(sep="\n")
 } else {
   gsa_json_text <- Sys.getenv("GOOGLE_SA")
+  message('nchar(Sys.getenv("GOOGLE_SA")): ', nchar(Sys.getenv("GOOGLE_SA")))
 }
 if (!skip_drive_auth){
   message("non-interactively authenticating to GoogleDrive with Google Service Account")

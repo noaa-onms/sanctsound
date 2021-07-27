@@ -1,3 +1,6 @@
+if (!require("sf")){
+  install.packages("sf", dependencies = TRUE, type = "binary")
+}
 if (!require("librarian")){
   install.packages("librarian")
   library(librarian)
