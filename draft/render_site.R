@@ -24,20 +24,16 @@ if (!skip_drive_auth){
   drive_auth(path = gsa_json_text)
 }
 
-# DEBUG
-# # nav menus in _site.yml ----
-# update_sounds_menu()
-# update_stories_menu()
-# 
-# # sanctuaries ----
-# sites <- read_csv(here("draft/data/nms_sites.csv"), col_types = cols()) %>% 
-#   arrange(code)
-# 
-# sites %>% 
-#   # filter(code %in% c("cinms","hihwnms")) %>% # "cinms","fknms","hihwnms"
-#   pwalk(render_sanctuary)
+# nav menus in _site.yml ----
+update_sounds_menu()
+update_stories_menu()
 
-# TODO: make update_sites_menu() so menu could be dynamic 
+# sanctuaries ----
+sites <- read_csv(here("draft/data/nms_sites.csv"), col_types = cols()) %>%
+  arrange(code)
+sites %>%
+  # filter(code %in% c("cinms","hihwnms")) %>% # "cinms","fknms","hihwnms"
+  pwalk(render_sanctuary)
     
 # modals ----
 modals    <- get_sheet("modals", redo = redo_modals)
@@ -53,34 +49,9 @@ if (redo_modals){
     filter(
       sanctuary_code == "CINMS",
       modal_title    == "Humpback whales") %>%
-    # "Time series"
-    # inner_join(
-    #   get_sheet("modals") %>%
-    #     filter(
-    #       tab_name == "Time series",
-    #       !is.na(gdrive_shareable_link)) %>%
-    #     select(sanctuary_code, modal_title),
-    #   by = c("sanctuary_code", "modal_title")) %>%
-    # "Daily patterns"
-    # inner_join(
-    #   get_sheet("modals") %>%
-    #     filter(
-    #       tab_name == "Daily patterns",
-    #       !is.na(gdrive_shareable_link)) %>%
-    #     select(sanctuary_code, modal_title),
-    #   by = c("sanctuary_code", "modal_title")) %>%
-    # CINMS: Container Ships/Smaller Vessels: Monthly pattern -> Monthly patterns
-    # inner_join(
-    #   get_sheet("modals") %>%
-    #     filter(
-    #       tab_name == "Monthly patterns",
-    #       !is.na(gdrive_shareable_link)) %>%
-    #     select(sanctuary_code, modal_title),
-    #   by = c("sanctuary_code", "modal_title")) %>%
     pwalk(render_modal)
 }
   
 
 # *.Rmd's ----
-# DEBUG
-#rmarkdown::render_site("./draft")
+rmarkdown::render_site("./draft")
