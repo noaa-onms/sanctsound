@@ -24,22 +24,18 @@ if (!skip_drive_auth){
   drive_auth(path = gsa_json_text)
 }
 
-# nav menus in _site.yml ----
-update_sounds_menu()
-update_stories_menu()
-# Error: arrange() failed at implicit mutate() step. 
-# x Could not create a temporary column for `..3`.
-# ℹ `..3` is `sanctuary_code`.
-
-# sanctuaries ----
-sites <- read_csv(here("draft/data/nms_sites.csv"), col_types = cols()) %>% 
-  arrange(code)
-
-#sites <- sites %>% filter(code == "fknms")
-#sites <- sites %>% 
-sites %>% 
-  # filter(code %in% c("cinms","hihwnms")) %>% # "cinms","fknms","hihwnms"
-  pwalk(render_sanctuary)
+# DEBUG
+# # nav menus in _site.yml ----
+# update_sounds_menu()
+# update_stories_menu()
+# 
+# # sanctuaries ----
+# sites <- read_csv(here("draft/data/nms_sites.csv"), col_types = cols()) %>% 
+#   arrange(code)
+# 
+# sites %>% 
+#   # filter(code %in% c("cinms","hihwnms")) %>% # "cinms","fknms","hihwnms"
+#   pwalk(render_sanctuary)
 
 # TODO: make update_sites_menu() so menu could be dynamic 
     
@@ -56,7 +52,7 @@ if (redo_modals){
   modal_pages %>%
     filter(
       sanctuary_code == "CINMS",
-      modal_title    == "Humpback whales") %>% 
+      modal_title    == "Humpback whales") %>%
     # "Time series"
     # inner_join(
     #   get_sheet("modals") %>%

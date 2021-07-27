@@ -12,7 +12,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ${{ github.workflow }}]')"
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      GOOGLE_SA: '${{ secrets.GOOGLE_SA }}'
+      GOOGLE_SA: ${{ secrets.GOOGLE_SA }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -40,7 +40,7 @@ jobs:
 
       - name: Render Rmarkdown website
         run: |
-          Rscript -e 'setwd("draft");source("render_site.R")'
+          Rscript -e 'source("render_site.R")'
 
       - name: Commit results
         run: |
