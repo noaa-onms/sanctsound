@@ -1,5 +1,5 @@
 if (!require(librarian)){
-  remotes::install_github("DesiQuintans/librarian")
+  install.packages("DesiQuintans/librarian")
   library(librarian)
 }
 shelf(
