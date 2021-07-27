@@ -82,4 +82,5 @@ if (redo_modals){
   
 
 # *.Rmd's ----
-rmarkdown::render_site("./draft")
+# DEBUG
+#rmarkdown::render_site("./draft")
