@@ -47,4 +47,4 @@ jobs:
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git commit -am "∆'s from github.workflow ${{ github.workflow }} [skip ${{ github.workflow }}]" || echo "No changes to commit"
-          git push origin || echo "No changes to commit
+          git push origin || echo "No changes to commit"
