@@ -36,7 +36,7 @@ sites %>%
   pwalk(render_sanctuary)
     
 # modals ----
-modals    <- get_sheet("modals", redo = redo_modals)
+modals <- get_sheet("modals", redo = redo_modals)
 modal_pages <- modals %>% 
   group_by(sanctuary_code, modal_title) %>% 
   summarize() %>% 
@@ -52,6 +52,11 @@ if (redo_modals){
     pwalk(render_modal)
 }
   
+# tiles ----
+tiles <- get_sheet("tiles", redo = F) %>% 
+  mutate(
+    path_relative = map_chr(gdrive_shareable_link, gdrive2path))
+# for now manually added into _cards.html for index.Rmd 
 
 # *.Rmd's ----
 rmarkdown::render_site("./draft")
