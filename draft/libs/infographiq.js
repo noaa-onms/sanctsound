@@ -99,14 +99,15 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
       // iterate through rows of csv
       data.forEach(function(d) {
         
-        d.svg_id     = d.modal_title.toLowerCase().replace(/\s/g, '-');
+        d.svg_id     = d.modal_title.toLowerCase().replace(/ & /g, ' ').replace(/\s/g, '-');
         d.modal_link = './modals/' + d.sanctuary_code.toLowerCase() + '_' + d.svg_id + '.html';
         d.sound_category = d.sound_category.trim();
         
         if (debug){ 
-          console.log('forEach d.modal_title: ' + d.modal_title);
-          console.log('        d.svg_id: '      + d.svg_id);
-          console.log('        d.modal_link: '  + d.modal_link);
+          console.log('forEach d.modal_title: '     + d.modal_title);
+          console.log('        d.svg_id: '          + d.svg_id);
+          console.log('        d.modal_link: '      + d.modal_link);
+          console.log('        d.sound_category: '  + d.sound_category);
         }
       
         function handleClick(){
