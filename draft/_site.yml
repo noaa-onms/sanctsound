@@ -84,24 +84,24 @@ navbar:
         href: sounds.html#sperm-whales-hihwnms
     - text: Human-made
       menu:
-      - text: Container Ships (CINMS)
-        href: sounds.html#container-ships-cinms
       - text: Container Ships (HIHWNMS)
         href: sounds.html#container-ships-hihwnms
+      - text: Echosounder (CINMS)
+        href: sounds.html#echosounder-cinms
       - text: Explosions (FKNMS)
         href: sounds.html#explosions-fknms
       - text: Military sonar (CINMS)
         href: sounds.html#military-sonar-cinms
       - text: Military sonar (HIHWNMS)
         href: sounds.html#military-sonar-hihwnms
-      - text: Other human-made (CINMS)
-        href: sounds.html#other-human-made-cinms
       - text: Seal bombs (CINMS)
         href: sounds.html#seal-bombs-cinms
       - text: Smaller Boats (HIHWNMS)
         href: sounds.html#smaller-boats-hihwnms
-      - text: Smaller Vessels (CINMS)
-        href: sounds.html#smaller-vessels-cinms
+      - text: Vessels (CINMS)
+        href: sounds.html#vessels-cinms
+      - text: Vessels (CINMS)
+        href: sounds.html#vessels-cinms
       - text: Vessels (FKNMS)
         href: sounds.html#vessels-fknms
     - text: Physical
