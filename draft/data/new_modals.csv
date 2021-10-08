@@ -1,0 +1,46 @@
+sanctuary_code,modal_title,sound_category,sound_subcategory
+CINMS,Blue whales,Animal,Marine mammals
+CINMS,Bocaccio,Animal,Fish
+CINMS,Dolphins,Animal,Marine mammals
+CINMS,Echosounder,Human-made,Sonar
+CINMS,Fin whales,Animal,Marine mammals
+CINMS,Giant sea bass,Animal,Fish
+CINMS,Gray whales,Animal,Marine mammals
+CINMS,Humpback whales,Animal,Marine mammals
+CINMS,Louder,Soundscape Snapshot,Louder
+CINMS,Military sonar,Human-made,Sonar
+CINMS,Plainfin midshipman,Animal,Fish
+CINMS,Quieter,Soundscape Snapshot,Quieter
+CINMS,Rain,Physical,Rain
+CINMS,Sea lions,Animal,Marine mammals
+CINMS,Seal bombs,Human-made,Fishing
+CINMS,Snapping shrimp,Animal,Invertebrates
+CINMS,Vessels,Human-made,Vessels
+CINMS,Wind & waves,Physical,Wind & waves
+FKNMS,Black grouper,Animal,Fish
+FKNMS,Dolphins,Animal,Marine mammals
+FKNMS,Explosions,Human-made,Explosions
+FKNMS,Fish chorus,Animal,Fish
+FKNMS,Hurricane,Physical,Hurricane
+FKNMS,Military sonar,Human-made,Military
+FKNMS,Nassau grouper,Animal,Fish
+FKNMS,Rain,Physical,Rain
+FKNMS,Red grouper,Animal,Fish
+FKNMS,Red hind,Animal,Fish
+FKNMS,SCUBA bubbles,Human-made,NA
+FKNMS,Snapping shrimp,Animal,Invertebrates
+FKNMS,Vessels,Human-made,Vessels
+FKNMS,Waves,Physical,Waves
+FKNMS,Wind,Physical,Wind
+HIHWNMS,Dolphins,Animal,Marine mammals
+HIHWNMS,Echosounder,Human-made,Vessels
+HIHWNMS,Fish chorus,Animal,Fish
+HIHWNMS,Humpback whales,Animal,Marine mammals
+HIHWNMS,Military sonar,Human-made,Military
+HIHWNMS,Minke whales,Animal,Marine mammals
+HIHWNMS,Rain,Physical,Rain
+HIHWNMS,Snapping shrimp,Animal,Invertebrates
+HIHWNMS,Sperm whales,Animal,Marine mammals
+HIHWNMS,Vessels,Human-made,Vessels
+HIHWNMS,Waves,Physical,Waves
+HIHWNMS,Wind,Physical,Wind

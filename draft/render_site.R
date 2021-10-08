@@ -32,7 +32,7 @@ update_stories_menu()
 sites <- read_csv(here("draft/data/nms_sites.csv"), col_types = cols()) %>%
   arrange(code)
 sites %>%
-  # filter(code %in% c("cinms","hihwnms")) %>% # "cinms","fknms","hihwnms"
+  filter(code %in% c("cinms")) %>% # "cinms","fknms","hihwnms"
   pwalk(render_sanctuary)
     
 # modals ----
@@ -48,7 +48,8 @@ if (redo_modals){
   modal_pages %>%
     filter(
       sanctuary_code == "CINMS",
-      modal_title    == "Humpback whales") %>%
+      modal_title    != "Vessels") %>%
+      # modal_title    == "Humpback whales") %>%
     pwalk(render_modal)
 }
   

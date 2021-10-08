@@ -26,9 +26,11 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
   var meta;
   
   var toc_header_colors = {
-    'Animal':    '#8DC63F80', 
-    'Human-made': '#A8509F80',
-    'Physical':   '#F2652280'};
+    'Animal':              '#8DC63F80', 
+    'Human-made':          '#A8509F80',
+    'Physical':            '#F2652280',
+    'Soundscape Snapshot': '#D3D3D380'
+  };
 
   //  var f_child = div.node().appendChild(f.documentElement);
   d3.xml(svg).then((f) => {
