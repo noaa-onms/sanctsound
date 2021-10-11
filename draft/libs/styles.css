@@ -13,6 +13,16 @@
 }
 */
 
+.black-white {
+  /* 1 pixel black shadow to left, top, right and bottom */
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white !important;
+}
+
+.black {
+  color: black !important;
+}
+
 .card-columns {
   column-gap: 0;      /* 0.25rem; */
 }

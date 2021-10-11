@@ -1,4 +1,4 @@
-name: my-website
+name: Sanctuaries and Sound
 navbar:
   title: SanctSound
   type: inverse
@@ -10,16 +10,18 @@ navbar:
     icon: fa-question
     href: more.html
     menu:
-    - text: How did we listen?
-      href: q_how-listen.html
+    - text: Why and how did we listen?
+      href: q_why-listen.html
+    - text: Where and when did we listen?
+      href: q_where-listen.html
     - text: What did we measure?
       href: q_what-measure.html
     - text: What did we hear?
       href: q_what-hear.html
-    - text: How far could we hear?
-      href: q_how-far.html
     - text: What did we learn?
       href: q_what-learn.html
+    - text: Who are we?
+      href: q_who.html
   - text: Sanctuaries
     icon: fa-globe
     menu:
