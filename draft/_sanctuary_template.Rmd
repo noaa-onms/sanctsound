@@ -19,6 +19,7 @@ editor_options:
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F, message = F, warning = F)
+knitr::knit_meta_add(list(rmarkdown::html_dependency_font_awesome()))
 ```
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
@@ -95,9 +96,16 @@ duration    <- filter(tbl_listen, file_type == "duration")
 </div>
 </div>
 
-`r shiny::icon("question-circle")` _[Click here](https://en.wikipedia.org/wiki/To_be_announced) to learn more about how we listened to and recorded soundscapes._
- 
-`r shiny::icon("chart-bar")` _[Click here](https://en.wikipedia.org/wiki/To_be_announced) to see similar maps of the listening range for the other hydrophones in this sanctuary and in other sanctuaries._
+```{r, results='asis'}
+d_s <- get_sheet("sanctuaries") %>% 
+  filter(sanctuary_code == !!sanctuary_code)
+
+if (!is.na(d_s$where_question_caption))
+  cat(glue("<i class='fas fa-question-circle'></i> {d_s$where_question_caption}\n<br>\n"))
+
+if (!is.na(d_s$where_chart_caption))
+  cat(glue("<i class='fas fa-chart-bar'></i> {d_s$where_chart_caption}\n<br>\n"))
+```
 
 ### **What** did we measure?
 
