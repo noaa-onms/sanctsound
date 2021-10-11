@@ -7,16 +7,8 @@ if (!require("librarian")){
   library(librarian)
 }
 shelf(
-  # multimedia
-  av,
-  # spatial
-  leaflet, sf, sp,
-  # tidyverse
-  dplyr, googledrive, purrr, readr, tibble, tidyr,
-  # report
-  DT, htmltools, knitr, rmarkdown, shiny, yaml,
-  # utility
-  fs, glue, here, stringr)
+  av, dplyr, DT, fs, glue, googledrive, here, htmltools, knitr, leaflet, 
+  purrr, readr, rmarkdown, sf, shiny, sp, stringr, tibble, tidyr, yaml)
 here <- here::here
 
 gsheet_pfx    <- "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv"

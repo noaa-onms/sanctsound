@@ -5,7 +5,7 @@ if (!require("librarian")){
 shelf(here)
 source(here::here("draft/functions.R"))
 
-redo_modals     <- F
+redo_modals     <- T
 skip_drive_auth <- F
 
 # authenticate to GoogleDrive using Google Service Account's secret JSON

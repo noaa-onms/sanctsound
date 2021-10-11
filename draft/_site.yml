@@ -84,26 +84,26 @@ navbar:
         href: sounds.html#sperm-whales-hihwnms
     - text: Human-made
       menu:
-      - text: Container Ships (HIHWNMS)
-        href: sounds.html#container-ships-hihwnms
       - text: Echosounder (CINMS)
         href: sounds.html#echosounder-cinms
       - text: Explosions (FKNMS)
         href: sounds.html#explosions-fknms
-      - text: Military sonar (CINMS)
-        href: sounds.html#military-sonar-cinms
       - text: Military sonar (HIHWNMS)
         href: sounds.html#military-sonar-hihwnms
+      - text: Naval sonar (CINMS)
+        href: sounds.html#naval-sonar-cinms
       - text: Seal bombs (CINMS)
         href: sounds.html#seal-bombs-cinms
-      - text: Smaller Boats (HIHWNMS)
-        href: sounds.html#smaller-boats-hihwnms
       - text: Vessels (CINMS)
         href: sounds.html#vessels-cinms
       - text: Vessels (CINMS)
         href: sounds.html#vessels-cinms
       - text: Vessels (FKNMS)
         href: sounds.html#vessels-fknms
+      - text: Vessels (HIHWNMS)
+        href: sounds.html#vessels-hihwnms
+      - text: Vessels (HIHWNMS)
+        href: sounds.html#vessels-hihwnms
     - text: Physical
       menu:
       - text: Rain (FKNMS)
@@ -142,7 +142,7 @@ navbar:
         href: stories.html#east-coast
     - text: Hawaii
       menu:
-      - text: Acoustic activity of reef biota in PMNM
+      - text: Acoustic activity of reef biota in PMNM (PMNM)
         href: stories.html#hawaii
       - text: Anthropogenic noise in HIHW and PMNM
         href: stories.html#hawaii
@@ -150,7 +150,7 @@ navbar:
         href: stories.html#hawaii
       - text: Humpback whale song occurrence across the archipelago
         href: stories.html#hawaii
-      - text: Waveglider mission to PMNM
+      - text: Waveglider mission to PMNM (PMNM)
         href: stories.html#hawaii
     - text: West Coast
       menu:
