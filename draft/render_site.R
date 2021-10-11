@@ -49,7 +49,7 @@ if (redo_modals){
     filter(
       sanctuary_code == "CINMS",
       modal_title    != "Vessels") %>%
-      # modal_title    == "Humpback whales") %>%
+    #   # modal_title    == "Humpback whales") %>%
     pwalk(render_modal)
 }
   
