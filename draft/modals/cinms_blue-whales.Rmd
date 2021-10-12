@@ -71,6 +71,8 @@ if (nrow(monthly) == 1)
 ```
 
 
-<i class="fas fa-question-circle"></i> [Click here](https://sanctsound.ioos.us/draft/q_what-measure.html#spectrograms-intensity-of-sound-at-different-pitches-over-time) to learn more about sound clips, how spectrograms were made, and what the colors mean.	
+<i class="fas fa-question-circle"></i> 
 
-<i class="fas fa-chart-bar"></i> Blue whales were heard at other stations. [Click here](https://sanctsound.portal.axds.co/#sanctsound/method/blue-whale-detections) to explore where else they were detected.
+<a href="https://sanctsound.ioos.us/draft/q_what-measure.html#spectrograms-intensity-of-sound-at-different-pitches-over-time" target="_blank">Click here</a> to learn more about sound clips, how spectrograms were made, and what the colors mean.	
+
+<i class="fas fa-chart-bar"></i> Blue whales were heard at other stations. <a href="https://sanctsound.portal.axds.co/#sanctsound/method/blue-whale-detections" target="_blank">Click here</a> to explore where else they were detected.
