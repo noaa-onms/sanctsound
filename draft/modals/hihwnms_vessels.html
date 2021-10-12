@@ -13,15 +13,19 @@
 
 <title>Vessels in HIHWNMS</title>
 
-<script src="modal_libs/jquery-1.11.3/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="modal_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
-<script src="modal_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="modal_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="modal_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="modal_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="modal_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link href="modal_libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
+<script src="modal_libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+<script src="modal_libs/bs3compat-0.3.1/transition.js"></script>
+<script src="modal_libs/bs3compat-0.3.1/tabs.js"></script>
+<script src="modal_libs/bs3compat-0.3.1/bs3compat.js"></script>
 <script src="modal_libs/navigation-1.1/tabsets.js"></script>
 <link href="modal_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="modal_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="modal_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="modal_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -30,14 +34,10 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-    </style>
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -50,35 +50,8 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
-<link rel="stylesheet" href="_modal_styles.css" type="text/css" />
 
 
 
@@ -87,10 +60,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -107,6 +76,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -119,7 +91,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -183,7 +154,7 @@ summary {
 
 
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -193,12 +164,21 @@ summary {
 
 
 <div id="section" class="section level2 tabset">
-<h2></h2>
-<div id="sights" class="section level3">
-<h3>Sights</h3>
+<h2 class="tabset"></h2>
+<div id="sights-sounds" class="section level3">
+<h3>Sights &amp; Sounds</h3>
+<div class="container">
+<div class="row">
+<div class="col">
 <div class="figure">
 <img src="../files/vessel_container_NOAA_Schwemmer.jpg" alt="" />
-<p class="caption">Large container ships produce low frequency noise as they carry cargo between ports. Photo: Robert Schwemmer, NOAA/ONMS</p>
+<p class="caption">Large commerical ships carry cargo between ports around the globe and are one of the main ways that supplies reach the Hawaiian islands. Photo: Robert Schwemmer, NOAA/ONMS</p>
+</div>
+</div>
+<div class="col">
+<p><video controls> <source src='../files/SanctSound_HI04_02_largeboat_20200124T235131Z.mp4' type='video/mp4'> Your browser does not support the video tag. </video> Spinning propeller blades and the flow of water over the ship’s hull are the main sources of the underwater noises made by large commerical ships.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -230,7 +210,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
