@@ -90,10 +90,10 @@ navbar:
         href: sounds.html#echosounder-cinms
       - text: Explosions (FKNMS)
         href: sounds.html#explosions-fknms
-      - text: Military sonar (HIHWNMS)
-        href: sounds.html#military-sonar-hihwnms
       - text: Naval sonar (CINMS)
         href: sounds.html#naval-sonar-cinms
+      - text: Naval sonar (HIHWNMS)
+        href: sounds.html#naval-sonar-hihwnms
       - text: Seal bombs (CINMS)
         href: sounds.html#seal-bombs-cinms
       - text: Vessels (CINMS)
@@ -104,18 +104,14 @@ navbar:
         href: sounds.html#vessels-fknms
       - text: Vessels (HIHWNMS)
         href: sounds.html#vessels-hihwnms
-      - text: Vessels (HIHWNMS)
-        href: sounds.html#vessels-hihwnms
     - text: Physical
       menu:
       - text: Rain (FKNMS)
         href: sounds.html#rain-fknms
       - text: Rain (HIHWNMS)
         href: sounds.html#rain-hihwnms
-      - text: Waves (FKNMS)
-        href: sounds.html#waves-fknms
-      - text: Wind (FKNMS)
-        href: sounds.html#wind-fknms
+      - text: Wind and waves (FKNMS)
+        href: sounds.html#wind-and-waves-fknms
   - text: Stories
     icon: fa-newspaper-o
     menu:
