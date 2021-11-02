@@ -29,6 +29,7 @@ update_sounds_menu()
 update_stories_menu()
 
 # sanctuaries ----
+create_svg_csv()
 sites <- read_csv(here("draft/data/nms_sites.csv"), col_types = cols()) %>%
   arrange(code)
 sites %>%
