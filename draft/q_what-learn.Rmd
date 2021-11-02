@@ -10,7 +10,9 @@ knitr::opts_chunk$set(echo = F)
 
 _Ever tried to identify something by touching it while your eyes were blindfolded? Or tried to enjoy food with a congested nose? Like most animals, we gather information from a variety of sources to make sense of the world around us. Rarely do we experience input from any one source in isolation. Similarly, sound is one of many ways that marine animals experience their environments, and one of many ways that we can study those environments. We gain the most understanding when we add what we hear to other ways of understanding an ecosystem._
 
-![](./images/what-learn.png)
+![](./images/what-learn.png){.img-fluid}
+
+
 <!--div style= "float:right; padding-left: 10px">
 </div-->
 
@@ -23,7 +25,7 @@ Under the Stories tab, you will find a collection of web stories and story maps 
 
 These stories span a range of geographic scales, from sanctuary-specific to national. Sanctuary specific stories focus on what we learned about sound in that place, and how that information is helping answer questions that are important there.  National level stories are focused on comparing patterns of sound among national marine sanctuaries to help us examine similarities and differences across the system. 
 
-![](./images/stories.jpeg)
+![](./images/stories.jpeg){.img-fluid}
 
 Through photos, videos, maps and graphs, these stories bring to life some of the fascinating patterns we have discovered about how both animals and humans use our National Marine Sanctuaries and how those patterns help the people who are charged with managing them.
 
