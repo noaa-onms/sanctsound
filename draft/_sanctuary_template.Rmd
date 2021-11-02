@@ -5,7 +5,8 @@ params:
   site_code: "cinms"
   # main: "Florida Keys National Marine Sanctuary"
   # site_code: "fknms"
-  csv: "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=modals"
+  # csv: "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=modals"
+  csv: "data/svg.csv"
   svg: "svg/cinms.svg"
 output:
   html_document:

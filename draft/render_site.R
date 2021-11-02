@@ -34,20 +34,20 @@ sites <- read_csv(here("draft/data/nms_sites.csv"), col_types = cols()) %>%
 sites %>%
   #filter(code %in% c("cinms","fknms","hihwnms")) %>% 
   pwalk(render_sanctuary)
-    
+
 # modals ----
 modals <- get_sheet("modals", redo = redo_modals)
 modal_pages <- modals %>% 
-  group_by(sanctuary_code, modal_title) %>% 
-  summarize() %>% 
+  select(sanctuary_code, modal_title, modal_id) %>% 
   mutate(
-    modal_html  = map2_chr(sanctuary_code, modal_title, modal_title_to_html_path)) %>% 
-  select(sanctuary_code, modal_title, modal_html) # modal_pages 
+    modal_html  = map_chr(modal_id, path_ext_set, "html")) %>% 
+  arrange(modal_html)
 
 if (redo_modals){
   modal_pages %>%
-    filter(
-      !(sanctuary_code == "CINMS" & modal_title %in% c("Blue whales", "Vessels"))) %>%
+    # filter(modal_id == "pmnm_minke-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
+    filter(!modal_id %in% c("cinms_blue-whales", "cinms_vessels")) %>% # pmnm_humpback-whales pmnm_minke-whales
+    # View()
     # TODO: ∆ _modal_template to have chart-/question-captions like Blue whales; multiple Tabs like Vessels
     pwalk(render_modal)
 }

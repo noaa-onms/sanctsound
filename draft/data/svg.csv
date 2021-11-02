@@ -1,0 +1,110 @@
+modal_id,modal_title,sanctuary_code,icon_sound_subcategory,sound_category,sound_subcategory
+cinms_bocaccio,Bocaccio,CINMS,Animal: Fish,Animal,Fish
+cinms_plainfin-midshipman,Plainfin midshipman,CINMS,Animal: Fish,Animal,Fish
+cinms_snapping-shrimp,Snapping shrimp,CINMS,Animal: Invertebrates,Animal,Invertebrates
+cinms_blue-whales,Blue whales,CINMS,Animal: Marine mammals,Animal,Marine mammals
+cinms_dolphins,Dolphins,CINMS,Animal: Marine mammals,Animal,Marine mammals
+cinms_fin-whales,Fin whales,CINMS,Animal: Marine mammals,Animal,Marine mammals
+cinms_gray-whales,Gray whales,CINMS,Animal: Marine mammals,Animal,Marine mammals
+cinms_humpback-whales,Humpback whales,CINMS,Animal: Marine mammals,Animal,Marine mammals
+cinms_sea-lions,Sea lions,CINMS,Animal: Marine mammals,Animal,Marine mammals
+cinms_seal-bombs,Seal bombs,CINMS,Human-made: Explosions,Human-made,Explosions
+cinms_echosounders,Echosounders,CINMS,Human-made: Sonar,Human-made,Sonar
+cinms_sonars,Sonars,CINMS,Human-made: Sonar,Human-made,Sonar
+cinms_vessels,Vessels,CINMS,Human-made: Vessels,Human-made,Vessels
+cinms_rain,Rain,CINMS,Physical: Rain,Physical,Rain
+cinms_wind-and-waves,Wind and waves,CINMS,Physical: Wind and waves,Physical,Wind and waves
+cinms_speaker,Speaker,CINMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+fknms_atlantic-midshipman,Atlantic midshipman,FKNMS,Animal: Fish,Animal,Fish
+fknms_black-grouper,Black grouper,FKNMS,Animal: Fish,Animal,Fish
+fknms_fish-chorus,Fish chorus,FKNMS,Animal: Fish,Animal,Fish
+fknms_red-grouper,Red grouper,FKNMS,Animal: Fish,Animal,Fish
+fknms_snapping-shrimp,Snapping shrimp,FKNMS,Animal: Invertebrates,Animal,Invertebrates
+fknms_dolphins,Dolphins,FKNMS,Animal: Marine mammals,Animal,Marine mammals
+fknms_explosions,Explosions,FKNMS,Human-made: Explosions,Human-made,Explosions
+fknms_scuba-bubbles,Scuba bubbles,FKNMS,Human-made: Scuba bubbles,Human-made,Scuba bubbles
+fknms_vessels,Vessels,FKNMS,Human-made: Vessels,Human-made,Vessels
+fknms_hurricanes,Hurricanes,FKNMS,Physical: Hurricane,Physical,Hurricane
+fknms_rain,Rain,FKNMS,Physical: Rain,Physical,Rain
+fknms_wind-and-waves,Wind and waves,FKNMS,Physical: Wind and waves,Physical,Wind and waves
+fknms_speaker,Speaker,FKNMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+grnms_fish-chorus,Fish chorus,GRNMS,Animal: Fish,Animal,Fish
+grnms_toadfish,Toadfish,GRNMS,Animal: Fish,Animal,Fish
+grnms_snapping-shrimp,Snapping shrimp,GRNMS,Animal: Invertebrates,Animal,Invertebrates
+grnms_dolphins,Dolphins,GRNMS,Animal: Marine mammals,Animal,Marine mammals
+grnms_right-whales,Right whales,GRNMS,Animal: Marine mammals,Animal,Marine mammals
+grnms_scuba-bubbles,Scuba bubbles,GRNMS,Human-made: Scuba bubbles,Human-made,Scuba bubbles
+grnms_vessels,Vessels,GRNMS,Human-made: Vessels,Human-made,Vessels
+grnms_hurricanes,Hurricanes,GRNMS,Physical: Hurricane,Physical,Hurricane
+grnms_rain,Rain,GRNMS,Physical: Rain,Physical,Rain
+grnms_wind-and-waves,Wind and waves,GRNMS,Physical: Wind and waves,Physical,Wind and waves
+grnms_speaker,Speaker,GRNMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+hihwnms_fish-chorus,Fish chorus,HIHWNMS,Animal: Fish,Animal,Fish
+hihwnms_snapping-shrimp,Snapping shrimp,HIHWNMS,Animal: Invertebrates,Animal,Invertebrates
+hihwnms_dolphins,Dolphins,HIHWNMS,Animal: Marine mammals,Animal,Marine mammals
+hihwnms_humpback-whales,Humpback whales,HIHWNMS,Animal: Marine mammals,Animal,Marine mammals
+hihwnms_minke-whales,Minke whales,HIHWNMS,Animal: Marine mammals,Animal,Marine mammals
+hihwnms_sperm-whales,Sperm whales,HIHWNMS,Animal: Marine mammals,Animal,Marine mammals
+hihwnms_explosions,Explosions,HIHWNMS,Human-made: Explosions,Human-made,Explosions
+hihwnms_echosounders,Echosounders,HIHWNMS,Human-made: Sonar,Human-made,Sonar
+hihwnms_sonars,Sonars,HIHWNMS,Human-made: Sonar,Human-made,Sonar
+hihwnms_vessels,Vessels,HIHWNMS,Human-made: Vessels,Human-made,Vessels
+hihwnms_rain,Rain,HIHWNMS,Physical: Rain,Physical,Rain
+hihwnms_wind-and-waves,Wind and waves,HIHWNMS,Physical: Wind and waves,Physical,Wind and waves
+hihwnms_speaker,Speaker,HIHWNMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+mbnms_bocaccio,Bocaccio,MBNMS,Animal: Fish,Animal,Fish
+mbnms_plainfin-midshipman,Plainfin midshipman,MBNMS,Animal: Fish,Animal,Fish
+mbnms_snapping-shrimp,Snapping shrimp,MBNMS,Animal: Invertebrates,Animal,Invertebrates
+mbnms_blue-whales,Blue whales,MBNMS,Animal: Marine mammals,Animal,Marine mammals
+mbnms_dolphins,Dolphins,MBNMS,Animal: Marine mammals,Animal,Marine mammals
+mbnms_fin-whales,Fin whales,MBNMS,Animal: Marine mammals,Animal,Marine mammals
+mbnms_gray-whales,Gray whales,MBNMS,Animal: Marine mammals,Animal,Marine mammals
+mbnms_humpback-whales,Humpback whales,MBNMS,Animal: Marine mammals,Animal,Marine mammals
+mbnms_killer-whales,Killer whales,MBNMS,Animal: Marine mammals,Animal,Marine mammals
+mbnms_sea-lions,Sea lions,MBNMS,Animal: Marine mammals,Animal,Marine mammals
+mbnms_seal-bombs,Seal bombs,MBNMS,Human-made: Explosions,Human-made,Explosions
+mbnms_echosounders-and-transducers,Echosounders and transducers,MBNMS,Human-made: Sonar,Human-made,Sonar
+mbnms_sonars,Sonars,MBNMS,Human-made: Sonar,Human-made,Sonar
+mbnms_vessels,Vessels,MBNMS,Human-made: Vessels,Human-made,Vessels
+mbnms_rain,Rain,MBNMS,Physical: Rain,Physical,Rain
+mbnms_wind-and-waves,Wind and waves,MBNMS,Physical: Wind and waves,Physical,Wind and waves
+mbnms_speaker,Speaker,MBNMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+ocnms_fish-chorus,Fish chorus,OCNMS,Animal: Fish,Animal,Fish
+ocnms_blue-whales,Blue whales,OCNMS,Animal: Marine mammals,Animal,Marine mammals
+ocnms_dolphins,Dolphins,OCNMS,Animal: Marine mammals,Animal,Marine mammals
+ocnms_fin-whales,Fin whales,OCNMS,Animal: Marine mammals,Animal,Marine mammals
+ocnms_gray-whales,Gray whales,OCNMS,Animal: Marine mammals,Animal,Marine mammals
+ocnms_humpback-whales,Humpback whales,OCNMS,Animal: Marine mammals,Animal,Marine mammals
+ocnms_killer-whales,Killer whales,OCNMS,Animal: Marine mammals,Animal,Marine mammals
+ocnms_seal-bombs,Seal bombs,OCNMS,Human-made: Explosions,Human-made,Explosions
+ocnms_echosounders,Echosounders,OCNMS,Human-made: Sonar,Human-made,Sonar
+ocnms_sonars,Sonars,OCNMS,Human-made: Sonar,Human-made,Sonar
+ocnms_vessels,Vessels,OCNMS,Human-made: Vessels,Human-made,Vessels
+ocnms_rain,Rain,OCNMS,Physical: Rain,Physical,Rain
+ocnms_wind-and-waves,Wind and waves,OCNMS,Physical: Wind and waves,Physical,Wind and waves
+ocnms_speaker,Speaker,OCNMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+pmnm_damselfish,Damselfish,PMNM,Animal: Fish,Animal,Fish
+pmnm_fish-chorus,Fish chorus,PMNM,Animal: Fish,Animal,Fish
+pmnm_snapping-shrimp,Snapping shrimp,PMNM,Animal: Invertebrates,Animal,Invertebrates
+pmnm_dolphins,Dolphins,PMNM,Animal: Marine mammals,Animal,Marine mammals
+pmnm_humpback-whales,Humpback whales,PMNM,Animal: Marine mammals,Animal,Marine mammals
+pmnm_minke-whales,Minke whales,PMNM,Animal: Marine mammals,Animal,Marine mammals
+pmnm_sonars,Sonars,PMNM,Human-made: Sonar,Human-made,Sonar
+pmnm_vessels,Vessels,PMNM,Human-made: Vessels,Human-made,Vessels
+pmnm_rain,Rain,PMNM,Physical: Rain,Physical,Rain
+pmnm_wind-and-waves,Wind and waves,PMNM,Physical: Wind and waves,Physical,Wind and waves
+pmnm_speaker,Speaker,PMNM,Soundscape Snapshots:,Soundscape Snapshots,NA
+sbnms_cod,Cod,SBNMS,Animal: Fish,Animal,Fish
+sbnms_haddock,Haddock,SBNMS,Animal: Fish,Animal,Fish
+sbnms_blue-whales,Blue whales,SBNMS,Animal: Marine mammals,Animal,Marine mammals
+sbnms_dolphins,Dolphins,SBNMS,Animal: Marine mammals,Animal,Marine mammals
+sbnms_fin-whales,Fin whales,SBNMS,Animal: Marine mammals,Animal,Marine mammals
+sbnms_humpback-whales,Humpback whales,SBNMS,Animal: Marine mammals,Animal,Marine mammals
+sbnms_minke-whales,Minke whales,SBNMS,Animal: Marine mammals,Animal,Marine mammals
+sbnms_right-whales,Right whales,SBNMS,Animal: Marine mammals,Animal,Marine mammals
+sbnms_sei-whales,Sei whales,SBNMS,Animal: Marine mammals,Animal,Marine mammals
+sbnms_pingers,Pingers,SBNMS,Human-made: Sonar,Human-made,Sonar
+sbnms_vessels,Vessels,SBNMS,Human-made: Vessels,Human-made,Vessels
+sbnms_rain,Rain,SBNMS,Physical: Rain,Physical,Rain
+sbnms_wind-and-waves,Wind and waves,SBNMS,Physical: Wind and waves,Physical,Wind and waves
+sbnms_speaker,Speaker,SBNMS,Soundscape Snapshots:,Soundscape Snapshots,NA

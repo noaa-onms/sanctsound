@@ -204,7 +204,10 @@ get_modal_file_tbl <- function(
   
   # tab_name = "Sight"; sanctuary_code = params$sanctuary_code; modal_title = params$modal_title
 
-  tbl <- modals %>% 
+  tbl <- get_sheet("modals") %>% 
+    left_join(
+      get_sheet("figures"),
+      by = "modal_id") %>% 
     filter(
       sanctuary_code == !!sanctuary_code,
       modal_title    == !!modal_title,
@@ -341,12 +344,15 @@ render_sanctuary <- function(code, name, type, ...){
       main      = glue("{name} {type}"),
       site_code = code,
       # scenes tab in [sanctsound_website-content - Google Sheets](https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/edit#gid=0)                    
-      csv       = "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=modals",
+      # csv       = "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=modals",
+      csv       = "https://sanctsound.ioos.us/draft/data/svg.csv",
       svg       = glue("svg/{code}.svg")))
   }
-render_modal <- function(sanctuary_code, modal_title, modal_html, rmd = here("draft/modals/_modal_template.Rmd")){
+render_modal <- function(
+  sanctuary_code, modal_title, modal_html, modal_id, 
+  rmd = here("draft/modals/_modal_template.Rmd")){
   
-  message(glue("RENDER {basename(modal_html)}: {modal_title}"))
+  message(glue("RENDER {basename(modal_html)}"))
   
   render(
     rmd, 
@@ -413,6 +419,29 @@ import_sounds <- function(redo = T){
   }
 
   read_csv(sounds_csv)
+}
+
+create_svg_csv <- function(redo = T){
+  svg_csv <- here("draft/data/svg.csv")
+  
+  if (!file.exists(svg_csv) | redo){
+    tbl_svg <- get_sheet("modals") %>% 
+      select(modal_id, modal_title, sanctuary_code) %>% 
+      left_join(
+        get_sheet("lookups") %>%
+          select(
+            modal_title = icon_modal, icon_sound_subcategory),
+        by = "modal_title") %>% 
+      left_join(
+        get_sheet("lookups") %>%
+          select(icon_sound_subcategory = sound_subcategory, sound_category = sound_cat, sound_subcategory = sound_subcat),
+        by = "icon_sound_subcategory") %>% 
+      arrange(sanctuary_code, sound_category, sound_subcategory, modal_title) # 
+    
+    write_csv(tbl_svg, svg_csv)
+  }
+
+  read_csv(svg_csv)
 }
 
 import_stories <- function(redo = T){

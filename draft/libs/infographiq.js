@@ -14,6 +14,8 @@ function appendHtml(el, str) {
 
 var modal_html = '<div aria-labelledby="modal-title" class="modal fade bs-example-modal-lg" id="modal" role="dialog" tabindex="-1"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="modal-title">title</h4></div><div class="modal-body"><iframe data-src="" height="100%" width="100%" frameborder="0"></iframe></div><div class="modal-footer"><button class="btn btn-default btn-sm" data-dismiss="modal">Close</button></div></div></div></div>';
 
+lookups_csv = "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=lookups";
+
 appendHtml(document.body, modal_html); // "body" has two more children - h1 and span.
 
 function basename(path) {
@@ -26,10 +28,10 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
   var meta;
   
   var toc_header_colors = {
-    'Animal':              '#8DC63F80', 
-    'Human-made':          '#A8509F80',
-    'Physical':            '#F2652280',
-    'Soundscape Snapshot': '#D3D3D380'
+    'Animal':               '#8DC63F80', 
+    'Human-made':           '#A8509F80',
+    'Physical':             '#F2652280',
+    'Soundscape Snapshots': '#D3D3D380'
   };
 
   //  var f_child = div.node().appendChild(f.documentElement);
@@ -84,8 +86,9 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
       }
       
       data = data.filter(function(d){ 
-        return basename(d.sanctuary_code).toLowerCase() == basename(svg).slice(0, -4) &
-          d.tab_name == "ICON.svg" });
+        return basename(d.sanctuary_code).toLowerCase() == basename(svg).slice(0, -4)
+          // & d.tab_name == "ICON.svg"
+      });
       
       // TODO: if has section column in argument to fxn
       data = data.sort(
