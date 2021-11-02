@@ -72,8 +72,8 @@ navbar:
         href: sounds.html#humpback-whales-hihwnms
       - text: Minke whales (HIHWNMS)
         href: sounds.html#minke-whales-hihwnms
-      - text: Plainfin midshipman (CINMS)
-        href: sounds.html#plainfin-midshipman-cinms
+      - text: Plainfin midshipmen (CINMS)
+        href: sounds.html#plainfin-midshipmen-cinms
       - text: Red grouper (FKNMS)
         href: sounds.html#red-grouper-fknms
       - text: Sea lions (CINMS)
@@ -86,22 +86,24 @@ navbar:
         href: sounds.html#sperm-whales-hihwnms
     - text: Human-made
       menu:
-      - text: Echosounder (CINMS)
-        href: sounds.html#echosounder-cinms
+      - text: Echosounders (CINMS)
+        href: sounds.html#echosounders-cinms
       - text: Explosions (FKNMS)
         href: sounds.html#explosions-fknms
-      - text: Naval sonar (CINMS)
-        href: sounds.html#naval-sonar-cinms
-      - text: Naval sonar (HIHWNMS)
-        href: sounds.html#naval-sonar-hihwnms
       - text: Seal bombs (CINMS)
         href: sounds.html#seal-bombs-cinms
+      - text: Sonars (CINMS)
+        href: sounds.html#sonars-cinms
+      - text: Sonars (HIHWNMS)
+        href: sounds.html#sonars-hihwnms
       - text: Vessels (CINMS)
         href: sounds.html#vessels-cinms
       - text: Vessels (CINMS)
         href: sounds.html#vessels-cinms
       - text: Vessels (FKNMS)
         href: sounds.html#vessels-fknms
+      - text: Vessels (HIHWNMS)
+        href: sounds.html#vessels-hihwnms
       - text: Vessels (HIHWNMS)
         href: sounds.html#vessels-hihwnms
     - text: Physical

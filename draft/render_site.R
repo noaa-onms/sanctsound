@@ -60,3 +60,7 @@ tiles <- get_sheet("tiles", redo = F) %>%
 
 # *.Rmd's ----
 rmarkdown::render_site("./draft")
+
+# servr::httd(here::here("draft"))
+# servr::daemon_stop(1)
+

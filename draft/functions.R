@@ -10,6 +10,7 @@ shelf(
   av, dplyr, DT, fs, glue, googledrive, here, htmltools, knitr, leaflet, 
   purrr, readr, rmarkdown, sf, shiny, sp, stringr, tibble, tidyr, yaml)
 here <- here::here
+options(readr.show_col_types = F)
 
 gsheet_pfx    <- "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv"
 # modals_csv    <- glue("{gsheet_pfx}&sheet=modals")
@@ -31,8 +32,8 @@ get_sheet <- function(sheet, redo = F){
   if (!exists(sheet, envir = globalenv()) | redo){
     
     d <- get_sheet_csv(sheet) %>% 
-      read_csv(col_types = cols()) %>% 
-      select(-starts_with("X"))
+      read_csv() %>% 
+      select(-starts_with("..."))
     msg <- glue("get_sheet(): read_csv(URL), assign to variable '{sheet}'\n  URL: {get_sheet_csv(sheet)}", .trim = F)
     message(as.character(msg))
     assign(sheet, d, envir = globalenv())
@@ -41,11 +42,13 @@ get_sheet <- function(sheet, redo = F){
   }
   get(sheet)
 }
-
-modals    <- get_sheet("modals")
-scenes    <- get_sheet("scenes")
-locations <- get_sheet("locations")
-metadata  <- get_sheet("metadata")
+sanctuaries <- get_sheet("sanctuaries")
+modals      <- get_sheet("modals")
+figures     <- get_sheet("figures")
+lookups     <- get_sheet("lookups")
+scenes      <- get_sheet("scenes")
+locations   <- get_sheet("locations")
+metadata    <- get_sheet("metadata")
 
 get_nms_ply <- function(nms, dir_pfx = here("draft")){
   # get polygon for National Marine Sanctuary
@@ -383,20 +386,33 @@ import_sounds <- function(redo = T){
   sounds_csv <- here("draft/data/sounds.csv")
   
   if (!file.exists(sounds_csv) | redo){
-    tbl_sounds <- get_sheet("modals") %>% 
+    tbl_sounds <- get_sheet("figures") %>% 
       filter(
         tab_name == "Sound",
         !is.na(gdrive_shareable_link)) %>% 
       mutate(
         snd_rel = map_chr(gdrive_shareable_link, gdrive2path, relative_pfx = "")) %>% 
       filter(
-        !is.na(snd_rel)) %>% 
-      arrange(sound_category, sound_subcategory, modal_title)
-    
+        !is.na(snd_rel)) %>%
+      left_join(
+        get_sheet("modals") %>% 
+          select(modal_id, modal_title, sanctuary_code),
+        by = "modal_id") %>% 
+      left_join(
+        get_sheet("lookups") %>%
+          select(
+            modal_title = icon_modal, icon_sound_subcategory),
+        by = "modal_title") %>% 
+      left_join(
+        get_sheet("lookups") %>%
+          select(icon_sound_subcategory = sound_subcategory, sound_category = sound_cat, sound_subcategory = sound_subcat),
+        by = "icon_sound_subcategory") %>% 
+      arrange(sound_category, sound_subcategory, modal_title, sanctuary_code)
+    	  
     write_csv(tbl_sounds, sounds_csv)
   }
 
-  read_csv(sounds_csv, col_types = cols())
+  read_csv(sounds_csv)
 }
 
 import_stories <- function(redo = T){
