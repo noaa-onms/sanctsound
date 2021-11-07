@@ -14,7 +14,7 @@ cinms_sonars,Sonars,CINMS,Human-made: Sonar,Human-made,Sonar
 cinms_vessels,Vessels,CINMS,Human-made: Vessels,Human-made,Vessels
 cinms_rain,Rain,CINMS,Physical: Rain,Physical,Rain
 cinms_wind-and-waves,Wind and waves,CINMS,Physical: Wind and waves,Physical,Wind and waves
-cinms_speaker,Speaker,CINMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+cinms_snapshots,Snapshots,CINMS,Soundscape:,Soundscape,NA
 fknms_atlantic-midshipman,Atlantic midshipman,FKNMS,Animal: Fish,Animal,Fish
 fknms_black-grouper,Black grouper,FKNMS,Animal: Fish,Animal,Fish
 fknms_fish-chorus,Fish chorus,FKNMS,Animal: Fish,Animal,Fish
@@ -27,7 +27,7 @@ fknms_vessels,Vessels,FKNMS,Human-made: Vessels,Human-made,Vessels
 fknms_hurricanes,Hurricanes,FKNMS,Physical: Hurricane,Physical,Hurricane
 fknms_rain,Rain,FKNMS,Physical: Rain,Physical,Rain
 fknms_wind-and-waves,Wind and waves,FKNMS,Physical: Wind and waves,Physical,Wind and waves
-fknms_speaker,Speaker,FKNMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+fknms_snapshots,Snapshots,FKNMS,Soundscape:,Soundscape,NA
 grnms_fish-chorus,Fish chorus,GRNMS,Animal: Fish,Animal,Fish
 grnms_toadfish,Toadfish,GRNMS,Animal: Fish,Animal,Fish
 grnms_snapping-shrimp,Snapping shrimp,GRNMS,Animal: Invertebrates,Animal,Invertebrates
@@ -38,7 +38,7 @@ grnms_vessels,Vessels,GRNMS,Human-made: Vessels,Human-made,Vessels
 grnms_hurricanes,Hurricanes,GRNMS,Physical: Hurricane,Physical,Hurricane
 grnms_rain,Rain,GRNMS,Physical: Rain,Physical,Rain
 grnms_wind-and-waves,Wind and waves,GRNMS,Physical: Wind and waves,Physical,Wind and waves
-grnms_speaker,Speaker,GRNMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+grnms_snapshots,Snapshots,GRNMS,Soundscape:,Soundscape,NA
 hihwnms_fish-chorus,Fish chorus,HIHWNMS,Animal: Fish,Animal,Fish
 hihwnms_snapping-shrimp,Snapping shrimp,HIHWNMS,Animal: Invertebrates,Animal,Invertebrates
 hihwnms_dolphins,Dolphins,HIHWNMS,Animal: Marine mammals,Animal,Marine mammals
@@ -51,7 +51,7 @@ hihwnms_sonars,Sonars,HIHWNMS,Human-made: Sonar,Human-made,Sonar
 hihwnms_vessels,Vessels,HIHWNMS,Human-made: Vessels,Human-made,Vessels
 hihwnms_rain,Rain,HIHWNMS,Physical: Rain,Physical,Rain
 hihwnms_wind-and-waves,Wind and waves,HIHWNMS,Physical: Wind and waves,Physical,Wind and waves
-hihwnms_speaker,Speaker,HIHWNMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+hihwnms_snapshots,Snapshots,HIHWNMS,Soundscape:,Soundscape,NA
 mbnms_bocaccio,Bocaccio,MBNMS,Animal: Fish,Animal,Fish
 mbnms_plainfin-midshipman,Plainfin midshipman,MBNMS,Animal: Fish,Animal,Fish
 mbnms_snapping-shrimp,Snapping shrimp,MBNMS,Animal: Invertebrates,Animal,Invertebrates
@@ -68,7 +68,7 @@ mbnms_sonars,Sonars,MBNMS,Human-made: Sonar,Human-made,Sonar
 mbnms_vessels,Vessels,MBNMS,Human-made: Vessels,Human-made,Vessels
 mbnms_rain,Rain,MBNMS,Physical: Rain,Physical,Rain
 mbnms_wind-and-waves,Wind and waves,MBNMS,Physical: Wind and waves,Physical,Wind and waves
-mbnms_speaker,Speaker,MBNMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+mbnms_snapshots,Snapshots,MBNMS,Soundscape:,Soundscape,NA
 ocnms_fish-chorus,Fish chorus,OCNMS,Animal: Fish,Animal,Fish
 ocnms_blue-whales,Blue whales,OCNMS,Animal: Marine mammals,Animal,Marine mammals
 ocnms_dolphins,Dolphins,OCNMS,Animal: Marine mammals,Animal,Marine mammals
@@ -82,7 +82,7 @@ ocnms_sonars,Sonars,OCNMS,Human-made: Sonar,Human-made,Sonar
 ocnms_vessels,Vessels,OCNMS,Human-made: Vessels,Human-made,Vessels
 ocnms_rain,Rain,OCNMS,Physical: Rain,Physical,Rain
 ocnms_wind-and-waves,Wind and waves,OCNMS,Physical: Wind and waves,Physical,Wind and waves
-ocnms_speaker,Speaker,OCNMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+ocnms_snapshots,Snapshots,OCNMS,Soundscape:,Soundscape,NA
 pmnm_damselfish,Damselfish,PMNM,Animal: Fish,Animal,Fish
 pmnm_fish-chorus,Fish chorus,PMNM,Animal: Fish,Animal,Fish
 pmnm_snapping-shrimp,Snapping shrimp,PMNM,Animal: Invertebrates,Animal,Invertebrates
@@ -93,7 +93,7 @@ pmnm_sonars,Sonars,PMNM,Human-made: Sonar,Human-made,Sonar
 pmnm_vessels,Vessels,PMNM,Human-made: Vessels,Human-made,Vessels
 pmnm_rain,Rain,PMNM,Physical: Rain,Physical,Rain
 pmnm_wind-and-waves,Wind and waves,PMNM,Physical: Wind and waves,Physical,Wind and waves
-pmnm_speaker,Speaker,PMNM,Soundscape Snapshots:,Soundscape Snapshots,NA
+pmnm_snapshots,Snapshots,PMNM,Soundscape:,Soundscape,NA
 sbnms_cod,Cod,SBNMS,Animal: Fish,Animal,Fish
 sbnms_haddock,Haddock,SBNMS,Animal: Fish,Animal,Fish
 sbnms_blue-whales,Blue whales,SBNMS,Animal: Marine mammals,Animal,Marine mammals
@@ -107,4 +107,4 @@ sbnms_pingers,Pingers,SBNMS,Human-made: Sonar,Human-made,Sonar
 sbnms_vessels,Vessels,SBNMS,Human-made: Vessels,Human-made,Vessels
 sbnms_rain,Rain,SBNMS,Physical: Rain,Physical,Rain
 sbnms_wind-and-waves,Wind and waves,SBNMS,Physical: Wind and waves,Physical,Wind and waves
-sbnms_speaker,Speaker,SBNMS,Soundscape Snapshots:,Soundscape Snapshots,NA
+sbnms_snapshots,Snapshots,SBNMS,Soundscape:,Soundscape,NA
