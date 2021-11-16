@@ -32,7 +32,7 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
     'Human-made':           '#FF990080',
     'Physical':             '#6600FF50',
     'Soundscape Snapshots': '#FFFF0080' 
-  }; // #041f28
+  };
 
   //  var f_child = div.node().appendChild(f.documentElement);
   d3.xml(svg).then((f) => {

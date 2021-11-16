@@ -13,15 +13,19 @@
 
 <title>Vessels in CINMS</title>
 
-<script src="modal_libs/jquery-1.11.3/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="modal_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
-<script src="modal_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="modal_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="modal_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="modal_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="modal_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link href="modal_libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
+<script src="modal_libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+<script src="modal_libs/bs3compat-0.3.1/transition.js"></script>
+<script src="modal_libs/bs3compat-0.3.1/tabs.js"></script>
+<script src="modal_libs/bs3compat-0.3.1/bs3compat.js"></script>
 <script src="modal_libs/navigation-1.1/tabsets.js"></script>
 <link href="modal_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="modal_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="modal_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="modal_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -30,14 +34,10 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-    </style>
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -50,35 +50,8 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
-<link rel="stylesheet" href="_modal_styles.css" type="text/css" />
 
 
 
@@ -87,10 +60,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -107,6 +76,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -119,7 +91,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -183,7 +154,7 @@ summary {
 
 
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -193,20 +164,41 @@ summary {
 
 
 <div id="section" class="section level2 tabset">
-<h2></h2>
+<h2 class="tabset"></h2>
 <div id="sights-sounds" class="section level3">
 <h3>Sights &amp; Sounds</h3>
+<div class="container">
 <div class="row">
-<div class="col-xs-6">
+<div class="col">
+<div class="figure">
+<img src="../files/vessel_container_ship_Jess_Morten_NOAA:CINMS_cropped.jpg" alt="" />
+<p class="caption">Large commerical ships carry cargo between ports around the globe. Container ships heading to or from large commerical ports in southern California are a common site in the waters around the Channel Islands. Photo: Jess Morten NOAA/CINMS</p>
+</div>
+</div>
+<div class="col">
+<p><video controls> <source src='../files/SanctSound_CI05_03_largeship_20190925T135956Z_44dBgain.mp4' type='video/mp4'> Your browser does not support the video tag. </video> Propulsion systems, such as spinning propeller blades, and the flow of water over the ship’s hull are the main sources of the underwater noises made by large commerical ships. These sounds tend to be louder at higher ship speeds.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="sights-sounds-1" class="section level3">
+<h3>Sights &amp; Sounds</h3>
+<div class="container">
+<div class="row">
+<div class="col">
 <div class="figure">
 <img src="../files/vessel_CINMS_sharkcat_NOAA.jpg" alt="" />
 <p class="caption">A variety of vessels are common in the waters around the Channel Islands, such as the R/V Shark Cat which supports science and research activities. Photo: NOAA</p>
 </div>
 </div>
-<div class="col-xs-6">
+<div class="col">
 <p><video controls> <source src='../files/SanctSound_CI01_03_smallboat_20190825T191712Z.mp4' type='video/mp4'> Your browser does not support the video tag. </video> These engine sounds from a small boat were recorded in CINMS. Noise from this vessel impacts frequencies below 6,000 Hz the most but is present up to 15,000 Hz.</p>
 </div>
 </div>
+</div>
+<p><i class="fas fa-question-circle"></i> <a href="https://sanctsound.ioos.us/draft/q_what-measure.html#spectrograms-intensity-of-sound-at-different-pitches-over-time">Click here</a> to learn more about sound clips, how spectrograms were made, and what the colors mean.</p>
+<p><i class="fas fa-chart-bar"></i> Vessels were heard at other stations. <a href="https://sanctsound.portal.axds.co/#sanctsound/method/vessel-detections?chart_type=vessel_histogram">Click here</a> to explore where else they were detected.</p>
+<p><i class="fas fa-volume-up"></i> Vessels were heard in other sanctuaries. <a href="http://tbd.com">Click here</a> to listen to sound clips from other locations.</p>
 </div>
 </div>
 
@@ -237,7 +229,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

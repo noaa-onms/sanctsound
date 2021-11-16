@@ -47,7 +47,7 @@ modal_pages <- modals %>%
 if (redo_modals){
   modal_pages %>%
     # filter(modal_id == "pmnm_minke-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
-    filter(!modal_id %in% c("cinms_blue-whales", "cinms_vessels")) %>% # pmnm_humpback-whales pmnm_minke-whales
+    # filter(!modal_id %in% c("cinms_blue-whales", "cinms_vessels")) %>% # pmnm_humpback-whales pmnm_minke-whales
     # View()
     # TODO: ∆ _modal_template to have chart-/question-captions like Blue whales; multiple Tabs like Vessels
     pwalk(render_modal)
