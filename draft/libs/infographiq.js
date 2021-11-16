@@ -31,7 +31,7 @@ function link_svg(svg, csv, debug = false, hover_color = 'yellow', width = '100%
     'Animal':               '#93D50080', 
     'Human-made':           '#FF990080',
     'Physical':             '#6600FF50',
-    'Soundscape Snapshots': '#FFFF0080' 
+    'Soundscape': '#FFFF0080' 
   };
 
   //  var f_child = div.node().appendChild(f.documentElement);
