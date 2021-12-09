@@ -7,10 +7,10 @@ output: html_document
 params:
   sanctuary_code: "CINMS"
   #modal_title: "Dolphins"
-  #modal_title: "Humpback whales"
+  modal_title: "Humpback whales"
   #modal_title: "Bocaccio"
   #modal_title: "Fin whales"
-  modal_title: "Blue whales"
+  # modal_title: "Blue whales"
   # modal_title: "Bocaccio"
   #modal_title: "Seal bombs"
   #modal_title: "Giant sea bass"
@@ -85,12 +85,15 @@ if (nrow(monthly) == 1)
   ")
 ```
 
+## 
+
 ```{r question_caption, results = "asis"}
 question_caption <- modals %>% 
   filter(
     sanctuary_code == params$sanctuary_code,
     modal_title    == params$modal_title) %>% 
-  pull(question_caption)
+  pull(question_caption) %>% 
+  md_links_new_window()
   
 if (!is.na(question_caption) && nchar(question_caption) > 0)
   glue('<i class="fas fa-question-circle"></i> {question_caption}')
@@ -101,7 +104,8 @@ chart_caption <- modals %>%
   filter(
     sanctuary_code == params$sanctuary_code,
     modal_title    == params$modal_title) %>% 
-  pull(chart_caption)
+  pull(chart_caption) %>% 
+  md_links_new_window()
   
 if (!is.na(chart_caption) && nchar(chart_caption) > 0)
   glue('<i class="fas fa-chart-bar"></i> {chart_caption}')
@@ -112,7 +116,8 @@ sound_caption <- modals %>%
   filter(
     sanctuary_code == params$sanctuary_code,
     modal_title    == params$modal_title) %>% 
-  pull(sound_caption)
+  pull(sound_caption) %>% 
+  md_links_new_window()
   
 if (!is.na(sound_caption) && nchar(sound_caption) > 0)
   glue('<i class="fas fa-volume-up"></i> {sound_caption}')

@@ -246,6 +246,10 @@ img_convert <- function(path_from, path_to, overwrite=F, width_in=6.5, dpi=150){
   #message(glue("{path_from}\t\n -> {path_to}\n", .trim = F))
 }
 
+md_links_new_window <- function(s){
+  str_replace_all(s, "\\[(.*?)\\]\\((.*?)\\)", "<a href='\\2' target='_blank'>\\1</>")
+}
+
 map_site <- function(site_code){
   
   # site_code = "cinms"
