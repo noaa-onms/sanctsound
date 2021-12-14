@@ -52,26 +52,204 @@ navbar:
     - text: '---------'
     - text: Animal
       menu:
+      - text: Black grouper (FKNMS)
+        href: sounds.html#black-grouper-fknms
       - text: Blue whales (CINMS)
         href: sounds.html#blue-whales-cinms
+      - text: Blue whales (OCNMS)
+        href: sounds.html#blue-whales-ocnms
       - text: Bocaccio (CINMS)
         href: sounds.html#bocaccio-cinms
+      - text: Bocaccio (MBNMS)
+        href: sounds.html#bocaccio-mbnms
+      - text: Cod (SBNMS)
+        href: sounds.html#cod-sbnms
+      - text: Damselfish (PMNM)
+        href: sounds.html#damselfish-pmnm
       - text: Dolphins (CINMS)
         href: sounds.html#dolphins-cinms
+      - text: Dolphins (FKNMS)
+        href: sounds.html#dolphins-fknms
+      - text: Dolphins (GRNMS)
+        href: sounds.html#dolphins-grnms
+      - text: Dolphins (HIHWNMS)
+        href: sounds.html#dolphins-hihwnms
+      - text: Dolphins (MBNMS)
+        href: sounds.html#dolphins-mbnms
+      - text: Dolphins (OCNMS)
+        href: sounds.html#dolphins-ocnms
+      - text: Dolphins (PMNM)
+        href: sounds.html#dolphins-pmnm
+      - text: Dolphins (SBNMS)
+        href: sounds.html#dolphins-sbnms
+      - text: Fin whales (MBNMS)
+        href: sounds.html#fin-whales-mbnms
+      - text: Fin whales (OCNMS)
+        href: sounds.html#fin-whales-ocnms
       - text: Gray whales (CINMS)
         href: sounds.html#gray-whales-cinms
+      - text: Gray whales (MBNMS)
+        href: sounds.html#gray-whales-mbnms
       - text: Humpback whales (CINMS)
         href: sounds.html#humpback-whales-cinms
+      - text: Humpback whales (HIHWNMS)
+        href: sounds.html#humpback-whales-hihwnms
+      - text: Humpback whales (MBNMS)
+        href: sounds.html#humpback-whales-mbnms
+      - text: Humpback whales (OCNMS)
+        href: sounds.html#humpback-whales-ocnms
+      - text: Humpback whales (PMNM)
+        href: sounds.html#humpback-whales-pmnm
+      - text: Humpback whales (SBNMS)
+        href: sounds.html#humpback-whales-sbnms
+      - text: Killer whales (MBNMS)
+        href: sounds.html#killer-whales-mbnms
+      - text: Killer whales (OCNMS)
+        href: sounds.html#killer-whales-ocnms
+      - text: Minke whales (HIHWNMS)
+        href: sounds.html#minke-whales-hihwnms
+      - text: Minke whales (PMNM)
+        href: sounds.html#minke-whales-pmnm
+      - text: Minke whales (SBNMS)
+        href: sounds.html#minke-whales-sbnms
       - text: Plainfin midshipman (CINMS)
         href: sounds.html#plainfin-midshipman-cinms
+      - text: Plainfin midshipman (MBNMS)
+        href: sounds.html#plainfin-midshipman-mbnms
+      - text: Red grouper (FKNMS)
+        href: sounds.html#red-grouper-fknms
+      - text: Right whales (GRNMS)
+        href: sounds.html#right-whales-grnms
+      - text: Right whales (SBNMS)
+        href: sounds.html#right-whales-sbnms
+      - text: Sea lions (CINMS)
+        href: sounds.html#sea-lions-cinms
+      - text: Sea lions (MBNMS)
+        href: sounds.html#sea-lions-mbnms
+      - text: Sei whales (SBNMS)
+        href: sounds.html#sei-whales-sbnms
+      - text: Snapping shrimp (CINMS)
+        href: sounds.html#snapping-shrimp-cinms
+      - text: Snapping shrimp (FKNMS)
+        href: sounds.html#snapping-shrimp-fknms
+      - text: Snapping shrimp (GRNMS)
+        href: sounds.html#snapping-shrimp-grnms
+      - text: Snapping shrimp (HIHWNMS)
+        href: sounds.html#snapping-shrimp-hihwnms
+      - text: Snapping shrimp (MBNMS)
+        href: sounds.html#snapping-shrimp-mbnms
+      - text: Snapping shrimp (PMNM)
+        href: sounds.html#snapping-shrimp-pmnm
+      - text: Sperm whales (HIHWNMS)
+        href: sounds.html#sperm-whales-hihwnms
+      - text: Toadfish (GRNMS)
+        href: sounds.html#toadfish-grnms
     - text: Human-made
       menu:
       - text: Echosounders (CINMS)
         href: sounds.html#echosounders-cinms
+      - text: Echosounders (HIHWNMS)
+        href: sounds.html#echosounders-hihwnms
+      - text: Echosounders and transducers (MBNMS)
+        href: sounds.html#echosounders-and-transducers-mbnms
+      - text: Explosions (FKNMS)
+        href: sounds.html#explosions-fknms
+      - text: Explosions (HIHWNMS)
+        href: sounds.html#explosions-hihwnms
+      - text: Pingers (SBNMS)
+        href: sounds.html#pingers-sbnms
+      - text: Seal bombs (CINMS)
+        href: sounds.html#seal-bombs-cinms
+      - text: Seal bombs (MBNMS)
+        href: sounds.html#seal-bombs-mbnms
+      - text: Seal bombs (OCNMS)
+        href: sounds.html#seal-bombs-ocnms
+      - text: Sonars (HIHWNMS)
+        href: sounds.html#sonars-hihwnms
+      - text: Sonars (MBNMS)
+        href: sounds.html#sonars-mbnms
+      - text: Sonars (OCNMS)
+        href: sounds.html#sonars-ocnms
+      - text: Sonars (PMNM)
+        href: sounds.html#sonars-pmnm
+      - text: Vessels (CINMS)
+        href: sounds.html#vessels-cinms
+      - text: Vessels (FKNMS)
+        href: sounds.html#vessels-fknms
+      - text: Vessels (GRNMS)
+        href: sounds.html#vessels-grnms
+      - text: Vessels (HIHWNMS)
+        href: sounds.html#vessels-hihwnms
+      - text: Vessels (MBNMS)
+        href: sounds.html#vessels-mbnms
+      - text: Vessels (OCNMS)
+        href: sounds.html#vessels-ocnms
+      - text: Vessels (SBNMS)
+        href: sounds.html#vessels-sbnms
     - text: Physical
       menu:
+      - text: Hurricanes (GRNMS)
+        href: sounds.html#hurricanes-grnms
       - text: Rain (CINMS)
         href: sounds.html#rain-cinms
+      - text: Rain (FKNMS)
+        href: sounds.html#rain-fknms
+      - text: Rain (GRNMS)
+        href: sounds.html#rain-grnms
+      - text: Rain (HIHWNMS)
+        href: sounds.html#rain-hihwnms
+      - text: Rain (MBNMS)
+        href: sounds.html#rain-mbnms
+      - text: Rain (OCNMS)
+        href: sounds.html#rain-ocnms
+      - text: Rain (SBNMS)
+        href: sounds.html#rain-sbnms
+      - text: Wind and waves (FKNMS)
+        href: sounds.html#wind-and-waves-fknms
+      - text: Wind and waves (GRNMS)
+        href: sounds.html#wind-and-waves-grnms
+      - text: Wind and waves (MBNMS)
+        href: sounds.html#wind-and-waves-mbnms
+      - text: Wind and waves (OCNMS)
+        href: sounds.html#wind-and-waves-ocnms
+      - text: Wind and waves (SBNMS)
+        href: sounds.html#wind-and-waves-sbnms
+    - text: Soundscape
+      menu:
+      - text: Snapshots (CINMS)
+        href: sounds.html#snapshots-cinms
+      - text: Snapshots (CINMS)
+        href: sounds.html#snapshots-cinms
+      - text: Snapshots (CINMS)
+        href: sounds.html#snapshots-cinms
+      - text: Snapshots (CINMS)
+        href: sounds.html#snapshots-cinms
+      - text: Snapshots (CINMS)
+        href: sounds.html#snapshots-cinms
+      - text: Snapshots (FKNMS)
+        href: sounds.html#snapshots-fknms
+      - text: Snapshots (GRNMS)
+        href: sounds.html#snapshots-grnms
+      - text: Snapshots (MBNMS)
+        href: sounds.html#snapshots-mbnms
+      - text: Snapshots (MBNMS)
+        href: sounds.html#snapshots-mbnms
+      - text: Snapshots (MBNMS)
+        href: sounds.html#snapshots-mbnms
+      - text: Snapshots (MBNMS)
+        href: sounds.html#snapshots-mbnms
+      - text: Snapshots (MBNMS)
+        href: sounds.html#snapshots-mbnms
+      - text: Snapshots (MBNMS)
+        href: sounds.html#snapshots-mbnms
+      - text: Snapshots (MBNMS)
+        href: sounds.html#snapshots-mbnms
+      - text: Snapshots (MBNMS)
+        href: sounds.html#snapshots-mbnms
+      - text: Snapshots (OCNMS)
+        href: sounds.html#snapshots-ocnms
+      - text: Snapshots (SBNMS)
+        href: sounds.html#snapshots-sbnms
   - text: Stories
     icon: fa-newspaper-o
     menu:
@@ -80,53 +258,40 @@ navbar:
     - text: '---------'
     - text: National
       menu:
-      - text: Did changes in offshore human activities during the COVID pandemic result
-          in changes in underwater soundscapes in sanctuaries?
+      - text: Can Scientists Train Machines to Listen for Ecosystem Health?
         href: stories.html#national
-      - text: How do measurements of sound compare among the sanctuaries we monitored?
+      - text: 'SanctSound Story Map: Exploring underwater sounds within the U.S. National
+          Mainre Sanctuary System'
         href: stories.html#national
-    - text: East Coast
-      menu:
-      - text: Acoustic monitoring enhances our understanding of site visitation at
-          Gray's Reef NMS (GRNMS)
-        href: stories.html#east-coast
-      - text: Baleen whale and regional dolphin presence in east coast National Marine
-          Sanctuaries
-        href: stories.html#east-coast
-      - text: Development of a call catalog to support automated acoustic data processing
-          techniques for coral reef soundscapes (FKNMS)
-        href: stories.html#east-coast
-      - text: Haddock and cod detection and vessel noise in SBNMS (SBNMS)
-        href: stories.html#east-coast
-    - text: Hawaii
-      menu:
-      - text: Acoustic activity of reef biota in PMNM (PMNM)
-        href: stories.html#hawaii
-      - text: Anthropogenic noise in HIHW and PMNM
-        href: stories.html#hawaii
-      - text: How is song chorusing related to whale abundance?
-        href: stories.html#hawaii
-      - text: Humpback whale song occurrence across the archipelago
-        href: stories.html#hawaii
-      - text: Waveglider mission to PMNM (PMNM)
-        href: stories.html#hawaii
+      - text: 'SanctSound: Listening to the (Not So) Silent World'
+        href: stories.html#national
     - text: West Coast
       menu:
-      - text: Chorusing behavior of fish in CINMS (CINMS)
+      - text: One Fish, Two Fish, Quiet Fish, Loud Fish (CINMS)
         href: stories.html#west-coast
-      - text: Giant sea bass in Santa Barbara Island (CINMS)
+      - text: Understanding Underwater Noise in Monterey Bay National Marine Sanctuary
+          (MBNMS)
         href: stories.html#west-coast
-      - text: How cruise ships contribute to the Monterey Bay soundscape (MBNMS)
+      - text: 'United in Song: Finding Common Ground to Protect Humpback Whales (OCNMS)'
         href: stories.html#west-coast
-      - text: How often do large ships exceed noise levels of X threshold at MB03
-          vs OC02 vs CI05?
-        href: stories.html#west-coast
-      - text: Seal bombs in Monterey Bay (MBNMS)
-        href: stories.html#west-coast
-      - text: Ships & whales in OCNMS (OCNMS)
-        href: stories.html#west-coast
-      - text: Vocalizing patterns of resident killer whales (OCNMS)
-        href: stories.html#west-coast
+    - text: .na.character
+      menu:
+      - text: 'Along for the Glide: What The Wave Glider''s Journey Through Papahānaumokuākea
+          Reveals About Humpback Whales (PMNM)'
+        href: stories.html#NA
+      - text: 'Eavesdropping on Whales: How Acoustic Surveys Are Revolutionizing Humpback
+          Whale Monitoring in Hawai''i (HIHWNMS)'
+        href: stories.html#NA
+      - text: Estimating Fishing and Diving Use at Gray's Reef by Listening to Boats
+          (GRNMS)
+        href: stories.html#NA
+      - text: 'Hum, Crackle, Knock: Monitoring Reef Habitats in Florida Keys National
+          Marine Sanctuary (FKNMS)'
+        href: stories.html#NA
+      - text: Listening to the Ocean in the Time of COVID-19 (SBNMS)
+        href: stories.html#NA
+      - text: 'Story Map: Boat Visitation at Gray''s Reef (GRNMS)'
+        href: stories.html#NA
   - text: Fun
     icon: fa-grin
     href: fun.html
