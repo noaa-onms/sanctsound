@@ -247,7 +247,7 @@ img_convert <- function(path_from, path_to, overwrite=F, width_in=6.5, dpi=150){
 }
 
 md_links_new_window <- function(s){
-  str_replace_all(s, "\\[(.*?)\\]\\((.*?)\\)", "<a href='\\2' target='_blank'>\\1</>")
+  str_replace_all(s, "\\[(.*?)\\]\\((.*?)\\)", "<a href='\\2' target='_blank'>\\1</a>")
 }
 
 map_site <- function(site_code){
@@ -623,6 +623,14 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_p
   
   if (!file.exists(path) | redo)
     drive_download(as_id(gid), path)
+  
+  gid = "https://drive.google.com/file/d/1rE8LY7_7axW5IPw83gOymErcyAvxLv6Y/view?usp=sharing"
+  x <- googledrive::drive_get(gid) %>% 
+    mutate(
+      modified = map_chr(drive_resource, "modifiedTime"))
+  y <- x$drive_resource[[1]]
+  
+  lubridate::as_datetime(x$drive_resource[[1]]$modifiedTime)
   
   if (path_ext(path) %in% c("mp3","wav") & !skip_spectrogram){
     

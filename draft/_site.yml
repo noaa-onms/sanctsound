@@ -3,9 +3,6 @@ navbar:
   title: SanctSound
   type: inverse
   left:
-  - text: Home
-    icon: fa-home
-    href: index.html
   - text: Questions
     icon: fa-question
     href: more.html
@@ -298,11 +295,11 @@ navbar:
   - text: Software
     icon: fa-code
     href: software.html
-  - text: Statistics
+  - text: Data Portal
     icon: fa-chart-bar
     menu:
-    - text: Statistics home
-      href: stats.html
+    - text: Home
+      href: https://sanctsound.portal.axds.co
     - text: '---------'
     - text: AIS comparisons
       href: z_ais-comparisons.html
