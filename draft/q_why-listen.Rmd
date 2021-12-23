@@ -48,9 +48,9 @@ At each SanctSound location, sound was recorded using an underwater microphone (
       <source src="./images/questions/OC-01 Video 02Nov2019_creditKathyHough_small.mp4" type="video/mp4" />
     </video>
   </div>
-  <figcaption class="figure-caption">
+  <!--figcaption class="figure-caption">
   Caption TBD.
-  </figcaption>
+  </figcaption-->
 </figure>
 <!--/html_preserve-->
 
@@ -60,8 +60,8 @@ Although most of SanctSound’s listening took place at specific locations, auto
 figure(
   img = c(
     "./images/questions/Eqiup_SBNMS_NOAA_McGuire_03.jpeg",
-    "./images/questions/PIR_PMNM_AlongForTheGlide.jpeg"),
-  caption = "Caption to come")
+    "./images/questions/PIR_PMNM_AlongForTheGlide.jpeg"))
+  #caption = "Caption to come")
 ```
 
 
