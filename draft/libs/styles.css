@@ -1,3 +1,8 @@
+.video-fluid {
+  width: 100%;
+  height: auto;
+}
+
 /*
 .card-1h{
   height:200px;
@@ -151,10 +156,13 @@
   max-width: 80% !important;
   margin-left: 10% !important;
   margin-right: 10% !important;
-  position: absolute;
-  top: 138px;
+  /*
+  margin-bottom: 234px;
+  padding-bottom: 234px;
+  position: absolute; 
+  */
+  margin-top: 100px;
 }
-
 
 html {
   position: relative;
@@ -175,16 +183,21 @@ body {
   background-size: cover;
   margin-top: 10px;
   position: absolute;
+  bottom: 0;
   width: 100%;
   height: 234px;
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 10%;
+  padding-right: 10%;
   /*
+  right: 0;
+  left: 0;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 0;
   position: absolute;
   bottom: 0;
-  width: 100%;
   height: 60px;
   padding: 20px 0;
   */
@@ -222,7 +235,7 @@ body {
     padding-left: 50px;
 }
 
-#footer-col-2 h5,#footer-col-3 h5 {
+#footer-col-2 h5, #footer-col-3 h5 {
     color: #fff;
     /* padding-top: 40px; 
        padding-bottom: 16px; */
@@ -285,3 +298,22 @@ body {
     fill: #003087
 }
 
+figure {
+  font-style: italic;
+  text-indent: 0;
+  border: thin silver solid;
+  margin: 0.6em;
+  padding: 0.6em !important;
+  border-radius: 5px !important;
+  width: 100%;
+  max-width: 800px;
+}
+
+.figure_img {
+  border-radius: 5px !important;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  text-align: center !important;
+}

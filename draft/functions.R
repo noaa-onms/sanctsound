@@ -22,6 +22,58 @@ gsheet_pfx    <- "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPX
 sites_csv <- here("draft/data/nms_sites.csv")
 sites_geo <- here("draft/data/nms_sites.geojson")
 
+figure <- function(
+  img, caption="", alt="", align="center", size="col-md-6"){
+  
+  stopifnot(align %in% c("center","left","right"))
+  
+  if (length(img) == 2){
+    if (length(alt) == 1)
+      alt = c(alt, "")
+    return(
+      glue(
+        "<!--html_preserve-->
+        <figure class='figure col-md-12'>
+          <div class='row'>
+            <div class='col-md-6'>
+              <img src='{img[1]}' alt='{alt[1]}' class='figure_img'/>
+            </div>
+            <div class='col-md-6'>
+              <img src='{img[2]}' alt='{alt[2]}' class='figure_img'/>
+            </div>
+          </div>
+          <figcaption class='figure-caption'>
+            {caption}
+          </figcaption>
+        </figure>
+        <!--/html_preserve-->"))
+  }
+  
+  if (align == "center"){
+    glue(
+      "<!--html_preserve-->
+    <center>
+      <figure class='figure'>
+        <img src='{img}' alt='{alt}' class='figure_img'/>
+        <figcaption class='figure-caption'>
+          {caption}
+        </figcaption>
+      </figure>
+    </center>
+    <!--/html_preserve-->")
+  } else {
+    glue(
+      "<!--html_preserve-->
+      <figure class='figure {size}' style='float:{align}'>
+        <img src='{img}' alt='{alt}' class='figure_img'/>
+        <figcaption class='figure-caption'>
+          {caption}
+        </figcaption>
+      </figure>
+      <!--/html_preserve-->")
+  }
+}
+
 get_sheet_csv <- function(sheet){
   glue("{gsheet_pfx}&sheet={sheet}")
 }

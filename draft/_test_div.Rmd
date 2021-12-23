@@ -1,0 +1,34 @@
+---
+title: "div stylings"
+author: "Ben Best"
+date: "12/22/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{css}
+.blackbox {
+  padding: 1em;
+  /*background: black;
+  color: white; */
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.center {
+  text-align: center;
+}
+```
+
+::: {.blackbox}
+::: {.center}
+**NOTICE!**
+:::
+
+Thank you for noticing this **new notice**! Your noticing it has been noted, and *will be reported to the authorities*!
+:::
+
+::: {.clearfix}
+:::
