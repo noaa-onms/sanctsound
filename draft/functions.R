@@ -27,6 +27,20 @@ figure <- function(
   
   stopifnot(align %in% c("center","left","right"))
   
+  get_media_html <- function(img, alt=""){
+    # img = "./images/questions/Equip_FKNMS_04_small.mp4"
+    ext <- tolower(fs::path_ext(img))
+    ifelse(
+      ext %in% c("mp4"),
+      glue(
+        "<video class='video-fluid z-depth-1' autoplay loop controls muted>
+          <source src='{img}' type='video/mp4' />
+        </video>"),
+      glue(
+        "<img src='{img}' alt='{alt}' class='figure_img'
+          data-enlargeable style='cursor: zoom-in'/>"))
+  }
+  
   if (length(img) == 2){
     if (length(alt) == 1)
       alt = c(alt, "")
@@ -36,12 +50,10 @@ figure <- function(
         <figure class='figure col-md-12'>
           <div class='row'>
             <div class='col-md-6'>
-              <img src='{img[1]}' alt='{alt[1]}' class='figure_img'
-               data-enlargeable style='cursor: zoom-in'/>
+              {get_media_html(img[1], alt[1])}
             </div>
             <div class='col-md-6'>
-              <img src='{img[2]}' alt='{alt[2]}' class='figure_img'
-               data-enlargeable style='cursor: zoom-in'/>
+              {get_media_html(img[2], alt[2])}
             </div>
           </div>
           <figcaption class='figure-caption'>
@@ -50,26 +62,24 @@ figure <- function(
         </figure>
         <!--/html_preserve-->"))
   }
-  
+
   if (align == "center"){
     glue(
       "<!--html_preserve-->
-    <center>
-      <figure class='figure'>
-        <img src='{img}' alt='{alt}' class='figure_img'
-          data-enlargeable style='cursor: zoom-in'/>
-        <figcaption class='figure-caption'>
-          {caption}
-        </figcaption>
-      </figure>
-    </center>
-    <!--/html_preserve-->")
+      <center>
+        <figure class='figure'>
+          {get_media_html(img, alt)}
+          <figcaption class='figure-caption'>
+            {caption}
+          </figcaption>
+        </figure>
+      </center>
+      <!--/html_preserve-->")
   } else {
     glue(
       "<!--html_preserve-->
-      <figure class='figure {size}' style='float:{align}'>
-        <img src='{img}' alt='{alt}' class='figure_img'
-          data-enlargeable style='cursor: zoom-in'/>
+      <figure class='figure {size} clearfix' style='float:{align}'>
+        {get_media_html(img, alt)}
         <figcaption class='figure-caption'>
           {caption}
         </figcaption>

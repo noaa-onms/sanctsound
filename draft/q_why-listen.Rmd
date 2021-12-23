@@ -15,8 +15,7 @@ We programmed all SanctSound recorders to collect information over the same rang
 
 In some cases, human-made sounds can interfere with the ability of animals to hear important signals underwater. One goal of the SanctSound project was to improve our understanding of where and when this is happening in sanctuaries, and what methods might be used to reduce interference that is causing harm.
 
-
-```{r, results='asis', eval=T}
+```{r, results='asis'}
 figure(
   img = "./images/questions/Hearing-ranges_small.gif",
   caption = "This animation shows how the hearing abilities of animals that we focused on during the project (green bars) overlap with the types of physical sounds (purple) and human-made sounds (orange) that we recorded. There are more sound-producing human activities and more sanctuary animals that use or produce sound than are depicted here. The yellow bar indicates the hearing range of humans in air as well as the range of frequencies that were recorded by SanctSound hydrophones.",
@@ -25,7 +24,7 @@ figure(
 
 We used the same recording equipment at all of our locations. Although data collected by different equipment can be adjusted to allow results to be compared, we minimized the need for adjustments by using recorders with similar performance. The measurements that you will discover through this portal have all been calibrated, which means that they have been adjusted to account for differences in performance between recorders. This approach allows us to compare recordings among locations, and to know that the differences and similarities we see reflect the conditions of the acoustic environment.
 
-```{r, results='asis', eval=T}
+```{r, results='asis'}
 figure(
   img = "./images/questions/4_recording_equipment.png",
   caption = "SanctSound has two main approaches for deploying sound recording equipment: a mooring with a release and float system, deployed and retrieved from a research vessel (left panel) and a mooring maintained by divers (center bottom panel). In a few special cases, the project also attached sound recording equipment to a diving autonomous underwater vehicle (center upper panel) and a surface autonomous vehicle powered by waves (right panel).",
@@ -35,28 +34,18 @@ figure(
 
 At each SanctSound location, sound was recorded using an underwater microphone (also known as a hydrophone) placed near the seafloor. Periodically we retrieved the instruments to download the recordings and refresh the batteries. At shallower locations, like those in Florida Keys national marine sanctuary, this equipment was placed and retrieved by divers. At deeper locations, such as those in Olympic Coast national marine sanctuary, gear was deployed over the side of the sanctuary's research vessels and allowed to sink to the seafloor using an anchored mooring line. Attached to each mooring line was a release system, placed between the recording equipment and anchor, which was used to remotely release the gear for recovery. After release, the recording equipment rose to the surface and was picked up by scientists on the research vessel. Regular maintenance of recording equipment using these methods supported continuous collection of sound information at each location.
 
+```{r, results='asis'}
+figure(
+  img = c(
+    "./images/questions/Equip_FKNMS_04_small.mp4",
+    "./images/questions/OC-01 Video 02Nov2019_creditKathyHough_small.mp4"))
+  #caption = "Caption to come")
+```
 
-<!--html_preserve-->
-<figure class="figure col-md-12">
-  <div class="col-md-6" style="float:left">
-    <video class="video-fluid z-depth-1" autoplay loop controls muted>
-      <source src="./images/questions/Equip_FKNMS_04_small.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <div class="col-md-6" style="float:right">
-    <video class="video-fluid z-depth-1" autoplay loop controls muted>
-      <source src="./images/questions/OC-01 Video 02Nov2019_creditKathyHough_small.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <!--figcaption class="figure-caption">
-  Caption TBD.
-  </figcaption-->
-</figure>
-<!--/html_preserve-->
 
 Although most of SanctSound’s listening took place at specific locations, autonomous underwater vehicles also known as “gliders” were also used to collect sounds for shorter periods of time in Stellwagen and Gray’s Reef national marine sanctuaries and in the Papahānaumokuākea marine national monument.  These vehicles were programmed to swim on particular paths over periods of weeks, collecting sounds and other types of data. Torpedo-shaped gliders dive up and down while others resemble surf boards to glide on the waves, but all of them gathered sounds over areas and times when specific animals were expected to be calling. Read a story about how gliders were used in Stellwagen Bank here and Papahānaumokuākea [here](https://sanctuaries.noaa.gov/news/jul21/along-for-the-glide.html).
 
-```{r, results='asis', eval=T}
+```{r, results='asis'}
 figure(
   img = c(
     "./images/questions/Eqiup_SBNMS_NOAA_McGuire_03.jpeg",
