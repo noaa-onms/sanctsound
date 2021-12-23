@@ -931,32 +931,22 @@ $(function() {
   
   // header scroll
   headerScroll = function() {
-    75 < $(this).scrollTop() ? (
+    75 > $(this).scrollTop() ? (
+      // if scrolled up [initial]
+      $("header > div > a").css("visibility", "visible"),
+      $(".navbar").css({ position: "static", top: "0" }),
+      $(".main-container").css("margin-top", "0px"),
+      $(".navbar").css("top", "75px")) : (
       // if scrolled down [after]
       $("header > div > a").css("visibility", "hidden"),
       $(".navbar").css("position", "fixed"),
       $(".main-container").css("margin-top", "75px"),
-      $(".navbar").css("top", "0px")) : (
-      //768 < $("body").width() && (
-      //  $("header").css("top", "-50px"),
-      //  $(".main-container").css("margin-top", "65px"),
-      //  $(".navbar").css("top", "10px"))) : (
-      // else if scrolled up [initial]
-      $("header > div > a").css("visibility", "visible"),
-      $(".navbar").css({
-        position: "static",
-        top: "0" }),
-      $(".main-container").css("margin-top", "0px"),
-      $(".navbar").css("top", "75px"))
-      //768 < $("body").width() && (
-      //  $(".main-container").css("margin-top", "25px")))
-  }
-  ,
+      $(".navbar").css("top", "0px"))
+  },
   $(document).scroll(headerScroll),
   window.onresize = function(e) {
-    768 < $("body").width() && void 0 === $("header").css("top") && headerScroll()
-  }
-  ,
+    headerScroll()
+  },
   headerScroll()
 });
 </script>
