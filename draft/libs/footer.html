@@ -46,36 +46,69 @@
 
 <script>
 $(function() {
+  // move header
   $('.main-container').after($('#footer'));
-})
+  $('.main-container').before($('.navbar'));
 
-$('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
-  var src = $(this).attr('src');
-  var modal;
-
-  function removeModal() {
-    modal.remove();
-    $('body').off('keyup.modal-close');
-  }
-  modal = $('<div>').css({
-    background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
-    backgroundSize: 'contain',
-    width: '100%',
-    height: '100%',
-    position: 'fixed',
-    zIndex: '10000',
-    top: '0',
-    left: '0',
-    cursor: 'zoom-out'
-  }).click(function() {
-    removeModal();
-  }).appendTo('body');
-  //handling ESC
-  $('body').on('keyup.modal-close', function(e) {
-    if (e.key === 'Escape') {
-      removeModal();
+  // image zoom
+  $('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+    var src = $(this).attr('src');
+    var modal;
+  
+    function removeModal() {
+      modal.remove();
+      $('body').off('keyup.modal-close');
     }
+    modal = $('<div>').css({
+      background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+      backgroundSize: 'contain',
+      width: '100%',
+      height: '100%',
+      position: 'fixed',
+      zIndex: '10000',
+      top: '0',
+      left: '0',
+      cursor: 'zoom-out'
+    }).click(function() {
+      removeModal();
+    }).appendTo('body');
+    //handling ESC
+    $('body').on('keyup.modal-close', function(e) {
+      if (e.key === 'Escape') {
+        removeModal();
+      }
+    });
   });
+  
+  // header scroll
+  headerScroll = function() {
+    75 < $(this).scrollTop() ? (
+      // if scrolled down [after]
+      $("header > div > a").css("visibility", "hidden"),
+      $(".navbar").css("position", "fixed"),
+      $(".main-container").css("margin-top", "75px"),
+      $(".navbar").css("top", "0px")) : (
+      //768 < $("body").width() && (
+      //  $("header").css("top", "-50px"),
+      //  $(".main-container").css("margin-top", "65px"),
+      //  $(".navbar").css("top", "10px"))) : (
+      // else if scrolled up [initial]
+      $("header > div > a").css("visibility", "visible"),
+      $(".navbar").css({
+        position: "static",
+        top: "0" }),
+      $(".main-container").css("margin-top", "0px"),
+      $(".navbar").css("top", "75px"))
+      //768 < $("body").width() && (
+      //  $(".main-container").css("margin-top", "25px")))
+  }
+  ,
+  $(document).scroll(headerScroll),
+  window.onresize = function(e) {
+    768 < $("body").width() && void 0 === $("header").css("top") && headerScroll()
+  }
+  ,
+  headerScroll()
 });
 </script>
 <!--script>
