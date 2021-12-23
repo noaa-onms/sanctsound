@@ -36,10 +36,12 @@ figure <- function(
         <figure class='figure col-md-12'>
           <div class='row'>
             <div class='col-md-6'>
-              <img src='{img[1]}' alt='{alt[1]}' class='figure_img'/>
+              <img src='{img[1]}' alt='{alt[1]}' class='figure_img'
+               data-enlargeable style='cursor: zoom-in'/>
             </div>
             <div class='col-md-6'>
-              <img src='{img[2]}' alt='{alt[2]}' class='figure_img'/>
+              <img src='{img[2]}' alt='{alt[2]}' class='figure_img'
+               data-enlargeable style='cursor: zoom-in'/>
             </div>
           </div>
           <figcaption class='figure-caption'>
@@ -54,7 +56,8 @@ figure <- function(
       "<!--html_preserve-->
     <center>
       <figure class='figure'>
-        <img src='{img}' alt='{alt}' class='figure_img'/>
+        <img src='{img}' alt='{alt}' class='figure_img'
+          data-enlargeable style='cursor: zoom-in'/>
         <figcaption class='figure-caption'>
           {caption}
         </figcaption>
@@ -65,7 +68,8 @@ figure <- function(
     glue(
       "<!--html_preserve-->
       <figure class='figure {size}' style='float:{align}'>
-        <img src='{img}' alt='{alt}' class='figure_img'/>
+        <img src='{img}' alt='{alt}' class='figure_img'
+          data-enlargeable style='cursor: zoom-in'/>
         <figcaption class='figure-caption'>
           {caption}
         </figcaption>

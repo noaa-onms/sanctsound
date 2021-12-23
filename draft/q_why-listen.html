@@ -782,7 +782,8 @@ $(document).ready(function () {
 
 <center>
   <figure class='figure'>
-    <img src='images/questions/Hearing-ranges_small.gif' alt='graphic of frequencies in horizontal axis with ranges of elements arranged above.' class='figure_img'/>
+    <img src='images/questions/Hearing-ranges_small.gif' alt='graphic of frequencies in horizontal axis with ranges of elements arranged above.' class='figure_img'
+      data-enlargeable style='cursor: zoom-in'/>
     <figcaption class='figure-caption'>
       This animation shows how the hearing abilities of animals that we focused on during the project (green bars) overlap with the types of physical sounds (purple) and human-made sounds (orange) that we recorded. There are more sound-producing human activities and more sanctuary animals that use or produce sound than are depicted here. The yellow bar indicates the hearing range of humans in air as well as the range of frequencies that were recorded by SanctSound hydrophones.
     </figcaption>
@@ -792,7 +793,8 @@ $(document).ready(function () {
 <p>We used the same recording equipment at all of our locations. Although data collected by different equipment can be adjusted to allow results to be compared, we minimized the need for adjustments by using recorders with similar performance. The measurements that you will discover through this portal have all been calibrated, which means that they have been adjusted to account for differences in performance between recorders. This approach allows us to compare recordings among locations, and to know that the differences and similarities we see reflect the conditions of the acoustic environment.</p>
 
 <figure class='figure col-md-6' style='float:right'>
-  <img src='images/questions/4_recording_equipment.png' alt='illustration of equipment' class='figure_img'/>
+  <img src='images/questions/4_recording_equipment.png' alt='illustration of equipment' class='figure_img'
+    data-enlargeable style='cursor: zoom-in'/>
   <figcaption class='figure-caption'>
     SanctSound has two main approaches for deploying sound recording equipment: a mooring with a release and float system, deployed and retrieved from a research vessel (left panel) and a mooring maintained by divers (center bottom panel). In a few special cases, the project also attached sound recording equipment to a diving autonomous underwater vehicle (center upper panel) and a surface autonomous vehicle powered by waves (right panel).
   </figcaption>
@@ -821,10 +823,12 @@ $(document).ready(function () {
 <figure class='figure col-md-12'>
   <div class='row'>
     <div class='col-md-6'>
-      <img src='images/questions/Eqiup_SBNMS_NOAA_McGuire_03.jpeg' alt='' class='figure_img'/>
+      <img src='images/questions/Eqiup_SBNMS_NOAA_McGuire_03.jpeg' alt='' class='figure_img'
+       data-enlargeable style='cursor: zoom-in'/>
     </div>
     <div class='col-md-6'>
-      <img src='images/questions/PIR_PMNM_AlongForTheGlide.jpeg' alt='' class='figure_img'/>
+      <img src='images/questions/PIR_PMNM_AlongForTheGlide.jpeg' alt='' class='figure_img'
+       data-enlargeable style='cursor: zoom-in'/>
     </div>
   </div>
   <figcaption class='figure-caption'>
@@ -884,6 +888,35 @@ $(document).ready(function () {
 $(function() {
   $('.main-container').after($('#footer'));
 })
+
+$('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+  var src = $(this).attr('src');
+  var modal;
+
+  function removeModal() {
+    modal.remove();
+    $('body').off('keyup.modal-close');
+  }
+  modal = $('<div>').css({
+    background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+    backgroundSize: 'contain',
+    width: '100%',
+    height: '100%',
+    position: 'fixed',
+    zIndex: '10000',
+    top: '0',
+    left: '0',
+    cursor: 'zoom-out'
+  }).click(function() {
+    removeModal();
+  }).appendTo('body');
+  //handling ESC
+  $('body').on('keyup.modal-close', function(e) {
+    if (e.key === 'Escape') {
+      removeModal();
+    }
+  });
+});
 </script>
 <!--script>
 $(document).ready(function() {
