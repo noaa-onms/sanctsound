@@ -6,9 +6,16 @@ title: "Who are we?"
 knitr::opts_chunk$set(echo = F)
 ```
 
-SanctSound is a nationally coordinated project co-led by NOAA’s Office of National Marine Sanctuaries and the U.S. Navy, and represents collaboration among a large number of people with expertise ranging from field operations to analysis to data management to communications.  
+<center>
+![](./images/questions/SanctSound_logo.png){width="200"}
+</center>
 
-![This image shows the logos for the NOAA Office of National Marine Sanctuaries and U.S. Navy, along with 21 additional institutional logos representing the large team of people who support the SanctSound monitoring project’s data collection, analysis, archive, and product distribution.](./images/who.png)
-_These institutional logos represent the large team of people who support the SanctSound monitoring project’s data collection, analysis, archive, and product distribution._
+SanctSound is a nationally coordinated project co-led by NOAA's Office of National Marine Sanctuaries and the U.S. Navy, and represents collaboration among a large number of people with expertise ranging from field operations to analysis to data management to communications.
 
+
+<center>
+![](./images/questions/Logos.png){width="500"}
+</center>
+
+These institutional logos represent the large team of people who support the SanctSound monitoring project’s data collection, analysis, archive, and product distribution.
 

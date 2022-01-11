@@ -7,7 +7,7 @@ if (!require("librarian")){
   library(librarian)
 }
 shelf(
-  av, dplyr, DT, fs, glue, googledrive, here, htmltools, knitr, leaflet, 
+  av, dplyr, DT, fs, glue, googledrive, here, htmltools, knitr, leaflet, lubridate,
   purrr, readr, rmarkdown, sf, shiny, sp, stringr, tibble, tidyr, yaml)
 here <- here::here
 options(readr.show_col_types = F)

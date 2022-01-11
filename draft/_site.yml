@@ -1,6 +1,9 @@
 name: Sanctuaries and Sound
 navbar:
-  title: SanctSound
+  logo:
+    image: ./images/SanctSound_logo_white-text.png
+    href: https://sanctsound.ioos.us/draft
+  title: <img src='./images/SanctSound_logo_white-text.png' width='100p' style='vertical-align:top'><!-- SanctSound -->
   type: inverse
   left:
   - text: Questions

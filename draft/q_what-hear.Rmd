@@ -5,67 +5,84 @@ editor_options:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F)
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
+source(here::here("draft/functions.R"))
 ```
 
-_Ever traveled to a new city and noticed how different it sounded from home? Sometimes you know immediately what is making a sound as it is relatively common and sounds about the same wherever you go (train passing by, airplanes taking off, truck backing up). Other sounds might be harder to figure out: what bird makes that call? Is that a coyote howling in the distance?_
+_What makes a place that you are visiting sound different from home? Sometimes you know immediately what is making a sound because it is relatively common and sounds about the same wherever you go (e.g., train passing by, airplanes taking off, truck backing up). Other sounds might be harder to figure out: What bird makes that call? Is that a baby crying in the distance?_
 
-The 30 listening stations in 7 U.S. National Marine Sanctuaries and 1 Marine National Monument in this project were selected to record ocean sounds over several years. We chose spots most likely to have a variety of sounds including physical processes, animals, and human activities. Reef-living invertebrates like snapping shrimp, calling fish and whales, boats, explosions from fishing activities, sonars used in military training, are a few of the expected and relatively well-characterized sources of sound in the ocean.
+The sounds produced by animals are made up of specific pitches, or frequencies. Some extend below the frequencies that human ears can reliably hear, like blue whale calls. Other animal repertoires extend higher than what humans can reliably hear, like dolphins. Similarly, people introduce sounds into the marine environment that contain specific frequencies. The bursting of bubbles off boat propellers produce sounds that span a wide range of frequencies, with their spectrum giving hints to their size. Natural environmental forces like wind and waves produce sound underwater that are heightened at specific frequencies and can be used to track the presence of storms and other weather activity at recording locations.
 
-Under the “What did we hear” tab for each sanctuary, interactive infographics showcase the many different sources of sound that we identified and tracked through our recording efforts. Clicking on the icons of sound sources on the infographic, for example the humpback whale, opens a window in which you can listen to sound clips recorded at that sanctuary and learn more about daily, monthly or annual patterns that were detected in that sanctuary.
+```{r, results='asis'}
+figure(
+  img = "./images/questions/SanctSounds.png",
+  caption = "There are many sources of sound in sanctuaries. This graphic highlights the sound sources that we focused on in the SanctSound project, including physical (purple bar), animal (green) and human-made (orange). The width of the bars indicates the range of frequencies (or pitches) that are typical of that sound source. For comparison, the yellow bar shows the hearing range of humans in air, and is also the range of frequencies that were recorded by SanctSound hydrophones.",
+  alt = "")
+```
 
-![](./images/infographic_modals_tutorial.png)
-‘Sounds’ pull down in the Navigation Bar lists all the sound clips available through the interactive infographics across all eight sanctuaries. For a catalog of all the sound clips available for this entire project, head to the SanctSound data portal by selecting ‘Spectrograms’ under the ‘Statistics’ pull down in the Navigation Bar.
+SanctSound recorders heard a variety of sounds, including physical processes, animals, and human activities. Invertebrates (like snapping shrimp), fish, whales, vessels, fishing activities, and sonars used in military training are a few of the expected and relatively well-characterized sources of sound recorded throughout the project. Only a few types of sounds were present at all recording locations. These included the underwater sounds made by vessels both big and small. 
 
-Only a few types of sounds were present at all recording locations. These include the underwater sounds made by wind and waves, and boats. Some sounds were present over many locations, including sounds made by snapping shrimp and humpback whales. Still others were present in only one or a few locations, like calling groupers in the Florida Keys National Marine Sanctuary or calling Atlantic cod in the Stellwagen Bank National Marine Sanctuary.
+Under the “What did we hear” tab for each sanctuary, interactive infographics showcase the many different sources of sound that we identified and tracked through our recording efforts. Clicking on a sound source icon on the infographic opens a window where you can listen to a sound clip recorded at that sanctuary and, for some sources, learn more about daily, monthly or annual patterns that were detected in that sanctuary. These scenes only include sources of sound tracked by the project and do not include all the species and activities that may create underwater sound in the sanctuaries.
 
-Many of the sounds produced by animals are constrained to specific tones or frequencies . Therefore, changes in levels or intensities of sound at certain frequencies during different time periods can be linked to different animal sources. Similarly, the bursting of bubbles off boat propellers produce sounds with specific frequency content allowing levels of sound at lower frequencies to track boat presence around listening stations. Natural environmental forces like wind and waves produce sound underwater that are heightened at specific frequencies and can be used to track the presence of storms and other weather activity at recording locations.
+```{r, results='asis'}
+figure(
+  img = "./images/questions/Modals_optimized_snapshots.png",
+  caption = "",
+  alt = "",
+  align  = "right")
+```
 
-<div class='row'>
-<div class='col-xs-6'>
+In addition to providing sound clips of specific sound sources, we also wanted to provide a few examples of what it sounds like when some of these sound sources co-occur. These “soundscape snapshots” help illustrate what the sanctuary actually sounds like in a certain place and time.
+Some of the sounds we recorded, like blue whale calls, extend below the frequencies that human ears can easily hear and that the speakers on typical electronic devices can reliably make. For these cases, we have included the original sound clip recorded as well as a version of the clip optimized for human hearing.
 
-**Bocaccio**:
+<div class="clearfix"></div>
 
-<video controls width="100%">
-<source src="./files/SanctSound_CI01_Bocaccio_20181101.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-  
-</div>
-<div class='col-xs-6'>
+One tool for better understanding the differences among different sounds is a spectrogram. A spectrogram uses color to show the intensity (or loudness) at different frequencies (or pitches) over time. In SanctSound spectrograms, louder sounds are shown in warmer colors. Vertically you can see whether sound is more or less intense at different frequencies. When you play a sound and view its pattern in a spectrogram, you get a better sense of a sound’s composition.
 
-**Dolphins**:
-  
-<video controls width="100%">
-<source src="./files/SanctSound_CI01_03_dolphins_20190904T064203Z.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+```{r, results='asis'}
+figure(
+  img = "./images/questions/4spectrograms_HIHWNMS.png",
+  caption = "",
+  alt = "",
+  align  = "left")
+```
 
-</div> <!-- end: col -->
-</div> <!-- end: row -->
+In these example spectrograms recorded in Hawaiian Islands Humpback Whale National Marine Sanctuary, you can see and hear the varied pitches and note types that make up humpback whale songs, the simpler and highly repetitive clicks made by sperm whales, the blurry underwater signature of rain on the ocean’s surface, and the lower frequency blade signature made by the propellor of a nearby vessel.
 
-<div class='row'>
-<div class='col-xs-12'>
+<div class="clearfix"></div>
 
-**Seal bombs**:
+```{r, results='asis'}
+figure(
+  img = "./images/questions/Foyer_example_sounds_screengrab.png",
+  caption = "",
+  alt = "",
+  align  = "left")
+```
 
-<video width="100%" controls>
-<source src="./files/SanctSound_CI05_02_SealBomb_20190405T110516.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+The ‘Sounds’ pull down in the Navigation Bar takes you to the [example sounds page](https://sanctsound.ioos.us/draft/sounds.html), which contains all the sound clips available through the interactive infographics across all eight sanctuaries. For a catalog of all the sound clips available for this entire project, head to the SanctSound data portal by selecting ‘Sound Library’ under the ‘Statistics’ pull down in the Navigation Bar or by clicking here.
 
-</div> <!-- end: col -->
-</div> <!-- end: row -->
+<div class="clearfix"></div>
 
+While there are many sounds of unknown origin in our data, sounds that are well described and relatively consistent can be “detected” by automated processes. Because computers aren’t perfect, scientists verify the automated detection results. This process allows us to determine how the automated detector performed in different places, including how well it worked in a louder environment or for specific types of sound. 
 
-While there are many sounds of unknown origin in our data, sounds that are well described and relatively consistent can be “detected” by automated processes. Because computers aren’t perfect, scientists verify the automated detection results. This process allows us to determine how the automated detector performed in different places, including how well it worked in a louder environment or for specific types of sound.
+```{r, results='asis'}
+figure(
+  img     = "./images/questions/what-hear-detections.png",
+  caption = "",
+  alt     = "")
+```
 
-There are many ways to showcase the contributions of known sounds detected at recording locations. Sounds produced by animals often peak during specific periods of the day, and during specific months or seasons based on the roles the sound plays in the animals’ reproductive, feeding or migratory  activity. For many of the sound sources in a sanctuary, we show how frequently the sound was detected during the project’s 3 year recording period. For example, we can graph the number of times a certain sound is detected each month to look for times of year when that sound is a more or less important component of the sanctuary soundscape. The plot below shows the occurrence of vessel sounds detected at a listening station in FKNMS.
+There are many ways to showcase the contributions of known sounds detected at recording locations. Sounds produced by animals often peak during specific periods of the day, and during specific months or seasons based on the roles the sound plays in the animals’ reproductive, feeding or migratory activity. For many of the sound sources in a sanctuary, we show how frequently the sound was detected during the project’s 3 year recording period. For example, we can graph the number of times a certain sound was detected each month to determine when that sound is a more or less important component of the sanctuary soundscape throughout the year. This plot shows the occurrence of dolphin sounds detected at a listening station in FKNMS.
 
-![](./images/humpback_monthly_detections_tutorial_mockup.png)
+```{r, results='asis'}
+figure(
+  img     = "./images/questions/what-hear-diurnal-detections.png",
+  caption = "",
+  alt     = "",
+  align   = "right")
+```
 
-We can also visualize whether detections varied over the course of a day by counting how many times a sound is detected in each hour and plotting that on a graph that looks like a 24 hour clock. For example, outboard motors are more commonly recorded during daylight hours since that is the time of day when most people go out fishing and boating.
+We can also visualize whether detections varied over the course of a day by counting how many times a sound is detected in each hour and plotting that on a graph that looks like a 24 hour clock. For example, at this site in Florida Keys National Marine Sanctuary, vessel sounds are more commonly recorded during the late morning to afternoon hours, since that is the time of day when most people go out fishing and boating.
 
-![](./images/humpback_daily_detections_tutorial mockup.png)
+These types of monthly and daily patterns are shown under the ‘What did we hear’ tab for many of the sound sources on a sanctuary’s interactive infographic. For those interested in a deeper exploration of detection patterns within and across sanctuaries, select ‘Detections’ under the ‘Statistics’ pull down in the Navigation Bar.
 
-These types of monthly and daily patterns are shown under the ‘What did we hear’ tab for many of the sound sources on a sanctuary’s interactive infographic. For those interested in a deeper exploration of detection patterns, select ‘Detections’ under the ‘Statistics’ pull down in the Navigation Bar to access tools in the SanctSound data portal for comparing detections across stations within a sanctuary and across different sanctuaries.

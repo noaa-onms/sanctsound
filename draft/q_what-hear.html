@@ -26,9 +26,26 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-<div class="custom-header"><div><div class="wrap"><div><div class="custom-logo">
-	<a href="https://ioos.us/"><img src="https://cdn.ioos.noaa.gov/media/2017/12/IOOS_logo.png" class="img-responsive d-block"></a>
-</div></div></div></div></div>
+<!--div class="custom-header">
+  <div class="wrap">
+    <div class="custom-logo">
+	    <a href="https://ioos.us/">
+  	    <img 
+  	      src="https://ioos.us/images/IOOS_Emblem_Tertiary_B_RGB.png" 
+  	      class="img-responsive d-block">
+	    </a>
+    </div>
+  </div>
+</div-->
+<header style="position: static; top: 0px;">
+  <div class="container-fluid">
+    <a href="https://ioos.us" style="visibility: visible;">
+      <img src="https://ioos.us/images/IOOS_Emblem_Tertiary_B_RGB.png">
+    </a>
+  </div>
+</header>
+
+
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -235,7 +252,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">SanctSound</a>
+      <a class="navbar-brand" href="index.html"><img src='images/SanctSound_logo_white-text.png' width='100p' style='vertical-align:top'><!-- SanctSound --></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -766,78 +783,124 @@ $(document).ready(function () {
 </div>
 
 
-<p><em>Ever traveled to a new city and noticed how different it sounded from home? Sometimes you know immediately what is making a sound as it is relatively common and sounds about the same wherever you go (train passing by, airplanes taking off, truck backing up). Other sounds might be harder to figure out: what bird makes that call? Is that a coyote howling in the distance?</em></p>
-<p>The 30 listening stations in 7 U.S. National Marine Sanctuaries and 1 Marine National Monument in this project were selected to record ocean sounds over several years. We chose spots most likely to have a variety of sounds including physical processes, animals, and human activities. Reef-living invertebrates like snapping shrimp, calling fish and whales, boats, explosions from fishing activities, sonars used in military training, are a few of the expected and relatively well-characterized sources of sound in the ocean.</p>
-<p>Under the “What did we hear” tab for each sanctuary, interactive infographics showcase the many different sources of sound that we identified and tracked through our recording efforts. Clicking on the icons of sound sources on the infographic, for example the humpback whale, opens a window in which you can listen to sound clips recorded at that sanctuary and learn more about daily, monthly or annual patterns that were detected in that sanctuary.</p>
-<p><img src="images/infographic_modals_tutorial.png" /> ‘Sounds’ pull down in the Navigation Bar lists all the sound clips available through the interactive infographics across all eight sanctuaries. For a catalog of all the sound clips available for this entire project, head to the SanctSound data portal by selecting ‘Spectrograms’ under the ‘Statistics’ pull down in the Navigation Bar.</p>
-<p>Only a few types of sounds were present at all recording locations. These include the underwater sounds made by wind and waves, and boats. Some sounds were present over many locations, including sounds made by snapping shrimp and humpback whales. Still others were present in only one or a few locations, like calling groupers in the Florida Keys National Marine Sanctuary or calling Atlantic cod in the Stellwagen Bank National Marine Sanctuary.</p>
-<p>Many of the sounds produced by animals are constrained to specific tones or frequencies . Therefore, changes in levels or intensities of sound at certain frequencies during different time periods can be linked to different animal sources. Similarly, the bursting of bubbles off boat propellers produce sounds with specific frequency content allowing levels of sound at lower frequencies to track boat presence around listening stations. Natural environmental forces like wind and waves produce sound underwater that are heightened at specific frequencies and can be used to track the presence of storms and other weather activity at recording locations.</p>
-<div class='row'>
-<div class='col-xs-6'>
+<p><em>What makes a place that you are visiting sound different from home? Sometimes you know immediately what is making a sound because it is relatively common and sounds about the same wherever you go (e.g., train passing by, airplanes taking off, truck backing up). Other sounds might be harder to figure out: What bird makes that call? Is that a baby crying in the distance?</em></p>
+<p>The sounds produced by animals are made up of specific pitches, or frequencies. Some extend below the frequencies that human ears can reliably hear, like blue whale calls. Other animal repertoires extend higher than what humans can reliably hear, like dolphins. Similarly, people introduce sounds into the marine environment that contain specific frequencies. The bursting of bubbles off boat propellers produce sounds that span a wide range of frequencies, with their spectrum giving hints to their size. Natural environmental forces like wind and waves produce sound underwater that are heightened at specific frequencies and can be used to track the presence of storms and other weather activity at recording locations.</p>
 
-<p><strong>Bocaccio</strong>:</p>
-<video controls width="100%">
-<source src="./files/SanctSound_CI01_Bocaccio_20181101.mp4" type="video/mp4">
-<p>Your browser does not support the video tag. </video></p>
-</div>
-<div class='col-xs-6'>
+<center>
+  <figure class='figure'>
+    <img src='images/questions/SanctSounds.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      There are many sources of sound in sanctuaries. This graphic highlights the sound sources that we focused on in the SanctSound project, including physical (purple bar), animal (green) and human-made (orange). The width of the bars indicates the range of frequencies (or pitches) that are typical of that sound source. For comparison, the yellow bar shows the hearing range of humans in air, and is also the range of frequencies that were recorded by SanctSound hydrophones.
+    </figcaption>
+  </figure>
+</center>
 
-<p><strong>Dolphins</strong>:</p>
-<video controls width="100%">
-<source src="./files/SanctSound_CI01_03_dolphins_20190904T064203Z.mp4" type="video/mp4">
-<p>Your browser does not support the video tag. </video></p>
-</div>
-<!-- end: col -->
-</div>
-<!-- end: row -->
-<div class='row'>
-<div class='col-xs-12'>
+<p>SanctSound recorders heard a variety of sounds, including physical processes, animals, and human activities. Invertebrates (like snapping shrimp), fish, whales, vessels, fishing activities, and sonars used in military training are a few of the expected and relatively well-characterized sources of sound recorded throughout the project. Only a few types of sounds were present at all recording locations. These included the underwater sounds made by vessels both big and small.</p>
+<p>Under the “What did we hear” tab for each sanctuary, interactive infographics showcase the many different sources of sound that we identified and tracked through our recording efforts. Clicking on a sound source icon on the infographic opens a window where you can listen to a sound clip recorded at that sanctuary and, for some sources, learn more about daily, monthly or annual patterns that were detected in that sanctuary. These scenes only include sources of sound tracked by the project and do not include all the species and activities that may create underwater sound in the sanctuaries.</p>
 
-<p><strong>Seal bombs</strong>:</p>
-<video width="100%" controls>
-<source src="./files/SanctSound_CI05_02_SealBomb_20190405T110516.mp4" type="video/mp4">
-<p>Your browser does not support the video tag. </video></p>
+<figure class='figure col-md-6 clearfix' style='float:right'>
+  <img src='images/questions/Modals_optimized_snapshots.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+  <figcaption class='figure-caption'>
+    
+  </figcaption>
+</figure>
+
+<p>In addition to providing sound clips of specific sound sources, we also wanted to provide a few examples of what it sounds like when some of these sound sources co-occur. These “soundscape snapshots” help illustrate what the sanctuary actually sounds like in a certain place and time. Some of the sounds we recorded, like blue whale calls, extend below the frequencies that human ears can easily hear and that the speakers on typical electronic devices can reliably make. For these cases, we have included the original sound clip recorded as well as a version of the clip optimized for human hearing.</p>
+<div class="clearfix">
+
 </div>
-<!-- end: col -->
+<p>One tool for better understanding the differences among different sounds is a spectrogram. A spectrogram uses color to show the intensity (or loudness) at different frequencies (or pitches) over time. In SanctSound spectrograms, louder sounds are shown in warmer colors. Vertically you can see whether sound is more or less intense at different frequencies. When you play a sound and view its pattern in a spectrogram, you get a better sense of a sound’s composition.</p>
+
+<figure class='figure col-md-6 clearfix' style='float:left'>
+  <img src='images/questions/4spectrograms_HIHWNMS.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+  <figcaption class='figure-caption'>
+    
+  </figcaption>
+</figure>
+
+<p>In these example spectrograms recorded in Hawaiian Islands Humpback Whale National Marine Sanctuary, you can see and hear the varied pitches and note types that make up humpback whale songs, the simpler and highly repetitive clicks made by sperm whales, the blurry underwater signature of rain on the ocean’s surface, and the lower frequency blade signature made by the propellor of a nearby vessel.</p>
+<div class="clearfix">
+
 </div>
-<!-- end: row -->
+
+<figure class='figure col-md-6 clearfix' style='float:left'>
+  <img src='images/questions/Foyer_example_sounds_screengrab.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+  <figcaption class='figure-caption'>
+    
+  </figcaption>
+</figure>
+
+<p>The ‘Sounds’ pull down in the Navigation Bar takes you to the <a href="https://sanctsound.ioos.us/draft/sounds.html">example sounds page</a>, which contains all the sound clips available through the interactive infographics across all eight sanctuaries. For a catalog of all the sound clips available for this entire project, head to the SanctSound data portal by selecting ‘Sound Library’ under the ‘Statistics’ pull down in the Navigation Bar or by clicking here.</p>
+<div class="clearfix">
+
+</div>
 <p>While there are many sounds of unknown origin in our data, sounds that are well described and relatively consistent can be “detected” by automated processes. Because computers aren’t perfect, scientists verify the automated detection results. This process allows us to determine how the automated detector performed in different places, including how well it worked in a louder environment or for specific types of sound.</p>
-<p>There are many ways to showcase the contributions of known sounds detected at recording locations. Sounds produced by animals often peak during specific periods of the day, and during specific months or seasons based on the roles the sound plays in the animals’ reproductive, feeding or migratory activity. For many of the sound sources in a sanctuary, we show how frequently the sound was detected during the project’s 3 year recording period. For example, we can graph the number of times a certain sound is detected each month to look for times of year when that sound is a more or less important component of the sanctuary soundscape. The plot below shows the occurrence of vessel sounds detected at a listening station in FKNMS.</p>
-<p><img src="images/humpback_monthly_detections_tutorial_mockup.png" /></p>
-<p>We can also visualize whether detections varied over the course of a day by counting how many times a sound is detected in each hour and plotting that on a graph that looks like a 24 hour clock. For example, outboard motors are more commonly recorded during daylight hours since that is the time of day when most people go out fishing and boating.</p>
-<p><img src="images/humpback_daily_detections_tutorial%20mockup.png" /></p>
-<p>These types of monthly and daily patterns are shown under the ‘What did we hear’ tab for many of the sound sources on a sanctuary’s interactive infographic. For those interested in a deeper exploration of detection patterns, select ‘Detections’ under the ‘Statistics’ pull down in the Navigation Bar to access tools in the SanctSound data portal for comparing detections across stations within a sanctuary and across different sanctuaries.</p>
 
+<center>
+  <figure class='figure'>
+    <img src='images/questions/what-hear-detections.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      
+    </figcaption>
+  </figure>
+</center>
 
-<div id="footer" class="container-fluid text-muted .bg-info px-0">
-  <div class="row">
-    <div id="footer-col-2" class="col-md-3 col-md-offset-3">
+<p>There are many ways to showcase the contributions of known sounds detected at recording locations. Sounds produced by animals often peak during specific periods of the day, and during specific months or seasons based on the roles the sound plays in the animals’ reproductive, feeding or migratory activity. For many of the sound sources in a sanctuary, we show how frequently the sound was detected during the project’s 3 year recording period. For example, we can graph the number of times a certain sound was detected each month to determine when that sound is a more or less important component of the sanctuary soundscape throughout the year. This plot shows the occurrence of dolphin sounds detected at a listening station in FKNMS.</p>
+
+<figure class='figure col-md-6 clearfix' style='float:right'>
+  <img src='images/questions/what-hear-diurnal-detections.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+  <figcaption class='figure-caption'>
+    
+  </figcaption>
+</figure>
+
+<p>We can also visualize whether detections varied over the course of a day by counting how many times a sound is detected in each hour and plotting that on a graph that looks like a 24 hour clock. For example, at this site in Florida Keys National Marine Sanctuary, vessel sounds are more commonly recorded during the late morning to afternoon hours, since that is the time of day when most people go out fishing and boating.</p>
+<p>These types of monthly and daily patterns are shown under the ‘What did we hear’ tab for many of the sound sources on a sanctuary’s interactive infographic. For those interested in a deeper exploration of detection patterns within and across sanctuaries, select ‘Detections’ under the ‘Statistics’ pull down in the Navigation Bar.</p>
+
+<div class="clearfix"></div>
+<div id="footer">
+  <div class="row w-80">
+    <div id="footer-col-2" class="col-sm-4">
       <h5>Useful Links</h5>
       <div>
         <a href="http://www.ioos.noaa.gov/" target="_blank">ioos.noaa.gov</a>
       </div>
     </div>
-    <div id="footer-col-3" class="col-md-3">
-        <h5>Our Social Ocean</h5>
-        <div>
-          <a href="https://www.facebook.com/usioosgov" target="_blank">
-              <div class="ggt-icon-border animate-icon">
-                <svg viewBox="0 0 512 512"><path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"></path></svg>
-              </div>
-              <div class="txt">facebook.com/<br>usioosgov</div>
-          </a>
-          <a href="https://www.twitter.com/usioosgov" target="_blank">
-            <div class="ggt-icon-border animate-icon">
-              <svg viewBox="0 0 512 512"><path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z"></path></svg>
-            </div>
-            <div class="txt">twitter.com/<br>usioosgov</div>
-          </a>
+    <div id="footer-col-3" class="col-sm-4">
+      <h5>Our Social Ocean</h5>
+      <a href="https://www.facebook.com/usioosgov" target="_blank">
+        <div class="ggt-icon-border animate-icon">
+          <svg viewBox="0 0 512 512"><path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"></path></svg>
         </div>
+        <div class="txt">
+          facebook.com/<br/>
+          usioosgov
+        </div>
+      </a>
+      <a href="https://www.twitter.com/usioosgov" target="_blank">
+        <div class="ggt-icon-border animate-icon">
+          <svg viewBox="0 0 512 512"><path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z"></path></svg>
+        </div>
+        <div class="txt">
+            twitter.com/<br>
+            usioosgov
+        </div>
+      </a>
     </div>
-    <div id="footer-col-4" class="col-md-3">
+    <div id="footer-col-4" class="col-sm-4">
       <div itemscope="" itemtype="http://schema.org/GovernmentOrganization">
         <p itemprop="name">U.S. Integrated Ocean Observing System Program</p>
-        <p itemprop="address">1315 East-West Highway<br>SSMC3, 2nd Floor<br>Silver Spring, MD 20910</p>
+        <p itemprop="address">
+            1315 East-West Highway<br/>
+            SSMC3, 2nd Floor<br/>
+            Silver Spring, MD 20910
+        </p>
         <p itemprop="telephone"><a href="tel:240-533-9444"> (240) 533-9444</a></p>
       </div>
       <a class="btn" href="mailto:webmaster.ioos.us@noaa.gov" itemprop="email">
@@ -849,10 +912,61 @@ $(document).ready(function () {
 
 <script>
 $(function() {
-  $('.main-container').after($('.footer'));
-})
-</script>
+  // move header and navbar outside main-container for full width
+  $('.main-container').after($('#footer'));
+  $('.main-container').before($('.navbar'));
 
+  // image zoom
+  $('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+    var src = $(this).attr('src');
+    var modal;
+  
+    function removeModal() {
+      modal.remove();
+      $('body').off('keyup.modal-close');
+    }
+    modal = $('<div>').css({
+      background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+      backgroundSize: 'contain',
+      width: '100%',
+      height: '100%',
+      position: 'fixed',
+      zIndex: '10000',
+      top: '0',
+      left: '0',
+      cursor: 'zoom-out'
+    }).click(function() {
+      removeModal();
+    }).appendTo('body');
+    //handling ESC
+    $('body').on('keyup.modal-close', function(e) {
+      if (e.key === 'Escape') {
+        removeModal();
+      }
+    });
+  });
+  
+  // header scroll
+  headerScroll = function() {
+    75 > $(this).scrollTop() ? (
+      // if scrolled up [initial]
+      $("header > div > a").css("visibility", "visible"),
+      $(".navbar").css({ position: "static", top: "0" }),
+      $(".main-container").css("margin-top", "0px"),
+      $(".navbar").css("top", "75px")) : (
+      // if scrolled down [after]
+      $("header > div > a").css("visibility", "hidden"),
+      $(".navbar").css("position", "fixed"),
+      $(".main-container").css("margin-top", "75px"),
+      $(".navbar").css("top", "0px"))
+  },
+  $(document).scroll(headerScroll),
+  window.onresize = function(e) {
+    headerScroll()
+  },
+  headerScroll()
+});
+</script>
 
 
 

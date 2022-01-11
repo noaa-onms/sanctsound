@@ -26,9 +26,26 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-<div class="custom-header"><div><div class="wrap"><div><div class="custom-logo">
-	<a href="https://ioos.us/"><img src="https://cdn.ioos.noaa.gov/media/2017/12/IOOS_logo.png" class="img-responsive d-block"></a>
-</div></div></div></div></div>
+<!--div class="custom-header">
+  <div class="wrap">
+    <div class="custom-logo">
+	    <a href="https://ioos.us/">
+  	    <img 
+  	      src="https://ioos.us/images/IOOS_Emblem_Tertiary_B_RGB.png" 
+  	      class="img-responsive d-block">
+	    </a>
+    </div>
+  </div>
+</div-->
+<header style="position: static; top: 0px;">
+  <div class="container-fluid">
+    <a href="https://ioos.us" style="visibility: visible;">
+      <img src="https://ioos.us/images/IOOS_Emblem_Tertiary_B_RGB.png">
+    </a>
+  </div>
+</header>
+
+
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -235,7 +252,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">SanctSound</a>
+      <a class="navbar-brand" href="index.html"><img src='images/SanctSound_logo_white-text.png' width='100p' style='vertical-align:top'><!-- SanctSound --></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -772,36 +789,44 @@ $(document).ready(function () {
 <p><img src="images/Sound_propogation_tutorial_mockup.png" /></p>
 <p>Under the “Where did we listen” tab for each sanctuary on the website, there is an example map showing the potential listening area for one of the sanctuary’s listening stations. For those interested in a deeper dive, use the ‘Statistics’ pull down in the Navigation Bar to access the SanctSound data portal’s sound propagation maps and models to support more detailed exploration of the listening range of a given station in a given year and given frequency band, and to compare the listening range of stations within a sanctuary and across multiple sanctuaries.</p>
 
-
-<div id="footer" class="container-fluid text-muted .bg-info px-0">
-  <div class="row">
-    <div id="footer-col-2" class="col-md-3 col-md-offset-3">
+<div class="clearfix"></div>
+<div id="footer">
+  <div class="row w-80">
+    <div id="footer-col-2" class="col-sm-4">
       <h5>Useful Links</h5>
       <div>
         <a href="http://www.ioos.noaa.gov/" target="_blank">ioos.noaa.gov</a>
       </div>
     </div>
-    <div id="footer-col-3" class="col-md-3">
-        <h5>Our Social Ocean</h5>
-        <div>
-          <a href="https://www.facebook.com/usioosgov" target="_blank">
-              <div class="ggt-icon-border animate-icon">
-                <svg viewBox="0 0 512 512"><path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"></path></svg>
-              </div>
-              <div class="txt">facebook.com/<br>usioosgov</div>
-          </a>
-          <a href="https://www.twitter.com/usioosgov" target="_blank">
-            <div class="ggt-icon-border animate-icon">
-              <svg viewBox="0 0 512 512"><path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z"></path></svg>
-            </div>
-            <div class="txt">twitter.com/<br>usioosgov</div>
-          </a>
+    <div id="footer-col-3" class="col-sm-4">
+      <h5>Our Social Ocean</h5>
+      <a href="https://www.facebook.com/usioosgov" target="_blank">
+        <div class="ggt-icon-border animate-icon">
+          <svg viewBox="0 0 512 512"><path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"></path></svg>
         </div>
+        <div class="txt">
+          facebook.com/<br/>
+          usioosgov
+        </div>
+      </a>
+      <a href="https://www.twitter.com/usioosgov" target="_blank">
+        <div class="ggt-icon-border animate-icon">
+          <svg viewBox="0 0 512 512"><path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z"></path></svg>
+        </div>
+        <div class="txt">
+            twitter.com/<br>
+            usioosgov
+        </div>
+      </a>
     </div>
-    <div id="footer-col-4" class="col-md-3">
+    <div id="footer-col-4" class="col-sm-4">
       <div itemscope="" itemtype="http://schema.org/GovernmentOrganization">
         <p itemprop="name">U.S. Integrated Ocean Observing System Program</p>
-        <p itemprop="address">1315 East-West Highway<br>SSMC3, 2nd Floor<br>Silver Spring, MD 20910</p>
+        <p itemprop="address">
+            1315 East-West Highway<br/>
+            SSMC3, 2nd Floor<br/>
+            Silver Spring, MD 20910
+        </p>
         <p itemprop="telephone"><a href="tel:240-533-9444"> (240) 533-9444</a></p>
       </div>
       <a class="btn" href="mailto:webmaster.ioos.us@noaa.gov" itemprop="email">
@@ -813,10 +838,61 @@ $(document).ready(function () {
 
 <script>
 $(function() {
-  $('.main-container').after($('.footer'));
-})
-</script>
+  // move header and navbar outside main-container for full width
+  $('.main-container').after($('#footer'));
+  $('.main-container').before($('.navbar'));
 
+  // image zoom
+  $('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+    var src = $(this).attr('src');
+    var modal;
+  
+    function removeModal() {
+      modal.remove();
+      $('body').off('keyup.modal-close');
+    }
+    modal = $('<div>').css({
+      background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+      backgroundSize: 'contain',
+      width: '100%',
+      height: '100%',
+      position: 'fixed',
+      zIndex: '10000',
+      top: '0',
+      left: '0',
+      cursor: 'zoom-out'
+    }).click(function() {
+      removeModal();
+    }).appendTo('body');
+    //handling ESC
+    $('body').on('keyup.modal-close', function(e) {
+      if (e.key === 'Escape') {
+        removeModal();
+      }
+    });
+  });
+  
+  // header scroll
+  headerScroll = function() {
+    75 > $(this).scrollTop() ? (
+      // if scrolled up [initial]
+      $("header > div > a").css("visibility", "visible"),
+      $(".navbar").css({ position: "static", top: "0" }),
+      $(".main-container").css("margin-top", "0px"),
+      $(".navbar").css("top", "75px")) : (
+      // if scrolled down [after]
+      $("header > div > a").css("visibility", "hidden"),
+      $(".navbar").css("position", "fixed"),
+      $(".main-container").css("margin-top", "75px"),
+      $(".navbar").css("top", "0px"))
+  },
+  $(document).scroll(headerScroll),
+  window.onresize = function(e) {
+    headerScroll()
+  },
+  headerScroll()
+});
+</script>
 
 
 
