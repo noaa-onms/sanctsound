@@ -22,13 +22,8 @@ knitr::opts_chunk$set(echo = TRUE)
 }
 ```
 
-::: {.blackbox}
-::: {.center}
+::: {.center .overflow-auto .blackbox}
 **NOTICE!**
-:::
 
 Thank you for noticing this **new notice**! Your noticing it has been noted, and *will be reported to the authorities*!
-:::
-
-::: {.clearfix}
 :::

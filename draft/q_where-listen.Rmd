@@ -17,6 +17,8 @@ The goal of the SanctSound project was to understand how sound varies in the oce
 map_sites()
 ```
 
+::: { .overflow-auto}
+
 ```{r, results='asis'}
 figure(
   img = "./images/questions/Animation.gif",
@@ -27,7 +29,9 @@ figure(
 
 Each of the 30 locations recorded sounds over different ranges. When you listen in a specific place, your ability to hear different sounds is dependent on the sound itself and the path the sound travels from the source to you – or in this case, the hydrophone. Important qualities for the sound include how loud it is and the frequencies, or tones, it contains. Louder and lower pitch sounds can generally be heard farther away than quieter and higher pitch sounds. But the path that sound wave takes through the water, known as a sound’s “propagation,” is influenced by numerous factors like the depth of the source in the water column, the depth of the seafloor, whether the seafloor is hard or soft, bumpy or flat, and properties of the water itself such as salinity, temperature, and density.
 
-<div class="clearfix"></div>
+:::
+
+::: { .overflow-auto}
 
 ```{r, results='asis'}
 figure(
@@ -42,7 +46,7 @@ When we compare and explore recordings, it’s important to know whether they re
 Under the “Where did we listen” tab for each sanctuary on the website, there is an example map showing the listening range for one of the sanctuary’s listening stations. Use the ‘Statistics’ pull down in the Navigation Bar to access the SanctSound data portal’s sound propagation maps and models for more detailed exploration of listening ranges at a recording location, including how they change according to the frequencies and seasons of interest. You can also look at the variation across recording locations.
 For example, these results predict that during the summer month a sound with characteristics like those made by a large vessel (192 decibels at a frequency at 50 Hertz, located 6 meters below the ocean surface) can be heard north of our recorder off Santa Rosa Island in Channel Islands National Marine Sanctuary. The same sound is predicted to be heard over a much larger range south of our recorder near Anacapa Island due to less interruption by land and deeper offshore waters that allow sound to propagate unimpeded.
 
-<div class="clearfix"></div>
+:::
 
 Similarly, we can examine how our expectations for listening capability change when we change the characteristics of the sound. For example, during the winter, a loud low frequency sound like a large commercial vessel (63 Hertz, 192 decibel sound level) can be heard above background wind noise over a much greater distance from our recorder at Santa Rosa Island than a higher frequency medium intensity sound like a humpback whale call (1000 Hertz, 165 decibels).
 

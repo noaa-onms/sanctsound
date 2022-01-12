@@ -27,6 +27,8 @@ figure(
 
 Sound can be described in a variety of different ways [DOSITS characterizing sound]. Two key attributes of sound are intensity and frequency. Intensity or “loudness” is measured in decibels and describes how much (the amplitude) pressure the sound contains; a low decibel or quiet sound contains less amplitude than a high amplitude or loud sound. Frequency is measured in hertz and provides information about tones that are contained in a sound. Other attributes describe how the sound occurred over time: was it a short burst of sound or a long-lasting hum? Our measurements of “levels” of sounds summarize all these attributes: intensity, frequency, and duration.
 
+::: { .overflow-auto}
+
 ```{r, results='asis'}
 figure(
   img = "./images/questions/Amplitude-Frequency.png",
@@ -39,7 +41,7 @@ Sound can be described in a variety of different ways [DOSITS characterizing sou
 
 This web portal showcases the types of information that sound can provide to help us understand and protect our oceans and its inhabitants. Here you can explore acoustic features of each recording location with the U.S. National Marine Sanctuary System, and make comparisons among locations to better understand how similar or different they are from each other. To do this, we not only had to record sound information in a comparable way [see Why and how did we listen?], we needed to make the same measurements from these recordings. 
 
-<div class="clearfix"></div>
+:::
 
 ## Spectrograms: Intensity of sound at different frequencies over time
 
@@ -89,6 +91,8 @@ figure(
   alt = "")
 ```
 
+::: { .overflow-auto}
+
 ```{r, results='asis'}
 figure(
   img = "./images/questions/what-measure-bring-together.png",
@@ -103,6 +107,7 @@ These four ways of looking at sound levels recorded over long periods of time pr
 
 These four plot types - spectrogram, stacked histogram, power spectrum and anomaly - are displayed under the ‘What did we measure’ tab for each sanctuary on the website. For those interested in exploring the variability in the levels of sound we recorded at a specific listening station or comparing levels among different listening stations in more detail, head to the SanctSound data portal using the ‘Statistics’ pull down in the Navigation Bar.
 
+:::
 
 
 
