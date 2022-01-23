@@ -155,8 +155,6 @@ navbar:
         href: sounds.html#echosounders-and-transducers-mbnms
       - text: Explosions (FKNMS)
         href: sounds.html#explosions-fknms
-      - text: Explosions (HIHWNMS)
-        href: sounds.html#explosions-hihwnms
       - text: Pingers (SBNMS)
         href: sounds.html#pingers-sbnms
       - text: Seal bombs (CINMS)
@@ -223,24 +221,16 @@ navbar:
         href: sounds.html#snapshots-cinms
       - text: Snapshots (CINMS)
         href: sounds.html#snapshots-cinms
-      - text: Snapshots (CINMS)
-        href: sounds.html#snapshots-cinms
-      - text: Snapshots (CINMS)
-        href: sounds.html#snapshots-cinms
       - text: Snapshots (FKNMS)
         href: sounds.html#snapshots-fknms
       - text: Snapshots (GRNMS)
         href: sounds.html#snapshots-grnms
-      - text: Snapshots (MBNMS)
-        href: sounds.html#snapshots-mbnms
-      - text: Snapshots (MBNMS)
-        href: sounds.html#snapshots-mbnms
-      - text: Snapshots (MBNMS)
-        href: sounds.html#snapshots-mbnms
-      - text: Snapshots (MBNMS)
-        href: sounds.html#snapshots-mbnms
-      - text: Snapshots (MBNMS)
-        href: sounds.html#snapshots-mbnms
+      - text: Snapshots (HIHWNMS)
+        href: sounds.html#snapshots-hihwnms
+      - text: Snapshots (HIHWNMS)
+        href: sounds.html#snapshots-hihwnms
+      - text: Snapshots (HIHWNMS)
+        href: sounds.html#snapshots-hihwnms
       - text: Snapshots (MBNMS)
         href: sounds.html#snapshots-mbnms
       - text: Snapshots (MBNMS)
@@ -249,6 +239,16 @@ navbar:
         href: sounds.html#snapshots-mbnms
       - text: Snapshots (OCNMS)
         href: sounds.html#snapshots-ocnms
+      - text: Snapshots (OCNMS)
+        href: sounds.html#snapshots-ocnms
+      - text: Snapshots (OCNMS)
+        href: sounds.html#snapshots-ocnms
+      - text: Snapshots (PMNM)
+        href: sounds.html#snapshots-pmnm
+      - text: Snapshots (PMNM)
+        href: sounds.html#snapshots-pmnm
+      - text: Snapshots (PMNM)
+        href: sounds.html#snapshots-pmnm
       - text: Snapshots (SBNMS)
         href: sounds.html#snapshots-sbnms
   - text: Stories
