@@ -59,7 +59,7 @@ figure(
   #caption = "Caption to come")
 ```
 
-Our goal was to collect sound information over three years at each site. However, it didn’t always go smoothly: sharks ate floats, anchors got stuck in the mud, hurricanes blew gear off locations, electronics flooded, and batteries failed. Charts on this website show when and how long hydrophones were deployed and the quality of recordings for each listening station. These listening duration charts, found under the “Where did we listen?” tab for each sanctuary, also allow you to see when interruptions occurred and consider how these interruptions affected the sound information that you can explore in this portal.
+Our goal was to collect sound information over three years at each site. However, it didn’t always go smoothly: sharks broke floats by biting them, anchors got stuck in the mud, hurricanes blew gear off locations, electronics flooded, and batteries failed. Charts on this website show when and how long hydrophones were deployed and the quality of recordings for each listening station. These listening duration charts, found under the “Where did we listen?” tab for each sanctuary, also allow you to see when interruptions occurred and consider how these interruptions affected the sound information that you can explore in this portal.
 
 ```{r, results='asis'}
 figure(
