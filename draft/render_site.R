@@ -2,8 +2,7 @@ if (!require("librarian")){
   install.packages("librarian")
   library(librarian)
 }
-shelf(here)
-source(here::here("draft/functions.R"))
+shelf(here, googledrive, googlesheets4)
 
 redo_modals     <- T
 skip_drive_auth <- F
@@ -22,7 +21,9 @@ if (Sys.getenv("GITHUB_ACTIONS") == ""){
 if (!skip_drive_auth){
   message("non-interactively authenticating to GoogleDrive with Google Service Account")
   drive_auth(path = gsa_json_text)
+  gs4_auth(path = gsa_json_text)
 }
+source(here::here("draft/functions.R"))
 
 # nav menus in _site.yml ----
 update_sounds_menu()

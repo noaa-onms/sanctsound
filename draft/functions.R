@@ -7,11 +7,14 @@ if (!require("librarian")){
   library(librarian)
 }
 shelf(
-  av, dplyr, DT, fs, glue, googledrive, here, htmltools, knitr, leaflet, lubridate,
+  av, dplyr, DT, fs, glue, googledrive, googlesheets4, here, htmltools, knitr, leaflet, lubridate,
   purrr, readr, rmarkdown, sf, shiny, sp, stringr, tibble, tidyr, yaml)
 here <- here::here
 options(readr.show_col_types = F)
 
+# [sanctsound website content - Google Sheet]
+gsheet <- "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/edit"
+# OLD:
 gsheet_pfx    <- "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv"
 # modals_csv    <- glue("{gsheet_pfx}&sheet=modals")
 # scenes_csv    <- glue("{gsheet_pfx}&sheet=scenes")
@@ -93,12 +96,11 @@ get_sheet_csv <- function(sheet){
 }
 
 get_sheet <- function(sheet, redo = F){
-  # sheet = "modals"
+  # sheet = "figures"
   
   if (!exists(sheet, envir = globalenv()) | redo){
-    
-    d <- get_sheet_csv(sheet) %>% 
-      read_csv() %>% 
+    # d <- get_sheet_csv(sheet) %>% 
+    d <- read_sheet(gsheet, sheet) %>% 
       select(-starts_with("..."))
     msg <- glue("get_sheet(): read_csv(URL), assign to variable '{sheet}'\n  URL: {get_sheet_csv(sheet)}", .trim = F)
     message(as.character(msg))
@@ -112,7 +114,7 @@ sanctuaries <- get_sheet("sanctuaries")
 modals      <- get_sheet("modals")
 figures     <- get_sheet("figures")
 lookups     <- get_sheet("lookups")
-scenes      <- get_sheet("scenes")
+# scenes      <- get_sheet("scenes")
 locations   <- get_sheet("locations")
 metadata    <- get_sheet("metadata")
 
