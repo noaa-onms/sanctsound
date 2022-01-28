@@ -45,7 +45,6 @@ hihwnms_dolphins,Dolphins,HIHWNMS,Animal: Marine mammals,Animal,Marine mammals
 hihwnms_humpback-whales,Humpback whales,HIHWNMS,Animal: Marine mammals,Animal,Marine mammals
 hihwnms_minke-whales,Minke whales,HIHWNMS,Animal: Marine mammals,Animal,Marine mammals
 hihwnms_sperm-whales,Sperm whales,HIHWNMS,Animal: Marine mammals,Animal,Marine mammals
-hihwnms_explosions,Explosions,HIHWNMS,Human-made: Explosions,Human-made,Explosions
 hihwnms_echosounders,Echosounders,HIHWNMS,Human-made: Sonar,Human-made,Sonar
 hihwnms_sonars,Sonars,HIHWNMS,Human-made: Sonar,Human-made,Sonar
 hihwnms_vessels,Vessels,HIHWNMS,Human-made: Vessels,Human-made,Vessels
@@ -69,7 +68,6 @@ mbnms_vessels,Vessels,MBNMS,Human-made: Vessels,Human-made,Vessels
 mbnms_rain,Rain,MBNMS,Physical: Rain,Physical,Rain
 mbnms_wind-and-waves,Wind and waves,MBNMS,Physical: Wind and waves,Physical,Wind and waves
 mbnms_snapshots,Snapshots,MBNMS,Soundscape:,Soundscape,NA
-ocnms_fish-chorus,Fish chorus,OCNMS,Animal: Fish,Animal,Fish
 ocnms_blue-whales,Blue whales,OCNMS,Animal: Marine mammals,Animal,Marine mammals
 ocnms_dolphins,Dolphins,OCNMS,Animal: Marine mammals,Animal,Marine mammals
 ocnms_fin-whales,Fin whales,OCNMS,Animal: Marine mammals,Animal,Marine mammals
