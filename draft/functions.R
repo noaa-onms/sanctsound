@@ -618,7 +618,12 @@ story_card <- function(img_rel, story_link, title, css_style, ...){
 }
 update_sounds_menu <- function(){
   
-  tbl_sounds <- import_sounds()
+  # tbl_sounds <- import_sounds(redo=F) %>% 
+  tbl_sounds <- import_sounds() %>% 
+    left_join(
+      get_sheet("sanctuaries") %>% 
+        select(sanctuary_code, sanctuary_name = name, sanctuary_type = type),
+      by = "sanctuary_code")
   
   site <- read_yaml(here("draft/_site.yml"))
   
@@ -629,8 +634,8 @@ update_sounds_menu <- function(){
     mutate(
       text_href = pmap(
         ., 
-        function(modal_title, sanctuary_code, snd_rel, ...){
-          txt <- glue("{modal_title} ({sanctuary_code})")
+        function(modal_title, sanctuary_name, snd_rel, ...){
+          txt <- glue("{modal_title} ({sanctuary_name})")
           list(
             text = txt, 
             href = header2anchor(txt, pfx = "sounds.html"))})) %>%
@@ -658,7 +663,11 @@ update_sounds_menu <- function(){
 
 update_stories_menu <- function(){
   
-  tbl_stories <- import_stories()
+  tbl_stories <- import_stories() %>% 
+    left_join(
+      get_sheet("sanctuaries") %>% 
+        select(sanctuary_code, sanctuary_name = name, sanctuary_type = type),
+      by = "sanctuary_code")
   
   site <- read_yaml(here("draft/_site.yml"))
   

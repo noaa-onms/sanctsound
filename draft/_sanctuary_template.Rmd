@@ -31,7 +31,7 @@ knitr::knit_meta_add(list(rmarkdown::html_dependency_font_awesome()))
 ### **What** did we hear?
 
 <!-- `r shiny::icon("info-circle")` -->
-Click on an element to see & hear more.
+Click the icons in the scene below to listen and learn about the sounds we recorded in this sanctuary.
 
 ```{r svg, child = '_svg-html_child.Rmd'}
 ```

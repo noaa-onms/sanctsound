@@ -53,204 +53,226 @@ navbar:
     - text: '---------'
     - text: Animal
       menu:
-      - text: Black grouper (FKNMS)
-        href: sounds.html#black-grouper-fknms
-      - text: Blue whales (CINMS)
-        href: sounds.html#blue-whales-cinms
-      - text: Blue whales (OCNMS)
-        href: sounds.html#blue-whales-ocnms
-      - text: Bocaccio (CINMS)
-        href: sounds.html#bocaccio-cinms
-      - text: Bocaccio (MBNMS)
-        href: sounds.html#bocaccio-mbnms
-      - text: Cod (SBNMS)
-        href: sounds.html#cod-sbnms
-      - text: Damselfish (PMNM)
-        href: sounds.html#damselfish-pmnm
-      - text: Dolphins (CINMS)
-        href: sounds.html#dolphins-cinms
-      - text: Dolphins (FKNMS)
-        href: sounds.html#dolphins-fknms
-      - text: Dolphins (GRNMS)
-        href: sounds.html#dolphins-grnms
-      - text: Dolphins (HIHWNMS)
-        href: sounds.html#dolphins-hihwnms
-      - text: Dolphins (MBNMS)
-        href: sounds.html#dolphins-mbnms
-      - text: Dolphins (OCNMS)
-        href: sounds.html#dolphins-ocnms
-      - text: Dolphins (PMNM)
-        href: sounds.html#dolphins-pmnm
-      - text: Dolphins (SBNMS)
-        href: sounds.html#dolphins-sbnms
-      - text: Fin whales (MBNMS)
-        href: sounds.html#fin-whales-mbnms
-      - text: Fin whales (OCNMS)
-        href: sounds.html#fin-whales-ocnms
-      - text: Gray whales (CINMS)
-        href: sounds.html#gray-whales-cinms
-      - text: Gray whales (MBNMS)
-        href: sounds.html#gray-whales-mbnms
-      - text: Humpback whales (CINMS)
-        href: sounds.html#humpback-whales-cinms
-      - text: Humpback whales (HIHWNMS)
-        href: sounds.html#humpback-whales-hihwnms
-      - text: Humpback whales (MBNMS)
-        href: sounds.html#humpback-whales-mbnms
-      - text: Humpback whales (OCNMS)
-        href: sounds.html#humpback-whales-ocnms
-      - text: Humpback whales (PMNM)
-        href: sounds.html#humpback-whales-pmnm
-      - text: Humpback whales (SBNMS)
-        href: sounds.html#humpback-whales-sbnms
-      - text: Killer whales (MBNMS)
-        href: sounds.html#killer-whales-mbnms
-      - text: Killer whales (OCNMS)
-        href: sounds.html#killer-whales-ocnms
-      - text: Minke whales (HIHWNMS)
-        href: sounds.html#minke-whales-hihwnms
-      - text: Minke whales (PMNM)
-        href: sounds.html#minke-whales-pmnm
-      - text: Minke whales (SBNMS)
-        href: sounds.html#minke-whales-sbnms
-      - text: Plainfin midshipman (CINMS)
-        href: sounds.html#plainfin-midshipman-cinms
-      - text: Plainfin midshipman (MBNMS)
-        href: sounds.html#plainfin-midshipman-mbnms
-      - text: Red grouper (FKNMS)
-        href: sounds.html#red-grouper-fknms
-      - text: Right whales (GRNMS)
-        href: sounds.html#right-whales-grnms
-      - text: Right whales (SBNMS)
-        href: sounds.html#right-whales-sbnms
-      - text: Sea lions (CINMS)
-        href: sounds.html#sea-lions-cinms
-      - text: Sea lions (MBNMS)
-        href: sounds.html#sea-lions-mbnms
-      - text: Sei whales (SBNMS)
-        href: sounds.html#sei-whales-sbnms
-      - text: Snapping shrimp (CINMS)
-        href: sounds.html#snapping-shrimp-cinms
-      - text: Snapping shrimp (FKNMS)
-        href: sounds.html#snapping-shrimp-fknms
-      - text: Snapping shrimp (GRNMS)
-        href: sounds.html#snapping-shrimp-grnms
-      - text: Snapping shrimp (HIHWNMS)
-        href: sounds.html#snapping-shrimp-hihwnms
-      - text: Snapping shrimp (MBNMS)
-        href: sounds.html#snapping-shrimp-mbnms
-      - text: Snapping shrimp (PMNM)
-        href: sounds.html#snapping-shrimp-pmnm
-      - text: Sperm whales (HIHWNMS)
-        href: sounds.html#sperm-whales-hihwnms
-      - text: Toadfish (GRNMS)
-        href: sounds.html#toadfish-grnms
+      - text: Black grouper (Florida Keys)
+        href: sounds.html#black-grouper-florida-keys
+      - text: Blue whales (Channel Islands)
+        href: sounds.html#blue-whales-channel-islands
+      - text: Blue whales (Monterey Bay)
+        href: sounds.html#blue-whales-monterey-bay
+      - text: Blue whales (Olympic Coast)
+        href: sounds.html#blue-whales-olympic-coast
+      - text: Blue whales (Stellwagen Bank)
+        href: sounds.html#blue-whales-stellwagen-bank
+      - text: Bocaccio (Channel Islands)
+        href: sounds.html#bocaccio-channel-islands
+      - text: Bocaccio (Monterey Bay)
+        href: sounds.html#bocaccio-monterey-bay
+      - text: Cod (Stellwagen Bank)
+        href: sounds.html#cod-stellwagen-bank
+      - text: Damselfish (Papahānaumokuākea)
+        href: sounds.html#damselfish-papahnaumokukea
+      - text: Dolphins (Channel Islands)
+        href: sounds.html#dolphins-channel-islands
+      - text: Dolphins (Florida Keys)
+        href: sounds.html#dolphins-florida-keys
+      - text: Dolphins (Gray's Reef)
+        href: sounds.html#dolphins-grays-reef
+      - text: Dolphins (Hawaiian Islands Humpback Whale)
+        href: sounds.html#dolphins-hawaiian-islands-humpback-whale
+      - text: Dolphins (Monterey Bay)
+        href: sounds.html#dolphins-monterey-bay
+      - text: Dolphins (Olympic Coast)
+        href: sounds.html#dolphins-olympic-coast
+      - text: Dolphins (Papahānaumokuākea)
+        href: sounds.html#dolphins-papahnaumokukea
+      - text: Dolphins (Stellwagen Bank)
+        href: sounds.html#dolphins-stellwagen-bank
+      - text: Fin whales (Channel Islands)
+        href: sounds.html#fin-whales-channel-islands
+      - text: Fin whales (Monterey Bay)
+        href: sounds.html#fin-whales-monterey-bay
+      - text: Fin whales (Olympic Coast)
+        href: sounds.html#fin-whales-olympic-coast
+      - text: Fin whales (Stellwagen Bank)
+        href: sounds.html#fin-whales-stellwagen-bank
+      - text: Gray whales (Channel Islands)
+        href: sounds.html#gray-whales-channel-islands
+      - text: Gray whales (Monterey Bay)
+        href: sounds.html#gray-whales-monterey-bay
+      - text: Humpback whales (Channel Islands)
+        href: sounds.html#humpback-whales-channel-islands
+      - text: Humpback whales (Hawaiian Islands Humpback Whale)
+        href: sounds.html#humpback-whales-hawaiian-islands-humpback-whale
+      - text: Humpback whales (Monterey Bay)
+        href: sounds.html#humpback-whales-monterey-bay
+      - text: Humpback whales (Olympic Coast)
+        href: sounds.html#humpback-whales-olympic-coast
+      - text: Humpback whales (Papahānaumokuākea)
+        href: sounds.html#humpback-whales-papahnaumokukea
+      - text: Humpback whales (Stellwagen Bank)
+        href: sounds.html#humpback-whales-stellwagen-bank
+      - text: Killer whales (Monterey Bay)
+        href: sounds.html#killer-whales-monterey-bay
+      - text: Killer whales (Olympic Coast)
+        href: sounds.html#killer-whales-olympic-coast
+      - text: Minke whales (Hawaiian Islands Humpback Whale)
+        href: sounds.html#minke-whales-hawaiian-islands-humpback-whale
+      - text: Minke whales (Papahānaumokuākea)
+        href: sounds.html#minke-whales-papahnaumokukea
+      - text: Minke whales (Stellwagen Bank)
+        href: sounds.html#minke-whales-stellwagen-bank
+      - text: Plainfin midshipman (Channel Islands)
+        href: sounds.html#plainfin-midshipman-channel-islands
+      - text: Plainfin midshipman (Monterey Bay)
+        href: sounds.html#plainfin-midshipman-monterey-bay
+      - text: Red grouper (Florida Keys)
+        href: sounds.html#red-grouper-florida-keys
+      - text: Right whales (Gray's Reef)
+        href: sounds.html#right-whales-grays-reef
+      - text: Right whales (Stellwagen Bank)
+        href: sounds.html#right-whales-stellwagen-bank
+      - text: Sea lions (Channel Islands)
+        href: sounds.html#sea-lions-channel-islands
+      - text: Sea lions (Monterey Bay)
+        href: sounds.html#sea-lions-monterey-bay
+      - text: Sei whales (Stellwagen Bank)
+        href: sounds.html#sei-whales-stellwagen-bank
+      - text: Snapping shrimp (Channel Islands)
+        href: sounds.html#snapping-shrimp-channel-islands
+      - text: Snapping shrimp (Florida Keys)
+        href: sounds.html#snapping-shrimp-florida-keys
+      - text: Snapping shrimp (Gray's Reef)
+        href: sounds.html#snapping-shrimp-grays-reef
+      - text: Snapping shrimp (Hawaiian Islands Humpback Whale)
+        href: sounds.html#snapping-shrimp-hawaiian-islands-humpback-whale
+      - text: Snapping shrimp (Monterey Bay)
+        href: sounds.html#snapping-shrimp-monterey-bay
+      - text: Snapping shrimp (Papahānaumokuākea)
+        href: sounds.html#snapping-shrimp-papahnaumokukea
+      - text: Sperm whales (Hawaiian Islands Humpback Whale)
+        href: sounds.html#sperm-whales-hawaiian-islands-humpback-whale
+      - text: Toadfish (Gray's Reef)
+        href: sounds.html#toadfish-grays-reef
     - text: Human-made
       menu:
-      - text: Echosounders (CINMS)
-        href: sounds.html#echosounders-cinms
-      - text: Echosounders (HIHWNMS)
-        href: sounds.html#echosounders-hihwnms
-      - text: Echosounders and transducers (MBNMS)
-        href: sounds.html#echosounders-and-transducers-mbnms
-      - text: Explosions (FKNMS)
-        href: sounds.html#explosions-fknms
-      - text: Pingers (SBNMS)
-        href: sounds.html#pingers-sbnms
-      - text: Seal bombs (CINMS)
-        href: sounds.html#seal-bombs-cinms
-      - text: Seal bombs (MBNMS)
-        href: sounds.html#seal-bombs-mbnms
-      - text: Seal bombs (OCNMS)
-        href: sounds.html#seal-bombs-ocnms
-      - text: Sonars (HIHWNMS)
-        href: sounds.html#sonars-hihwnms
-      - text: Sonars (MBNMS)
-        href: sounds.html#sonars-mbnms
-      - text: Sonars (OCNMS)
-        href: sounds.html#sonars-ocnms
-      - text: Sonars (PMNM)
-        href: sounds.html#sonars-pmnm
-      - text: Vessels (CINMS)
-        href: sounds.html#vessels-cinms
-      - text: Vessels (FKNMS)
-        href: sounds.html#vessels-fknms
-      - text: Vessels (GRNMS)
-        href: sounds.html#vessels-grnms
-      - text: Vessels (HIHWNMS)
-        href: sounds.html#vessels-hihwnms
-      - text: Vessels (MBNMS)
-        href: sounds.html#vessels-mbnms
-      - text: Vessels (OCNMS)
-        href: sounds.html#vessels-ocnms
-      - text: Vessels (SBNMS)
-        href: sounds.html#vessels-sbnms
+      - text: Echosounders (Channel Islands)
+        href: sounds.html#echosounders-channel-islands
+      - text: Echosounders (Hawaiian Islands Humpback Whale)
+        href: sounds.html#echosounders-hawaiian-islands-humpback-whale
+      - text: Echosounders and transducers (Monterey Bay)
+        href: sounds.html#echosounders-and-transducers-monterey-bay
+      - text: Explosions (Florida Keys)
+        href: sounds.html#explosions-florida-keys
+      - text: Pingers (Stellwagen Bank)
+        href: sounds.html#pingers-stellwagen-bank
+      - text: Seal bombs (Channel Islands)
+        href: sounds.html#seal-bombs-channel-islands
+      - text: Seal bombs (Monterey Bay)
+        href: sounds.html#seal-bombs-monterey-bay
+      - text: Seal bombs (Olympic Coast)
+        href: sounds.html#seal-bombs-olympic-coast
+      - text: Sonars (Channel Islands)
+        href: sounds.html#sonars-channel-islands
+      - text: Sonars (Hawaiian Islands Humpback Whale)
+        href: sounds.html#sonars-hawaiian-islands-humpback-whale
+      - text: Sonars (Monterey Bay)
+        href: sounds.html#sonars-monterey-bay
+      - text: Sonars (Olympic Coast)
+        href: sounds.html#sonars-olympic-coast
+      - text: Sonars (Papahānaumokuākea)
+        href: sounds.html#sonars-papahnaumokukea
+      - text: Vessels (Channel Islands)
+        href: sounds.html#vessels-channel-islands
+      - text: Vessels (Florida Keys)
+        href: sounds.html#vessels-florida-keys
+      - text: Vessels (Gray's Reef)
+        href: sounds.html#vessels-grays-reef
+      - text: Vessels (Hawaiian Islands Humpback Whale)
+        href: sounds.html#vessels-hawaiian-islands-humpback-whale
+      - text: Vessels (Monterey Bay)
+        href: sounds.html#vessels-monterey-bay
+      - text: Vessels (Olympic Coast)
+        href: sounds.html#vessels-olympic-coast
+      - text: Vessels (Stellwagen Bank)
+        href: sounds.html#vessels-stellwagen-bank
     - text: Physical
       menu:
-      - text: Hurricanes (GRNMS)
-        href: sounds.html#hurricanes-grnms
-      - text: Rain (CINMS)
-        href: sounds.html#rain-cinms
-      - text: Rain (FKNMS)
-        href: sounds.html#rain-fknms
-      - text: Rain (GRNMS)
-        href: sounds.html#rain-grnms
-      - text: Rain (HIHWNMS)
-        href: sounds.html#rain-hihwnms
-      - text: Rain (MBNMS)
-        href: sounds.html#rain-mbnms
-      - text: Rain (OCNMS)
-        href: sounds.html#rain-ocnms
-      - text: Rain (SBNMS)
-        href: sounds.html#rain-sbnms
-      - text: Wind and waves (FKNMS)
-        href: sounds.html#wind-and-waves-fknms
-      - text: Wind and waves (GRNMS)
-        href: sounds.html#wind-and-waves-grnms
-      - text: Wind and waves (MBNMS)
-        href: sounds.html#wind-and-waves-mbnms
-      - text: Wind and waves (OCNMS)
-        href: sounds.html#wind-and-waves-ocnms
-      - text: Wind and waves (SBNMS)
-        href: sounds.html#wind-and-waves-sbnms
+      - text: Hurricanes (Gray's Reef)
+        href: sounds.html#hurricanes-grays-reef
+      - text: Rain (Channel Islands)
+        href: sounds.html#rain-channel-islands
+      - text: Rain (Florida Keys)
+        href: sounds.html#rain-florida-keys
+      - text: Rain (Gray's Reef)
+        href: sounds.html#rain-grays-reef
+      - text: Rain (Hawaiian Islands Humpback Whale)
+        href: sounds.html#rain-hawaiian-islands-humpback-whale
+      - text: Rain (Monterey Bay)
+        href: sounds.html#rain-monterey-bay
+      - text: Rain (Olympic Coast)
+        href: sounds.html#rain-olympic-coast
+      - text: Rain (Stellwagen Bank)
+        href: sounds.html#rain-stellwagen-bank
+      - text: Wind and waves (Florida Keys)
+        href: sounds.html#wind-and-waves-florida-keys
+      - text: Wind and waves (Gray's Reef)
+        href: sounds.html#wind-and-waves-grays-reef
+      - text: Wind and waves (Monterey Bay)
+        href: sounds.html#wind-and-waves-monterey-bay
+      - text: Wind and waves (Olympic Coast)
+        href: sounds.html#wind-and-waves-olympic-coast
+      - text: Wind and waves (Stellwagen Bank)
+        href: sounds.html#wind-and-waves-stellwagen-bank
     - text: Soundscape
       menu:
-      - text: Snapshots (CINMS)
-        href: sounds.html#snapshots-cinms
-      - text: Snapshots (CINMS)
-        href: sounds.html#snapshots-cinms
-      - text: Snapshots (CINMS)
-        href: sounds.html#snapshots-cinms
-      - text: Snapshots (FKNMS)
-        href: sounds.html#snapshots-fknms
-      - text: Snapshots (GRNMS)
-        href: sounds.html#snapshots-grnms
-      - text: Snapshots (HIHWNMS)
-        href: sounds.html#snapshots-hihwnms
-      - text: Snapshots (HIHWNMS)
-        href: sounds.html#snapshots-hihwnms
-      - text: Snapshots (HIHWNMS)
-        href: sounds.html#snapshots-hihwnms
-      - text: Snapshots (MBNMS)
-        href: sounds.html#snapshots-mbnms
-      - text: Snapshots (MBNMS)
-        href: sounds.html#snapshots-mbnms
-      - text: Snapshots (MBNMS)
-        href: sounds.html#snapshots-mbnms
-      - text: Snapshots (OCNMS)
-        href: sounds.html#snapshots-ocnms
-      - text: Snapshots (OCNMS)
-        href: sounds.html#snapshots-ocnms
-      - text: Snapshots (OCNMS)
-        href: sounds.html#snapshots-ocnms
-      - text: Snapshots (PMNM)
-        href: sounds.html#snapshots-pmnm
-      - text: Snapshots (PMNM)
-        href: sounds.html#snapshots-pmnm
-      - text: Snapshots (PMNM)
-        href: sounds.html#snapshots-pmnm
-      - text: Snapshots (SBNMS)
-        href: sounds.html#snapshots-sbnms
+      - text: Snapshots (Channel Islands)
+        href: sounds.html#snapshots-channel-islands
+      - text: Snapshots (Channel Islands)
+        href: sounds.html#snapshots-channel-islands
+      - text: Snapshots (Channel Islands)
+        href: sounds.html#snapshots-channel-islands
+      - text: Snapshots (Florida Keys)
+        href: sounds.html#snapshots-florida-keys
+      - text: Snapshots (Florida Keys)
+        href: sounds.html#snapshots-florida-keys
+      - text: Snapshots (Florida Keys)
+        href: sounds.html#snapshots-florida-keys
+      - text: Snapshots (Gray's Reef)
+        href: sounds.html#snapshots-grays-reef
+      - text: Snapshots (Gray's Reef)
+        href: sounds.html#snapshots-grays-reef
+      - text: Snapshots (Gray's Reef)
+        href: sounds.html#snapshots-grays-reef
+      - text: Snapshots (Hawaiian Islands Humpback Whale)
+        href: sounds.html#snapshots-hawaiian-islands-humpback-whale
+      - text: Snapshots (Hawaiian Islands Humpback Whale)
+        href: sounds.html#snapshots-hawaiian-islands-humpback-whale
+      - text: Snapshots (Hawaiian Islands Humpback Whale)
+        href: sounds.html#snapshots-hawaiian-islands-humpback-whale
+      - text: Snapshots (Monterey Bay)
+        href: sounds.html#snapshots-monterey-bay
+      - text: Snapshots (Monterey Bay)
+        href: sounds.html#snapshots-monterey-bay
+      - text: Snapshots (Monterey Bay)
+        href: sounds.html#snapshots-monterey-bay
+      - text: Snapshots (Olympic Coast)
+        href: sounds.html#snapshots-olympic-coast
+      - text: Snapshots (Olympic Coast)
+        href: sounds.html#snapshots-olympic-coast
+      - text: Snapshots (Olympic Coast)
+        href: sounds.html#snapshots-olympic-coast
+      - text: Snapshots (Papahānaumokuākea)
+        href: sounds.html#snapshots-papahnaumokukea
+      - text: Snapshots (Papahānaumokuākea)
+        href: sounds.html#snapshots-papahnaumokukea
+      - text: Snapshots (Papahānaumokuākea)
+        href: sounds.html#snapshots-papahnaumokukea
+      - text: Snapshots (Stellwagen Bank)
+        href: sounds.html#snapshots-stellwagen-bank
+      - text: Snapshots (Stellwagen Bank)
+        href: sounds.html#snapshots-stellwagen-bank
+      - text: Snapshots (Stellwagen Bank)
+        href: sounds.html#snapshots-stellwagen-bank
   - text: Stories
     icon: fa-newspaper-o
     menu:
@@ -309,22 +331,16 @@ navbar:
     - text: Home
       href: https://sanctsound.portal.axds.co
     - text: '---------'
-    - text: AIS comparisons
-      href: z_ais-comparisons.html
-    - text: Anomaly plots
-      href: z_anomaly-plots.html
-    - text: Box plots
-      href: z_box-plots.html
-    - text: Detections
-      href: z_detections.html
-    - text: Line plots
-      href: z_line-plots.html
-    - text: Power spectrum
-      href: z_power-spectrum.html
-    - text: Spectrograms
-      href: z_spectrograms.html
-    - text: Stream plots
-      href: z_stream-plots.html
+    - text: Broadband Sound Pressure Level
+      href: https://sanctsound.portal.axds.co/#sanctsound/method/broadband-sound-pressure-level
+    - text: High Resolution Spectrogram
+      href: https://sanctsound.portal.axds.co/#sanctsound/method/high-resolution-spectrogram
+    - text: Octave Level
+      href: https://sanctsound.portal.axds.co/#sanctsound/method/octave-level
+    - text: One-third Octave Level
+      href: https://sanctsound.portal.axds.co/#sanctsound/method/one-third-octave-level
+    - text: Power Spectrum
+      href: https://sanctsound.portal.axds.co/#sanctsound/compare/powerspec
 output:
   html_document:
     theme:
