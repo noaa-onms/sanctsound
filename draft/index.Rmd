@@ -1,5 +1,5 @@
 ---
-title: "Sanctuary Soundscapes"
+title: "Sanctuary Soundscape Monitoring Project (SanctSound)"
 subtitle: "Exploring underwater sounds within U.S. national marine sanctuaries"
 output:
   html_document:
