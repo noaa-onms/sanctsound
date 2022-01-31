@@ -27,9 +27,9 @@ knitr::knit_meta_add(list(rmarkdown::html_dependency_font_awesome()))
 ```{r sight_sound, results = "asis"}
 # params <- list(
 #   sanctuary_code = "CINMS",
+#   modal_title = "Fin whales")
 #   modal_title = "Bocaccio")
-  # modal_title = "Blue whales")
-  # modal_title = "Fin whales")
+#   modal_title = "Blue whales")
 #   modal_title = "Seal bombs")
 #   modal_title = "Giant sea bass")
 

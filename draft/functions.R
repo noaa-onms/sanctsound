@@ -7,10 +7,31 @@ if (!require("librarian")){
   library(librarian)
 }
 shelf(
-  av, dplyr, DT, fs, glue, googledrive, googlesheets4, here, htmltools, knitr, leaflet, lubridate,
-  purrr, readr, rmarkdown, sf, shiny, sp, stringr, tibble, tidyr, yaml)
+  av, dplyr, DT, fs, glue, googledrive, googlesheets4, 
+  here, htmltools, knitr, leaflet, lubridate,
+  purrr, readr, rmarkdown, sf, shiny, 
+  sp, stringr, tibble, tidyr, yaml)
 here <- here::here
 options(readr.show_col_types = F)
+
+skip_drive_auth <- F
+
+# authenticate to GoogleDrive using Google Service Account's secret JSON
+#   after Sharing with its email: shares@nms4gargle.iam.gserviceaccount.com
+if (Sys.getenv("GITHUB_ACTIONS") == ""){
+  message("GITHUB_ACTIONS environmental variable is empty")
+  google_sa_json <- "/Users/bbest/My Drive (ben@ecoquants.com)/projects/nms-web/data/nms4gargle-774a9e9ec703.json"
+  stopifnot(file.exists(google_sa_json))
+  gsa_json_text <- readLines(google_sa_json) %>% paste(sep="\n")
+} else {
+  gsa_json_text <- Sys.getenv("GOOGLE_SA")
+  message('nchar(Sys.getenv("GOOGLE_SA")): ', nchar(Sys.getenv("GOOGLE_SA")))
+}
+if (!skip_drive_auth){
+  message("non-interactively authenticating to GoogleDrive with Google Service Account")
+  drive_auth(path = gsa_json_text)
+  gs4_auth(path = gsa_json_text)
+}
 
 # [sanctsound website content - Google Sheet]
 gsheet <- "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/edit"

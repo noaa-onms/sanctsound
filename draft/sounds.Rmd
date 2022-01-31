@@ -18,8 +18,16 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```{r, results='asis'}
 source("functions.R")
 
-tbl_sounds <- import_sounds() %>% 
-  arrange(sound_category, sound_subcategory, modal_title, sanctuary_code)
+# tbl_sounds <- import_sounds() %>% 
+tbl_sounds <- import_sounds(redo = F) %>% 
+  arrange(sound_category, sound_subcategory, modal_title, sanctuary_code) %>% 
+  left_join(
+    get_sheet("sanctuaries") %>% 
+      select(sanctuary_code, sanctuary_name = name, sanctuary_type = type),
+    by = "sanctuary_code")
+
+# tbl_sounds %>% 
+#   filter(!is.na(sound_enhancement))
 
 tbl_sounds$sound_category    <- na_factor(tbl_sounds$sound_category)
 tbl_sounds$sound_subcategory <- na_factor(tbl_sounds$sound_subcategory)
@@ -28,8 +36,10 @@ categories <- tbl_sounds %>%
   distinct(sound_category) %>% 
   pull(sound_category)
 
+idx = 0
 for (cat in categories){ # cat = categories[1]
   
+  message(glue("cat: {cat}"))
   cat(glue("\n\n## {cat}\n\n", .trim = F))
   
   subcategories <- tbl_sounds %>% 
@@ -38,6 +48,7 @@ for (cat in categories){ # cat = categories[1]
     pull(sound_subcategory)
     
   for (subcat in subcategories){ # subcat = subcategories[3]
+    message(glue("- subcat: {subcat}"))
     cat(glue("\n\n### {replace_na(subcat, 'Other')}\n\n", .trim = F))
     
     subcat_snds <- tbl_sounds %>% 
@@ -46,17 +57,36 @@ for (cat in categories){ # cat = categories[1]
         sound_subcategory == subcat)
     
     for (i in 1:nrow(subcat_snds)){ # i=1
+      idx = idx + 1
+      message(glue("
+        * idx {idx}: {subcat_snds$modal_title[i]} ({subcat_snds$sanctuary_code[i]})"))
+      
       cat("\n\n")
       with(
         subcat_snds[i,],
         cat(glue("
-          #### {modal_title} ({sanctuary_code})
+          #### {modal_title} ({sanctuary_name})
                     
           <video width='360' height='240' controls>
           <source src='{snd_rel}' type='video/mp4'>
           Your browser does not support the video tag.
           </video>
-          {caption}")))
+          <p>{caption}</p>")))
+      
+      snd_enh <- subcat_snds$sound_enhancement[i]
+      if (!is.na(snd_enh)){
+        snd_enh_lnk <- gdrive2path(snd_enh, skip_spectrogram=T, relative_pfx = "./")
+        cat(glue("
+        <br>
+        <p>
+        Enhanced <i class='fas fa-assistive-listening-systems fa-3x'></i> 
+        <audio controls>
+          <source src='{snd_enh_lnk}' type='audio/wav'>
+          Your browser does not support the audio element.
+        </audio>
+        </p>"))
+      }
+      
       cat("\n\n")
     }
   }

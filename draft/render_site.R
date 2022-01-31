@@ -2,28 +2,11 @@ if (!require("librarian")){
   install.packages("librarian")
   library(librarian)
 }
-shelf(here, googledrive, googlesheets4)
+shelf(here)
 
-redo_modals     <- T
-skip_drive_auth <- F
-
-# authenticate to GoogleDrive using Google Service Account's secret JSON
-#   after Sharing with its email: shares@nms4gargle.iam.gserviceaccount.com
-if (Sys.getenv("GITHUB_ACTIONS") == ""){
-  message("GITHUB_ACTIONS environmental variable is empty")
-  google_sa_json <- "/Users/bbest/My Drive (ben@ecoquants.com)/projects/nms-web/data/nms4gargle-774a9e9ec703.json"
-  stopifnot(file.exists(google_sa_json))
-  gsa_json_text <- readLines(google_sa_json) %>% paste(sep="\n")
-} else {
-  gsa_json_text <- Sys.getenv("GOOGLE_SA")
-  message('nchar(Sys.getenv("GOOGLE_SA")): ', nchar(Sys.getenv("GOOGLE_SA")))
-}
-if (!skip_drive_auth){
-  message("non-interactively authenticating to GoogleDrive with Google Service Account")
-  drive_auth(path = gsa_json_text)
-  gs4_auth(path = gsa_json_text)
-}
 source(here::here("draft/functions.R"))
+skip_drive_auth <- F
+redo_modals     <- T
 
 # nav menus in _site.yml ----
 update_sounds_menu()
@@ -47,6 +30,7 @@ modal_pages <- modals %>%
 
 if (redo_modals){
   modal_pages %>%
+    # filter(modal_id == "cinms_fin-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(modal_id == "pmnm_minke-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(!modal_id %in% c("cinms_blue-whales", "cinms_vessels")) %>% # pmnm_humpback-whales pmnm_minke-whales
     # View()
@@ -62,6 +46,7 @@ tiles <- get_sheet("tiles", redo = F) %>%
 
 # *.Rmd's ----
 rmarkdown::render_site("./draft")
+rmarkdown::render("draft/sounds.Rmd")
 
 # servr::httd(here::here("draft"))
 # servr::daemon_stop(1)
