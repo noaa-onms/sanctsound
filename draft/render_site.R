@@ -18,7 +18,7 @@ sites <- read_csv(here("draft/data/nms_sites.csv"), col_types = cols()) %>%
   arrange(code)
 sites %>%
   #filter(code %in% c("cinms","fknms","hihwnms")) %>% 
-  #filter(code %in% c("fknms")) %>% 
+  # filter(code %in% c("cinms")) %>% 
   pwalk(render_sanctuary)
 
 # modals ----
@@ -32,7 +32,7 @@ modal_pages <- modals %>%
 if (redo_modals){
   modal_pages %>%
     # filter(modal_id == "cinms_fin-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
-    filter(modal_id == "cinms_blue-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
+    # filter(modal_id == "cinms_blue-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(modal_id == "pmnm_minke-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(!modal_id %in% c("cinms_blue-whales", "cinms_vessels")) %>% # pmnm_humpback-whales pmnm_minke-whales
     # View()
