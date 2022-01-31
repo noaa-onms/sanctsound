@@ -1,6 +1,6 @@
 ---
 title: "Sanctuary Soundscapes"
-subtitle: "Exploring underwater sounds within US national marine sanctuaries"
+subtitle: "Exploring underwater sounds within U.S. national marine sanctuaries"
 output:
   html_document:
     css: 
