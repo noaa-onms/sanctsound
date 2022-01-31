@@ -7,6 +7,8 @@ output:
     toc_float: true
     css: 
       - libs/styles.css
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -16,7 +18,8 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```{r, results='asis'}
 source("functions.R")
 
-tbl_stories <- import_stories()
+# tbl_stories <- import_stories(redo = F)
+tbl_stories <- import_stories(redo = F)
 
 regions <- tbl_stories %>% 
   distinct(region) %>% 

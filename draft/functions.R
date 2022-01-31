@@ -541,26 +541,30 @@ import_stories <- function(redo = T){
   stories_csv <- here("draft/data/stories.csv")
   
   if (!file.exists(stories_csv) | redo){
-  tbl_stories <- get_sheet("stories") %>% 
-    filter(
-      !is.na(image_gdrive_sharable_link)) %>% 
-    mutate(
-      img_rel = map_chr(image_gdrive_sharable_link, gdrive2path, relative_pfx = "")) %>% 
-    filter(
-      !is.na(img_rel))
+    # View(tbl_stories)
+    tbl_stories <- get_sheet("stories") %>% 
+      filter(
+        !is.na(image_gdrive_sharable_link)) %>% 
+      mutate(
+        img_rel = map_chr(image_gdrive_sharable_link, gdrive2path, relative_pfx = "")) %>% 
+      filter(
+        !is.na(img_rel))
     
     write_csv(tbl_stories, stories_csv)
   }
   
   tbl_stories <- read_csv(stories_csv, col_types = cols())
   
+  rgns <- c(
+    "National", 
+    tbl_stories$region %>% setdiff("National") %>% sort())
   tbl_stories$region <- factor(
     tbl_stories$region,
-    levels = c("National", "East Coast", "Hawaii", "West Coast"),
+    levels = rgns,
     ordered = T)
   
   tbl_stories %>% 
-    arrange(region, title, sanctuary)
+    arrange(region, sanctuary, title)
 }
 
 header2anchor <- function(header, pfx="stories.html"){
@@ -589,12 +593,26 @@ story_grid_item <- function(title, img_rel, story_link, ...){
   }
 }
 
-story_card <- function(title, img_rel, story_link, ...){
-  a <- ""
+story_card <- function(img_rel, story_link, title, css_style, ...){
+  link_html <- ""
   if(!is.na(story_link))
-    a <- "<a href='{story_link}' class='stretched-link'></a>"
+    link_html <- glue("<a href='{story_link}' target='_blank' class='stretched-link'></a>")
+  title_html <- ""
+  if(!is.na(title)){
+    title_style <- ifelse(!is.na(css_style), css_style, "black-white")
+    title_html <- glue("
+      <div class='card-img-overlay d-flex'>
+        <h4 class='card-title align-self-center mx-auto {title_style}'>
+          {title}
+        </h4>
+      </div>")
+  }
   glue("
-    <div class='card card-img-wrap'><img class='card-img' src='{img_rel}'>{a}</div>") %>% 
+    <div class='card card-img-wrap'>
+      <img class='card-img' src='{img_rel}'/>
+      {link_html}
+      {title_html}
+    </div>") %>% 
     HTML() # .noWS="outside")
 
 }
