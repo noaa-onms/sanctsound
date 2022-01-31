@@ -18,6 +18,7 @@ sites <- read_csv(here("draft/data/nms_sites.csv"), col_types = cols()) %>%
   arrange(code)
 sites %>%
   #filter(code %in% c("cinms","fknms","hihwnms")) %>% 
+  #filter(code %in% c("cinms")) %>% 
   pwalk(render_sanctuary)
 
 # modals ----
