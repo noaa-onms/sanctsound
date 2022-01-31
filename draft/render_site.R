@@ -32,6 +32,7 @@ modal_pages <- modals %>%
 if (redo_modals){
   modal_pages %>%
     # filter(modal_id == "cinms_fin-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
+    filter(modal_id == "cinms_blue-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(modal_id == "pmnm_minke-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(!modal_id %in% c("cinms_blue-whales", "cinms_vessels")) %>% # pmnm_humpback-whales pmnm_minke-whales
     # View()
