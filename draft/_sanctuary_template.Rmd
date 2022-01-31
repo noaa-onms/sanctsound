@@ -88,14 +88,26 @@ propagation <- filter(tbl_listen, file_type == "propagation")
 duration    <- filter(tbl_listen, file_type == "duration")
 ```
 
+<!--div class='container'-->
 <div class='row'>
-<div class='col-xs-4'>
-  `r with(propagation, if (length(img_rel) == 1) glue("![{caption}]({img_rel})"))`
-</div>
-<div class='col-xs-8'>
-  `r with(duration, if (length(img_rel) == 1) glue("![{caption}]({img_rel})"))`
-</div>
-</div>
+
+<div class='col-md-4'><figure class='figure'>
+ <img src='`r propagation$img_rel`' alt='' width='100%'
+  class='figure_img' data-enlargeable style='cursor: zoom-in'/>
+ <figcaption class='figure-caption'>
+  `r propagation$caption`
+ </figcaption>
+</figure></div>
+
+<div class='col-md-8'><figure class='figure'>
+ <img src='`r duration$img_rel`' alt='' width='100%' 
+  class='figure_img' data-enlargeable style='cursor: zoom-in'/>
+ <figcaption class='figure-caption'>
+  `r duration$caption`
+ </figcaption>
+</figure></div>
+
+</div><!--/div-->
 
 ```{r, results='asis'}
 d_s <- get_sheet("sanctuaries") %>% 
