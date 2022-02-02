@@ -34,7 +34,13 @@ if (redo_modals){
     # filter(modal_id == "cinms_fin-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(modal_id == "cinms_blue-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(modal_id == "pmnm_minke-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
-    # filter(!modal_id %in% c("cinms_blue-whales", "cinms_vessels")) %>% # pmnm_humpback-whales pmnm_minke-whales
+    filter(modal_id %in% c(
+      "ocnms_echosounders", 
+      "hihwnms_vessels", 
+      "ocnms_gray-whales", 
+      "hihwnms_fish-chorus", 
+      "cinms_wind-and-waves", 
+      "ocnms_blue-whales")) %>% # pmnm_humpback-whales pmnm_minke-whales
     # View()
     # TODO: ∆ _modal_template to have chart-/question-captions like Blue whales; multiple Tabs like Vessels
     pwalk(render_modal)
