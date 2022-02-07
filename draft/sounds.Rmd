@@ -67,7 +67,7 @@ for (cat in categories){ # cat = categories[1]
         cat(glue("
           #### {modal_title} ({sanctuary_name})
                     
-          <video width='360' height='240' controls>
+          <video width='360' height='240' controls controlsList='nodownload'>
           <source src='{snd_rel}' type='video/mp4'>
           Your browser does not support the video tag.
           </video>

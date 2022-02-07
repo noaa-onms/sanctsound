@@ -666,23 +666,23 @@ update_stories_menu <- function(){
   tbl_stories <- import_stories() %>% 
     left_join(
       get_sheet("sanctuaries") %>% 
-        select(sanctuary_code, sanctuary_name = name, sanctuary_type = type),
-      by = "sanctuary_code")
+        select(sanctuary=sanctuary_code, sanctuary_name = name, sanctuary_type = type),
+      by = "sanctuary")
   
   site <- read_yaml(here("draft/_site.yml"))
   
   idx_stories <- which(map_chr(site$navbar$left, "text") == "Stories")
   
   stories_menu <- tbl_stories %>%
-    arrange(region, title, sanctuary) %>% 
+    arrange(region, title) %>% 
     mutate(
       text_href = pmap(
         ., 
-        function(region, title, sanctuary, ...){
+        function(region, title, sanctuary_name, ...){
           txt_sanctuary <- ifelse(
-            is.na(sanctuary),
+            is.na(sanctuary_name),
             "",
-            glue(" ({sanctuary})"))
+            glue(" ({sanctuary_name})"))
           txt <- glue("{title}{txt_sanctuary}")
           
           list(

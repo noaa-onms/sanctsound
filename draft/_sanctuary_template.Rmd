@@ -152,12 +152,12 @@ power_spec  <- filter(tbl_measure, file_type == "power_spec")
 </div>
 <div class='row'>
 <div class='col-xs-6 well'>
-  **Streamplot**: _loudness and contribution of different pitches_
+  **Sound levels above median**: _loudness and contribution of different pitches_
   
   `r with(streamplot, if (length(img_rel) == 1) glue("![{caption}]({img_rel})"))`
 </div>
 <div class='col-xs-6 well'>
-  **Power spec**: _variability of loudness across pitch_
+  **Power spectrum**: _variability of loudness across pitch_
   
   `r with(power_spec, if (length(img_rel) == 1) glue("![{caption}]({img_rel})"))`
 </div>

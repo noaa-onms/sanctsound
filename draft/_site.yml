@@ -95,10 +95,14 @@ navbar:
         href: sounds.html#fin-whales-olympic-coast
       - text: Fin whales (Stellwagen Bank)
         href: sounds.html#fin-whales-stellwagen-bank
+      - text: Fish chorus (Hawaiian Islands Humpback Whale)
+        href: sounds.html#fish-chorus-hawaiian-islands-humpback-whale
       - text: Gray whales (Channel Islands)
         href: sounds.html#gray-whales-channel-islands
       - text: Gray whales (Monterey Bay)
         href: sounds.html#gray-whales-monterey-bay
+      - text: Gray whales (Olympic Coast)
+        href: sounds.html#gray-whales-olympic-coast
       - text: Humpback whales (Channel Islands)
         href: sounds.html#humpback-whales-channel-islands
       - text: Humpback whales (Hawaiian Islands Humpback Whale)
@@ -159,6 +163,8 @@ navbar:
         href: sounds.html#echosounders-channel-islands
       - text: Echosounders (Hawaiian Islands Humpback Whale)
         href: sounds.html#echosounders-hawaiian-islands-humpback-whale
+      - text: Echosounders (Olympic Coast)
+        href: sounds.html#echosounders-olympic-coast
       - text: Echosounders and transducers (Monterey Bay)
         href: sounds.html#echosounders-and-transducers-monterey-bay
       - text: Explosions (Florida Keys)
@@ -213,6 +219,8 @@ navbar:
         href: sounds.html#rain-olympic-coast
       - text: Rain (Stellwagen Bank)
         href: sounds.html#rain-stellwagen-bank
+      - text: Wind and waves (Channel Islands)
+        href: sounds.html#wind-and-waves-channel-islands
       - text: Wind and waves (Florida Keys)
         href: sounds.html#wind-and-waves-florida-keys
       - text: Wind and waves (Gray's Reef)
@@ -292,33 +300,36 @@ navbar:
         href: stories.html#national
       - text: 'SanctSound: Listening to the (Not So) Silent World'
         href: stories.html#national
-    - text: West Coast
+    - text: Eastern
       menu:
-      - text: One Fish, Two Fish, Quiet Fish, Loud Fish (CINMS)
-        href: stories.html#west-coast
-      - text: Understanding Underwater Noise in Monterey Bay National Marine Sanctuary
-          (MBNMS)
-        href: stories.html#west-coast
-      - text: 'United in Song: Finding Common Ground to Protect Humpback Whales (OCNMS)'
-        href: stories.html#west-coast
-    - text: .na.character
+      - text: Estimating Fishing and Diving Use at Gray's Reef by Listening to Boats
+          (Gray's Reef)
+        href: stories.html#eastern
+      - text: 'Hum, Crackle, Knock: Monitoring Reef Habitats in Florida Keys National
+          Marine Sanctuary (Florida Keys)'
+        href: stories.html#eastern
+      - text: Listening to the Ocean in the Time of COVID-19 (Stellwagen Bank)
+        href: stories.html#eastern
+      - text: 'Story Map: Boat Visitation at Gray''s Reef (Gray''s Reef)'
+        href: stories.html#eastern
+    - text: Pacific Islands
       menu:
       - text: 'Along for the Glide: What The Wave Glider''s Journey Through Papahānaumokuākea
-          Reveals About Humpback Whales (PMNM)'
-        href: stories.html#NA
+          Reveals About Humpback Whales (Papahānaumokuākea)'
+        href: stories.html#pacific-islands
       - text: 'Eavesdropping on Whales: How Acoustic Surveys Are Revolutionizing Humpback
-          Whale Monitoring in Hawai''i (HIHWNMS)'
-        href: stories.html#NA
-      - text: Estimating Fishing and Diving Use at Gray's Reef by Listening to Boats
-          (GRNMS)
-        href: stories.html#NA
-      - text: 'Hum, Crackle, Knock: Monitoring Reef Habitats in Florida Keys National
-          Marine Sanctuary (FKNMS)'
-        href: stories.html#NA
-      - text: Listening to the Ocean in the Time of COVID-19 (SBNMS)
-        href: stories.html#NA
-      - text: 'Story Map: Boat Visitation at Gray''s Reef (GRNMS)'
-        href: stories.html#NA
+          Whale Monitoring in Hawai''i (Hawaiian Islands Humpback Whale)'
+        href: stories.html#pacific-islands
+    - text: West Coast
+      menu:
+      - text: One Fish, Two Fish, Quiet Fish, Loud Fish (Channel Islands)
+        href: stories.html#west-coast
+      - text: Understanding Underwater Noise in Monterey Bay National Marine Sanctuary
+          (Monterey Bay)
+        href: stories.html#west-coast
+      - text: 'United in Song: Finding Common Ground to Protect Humpback Whales (Olympic
+          Coast)'
+        href: stories.html#west-coast
   - text: Fun
     icon: fa-grin
     href: fun.html

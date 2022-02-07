@@ -1,5 +1,5 @@
 ---
-title: "`r params$modal_title` in `r params$sanctuary_code`"
+title: "`r params$modal_title`"
 output: html_document
 # output:
 #   html_document:
