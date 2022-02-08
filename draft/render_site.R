@@ -31,7 +31,7 @@ modal_pages <- modals %>%
 
 if (redo_modals){
   modal_pages %>%
-    filter(modal_id == "cinms_fin-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
+    # filter(modal_id == "cinms_fin-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(modal_id == "cinms_blue-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(modal_id == "pmnm_minke-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(modal_id %in% c(
@@ -47,13 +47,13 @@ if (redo_modals){
 }
   
 # tiles ----
-tiles <- get_sheet("tiles", redo = F) %>% 
-  mutate(
-    path_relative = map_chr(gdrive_shareable_link, gdrive2path))
+# tiles <- get_sheet("tiles", redo = F) %>% 
+#   mutate(
+#     path_relative = map_chr(gdrive_shareable_link, gdrive2path))
 # for now manually added into _cards.html for index.Rmd 
 
 # *.Rmd's ----
-rmarkdown::render_site("./draft")
+rmarkdown::render_site(here::here("draft"))
 #rmarkdown::render("draft/sounds.Rmd")
 
 # servr::httd(here::here("draft"))
