@@ -16,7 +16,7 @@ _Ever tried to negotiate where to sit at a concert with a friend who thinks it�
 <!--img src="./images/image4.png" alt="amplitude and frequency" style="float:left;width:50%;padding:10px"-->
 
 This project recorded underwater sound continuously throughout the day and night at 30 locations in the U.S. National Marine Sanctuary System over three years. This effort resulted in a very large amount of information. In fact, this project generated 300 terabytes of data. For context, approximately 500 hours’ worth of movies can fit in one terabyte.
-Information of this size is hard to share and hard to make sense of. To support sharing, all the project’s raw data are archived and accessible from the NOAA National Centers for Environmental Information (NCEI) [Passive Acoustic Archive](https://www.ncei.noaa.gov/maps/passive_acoustic_data/). To support understanding, the project extracted standard measurements from these recordings, which are also archived at NCEI and made accessible via [ERDDAP](https://coastwatch.pfeg.noaa.gov/erddap/index.html).
+Information of this size is hard to share and hard to make sense of. To support sharing, all the project’s raw data are archived and accessible from the NOAA National Centers for Environmental Information (NCEI) **[Passive Acoustic Archive](https://www.ncei.noaa.gov/maps/passive_acoustic_data/)**. To support understanding, the project extracted standard measurements from these recordings, which are also archived at NCEI and made accessible via **[ERDDAP](https://coastwatch.pfeg.noaa.gov/erddap/index.html)**.
 
 ```{r, results='asis'}
 figure(
@@ -24,8 +24,6 @@ figure(
   caption = "The NOAA National Centers for Environmental Information Passive Acoustic Data Archive manages and makes accessible data from SanctSound (orange circles) and other acoustic monitoring projects from around the country. Credit: NOAA",
   alt = "")
 ```
-
-Sound can be described in a variety of different ways [DOSITS characterizing sound]. Two key attributes of sound are intensity and frequency. Intensity or “loudness” is measured in decibels and describes how much (the amplitude) pressure the sound contains; a low decibel or quiet sound contains less amplitude than a high amplitude or loud sound. Frequency is measured in hertz and provides information about tones that are contained in a sound. Other attributes describe how the sound occurred over time: was it a short burst of sound or a long-lasting hum? Our measurements of “levels” of sounds summarize all these attributes: intensity, frequency, and duration.
 
 ::: { .overflow-auto}
 
@@ -37,9 +35,9 @@ figure(
   align = "left")
 ```
 
-Sound can be described in a variety of different ways [DOSITS characterizing sound]. Two key attributes of sound are intensity and frequency. **Intensity** or “loudness” is measured in decibels and describes how much pressure the sound contains (the amplitude); a low decibel or quiet sound contains less amplitude than a high amplitude or loud sound. **Frequency** is measured in hertz and provides information about tones that are contained in a sound. Other attributes describe how the sound occurred over time: was it a short burst of sound or a long-lasting hum? Our measurements of “levels” of sounds summarize all these attributes: intensity, frequency, and duration.
+Sound can be described in a variety of different ways **[DOSITS characterizing sound] (https://dosits.org/science/sound/characterize-sounds/)**. Two key attributes of sound are intensity and frequency. **Intensity** or “loudness” is measured in decibels and describes how much pressure the sound contains (the amplitude); a low decibel or quiet sound contains less amplitude than a high amplitude or loud sound. **Frequency** is measured in hertz and provides information about tones that are contained in a sound. Other attributes describe how the sound occurred over time: was it a short burst of sound or a long-lasting hum? Our measurements of “levels” of sounds summarize all these attributes: intensity, frequency, and duration.
 
-This web portal showcases the types of information that sound can provide to help us understand and protect our oceans and its inhabitants. Here you can explore acoustic features of each recording location with the U.S. National Marine Sanctuary System, and make comparisons among locations to better understand how similar or different they are from each other. To do this, we not only had to record sound information in a comparable way [see Why and how did we listen?], we needed to make the same measurements from these recordings. 
+This web portal showcases the types of information that sound can provide to help us understand and protect our oceans and its inhabitants. Here you can explore acoustic features of each recording location with the U.S. National Marine Sanctuary System, and make comparisons among locations to better understand how similar or different they are from each other. To do this, we not only had to record sound information in a comparable way **[see Why and how did we listen?]**, we needed to make the same measurements from these recordings. 
 
 :::
 
