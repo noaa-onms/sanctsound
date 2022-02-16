@@ -66,7 +66,7 @@ figure(
   align  = "left")
 ```
 
-The ‘Sounds’ pull down in the Navigation Bar takes you to the [example sounds page](https://sanctsound.ioos.us/draft/sounds.html), which contains all the sound clips available through the interactive infographics across all eight sanctuaries. For a catalog of all the sound clips available for this entire project, head to the SanctSound data portal by selecting ‘Sound Library’ under the ‘Statistics’ pull down in the Navigation Bar or by clicking here.
+The ‘Sounds’ pull down in the Navigation Bar takes you to the *[example sounds page](https://sanctsound.ioos.us/draft/sounds.html)*, which contains all the sound clips available through the interactive infographics across all eight sanctuaries. For a catalog of all the sound clips available for this entire project, head to the SanctSound data portal by selecting ‘Sound Library’ under the ‘Statistics’ pull down in the Navigation Bar or by clicking here.
 
 :::
 
