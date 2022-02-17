@@ -66,7 +66,7 @@ figure(
   align  = "left")
 ```
 
-The ‘Sounds’ pull down in the Navigation Bar takes you to the **[example sounds page](https://sanctsound.ioos.us/draft/sounds.html)**, which contains all the sound clips available through the interactive infographics across all eight sanctuaries. For a catalog of all the sound clips available for this entire project, head to the SanctSound data portal by selecting ‘Sound Library’ under the ‘Statistics’ pull down in the Navigation Bar or by clicking here.
+The ‘Sounds’ pull down in the Navigation Bar takes you to the **[example sounds page](https://sanctsound.ioos.us/draft/sounds.html)**, which contains all the sound clips available through the interactive infographics across all eight sanctuaries. For a catalog of all the sound clips available for this entire project, head to the SanctSound data portal by selecting ‘Sound Library’ under the ‘Data Portal’ pull down in the Navigation Bar or by clicking **[here](https://sanctsound.portal.axds.co/#sanctsound/method-types/sounds)**.
 
 :::
 
@@ -93,6 +93,6 @@ figure(
 
 We can also visualize whether detections varied over the course of a day by counting how many times a sound is detected in each hour and plotting that on a graph that looks like a 24 hour clock. For example, at this site in Florida Keys National Marine Sanctuary, vessel sounds are more commonly recorded during the late morning to afternoon hours, since that is the time of day when most people go out fishing and boating.
 
-These types of monthly and daily patterns are shown under the ‘What did we hear’ tab for many of the sound sources on a sanctuary’s interactive infographic. For those interested in a deeper exploration of detection patterns within and across sanctuaries, select ‘Detections’ under the ‘Statistics’ pull down in the Navigation Bar.
+These types of monthly and daily patterns are shown under the ‘What did we hear’ tab for many of the sound sources on a sanctuary’s interactive infographic. For those interested in a deeper exploration of detection patterns within and across sanctuaries, select ‘Home’ under the ‘Data Portal’ pull down in the Navigation Bar.
 
 :::
