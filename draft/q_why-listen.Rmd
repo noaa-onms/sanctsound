@@ -11,7 +11,7 @@ source("functions.R")
 
 The goal of the SanctSound project was to understand how sound varies in the ocean by collecting the same information in national marine sanctuaries around the United States. To do this, 30 locations within seven national marine sanctuaries and one marine national monument were selected have sound recording devices placed in them so scientists could listen to the ocean, as continuously as possible, over a period of three years.
 
-We programmed all SanctSound recorders to collect information over the same range of frequencies or pitches - from 20 Hertz (low pitch) to 24,000 Hertz (high pitch). For reference, people hear sounds in air that range from 20 to 20,000 Hertz. The hearing systems of marine animals are tuned to hear specific sounds transmitted through water [learn more about animal hearing at [DOSITS Sound Reception](https://dosits.org/animals/sound-reception/)].
+We programmed all SanctSound recorders to collect information over the same range of frequencies or pitches - from 20 Hertz (low pitch) to 24,000 Hertz (high pitch). For reference, people hear sounds in air that range from 20 to 20,000 Hertz. The hearing systems of marine animals are tuned to hear specific sounds transmitted through water. Learn more about animal hearing at **[DOSITS Sound Reception](https://dosits.org/animals/sound-reception/)**.
 
 In some cases, human-made sounds can interfere with the ability of animals to hear important signals underwater. One goal of the SanctSound project was to improve our understanding of where and when this is happening in sanctuaries, and what methods might be used to reduce interference that is causing harm or disruption.
 
@@ -47,7 +47,7 @@ figure(
 ```
 
 
-Although most of SanctSound’s listening took place at specific locations, autonomous underwater vehicles also known as “gliders” were also used to collect sounds for shorter periods of time in Stellwagen and Gray’s Reef national marine sanctuaries and in the Papahānaumokuākea Marine National Monument.  These vehicles were programmed to swim on particular paths over periods of weeks, collecting sounds and other types of data. Torpedo-shaped gliders dive up and down while others resemble surf boards to glide on the waves, but all of them gathered sounds over areas and times when specific animals were expected to be calling. Read a story about how gliders were used in Stellwagen Bank here and Papahānaumokuākea [here](https://sanctuaries.noaa.gov/news/jul21/along-for-the-glide.html).
+Although most of SanctSound’s listening took place at specific locations, autonomous underwater vehicles also known as “gliders” were also used to collect sounds for shorter periods of time in Stellwagen and Gray’s Reef national marine sanctuaries and in the Papahānaumokuākea Marine National Monument.  These vehicles were programmed to swim on particular paths over periods of weeks, collecting sounds and other types of data. Torpedo-shaped gliders dive up and down while others resemble surf boards to glide on the waves, but all of them gathered sounds over areas and times when specific animals were expected to be calling. Read a story about how gliders were used in Stellwagen Bank here and Papahānaumokuākea **[here](https://sanctuaries.noaa.gov/news/jul21/along-for-the-glide.html)**.
 
 ```{r, results='asis'}
 figure(
