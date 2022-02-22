@@ -1,7 +1,7 @@
 name: render-website
 
 on:
-  # push:
+  push:
   schedule:            
   - cron: '0 0 * * 0' # once per week, Sundays 0:00
   workflow_dispatch:
