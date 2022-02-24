@@ -53,6 +53,8 @@ navbar:
     - text: '---------'
     - text: Animal
       menu:
+      - text: Atlantic midshipman (Florida Keys)
+        href: sounds.html#atlantic-midshipman-florida-keys
       - text: Black grouper (Florida Keys)
         href: sounds.html#black-grouper-florida-keys
       - text: Blue whales (Channel Islands)
@@ -95,6 +97,10 @@ navbar:
         href: sounds.html#fin-whales-olympic-coast
       - text: Fin whales (Stellwagen Bank)
         href: sounds.html#fin-whales-stellwagen-bank
+      - text: Fish chorus (Florida Keys)
+        href: sounds.html#fish-chorus-florida-keys
+      - text: Fish chorus (Gray's Reef)
+        href: sounds.html#fish-chorus-grays-reef
       - text: Fish chorus (Hawaiian Islands Humpback Whale)
         href: sounds.html#fish-chorus-hawaiian-islands-humpback-whale
       - text: Gray whales (Channel Islands)
@@ -103,6 +109,8 @@ navbar:
         href: sounds.html#gray-whales-monterey-bay
       - text: Gray whales (Olympic Coast)
         href: sounds.html#gray-whales-olympic-coast
+      - text: Haddock (Stellwagen Bank)
+        href: sounds.html#haddock-stellwagen-bank
       - text: Humpback whales (Channel Islands)
         href: sounds.html#humpback-whales-channel-islands
       - text: Humpback whales (Hawaiian Islands Humpback Whale)
@@ -171,6 +179,10 @@ navbar:
         href: sounds.html#explosions-florida-keys
       - text: Pingers (Stellwagen Bank)
         href: sounds.html#pingers-stellwagen-bank
+      - text: Scuba bubbles (Florida Keys)
+        href: sounds.html#scuba-bubbles-florida-keys
+      - text: Scuba bubbles (Gray's Reef)
+        href: sounds.html#scuba-bubbles-grays-reef
       - text: Seal bombs (Channel Islands)
         href: sounds.html#seal-bombs-channel-islands
       - text: Seal bombs (Monterey Bay)
@@ -203,6 +215,8 @@ navbar:
         href: sounds.html#vessels-stellwagen-bank
     - text: Physical
       menu:
+      - text: Hurricanes (Florida Keys)
+        href: sounds.html#hurricanes-florida-keys
       - text: Hurricanes (Gray's Reef)
         href: sounds.html#hurricanes-grays-reef
       - text: Rain (Channel Islands)
@@ -217,6 +231,8 @@ navbar:
         href: sounds.html#rain-monterey-bay
       - text: Rain (Olympic Coast)
         href: sounds.html#rain-olympic-coast
+      - text: Rain (Papahānaumokuākea)
+        href: sounds.html#rain-papahnaumokukea
       - text: Rain (Stellwagen Bank)
         href: sounds.html#rain-stellwagen-bank
       - text: Wind and waves (Channel Islands)
@@ -225,10 +241,14 @@ navbar:
         href: sounds.html#wind-and-waves-florida-keys
       - text: Wind and waves (Gray's Reef)
         href: sounds.html#wind-and-waves-grays-reef
+      - text: Wind and waves (Hawaiian Islands Humpback Whale)
+        href: sounds.html#wind-and-waves-hawaiian-islands-humpback-whale
       - text: Wind and waves (Monterey Bay)
         href: sounds.html#wind-and-waves-monterey-bay
       - text: Wind and waves (Olympic Coast)
         href: sounds.html#wind-and-waves-olympic-coast
+      - text: Wind and waves (Papahānaumokuākea)
+        href: sounds.html#wind-and-waves-papahnaumokukea
       - text: Wind and waves (Stellwagen Bank)
         href: sounds.html#wind-and-waves-stellwagen-bank
     - text: Soundscape

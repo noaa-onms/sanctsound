@@ -463,9 +463,17 @@ render_page <- function(rmd){
 }
 
 audio_to_spectrogram_video <- function(path, path_mp4){
+  
   path_mp3 <- glue("{path_ext_remove(path)}_ffmpeg-clean.mp3")
   cmd <- glue("ffmpeg -y -i {path} -codec:a libmp3lame -qscale:a 2 {path_mp3}")
   res <- system(cmd)
+  
+  # dyld: Library not loaded: /usr/local/opt/libffi/lib/libffi.7.dylib
+  #   Referenced from: /usr/local/opt/p11-kit/lib/libp11-kit.0.dylib
+  #   Reason: image not found
+  # https://github.com/platformio/platform-lattice_ice40/issues/7#issuecomment-949301515
+  #   cp /usr/local/opt/ntopng/libffi.7.dylib /usr/local/opt/libffi/lib/libffi.7.dylib
+  
   if (res != 0)
     return(NA)
   
@@ -475,8 +483,11 @@ audio_to_spectrogram_video <- function(path, path_mp4){
       width = 720, height = 480, res = 144, framerate = 25))
   # TODO: change color ramp inside this function around line: graphics::plot(fftdata, vline = i)
   
-  if (class(out) == "try-error")
+  if ("try-error" %in% class(out))
     return(NA)
+  
+  if (!file.exists(path_mp4))
+    stop(glue("Why does path_mp4 {path_mp4} not exist?"))
   
   path_mp4
 }
@@ -715,6 +726,7 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_p
   # gdrive_shareable_link <- "https://drive.google.com/file/d/1_wWLplFmhEAEqmbsTA0D85yuAhmapc5a/view?usp=sharing"
   # gdrive_shareable_link <- tbl$gdrive_shareable_link; get_relative_path = T; redo = F
   # gdrive_shareable_link <- sound$sound_enhancement; get_relative_path = T; relative_pfx = "../", redo = F, skip_spectrogram = T; redo = F
+  # gdrive_shareable_link <- "https://drive.google.com/file/d/1ExSIVhHbzWgZJe95EMli8EvpgkL2hpc4/view?usp=sharing"; get_relative_path = T; relative_pfx = "../"; redo = F; skip_spectrogram = F
   
   regex <- ifelse(
     str_detect(gdrive_shareable_link, "/file/"),
@@ -728,8 +740,7 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_p
   message(glue("gdrive_shareable_link: {gdrive_shareable_link}"))
   message(glue("  gid: {gid}"))
   
-  
-  if (class(fname) == "try-error")
+  if ("try-error" %in% class(fname))
     return(NA)
   
   fname_ok      <- fname %>% str_replace_all("/", "_")
@@ -738,15 +749,15 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_p
   message(glue("  fname_ok: {fname}"))
   
   if (!file.exists(path) | redo)
-    drive_download(as_id(gid), path)
+    drive_download(as_id(gid), path, overwrite = T)
   
-  gid = "https://drive.google.com/file/d/1rE8LY7_7axW5IPw83gOymErcyAvxLv6Y/view?usp=sharing"
-  x <- googledrive::drive_get(gid) %>% 
+  x <- googledrive::drive_get(as_id(gid)) %>% 
     mutate(
       modified = map_chr(drive_resource, "modifiedTime"))
   y <- x$drive_resource[[1]]
   
-  lubridate::as_datetime(x$drive_resource[[1]]$modifiedTime)
+  # TODO: check modifiedTime
+  date_mod <- lubridate::as_datetime(x$drive_resource[[1]]$modifiedTime)
   
   if (path_ext(path) %in% c("mp3","wav") & !skip_spectrogram){
     
