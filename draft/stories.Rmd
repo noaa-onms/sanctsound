@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 ```{r, results='asis'}
 source("functions.R")
 
-# tbl_stories <- import_stories(redo = F)
+# tbl_stories <- import_stories(redo = T)
 tbl_stories <- import_stories(redo = F)
 
 regions <- tbl_stories %>% 

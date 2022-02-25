@@ -318,7 +318,7 @@ navbar:
       - text: Oh Snap! What Tiny Shrimp Can Tell Us About Habitat Health
         href: stories.html#national
       - text: 'SanctSound Story Map: Exploring underwater sounds within the U.S. National
-          Mainre Sanctuary System'
+          Marine Sanctuary System'
         href: stories.html#national
       - text: 'SanctSound: Listening to the (Not So) Silent World'
         href: stories.html#national
@@ -381,8 +381,9 @@ output:
       bootswatch: yeti
       primary: '#013088'
       secondary: '#FFF'
-    css:
-    - libs/styles.css
+    css: 
+      - libs/styles.css
+      - libs/slider_styles.css
     self_contained: no
     lib_dir: site_libs
     mathjax: ~

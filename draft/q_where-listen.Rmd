@@ -1,10 +1,5 @@
 ---
 title: "Where and when did we listen?"
-output:
-  html_document:
-    css: 
-      - libs/styles.css
-      - libs/slider_styles.css
 ---
 
 ```{r setup, include=FALSE}

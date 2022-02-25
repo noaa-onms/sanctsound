@@ -613,16 +613,17 @@ story_grid_item <- function(title, img_rel, story_link, ...){
   }
 }
 
-story_card <- function(img_rel, story_link, title, css_style, ...){
+story_card <- function(img_rel, story_link, title, title_style, title_size, ...){
   link_html <- ""
   if(!is.na(story_link))
     link_html <- glue("<a href='{story_link}' target='_blank' class='stretched-link'></a>")
   title_html <- ""
   if(!is.na(title)){
-    title_style <- ifelse(!is.na(css_style), css_style, "black-white")
+    css_style <- ifelse(!is.na(title_style), title_style, "black-white")
+    font_size <- ifelse(!is.na(title_size), glue("style='font-size: {title_size}'"), "") # defaults to 1.3rem
     title_html <- glue("
       <div class='card-img-overlay d-flex'>
-        <h4 class='card-title align-self-center mx-auto {title_style}'>
+        <h4 class='card-title align-self-center mx-auto {css_style}' {font_size}>
           {title}
         </h4>
       </div>")
