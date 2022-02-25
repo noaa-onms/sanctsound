@@ -199,5 +199,10 @@ if (nrow(snc_stories) > 0){
 }
 ```
 
+- [Click here](https://sanctsound.ioos.us/draft/q_what-learn.html) 
+to learn about our collection of stories. 
+- [Click here](https://sanctsound.ioos.us/draft/stories.html) to 
+read more SanctSound stories.
+
 
 
