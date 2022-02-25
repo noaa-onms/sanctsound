@@ -47,7 +47,7 @@ figure(
 ```
 
 
-Although most of SanctSound’s listening took place at specific locations, autonomous underwater vehicles also known as “gliders” were also used to collect sounds for shorter periods of time in Stellwagen and Gray’s Reef national marine sanctuaries and in the Papahānaumokuākea Marine National Monument.  These vehicles were programmed to swim on particular paths over periods of weeks, collecting sounds and other types of data. Torpedo-shaped gliders dive up and down while others resemble surf boards to glide on the waves, but all of them gathered sounds over areas and times when specific animals were expected to be calling. Read a story about how gliders were used in Stellwagen Bank here and Papahānaumokuākea **[here](https://sanctuaries.noaa.gov/news/jul21/along-for-the-glide.html)**.
+Although most of SanctSound’s listening took place at specific locations, autonomous underwater vehicles also known as “gliders” were also used to collect sounds for shorter periods of time in Stellwagen and Gray’s Reef national marine sanctuaries and in the Papahānaumokuākea Marine National Monument. These vehicles were programmed to swim on particular paths over periods of weeks, collecting sounds and other types of data. Torpedo-shaped gliders dive up and down while others resemble surf boards to glide on the waves, but all of them gathered sounds over areas and times when specific animals were expected to be calling. Read a story about how gliders were used in Stellwagen Bank **[here](https://sanctuaries.noaa.gov/news/mar21/listening-during-quarantine.html)** and Papahānaumokuākea **[here](https://sanctuaries.noaa.gov/news/jul21/along-for-the-glide.html)**.
 
 ```{r, results='asis'}
 figure(
