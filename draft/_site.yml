@@ -381,7 +381,8 @@ output:
       bootswatch: yeti
       primary: '#013088'
       secondary: '#FFF'
-    css: libs/styles.css
+    css:
+    - libs/styles.css
     self_contained: no
     lib_dir: site_libs
     mathjax: ~

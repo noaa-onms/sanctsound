@@ -5,8 +5,6 @@ output:
     toc: true
     toc_depth: 2
     toc_float: true
-    css: 
-      - libs/styles.css
 editor_options: 
   chunk_output_type: console
 ---

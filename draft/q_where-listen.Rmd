@@ -3,7 +3,7 @@ title: "Where and when did we listen?"
 output:
   html_document:
     css: 
-      #- libs/tiles.css
+      - libs/styles.css
       - libs/slider_styles.css
 ---
 
@@ -72,17 +72,19 @@ figure(
 <script src="js/jquery.mobile.custom.min.js"></script>
 ```
 
-<figure class="cd-image-container">
+<!-- source: [Propogation Models](https://sanctsound.portal.axds.co/#sanctsound/sanctuary/channel-islands/site/CI01/method_type/prop-model?grouping_tab=by_month&ogc=signal_to_noise_ratio_raster&style=solid&threshold=1&max=30&size=large&color_scale=row&palette=balance) -->
+<center>
+
+<figure class="figure cd-image-container" style="padding: 0 !important;">
  <img src="./images/questions/Propogation_CI01_63Hz.png" alt="Original Image">
- <span class="cd-image-label" data-type="original">Date: 2019</span>
- 
+ <span class="cd-image-label" data-type="original">January 63 Hz</span>
  <div class="cd-resize-img"> <!-- the resizable image on top -->
   <img src="./images/questions/Propogation_CI01_1000Hz.png" alt="Modified Image">
-	<span class="cd-image-label" data-type="modified">Date: 2009</span>
+	<span class="cd-image-label" data-type="modified">January 1000 Hz</span>
  </div>
 	<span class="cd-handle"></span>
 </figure>
-
+<center>
 <script src="libs/slider.js"></script>
 
 Our goal was to collect sound information over three years at each site. However, it didn’t always go smoothly: sharks broke floats by biting them, anchors got stuck in the mud, hurricanes blew gear off locations, electronics flooded, and batteries failed. Charts on this website show when and how long hydrophones were deployed and the quality of recordings for each listening station. These listening duration charts, found under the “Where did we listen?” tab for each sanctuary, also allow you to see when interruptions occurred and consider how these interruptions affected the sound information that you can explore in this portal.

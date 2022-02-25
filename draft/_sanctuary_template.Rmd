@@ -12,9 +12,6 @@ output:
   html_document:
     mathjax: null
     self_contained: false    
-    css: 
-      #- libs/masonry.css
-      - libs/styles.css
 editor_options: 
   chunk_output_type: console
 ---

@@ -1,11 +1,6 @@
 ---
 title: "Sanctuary Soundscape Monitoring Project (SanctSound)"
 subtitle: "Exploring underwater sounds within U.S. national marine sanctuaries"
-output:
-  html_document:
-    css: 
-      #- libs/tiles.css
-      - libs/styles.css
 ---
 
 ```{r setup, include=FALSE}
