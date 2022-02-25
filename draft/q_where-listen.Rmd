@@ -41,15 +41,15 @@ Each of the 30 locations recorded sounds over different ranges. When you listen 
 ```{r, results='asis'}
 figure(
   img     = "./images/questions/Propogation_CI01_CI05_50Hz.png",
-  caption = "",
+  caption = "Comparison of listening ranges for two different recording locations in the Channel Islands National Marine Sanctuary in summer conditions and for the same louder, low frequency source.",
   alt     = "",
   align   = "left")
 ```
 
-When we compare and explore recordings, it’s important to know whether they represent sounds heard over very short distances or longer distances from where we placed our recorders. To estimate the “listening ranges” of our recorders, we created mathematical models of sound wave propagation combined with the known characteristics of the environment around each location (e.g., depth, composition of seabed) and the known characteristics of several different sounds of interest (the intensity and main frequency content of boats, fish calls, and whale song).
+When we compare and explore recordings, it’s important to know whether they represent sounds heard over very short distances or longer distances from where we placed our recorders. To estimate the “listening ranges” of our recorders, we created mathematical models of sound wave propagation combined with the known characteristics of the environment around each location (e.g., depth, composition of seabed) and the known characteristics of several different sounds of interest (the intensity and main frequency content of boats, fish calls, and whale song). 
 
 Under the “Where did we listen” tab for each sanctuary on the website, there is an example map showing the listening range for one of the sanctuary’s listening stations. Use the ‘Statistics’ pull down in the Navigation Bar to access the SanctSound data portal’s sound propagation maps and models for more detailed exploration of listening ranges at a recording location, including how they change according to the frequencies and seasons of interest. You can also look at the variation across recording locations.
-For example, these results predict that during the summer month a sound with characteristics like those made by a large vessel (192 decibels at a frequency at 50 Hertz, located 6 meters below the ocean surface) can be heard north of our recorder off Santa Rosa Island in Channel Islands National Marine Sanctuary. The same sound is predicted to be heard over a much larger range south of our recorder near Anacapa Island due to less interruption by land and deeper offshore waters that allow sound to propagate unimpeded.
+For example, these results predict that during the summer a sound with characteristics like those made by a large vessel (192 decibels at a frequency at 63 Hertz, located 20 meters below the ocean surface) can be heard north of our recorder off Santa Rosa Island in Channel Islands National Marine Sanctuary. The same sound is predicted to be heard over a much larger range south of our recorder near Anacapa Island due to less interruption by land and deeper offshore waters that allow sound to propagate unimpeded.
 
 :::
 
@@ -61,7 +61,7 @@ figure(
   img = c(
     "./images/questions/Propogation_CI01_63Hz.png",
     "./images/questions/Propogation_CI01_1000Hz.png"))
-  #caption = "Caption to come")
+  #caption = "Comparison of listening ranges at the same recording locations in the Channel Islands National Marine Sanctuary in winter conditions for two different sources of sound: a very low frequency and loud sound (slide left) and a moderately loud and moderately low frequency sound (slide right).")
 ```
 
 ```{html, eval=F}
