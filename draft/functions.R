@@ -339,10 +339,8 @@ md_links_new_window <- function(s){
   str_replace_all(s, "\\[(.*?)\\]\\((.*?)\\)", "<a href='\\2' target='_blank'>\\1</a>")
 }
 
-map_site <- function(site_code){
-  
-  # site_code = "cinms"
-  # site_code = "fknms"
+map_site <- function(site_code, sites=NULL){
+  # site_code = "cinms"; sites=na.omit(sounds$site_id)
   
   locations <- get_sheet("locations")
   
@@ -353,9 +351,18 @@ map_site <- function(site_code){
       use_for_map) %>% 
     mutate(
       popup_md   = glue("**{site_id}**: {tagline}"),
-      popup_html = map_chr(popup_md, function(x) markdown::markdownToHTML(text = x, fragment.only=T))) %>% 
+      popup_html = map_chr(popup_md, function(x){
+        markdown::markdownToHTML(text = x, fragment.only=T) })) %>% 
     st_as_sf(coords = c("lon","lat"), crs = 4326, remove = F)
   
+  if (!is.null(sites)){
+    stopifnot(all(sites %in% sensors$site_id))
+    sensors <- sensors %>% 
+      filter(site_id %in% sites)
+    sensor_options = labelOptions(noHide = T)
+  } else {
+    sensor_options = NULL
+  }
   #library(leaflet)
   
   site <- sf::read_sf(sites_geo) %>% 
@@ -374,17 +381,19 @@ map_site <- function(site_code){
       addCircleMarkers(
         data = sensors,
         color = "yellow", opacity = 0.7, fillOpacity = 0.5,
-        popup = ~popup_html, label = ~site_id)
+        popup = ~popup_html, 
+        label = ~site_id,
+        labelOptions = sensor_options)
+    # addAwesomeMarkers(
+    #   data = sensors,
+    #   icon = awesomeIcons(
+    #     icon = 'microphone', library = 'fa',
+    #     iconColor = 'black',
+    #     markerColor = 'pink'),
+    #   label = ~label_html)
   }
+  
   map
-  # addAwesomeMarkers(
-  #   data = sensors, 
-  #   icon = awesomeIcons(
-  #     icon = 'microphone', library = 'fa',
-  #     iconColor = 'black',
-  #     markerColor = 'pink'), 
-  #   label = ~label_html)
-  #addMarkers(data = sensors, options = markerOptions())
 }
 
 map_sites <- function(){
@@ -883,37 +892,59 @@ update_modal_imgs_snds <- function(modals_csv = modals_csv){
   
 }
 
-sight_sound_md <- function(sight, sound, type = "header"){
+sight_sounds_md <- function(sight, sounds, type = "header"){
   
   has_sight          = F
-  has_sound          = F
+  has_sounds         = F
   has_sound_enhanced = F
-  if (nrow(sight) > 0) has_sight = T
-  if (nrow(sound) > 0) has_sound = T
+  if (nrow(sight) > 0)  has_sight = T
+  if (nrow(sounds) > 0) has_sounds = T
   
-  if(nrow(sound) == 1 && is.na(sound$caption))
+  if(nrow(sounds) == 1 && is.na(sounds$caption))
     sound$caption <- ""
   
   md       <- ""
   md_sight <- glue("![{sight$caption}]({sight$path_relative})")
-  md_sound <- glue("
-    <video controls>
-    <source src='{sound$path_relative}' type='video/mp4'>
-    Your browser does not support the video tag.
-    </video>
-    {sound$caption}")
+  # md_sound <- glue("
+  #   <video controls>
+  #   <source src='{sound$path_relative}' type='video/mp4'>
+  #   Your browser does not support the video tag.
+  #   </video>
+  #   {sound$caption}")
   
-  if (has_sound && !is.na(sound$sound_enhancement)){
-    snd_enh_lnk <- gdrive2path(sound$sound_enhancement, skip_spectrogram=T)
-    md_sound <- glue("
-      {md_sound}\
-      \
-      <i class='fas fa-assistive-listening-systems fa-3x'></i> <audio controls><source src='{snd_enh_lnk}' type='audio/wav'>Your browser does not support the audio element.</audio>\
-      \
-      Listen to the same sound clip optimized for human hearing. Many ocean animals can hear and produce sounds that humans cannot, learn more <a href='..' target='_blank'>here<a/>.")
-  }
+  sounds <- sounds %>% 
+    mutate(
+      md = glue("
+        <video controls>
+         <source src='{path_relative}' type='video/mp4'/>Your browser does not support the video tag.
+        </video>
+        <p>
+        {caption}
+        </p>"),
+      md = ifelse(
+        !is.na(sound_enhancement),
+        glue("
+          {md}\
+          <i class='fas fa-assistive-listening-systems fa-3x'></i>
+          <audio controls><source src='{snd_enh_lnk}' type='audio/wav'>
+          Your browser does not support the audio element.</audio>\
+          Listen to the same sound clip optimized for human hearing. 
+          Many ocean animals can hear and produce sounds that humans cannot, 
+          learn more <a href='..' target='_blank'>here<a/>.
+          "),
+        md))
+  
+  # if (has_sounds && !is.na(sound$sound_enhancement)){
+  #   snd_enh_lnk <- gdrive2path(sound$sound_enhancement, skip_spectrogram=T)
+  #   md_sound <- glue("
+  #     {md_sound}\
+  #     \
+  #     <i class='fas fa-assistive-listening-systems fa-3x'></i> <audio controls><source src='{snd_enh_lnk}' type='audio/wav'>Your browser does not support the audio element.</audio>\
+  #     \
+  #     Listen to the same sound clip optimized for human hearing. Many ocean animals can hear and produce sounds that humans cannot, learn more <a href='..' target='_blank'>here<a/>.")
+  # }
 
-  if (has_sound & has_sight)
+  if (has_sounds & has_sight)
     md <- glue(
       "
       ### Sights & Sounds
@@ -925,26 +956,23 @@ sight_sound_md <- function(sight, sound, type = "header"){
       </div>
       
       <div class='col'>
-        {md_sound}
+        {paste(sounds$md, collapse='\n')}
       </div>
       
       </div></div>
       ")
-  if (has_sight & !has_sound)
+  if (has_sight & !has_sounds)
     md <- glue(
       "
       ### Sights
       
       {md_sight}
       ")
-  if (has_sound & !has_sight)
+  if (has_sounds & !has_sight)
     md <- glue(
-      "
-      ### Sounds
-      
-      {md_sound}
-      ")
+      "### Sounds\n\n",
+      "{paste(sounds$md, collapse='\n<br>\n')}")
+  # cat(md)
 
-  #browser()
   md
 }
