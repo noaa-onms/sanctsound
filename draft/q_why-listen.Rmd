@@ -29,7 +29,7 @@ We used the same recording equipment at all of our locations. Although data coll
 ```{r, results='asis'}
 figure(
   img = "./images/questions/4_recording_equipment.png",
-  caption = "SanctSound has two main approaches for deploying sound recording equipment: a mooring with a release and float system, deployed and retrieved from a research vessel (left panel) and a mooring maintained by divers (center bottom panel). In a few special cases, the project also attached sound recording equipment to a diving autonomous underwater vehicle (center upper panel) and a surface autonomous vehicle powered by waves (right panel).",
+  caption = "SanctSound had two main approaches for deploying sound recording equipment: a mooring maintained by divers (1) and a mooring with a release and float system deployed and retrieved from a research vessel (2). In a few special cases, the project also attached sound recording equipment to a diving autonomous underwater vehicle (3) and a surface autonomous vehicle powered by waves (4).",
   alt = "illustration of equipment",
   align = "right")
 ```
