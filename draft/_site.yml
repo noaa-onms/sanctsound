@@ -361,19 +361,21 @@ navbar:
   - text: Data Portal
     icon: fa-chart-bar
     menu:
-    - text: Home
+    - text: Data Home
       href: https://sanctsound.portal.axds.co
     - text: '---------'
     - text: Broadband Sound Pressure Level
-      href: https://sanctsound.portal.axds.co/#sanctsound/method/broadband-sound-pressure-level
+      href: https://sanctsound.portal.axds.co/#sanctsound/compare/broadband
     - text: High Resolution Spectrogram
       href: https://sanctsound.portal.axds.co/#sanctsound/method/high-resolution-spectrogram
     - text: Octave Level
       href: https://sanctsound.portal.axds.co/#sanctsound/method/octave-level
     - text: One-third Octave Level
       href: https://sanctsound.portal.axds.co/#sanctsound/method/one-third-octave-level
-    - text: Power Spectrum
-      href: https://sanctsound.portal.axds.co/#sanctsound/compare/powerspec
+    - text: Sound Library
+      href: https://sanctsound.portal.axds.co/#sanctsound/method-types/sounds
+    - text: Sound Propagation Modeling
+      href: https://sanctsound.portal.axds.co/#sanctsound/compare/prop-model
 output:
   html_document:
     theme:
