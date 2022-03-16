@@ -13,7 +13,7 @@
 
 <title>Gray’s Reef National Marine Sanctuary</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <link href="site_libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
@@ -85,6 +85,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -105,6 +106,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -257,7 +261,7 @@ $(document).ready(function () {
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -267,7 +271,7 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-question"></span>
      
     Questions
@@ -296,7 +300,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-globe"></span>
      
     Sanctuaries
@@ -335,7 +339,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-file-audio"></span>
      
     Sounds
@@ -348,7 +352,7 @@ $(document).ready(function () {
     </li>
     <li class="divider"></li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Animal</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Animal</a>
       <ul class="dropdown-menu" role="menu">
         <li>
           <a href="sounds.html#atlantic-midshipman-florida-keys">Atlantic midshipman (Florida Keys)</a>
@@ -424,9 +428,6 @@ $(document).ready(function () {
         </li>
         <li>
           <a href="sounds.html#fish-chorus-hawaiian-islands-humpback-whale">Fish chorus (Hawaiian Islands Humpback Whale)</a>
-        </li>
-        <li>
-          <a href="sounds.html#fish-chorus-papahnaumokukea">Fish chorus (Papahānaumokuākea)</a>
         </li>
         <li>
           <a href="sounds.html#gray-whales-channel-islands">Gray whales (Channel Islands)</a>
@@ -524,7 +525,7 @@ $(document).ready(function () {
       </ul>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Human-made</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Human-made</a>
       <ul class="dropdown-menu" role="menu">
         <li>
           <a href="sounds.html#echosounders-channel-islands">Echosounders (Channel Islands)</a>
@@ -584,9 +585,6 @@ $(document).ready(function () {
           <a href="sounds.html#vessels-grays-reef">Vessels (Gray's Reef)</a>
         </li>
         <li>
-          <a href="sounds.html#vessels-hawaiian-islands-humpback-whale">Vessels (Hawaiian Islands Humpback Whale)</a>
-        </li>
-        <li>
           <a href="sounds.html#vessels-monterey-bay">Vessels (Monterey Bay)</a>
         </li>
         <li>
@@ -598,7 +596,7 @@ $(document).ready(function () {
       </ul>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Physical</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Physical</a>
       <ul class="dropdown-menu" role="menu">
         <li>
           <a href="sounds.html#hurricanes-florida-keys">Hurricanes (Florida Keys)</a>
@@ -657,7 +655,7 @@ $(document).ready(function () {
       </ul>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Soundscape</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Soundscape</a>
       <ul class="dropdown-menu" role="menu">
         <li>
           <a href="sounds.html#snapshots-channel-islands">Snapshots (Channel Islands)</a>
@@ -736,7 +734,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-newspaper-o"></span>
      
     Stories
@@ -749,64 +747,67 @@ $(document).ready(function () {
     </li>
     <li class="divider"></li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">National</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">National</a>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <a href="stories.html#national">Can Scientists Train Machines to Listen for Ecosystem Health?</a>
+          <a href="stories.html#national">Listen Up! Vessel Traffic</a>
         </li>
         <li>
-          <a href="stories.html#national">Listen Up! Vessel Traffic in U.S National Marine Sanctuaries</a>
+          <a href="stories.html#national">Listening to the (Not So) Silent World</a>
         </li>
         <li>
-          <a href="stories.html#national">Oh Snap! What Tiny Shrimp Can Tell Us About Habitat Health</a>
+          <a href="stories.html#national">Oh Snap!</a>
         </li>
         <li>
-          <a href="stories.html#national">SanctSound Story Map: Exploring underwater sounds within the U.S. National Mainre Sanctuary System</a>
+          <a href="stories.html#national">SanctSound Story Map</a>
         </li>
         <li>
-          <a href="stories.html#national">SanctSound: Listening to the (Not So) Silent World</a>
+          <a href="stories.html#national">Training Machines to Listen</a>
         </li>
       </ul>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Eastern</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Eastern</a>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <a href="stories.html#eastern">Estimating Fishing and Diving Use at Gray's Reef by Listening to Boats (Gray's Reef)</a>
+          <a href="stories.html#eastern">Boat Visitation (Gray's Reef)</a>
         </li>
         <li>
-          <a href="stories.html#eastern">Hum, Crackle, Knock: Monitoring Reef Habitats in Florida Keys National Marine Sanctuary (Florida Keys)</a>
+          <a href="stories.html#eastern">Estimating Fishing and Diving Use (Gray's Reef)</a>
         </li>
         <li>
-          <a href="stories.html#eastern">Listening to the Ocean in the Time of COVID-19 (Stellwagen Bank)</a>
+          <a href="stories.html#eastern">Hum, Crackle, Knock (Florida Keys)</a>
         </li>
         <li>
-          <a href="stories.html#eastern">Story Map: Boat Visitation at Gray's Reef (Gray's Reef)</a>
+          <a href="stories.html#eastern">Listening in the Time of COVID-19 (Stellwagen Bank)</a>
+        </li>
+        <li>
+          <a href="stories.html#eastern">Year-Round Whale Presence (Stellwagen Bank)</a>
         </li>
       </ul>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pacific Islands</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pacific Islands</a>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <a href="stories.html#pacific-islands">Along for the Glide: What The Wave Glider's Journey Through Papahānaumokuākea Reveals About Humpback Whales (Papahānaumokuākea)</a>
+          <a href="stories.html#pacific-islands">Along for the Glide (Papahānaumokuākea)</a>
         </li>
         <li>
-          <a href="stories.html#pacific-islands">Eavesdropping on Whales: How Acoustic Surveys Are Revolutionizing Humpback Whale Monitoring in Hawai'i (Hawaiian Islands Humpback Whale)</a>
+          <a href="stories.html#pacific-islands">Eavesdropping on Whales (Hawaiian Islands Humpback Whale)</a>
         </li>
       </ul>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">West Coast</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">West Coast</a>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <a href="stories.html#west-coast">One Fish, Two Fish, Quiet Fish, Loud Fish (Channel Islands)</a>
+          <a href="stories.html#west-coast">One Fish, Two Fish (Channel Islands)</a>
         </li>
         <li>
-          <a href="stories.html#west-coast">Understanding Underwater Noise in Monterey Bay National Marine Sanctuary (Monterey Bay)</a>
+          <a href="stories.html#west-coast">Understanding Noise in Monterey Bay (Monterey Bay)</a>
         </li>
         <li>
-          <a href="stories.html#west-coast">United in Song: Finding Common Ground to Protect Humpback Whales (Olympic Coast)</a>
+          <a href="stories.html#west-coast">United in Song (Olympic Coast)</a>
         </li>
       </ul>
     </li>
@@ -827,7 +828,7 @@ $(document).ready(function () {
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-chart-bar"></span>
      
     Data Portal
@@ -836,11 +837,11 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="https://sanctsound.portal.axds.co">Home</a>
+      <a href="https://sanctsound.portal.axds.co">Data Home</a>
     </li>
     <li class="divider"></li>
     <li>
-      <a href="https://sanctsound.portal.axds.co/#sanctsound/method/broadband-sound-pressure-level">Broadband Sound Pressure Level</a>
+      <a href="https://sanctsound.portal.axds.co/#sanctsound/compare/broadband">Broadband Sound Pressure Level</a>
     </li>
     <li>
       <a href="https://sanctsound.portal.axds.co/#sanctsound/method/high-resolution-spectrogram">High Resolution Spectrogram</a>
@@ -852,7 +853,10 @@ $(document).ready(function () {
       <a href="https://sanctsound.portal.axds.co/#sanctsound/method/one-third-octave-level">One-third Octave Level</a>
     </li>
     <li>
-      <a href="https://sanctsound.portal.axds.co/#sanctsound/compare/powerspec">Power Spectrum</a>
+      <a href="https://sanctsound.portal.axds.co/#sanctsound/method-types/sounds">Sound Library</a>
+    </li>
+    <li>
+      <a href="https://sanctsound.portal.axds.co/#sanctsound/compare/prop-model">Sound Propagation Modeling</a>
     </li>
   </ul>
 </li>
@@ -880,7 +884,8 @@ $(document).ready(function () {
 <div id="what-did-we-hear" class="section level3">
 <h3><strong>What</strong> did we hear?</h3>
 <!-- `<i class="fa fa-info-circle" role="presentation" aria-label="info-circle icon"></i>`{=html} -->
-<p>Click the icons in the scene below to listen and learn about the sounds we recorded in this sanctuary.</p>
+<p>Click the icons in the scene below to listen and learn about the
+sounds we recorded in this sanctuary.</p>
 <script src = "libs/d3.v5.min.js"></script>
 <script src = "libs/infographiq.js"></script>
 <link href  = "libs/bootstrap-toggle.min.css" rel = "stylesheet">
@@ -912,9 +917,11 @@ $('#toggle-text').change(function() {
 </div>
 <div id="where-did-we-listen" class="section level3">
 <h3><strong>Where</strong> did we listen?</h3>
-<p>Here is a map of listening device locations. Hover on a location to see its site id and click on it to see the rationale for its placement. <!-- `<i class="fa fa-map" role="presentation" aria-label="map icon"></i>`{=html} --></p>
-<div id="htmlwidget-a4a6fa86afd72f05e514" style="width:100%;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a4a6fa86afd72f05e514">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-80.921201,-80.8281449999999,-80.828143,-80.9212,-80.921201],"lat":[31.4210639912502,31.4210639912502,31.3627319912123,31.3627319912123,31.4210639912502]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[31.396417,31.376133,31.36749],[-80.8904,-80.839133,-80.895],10,null,null,{"interactive":true,"className":"","stroke":true,"color":"yellow","weight":5,"opacity":0.7,"fill":true,"fillColor":"yellow","fillOpacity":0.5},null,null,["<p><strong>GR01<\/strong>: Historical monitoring sites; large complex reef site and a fished area<\/p>\n","<p><strong>GR02<\/strong>: Historical monitoring sites; long linear reef site and only research allowed (closed to fishing)<\/p>\n","<p><strong>GR03<\/strong>: Historical monitoring sites; patch reef site and only research allowed (closed to fishing)<\/p>\n"],null,["GR01","GR02","GR03"],null,null]}],"limits":{"lat":[31.3627319912123,31.4210639912502],"lng":[-80.921201,-80.828143]}},"evals":[],"jsHooks":[]}</script>
+<p>Here is a map of listening device locations. Hover on a location to
+see its site id and click on it to see the rationale for its placement.
+<!-- `<i class="fa fa-map" role="presentation" aria-label="map icon"></i>`{=html} --></p>
+<div id="htmlwidget-133551680e4ea57103b1" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-133551680e4ea57103b1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-80.921201,-80.8281449999999,-80.828143,-80.9212,-80.921201],"lat":[31.4210639912502,31.4210639912502,31.3627319912123,31.3627319912123,31.4210639912502]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[31.396417,31.376133,31.36749],[-80.8904,-80.839133,-80.895],10,null,null,{"interactive":true,"className":"","stroke":true,"color":"yellow","weight":5,"opacity":0.7,"fill":true,"fillColor":"yellow","fillOpacity":0.5},null,null,["<p><strong>GR01<\/strong>: A historical monitoring site with complex reef habitat that supports high densities of fish and is a destination for recreational fishing.<\/p>\n","<p><strong>GR02<\/strong>: A historical monitoring site with linear reef habitat inside in a research only area that prohibits fishing and supports ongoing scientific investigation and monitoring.<\/p>\n","<p><strong>GR03<\/strong>: Patch reef habitat in a research only area that prohibits fishing and supports ongoing scientific investigation and monitoring.<\/p>\n"],null,["GR01","GR02","GR03"],null,null]}],"limits":{"lat":[31.3627319912123,31.4210639912502],"lng":[-80.921201,-80.828143]}},"evals":[],"jsHooks":[]}</script>
 <!--div class='container'-->
 <div class="row">
 <div class="col-md-4">
@@ -935,55 +942,75 @@ $('#toggle-text').change(function() {
 </div>
 </div>
 <!--/div-->
-<p><i class='fas fa-question-circle'></i> <a href="https://sanctsound.ioos.us/draft/q_where-listen.html">Click here</a> to learn more about how we listened to and recorded soundscapes. <br><i class='fas fa-chart-bar'></i> <a href="https://sanctsound.portal.axds.co/#sanctsound/sanctuary/grays-reef/site/GR01/method_type/prop-model?grouping_tab=by_frequency">Click here</a> to see similar maps of the listening range for the other hydrophones in this sanctuary and in other sanctuaries. <br></p>
+<p><i class='fas fa-question-circle'></i> <a
+href="https://sanctsound.ioos.us/draft/q_where-listen.html">Click
+here</a> to learn more about how we listened to and recorded
+soundscapes. <br><i class='fas fa-chart-bar'></i> <a
+href="https://sanctsound.portal.axds.co/#sanctsound/sanctuary/grays-reef/site/GR01/method_type/prop-model?grouping_tab=by_frequency">Click
+here</a> to see similar maps of the listening range for the other
+hydrophones in this sanctuary and in other sanctuaries. <br></p>
 </div>
 <div id="what-did-we-measure" class="section level3">
 <h3><strong>What</strong> did we measure?</h3>
 <div class="row">
 <div class="col-xs-12 well">
-<p><strong>Spectrogram</strong>: <em>intensity of different pitches over time</em></p>
+<p><strong>Spectrogram</strong>: <em>intensity of different pitches over
+time</em></p>
 </div>
 </div>
 <div class="row">
 <div class="col-xs-6 well">
-<p><strong>Sound levels above median</strong>: <em>loudness and contribution of different pitches</em></p>
+<p><strong>Sound levels above median</strong>: <em>loudness and
+contribution of different pitches</em></p>
 </div>
 <div class="col-xs-6 well">
-<p><strong>Power spectrum</strong>: <em>variability of loudness across pitch</em></p>
+<p><strong>Power spectrum</strong>: <em>variability of loudness across
+pitch</em></p>
 </div>
 </div>
 <div class="row">
 <div class="col-xs-12 well">
-<p><strong>Anomaly plot</strong>: <em>deviation of loudness from average</em></p>
+<p><strong>Anomaly plot</strong>: <em>deviation of loudness from
+average</em></p>
 </div>
 </div>
-<p><i class="fa fa-question-circle" role="presentation" aria-label="question-circle icon"></i> <em><a href="https://en.wikipedia.org/wiki/To_be_announced">Click here</a> to learn more about what we measured and how to read and understand these summary graphs.</em></p>
-<p><i class="fa fa-chart-bar" role="presentation" aria-label="chart-bar icon"></i> <em><a href="https://en.wikipedia.org/wiki/To_be_announced">Click here</a> to see similar summary graphs for the other stations in this sanctuary and here for data available in other sanctuaries.</em></p>
+<p><i class="fa fa-question-circle" role="presentation" aria-label="question-circle icon"></i>
+<em><a href="https://en.wikipedia.org/wiki/To_be_announced">Click
+here</a> to learn more about what we measured and how to read and
+understand these summary graphs.</em></p>
+<p><i class="fa fa-chart-bar" role="presentation" aria-label="chart-bar icon"></i>
+<em><a href="https://en.wikipedia.org/wiki/To_be_announced">Click
+here</a> to see similar summary graphs for the other stations in this
+sanctuary and here for data available in other sanctuaries.</em></p>
 <!-- ![](./images/cinms_ex-what-measure.png) -->
 </div>
 <div id="what-did-we-learn" class="section level3">
 <h3><strong>What</strong> did we learn?</h3>
 <div class="card-columns">
 <div class="card card-img-wrap">
-<img class='card-img' src='files/ECR_GFNMS_FishingDiving.jpg'/> <a href='https://graysreef.noaa.gov/news/2021/estimating-fishing-diving-use-by-listening-to-boats.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/ECR_GRNMS_StoryMap_Vessels.jpg'/>
+<a href='https://graysreef.noaa.gov/news/2021/observations-of-boat-visitation-at-grays-reef-nms.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-Estimating Fishing and Diving Use at Gray’s Reef by Listening to Boats
+Boat Visitation
 </h4>
 </div>
 </div>
 <div class="card card-img-wrap">
-<img class='card-img' src='files/ECR_GFNMS_StoryMap_Vessels.jpg'/> <a href='https://graysreef.noaa.gov/news/2021/observations-of-boat-visitation-at-grays-reef-nms.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/ECR_GRNMS_FishingDiving.jpg'/>
+<a href='https://graysreef.noaa.gov/news/2021/estimating-fishing-diving-use-by-listening-to-boats.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-Story Map: Boat Visitation at Gray’s Reef
+Estimating Fishing and Diving Use
 </h4>
 </div>
 </div>
 </div>
 <ul>
-<li><a href="https://sanctsound.ioos.us/draft/q_what-learn.html">Click here</a> to learn about our collection of stories.</li>
-<li><a href="https://sanctsound.ioos.us/draft/stories.html">Click here</a> to read more SanctSound stories.</li>
+<li><a href="https://sanctsound.ioos.us/draft/q_what-learn.html">Click
+here</a> to learn about our collection of stories.</li>
+<li><a href="https://sanctsound.ioos.us/draft/stories.html">Click
+here</a> to read more SanctSound stories.</li>
 </ul>
 </div>
 </div>

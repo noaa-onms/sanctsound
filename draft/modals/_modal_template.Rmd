@@ -10,8 +10,8 @@ params:
   #modal_title: "Humpback whales"
   #modal_title: "Bocaccio"
   # modal_title: "Fin whales"
-  # modal_title: "Blue whales"
-  modal_title: "Snapshots"
+  modal_title: "Blue whales"
+  #modal_title: "Snapshots"
   # modal_title: "Bocaccio"
   #modal_title: "Seal bombs"
   #modal_title: "Giant sea bass"
@@ -29,7 +29,7 @@ knitr::knit_meta_add(list(rmarkdown::html_dependency_font_awesome()))
 # params <- list(
 #   sanctuary_code = "CINMS",
 #   modal_title = "Snapshots")
-#   modal_title = "Blue whales")
+  # modal_title = "Blue whales")
 #   modal_title = "Fin whales")
 #   modal_title = "Bocaccio")
 #   modal_title = "Seal bombs")

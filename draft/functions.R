@@ -476,7 +476,7 @@ audio_to_spectrogram_video <- function(path, path_mp4){
   
   # install ffmpeg on Mac: brew install ffmpeg
   path_mp3 <- glue("{path_ext_remove(path)}_ffmpeg-clean.mp3")
-  cmd <- glue("ffmpeg -y -i {path} -codec:a libmp3lame -qscale:a 2 {path_mp3}")
+  cmd <- glue("source ~/.bash_profile; ffmpeg -y -i {path} -codec:a libmp3lame -qscale:a 2 {path_mp3}")
   res <- system(cmd)
   
   # dyld: Library not loaded: /usr/local/opt/libffi/lib/libffi.7.dylib
@@ -929,7 +929,7 @@ sight_sounds_md <- function(sight, sounds, type = "header"){
         glue("
           {md}\
           <i class='fas fa-assistive-listening-systems fa-3x'></i>
-          <audio controls><source src='{snd_enh_lnk}' type='audio/wav'>
+          <audio controls><source src='{gdrive2path(sound_enhancement, skip_spectrogram=T)}' type='audio/wav'>
           Your browser does not support the audio element.</audio>\
           Listen to the same sound clip optimized for human hearing. 
           Many ocean animals can hear and produce sounds that humans cannot, 
@@ -949,28 +949,30 @@ sight_sounds_md <- function(sight, sounds, type = "header"){
 
   if (has_sounds & has_sight)
     md <- glue(
-      "
-      ### Sights & Sounds
-      
-      <div class='container'><div class='row'>
-      
-      <div class='col'>
-        {md_sight}
-      </div>
-      
-      <div class='col'>
-        {paste(sounds$md, collapse='\n')}
-      </div>
-      
-      </div></div>
-      ")
+"
+### Sights & Sounds
+
+<div class='container'><div class='row'>
+
+<div class='col'>
+  {md_sight}
+</div>
+
+<div class='col'>
+  {paste(sounds$md, collapse='\n')}
+</div>
+
+</div></div>
+")
+  
   if (has_sight & !has_sounds)
     md <- glue(
-      "
-      ### Sights
-      
-      {md_sight}
-      ")
+"
+### Sights
+
+{md_sight}
+")
+  
   if (has_sounds & !has_sight)
     md <- glue(
       "### Sounds\n\n",

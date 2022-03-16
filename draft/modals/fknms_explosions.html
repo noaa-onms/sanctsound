@@ -13,7 +13,7 @@
 
 <title>Explosions</title>
 
-<script src="modal_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="modal_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="modal_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <link href="modal_libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
@@ -55,6 +55,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -75,6 +76,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -171,17 +175,19 @@ pre code {
 <div class="row">
 <div class="col">
 <div class="figure">
-<img src="../files/temp_boom.jpg" alt="" />
+<img src="../files/explosion_image_cropped.jpg" alt="" />
 <p class="caption">Underwater explosions can be heard by
 hydrophones.</p>
 </div>
 </div>
 <div class="col">
-<p><video controls>
-<source src='../files/SanctSound_FK03_01_explosion_20190131T220530Z.mp4' type='video/mp4'>
-Your browser does not support the video tag. </video> This underwater
-explosion was detected in Florida Keys National Marine Sanctuary, but
-the source of the explosion is unknown.</p>
+<video controls>
+<source src='../files/SanctSound_FK03_01_explosion_20190131T220530Z.mp4' type='video/mp4'/>Your
+browser does not support the video tag. </video>
+<p>
+This underwater explosion was detected in Florida Keys National Marine
+Sanctuary, but the source of the explosion is unknown.
+</p>
 </div>
 </div>
 </div>

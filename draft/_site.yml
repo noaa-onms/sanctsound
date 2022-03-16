@@ -103,8 +103,6 @@ navbar:
         href: sounds.html#fish-chorus-grays-reef
       - text: Fish chorus (Hawaiian Islands Humpback Whale)
         href: sounds.html#fish-chorus-hawaiian-islands-humpback-whale
-      - text: Fish chorus (Papahānaumokuākea)
-        href: sounds.html#fish-chorus-papahnaumokukea
       - text: Gray whales (Channel Islands)
         href: sounds.html#gray-whales-channel-islands
       - text: Gray whales (Monterey Bay)
@@ -207,8 +205,6 @@ navbar:
         href: sounds.html#vessels-florida-keys
       - text: Vessels (Gray's Reef)
         href: sounds.html#vessels-grays-reef
-      - text: Vessels (Hawaiian Islands Humpback Whale)
-        href: sounds.html#vessels-hawaiian-islands-humpback-whale
       - text: Vessels (Monterey Bay)
         href: sounds.html#vessels-monterey-bay
       - text: Vessels (Olympic Coast)
@@ -311,46 +307,41 @@ navbar:
     - text: '---------'
     - text: National
       menu:
-      - text: Can Scientists Train Machines to Listen for Ecosystem Health?
+      - text: Listen Up! Vessel Traffic
         href: stories.html#national
-      - text: Listen Up! Vessel Traffic in U.S National Marine Sanctuaries
+      - text: Listening to the (Not So) Silent World
         href: stories.html#national
-      - text: Oh Snap! What Tiny Shrimp Can Tell Us About Habitat Health
+      - text: Oh Snap!
         href: stories.html#national
-      - text: 'SanctSound Story Map: Exploring underwater sounds within the U.S. National
-          Marine Sanctuary System'
+      - text: SanctSound Story Map
         href: stories.html#national
-      - text: 'SanctSound: Listening to the (Not So) Silent World'
+      - text: Training Machines to Listen
         href: stories.html#national
     - text: Eastern
       menu:
-      - text: Estimating Fishing and Diving Use at Gray's Reef by Listening to Boats
-          (Gray's Reef)
+      - text: Boat Visitation (Gray's Reef)
         href: stories.html#eastern
-      - text: 'Hum, Crackle, Knock: Monitoring Reef Habitats in Florida Keys National
-          Marine Sanctuary (Florida Keys)'
+      - text: Estimating Fishing and Diving Use (Gray's Reef)
         href: stories.html#eastern
-      - text: Listening to the Ocean in the Time of COVID-19 (Stellwagen Bank)
+      - text: Hum, Crackle, Knock (Florida Keys)
         href: stories.html#eastern
-      - text: 'Story Map: Boat Visitation at Gray''s Reef (Gray''s Reef)'
+      - text: Listening in the Time of COVID-19 (Stellwagen Bank)
+        href: stories.html#eastern
+      - text: Year-Round Whale Presence (Stellwagen Bank)
         href: stories.html#eastern
     - text: Pacific Islands
       menu:
-      - text: 'Along for the Glide: What The Wave Glider''s Journey Through Papahānaumokuākea
-          Reveals About Humpback Whales (Papahānaumokuākea)'
+      - text: Along for the Glide (Papahānaumokuākea)
         href: stories.html#pacific-islands
-      - text: 'Eavesdropping on Whales: How Acoustic Surveys Are Revolutionizing Humpback
-          Whale Monitoring in Hawai''i (Hawaiian Islands Humpback Whale)'
+      - text: Eavesdropping on Whales (Hawaiian Islands Humpback Whale)
         href: stories.html#pacific-islands
     - text: West Coast
       menu:
-      - text: One Fish, Two Fish, Quiet Fish, Loud Fish (Channel Islands)
+      - text: One Fish, Two Fish (Channel Islands)
         href: stories.html#west-coast
-      - text: Understanding Underwater Noise in Monterey Bay National Marine Sanctuary
-          (Monterey Bay)
+      - text: Understanding Noise in Monterey Bay (Monterey Bay)
         href: stories.html#west-coast
-      - text: 'United in Song: Finding Common Ground to Protect Humpback Whales (Olympic
-          Coast)'
+      - text: United in Song (Olympic Coast)
         href: stories.html#west-coast
   - text: Fun
     icon: fa-grin
@@ -383,9 +374,9 @@ output:
       bootswatch: yeti
       primary: '#013088'
       secondary: '#FFF'
-    css: 
-      - libs/styles.css
-      - libs/slider_styles.css
+    css:
+    - libs/styles.css
+    - libs/slider_styles.css
     self_contained: no
     lib_dir: site_libs
     mathjax: ~

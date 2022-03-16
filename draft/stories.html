@@ -13,7 +13,7 @@
 
 <title>Stories</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <link href="site_libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
@@ -78,6 +78,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -98,6 +99,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -323,7 +327,7 @@ div.tocify {
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -333,7 +337,7 @@ div.tocify {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-question"></span>
      
     Questions
@@ -362,7 +366,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-globe"></span>
      
     Sanctuaries
@@ -401,7 +405,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-file-audio"></span>
      
     Sounds
@@ -414,7 +418,7 @@ div.tocify {
     </li>
     <li class="divider"></li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Animal</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Animal</a>
       <ul class="dropdown-menu" role="menu">
         <li>
           <a href="sounds.html#atlantic-midshipman-florida-keys">Atlantic midshipman (Florida Keys)</a>
@@ -490,9 +494,6 @@ div.tocify {
         </li>
         <li>
           <a href="sounds.html#fish-chorus-hawaiian-islands-humpback-whale">Fish chorus (Hawaiian Islands Humpback Whale)</a>
-        </li>
-        <li>
-          <a href="sounds.html#fish-chorus-papahnaumokukea">Fish chorus (Papahānaumokuākea)</a>
         </li>
         <li>
           <a href="sounds.html#gray-whales-channel-islands">Gray whales (Channel Islands)</a>
@@ -590,7 +591,7 @@ div.tocify {
       </ul>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Human-made</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Human-made</a>
       <ul class="dropdown-menu" role="menu">
         <li>
           <a href="sounds.html#echosounders-channel-islands">Echosounders (Channel Islands)</a>
@@ -650,9 +651,6 @@ div.tocify {
           <a href="sounds.html#vessels-grays-reef">Vessels (Gray's Reef)</a>
         </li>
         <li>
-          <a href="sounds.html#vessels-hawaiian-islands-humpback-whale">Vessels (Hawaiian Islands Humpback Whale)</a>
-        </li>
-        <li>
           <a href="sounds.html#vessels-monterey-bay">Vessels (Monterey Bay)</a>
         </li>
         <li>
@@ -664,7 +662,7 @@ div.tocify {
       </ul>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Physical</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Physical</a>
       <ul class="dropdown-menu" role="menu">
         <li>
           <a href="sounds.html#hurricanes-florida-keys">Hurricanes (Florida Keys)</a>
@@ -723,7 +721,7 @@ div.tocify {
       </ul>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Soundscape</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Soundscape</a>
       <ul class="dropdown-menu" role="menu">
         <li>
           <a href="sounds.html#snapshots-channel-islands">Snapshots (Channel Islands)</a>
@@ -802,7 +800,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-newspaper-o"></span>
      
     Stories
@@ -815,64 +813,67 @@ div.tocify {
     </li>
     <li class="divider"></li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">National</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">National</a>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <a href="stories.html#national">Can Scientists Train Machines to Listen for Ecosystem Health?</a>
+          <a href="stories.html#national">Listen Up! Vessel Traffic</a>
         </li>
         <li>
-          <a href="stories.html#national">Listen Up! Vessel Traffic in U.S National Marine Sanctuaries</a>
+          <a href="stories.html#national">Listening to the (Not So) Silent World</a>
         </li>
         <li>
-          <a href="stories.html#national">Oh Snap! What Tiny Shrimp Can Tell Us About Habitat Health</a>
+          <a href="stories.html#national">Oh Snap!</a>
         </li>
         <li>
-          <a href="stories.html#national">SanctSound Story Map: Exploring underwater sounds within the U.S. National Marine Sanctuary System</a>
+          <a href="stories.html#national">SanctSound Story Map</a>
         </li>
         <li>
-          <a href="stories.html#national">SanctSound: Listening to the (Not So) Silent World</a>
+          <a href="stories.html#national">Training Machines to Listen</a>
         </li>
       </ul>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Eastern</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Eastern</a>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <a href="stories.html#eastern">Estimating Fishing and Diving Use at Gray's Reef by Listening to Boats (Gray's Reef)</a>
+          <a href="stories.html#eastern">Boat Visitation (Gray's Reef)</a>
         </li>
         <li>
-          <a href="stories.html#eastern">Hum, Crackle, Knock: Monitoring Reef Habitats in Florida Keys National Marine Sanctuary (Florida Keys)</a>
+          <a href="stories.html#eastern">Estimating Fishing and Diving Use (Gray's Reef)</a>
         </li>
         <li>
-          <a href="stories.html#eastern">Listening to the Ocean in the Time of COVID-19 (Stellwagen Bank)</a>
+          <a href="stories.html#eastern">Hum, Crackle, Knock (Florida Keys)</a>
         </li>
         <li>
-          <a href="stories.html#eastern">Story Map: Boat Visitation at Gray's Reef (Gray's Reef)</a>
+          <a href="stories.html#eastern">Listening in the Time of COVID-19 (Stellwagen Bank)</a>
+        </li>
+        <li>
+          <a href="stories.html#eastern">Year-Round Whale Presence (Stellwagen Bank)</a>
         </li>
       </ul>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pacific Islands</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pacific Islands</a>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <a href="stories.html#pacific-islands">Along for the Glide: What The Wave Glider's Journey Through Papahānaumokuākea Reveals About Humpback Whales (Papahānaumokuākea)</a>
+          <a href="stories.html#pacific-islands">Along for the Glide (Papahānaumokuākea)</a>
         </li>
         <li>
-          <a href="stories.html#pacific-islands">Eavesdropping on Whales: How Acoustic Surveys Are Revolutionizing Humpback Whale Monitoring in Hawai'i (Hawaiian Islands Humpback Whale)</a>
+          <a href="stories.html#pacific-islands">Eavesdropping on Whales (Hawaiian Islands Humpback Whale)</a>
         </li>
       </ul>
     </li>
     <li class="dropdown-submenu">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">West Coast</a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">West Coast</a>
       <ul class="dropdown-menu" role="menu">
         <li>
-          <a href="stories.html#west-coast">One Fish, Two Fish, Quiet Fish, Loud Fish (Channel Islands)</a>
+          <a href="stories.html#west-coast">One Fish, Two Fish (Channel Islands)</a>
         </li>
         <li>
-          <a href="stories.html#west-coast">Understanding Underwater Noise in Monterey Bay National Marine Sanctuary (Monterey Bay)</a>
+          <a href="stories.html#west-coast">Understanding Noise in Monterey Bay (Monterey Bay)</a>
         </li>
         <li>
-          <a href="stories.html#west-coast">United in Song: Finding Common Ground to Protect Humpback Whales (Olympic Coast)</a>
+          <a href="stories.html#west-coast">United in Song (Olympic Coast)</a>
         </li>
       </ul>
     </li>
@@ -893,7 +894,7 @@ div.tocify {
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-chart-bar"></span>
      
     Data Portal
@@ -902,11 +903,11 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="https://sanctsound.portal.axds.co">Home</a>
+      <a href="https://sanctsound.portal.axds.co">Data Home</a>
     </li>
     <li class="divider"></li>
     <li>
-      <a href="https://sanctsound.portal.axds.co/#sanctsound/method/broadband-sound-pressure-level">Broadband Sound Pressure Level</a>
+      <a href="https://sanctsound.portal.axds.co/#sanctsound/compare/broadband">Broadband Sound Pressure Level</a>
     </li>
     <li>
       <a href="https://sanctsound.portal.axds.co/#sanctsound/method/high-resolution-spectrogram">High Resolution Spectrogram</a>
@@ -918,7 +919,10 @@ div.tocify {
       <a href="https://sanctsound.portal.axds.co/#sanctsound/method/one-third-octave-level">One-third Octave Level</a>
     </li>
     <li>
-      <a href="https://sanctsound.portal.axds.co/#sanctsound/compare/powerspec">Power Spectrum</a>
+      <a href="https://sanctsound.portal.axds.co/#sanctsound/method-types/sounds">Sound Library</a>
+    </li>
+    <li>
+      <a href="https://sanctsound.portal.axds.co/#sanctsound/compare/prop-model">Sound Propagation Modeling</a>
     </li>
   </ul>
 </li>
@@ -943,42 +947,47 @@ div.tocify {
 <h2>National</h2>
 <div class="card-columns">
 <div class="card card-img-wrap">
-<img class='card-img' src='files/Ntl_ScientistTrainingMachines.jpg'/> <a href='https://sanctuaries.noaa.gov/news/sep21/artificial-intelligence-sanctsound.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/Ntl_ListenUp_StoryMap.png'/>
+<a href='https://sanctuaries.noaa.gov/science/monitoring/sound/listen-up.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-Can Scientists Train Machines to Listen for Ecosystem Health?
+Listen Up! Vessel Traffic
 </h4>
 </div>
 </div>
 <div class="card card-img-wrap">
-<img class='card-img' src='files/Ntl_ListenUp_StoryMap.png'/> <a href='https://sanctuaries.noaa.gov/science/monitoring/sound/listen-up.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/Ntl_Listening_Silent_World.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/feb21/sanctsound-overview.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-Listen Up! Vessel Traffic in U.S National Marine Sanctuaries
+Listening to the (Not So) Silent World
 </h4>
 </div>
 </div>
 <div class="card card-img-wrap">
-<img class='card-img' src='files/Ntl_OhSnap.jpg'/> <a href='https://sanctuaries.noaa.gov/news/dec21/oh-snap.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/Ntl_OhSnap.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/dec21/oh-snap.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-Oh Snap! What Tiny Shrimp Can Tell Us About Habitat Health
+Oh Snap!
 </h4>
 </div>
 </div>
 <div class="card card-img-wrap">
-<img class='card-img' src='files/Ntl_StoryMap_waterhalo.jpg'/> <a href='https://sanctuaries.noaa.gov/science/monitoring/sound/sanctsound-storymap.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/Ntl_StoryMap_waterhalo.jpg'/>
+<a href='https://sanctuaries.noaa.gov/science/monitoring/sound/sanctsound-storymap.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-SanctSound Story Map: Exploring underwater sounds within the U.S. National Marine Sanctuary System
+SanctSound Story Map
 </h4>
 </div>
 </div>
 <div class="card card-img-wrap">
-<img class='card-img' src='files/Ntl_Listening_Silent_World.jpg'/> <a href='https://sanctuaries.noaa.gov/news/feb21/sanctsound-overview.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/Ntl_ScientistTrainingMachines.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/sep21/artificial-intelligence-sanctsound.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-SanctSound: Listening to the (Not So) Silent World
+Training Machines to Listen
 </h4>
 </div>
 </div>
@@ -988,34 +997,47 @@ SanctSound: Listening to the (Not So) Silent World
 <h2>Eastern</h2>
 <div class="card-columns">
 <div class="card card-img-wrap">
-<img class='card-img' src='files/ECR_FKNMS_HumCrackleKnock.jpg'/> <a href='https://sanctuaries.noaa.gov/news/jun21/monitoring-reefs-florida-keys.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/ECR_FKNMS_HumCrackleKnock.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/jun21/monitoring-reefs-florida-keys.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-Hum, Crackle, Knock: Monitoring Reef Habitats in Florida Keys National Marine Sanctuary
+Hum, Crackle, Knock
 </h4>
 </div>
 </div>
 <div class="card card-img-wrap">
-<img class='card-img' src='files/ECR_GFNMS_FishingDiving.jpg'/> <a href='https://graysreef.noaa.gov/news/2021/estimating-fishing-diving-use-by-listening-to-boats.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/ECR_GRNMS_StoryMap_Vessels.jpg'/>
+<a href='https://graysreef.noaa.gov/news/2021/observations-of-boat-visitation-at-grays-reef-nms.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-Estimating Fishing and Diving Use at Gray’s Reef by Listening to Boats
+Boat Visitation
 </h4>
 </div>
 </div>
 <div class="card card-img-wrap">
-<img class='card-img' src='files/ECR_GFNMS_StoryMap_Vessels.jpg'/> <a href='https://graysreef.noaa.gov/news/2021/observations-of-boat-visitation-at-grays-reef-nms.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/ECR_GRNMS_FishingDiving.jpg'/>
+<a href='https://graysreef.noaa.gov/news/2021/estimating-fishing-diving-use-by-listening-to-boats.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-Story Map: Boat Visitation at Gray’s Reef
+Estimating Fishing and Diving Use
 </h4>
 </div>
 </div>
 <div class="card card-img-wrap">
-<img class='card-img' src='files/ECR_SBNMS_ListeningCOVID.jpg'/> <a href='https://sanctuaries.noaa.gov/news/mar21/listening-during-quarantine.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/ECR_SBNMS_ListeningCOVID.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/mar21/listening-during-quarantine.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-Listening to the Ocean in the Time of COVID-19
+Listening in the Time of COVID-19
+</h4>
+</div>
+</div>
+<div class="card card-img-wrap">
+<img class='card-img' src='files/ECR_SBNMS_Year-Round_Whale.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/feb22/listening-closely.html' target='_blank' class='stretched-link'></a>
+<div class="card-img-overlay d-flex">
+<h4 class="card-title align-self-center mx-auto black-white">
+Year-Round Whale Presence
 </h4>
 </div>
 </div>
@@ -1025,18 +1047,20 @@ Listening to the Ocean in the Time of COVID-19
 <h2>Pacific Islands</h2>
 <div class="card-columns">
 <div class="card card-img-wrap">
-<img class='card-img' src='files/PIR_HIHWNMS_EavesdroppingWhales.jpg'/> <a href='https://sanctuaries.noaa.gov/news/feb21/eavesdropping-on-whales.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/PIR_HIHWNMS_EavesdroppingWhales.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/feb21/eavesdropping-on-whales.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-Eavesdropping on Whales: How Acoustic Surveys Are Revolutionizing Humpback Whale Monitoring in Hawai’i
+Eavesdropping on Whales
 </h4>
 </div>
 </div>
 <div class="card card-img-wrap">
-<img class='card-img' src='files/PIR_PMNM_AlongForTheGlide.jpg'/> <a href='https://sanctuaries.noaa.gov/news/jul21/along-for-the-glide.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/PIR_PMNM_AlongForTheGlide.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/jul21/along-for-the-glide.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-Along for the Glide: What The Wave Glider’s Journey Through Papahānaumokuākea Reveals About Humpback Whales
+Along for the Glide
 </h4>
 </div>
 </div>
@@ -1046,26 +1070,29 @@ Along for the Glide: What The Wave Glider’s Journey Through Papahānaumokuāke
 <h2>West Coast</h2>
 <div class="card-columns">
 <div class="card card-img-wrap">
-<img class='card-img' src='files/WCR_CINMS_OneFish_TwoFish_cropped.jpg'/> <a href='https://sanctuaries.noaa.gov/news/mar21/calling-fish.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/WCR_CINMS_OneFish_TwoFish_cropped.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/mar21/calling-fish.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-One Fish, Two Fish, Quiet Fish, Loud Fish
+One Fish, Two Fish
 </h4>
 </div>
 </div>
 <div class="card card-img-wrap">
-<img class='card-img' src='files/WCR_MBNMS_UnderwaterNoiseMBNMS.jpg'/> <a href='https://sanctuaries.noaa.gov/news/apr21/understanding-underwater-noise.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/WCR_MBNMS_UnderwaterNoiseMBNMS.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/apr21/understanding-underwater-noise.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-Understanding Underwater Noise in Monterey Bay National Marine Sanctuary
+Understanding Noise in Monterey Bay
 </h4>
 </div>
 </div>
 <div class="card card-img-wrap">
-<img class='card-img' src='files/WCR_OCNMS_UnitedSong.jpg'/> <a href='https://sanctuaries.noaa.gov/news/jul21/humpbacks-olympic-coast.html' target='_blank' class='stretched-link'></a>
+<img class='card-img' src='files/WCR_OCNMS_UnitedSong.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/jul21/humpbacks-olympic-coast.html' target='_blank' class='stretched-link'></a>
 <div class="card-img-overlay d-flex">
 <h4 class="card-title align-self-center mx-auto black-white">
-United in Song: Finding Common Ground to Protect Humpback Whales
+United in Song
 </h4>
 </div>
 </div>
