@@ -57,7 +57,7 @@ screensave <- function(dataportal_link, file_img, ...){
   b$Page$navigate(dataportal_link, wait_ = FALSE)
   p <- b$Page$loadEventFired(wait_ = FALSE)
   str(b$wait_for(p))
-  Sys.sleep(60)
+  Sys.sleep(200) # TODO: while loop if size output < 4KB, secs: 10,30,60,200
   root_node <- b$DOM$getDocument()$root$nodeId
   
   # get selector
@@ -95,7 +95,7 @@ d_measures %>%
 
 # crop ALL figure from Hourly-patterns.png
 library(magick)
-imgs_in <- list.files(dir_figs, "Hourly-patterns\\.png$", full.names = T)
+imgs_in <- list.files(dir_figs, "no-bin.radar-hourly\\.png$", full.names = T)
 for (img_in in imgs_in){ # img_in = imgs_in[1]
   img_out <- fs::path_ext_set(img_in, "_ALL.png")
   img_out <- glue("{fs::path_ext_remove(img_in)}_ALL.png")
