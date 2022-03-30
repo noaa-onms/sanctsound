@@ -18,22 +18,22 @@ source(here::here("draft/functions.R"))
 # figures <- get_sheet("figures")
 measures  <- get_sheet("measures")
 
-dir_measures = "/Users/bbest/My Drive/projects/noaa-sanctsound/Database_WebPortal/Measure/measure_plots_from_Ben"
-dir_figs = "/Users/bbest/My Drive/projects/noaa-sanctsound/Database_WebPortal/figures_detections/figures_detections_from_Ben"
+dir_measures <- "/Users/bbest/My Drive/projects/noaa-sanctsound/Database_WebPortal/Measure/measure_plots_from_Ben"
+dir_figs     <- "/Users/bbest/My Drive/projects/noaa-sanctsound/Database_WebPortal/figures_detections/figures_detections_from_Ben"
 
-d_measures <- measure %>% 
+d_measures <- measures %>% 
   filter(!is.na(dataportal_link)) %>% 
   mutate(
-    file_img = glue("{dir_measures}/house_measures_{sanctuary_code}_{file_type}.png"),
+    file_img = glue("{dir_measures}/measures_{basename(dataportal_link)}.png"),
     base_img = basename(file_img)) %>% 
-  # select(sanctuary_code, file_type, base_img) %>% View()
+  # select(dataportal_link, base_img) %>% View()
   select(dataportal_link, file_img)
 d_measures
 
 d_figs <- figures %>% 
   filter(!is.na(dataportal_link)) %>% 
   mutate(
-    file_img = glue("{dir_figs}/house_figures_{modal_id}_{str_replace(tab_name, ' ', '-')}.png"),
+    file_img = glue("{dir_figs}/figures_{basename(dataportal_link)}.png"),
     base_img = basename(file_img)) %>% 
   # select(modal_id, tab_name, base_img) %>% View()
   select(dataportal_link, file_img)
@@ -93,9 +93,13 @@ d_figs %>%
 d_measures %>% 
   pwalk(screensave)
 
-# library(magick)
-# # {width}x{height}+{x}+{y}
-# image_crop(image, "100x150+50") #: crop out width:100px and height:150px starting +50px from the left
-# image_read(img_1) %>% 
-#   image_crop("1319x469+26+233") %>% 
-#   image_write(img_2)
+# crop ALL figure from Hourly-patterns.png
+library(magick)
+imgs_in <- list.files(dir_figs, "Hourly-patterns\\.png$", full.names = T)
+for (img_in in imgs_in){ # img_in = imgs_in[1]
+  img_out <- fs::path_ext_set(img_in, "_ALL.png")
+  img_out <- glue("{fs::path_ext_remove(img_in)}_ALL.png")
+  image_read(img_in) %>%
+    image_crop("280x211+0+69") %>% # crop {width}x{height}+{x}+{y}
+    image_write(img_out)
+}
