@@ -120,7 +120,7 @@ if (!is.na(d_s$where_chart_caption))
 ### **What** did we measure?
 
 ```{r}
-tbl_measure <- get_sheet("measure") %>% 
+tbl_measures <- get_sheet("measures") %>% 
   filter(
     sanctuary_code == !!sanctuary_code,
     !is.na(gdrive_shareable_link)) %>% 
@@ -134,10 +134,10 @@ tbl_measure <- get_sheet("measure") %>%
 #   select(path_0, path_w, image_width_inches) %>% 
 #   pwalk(~img_convert(..1, ..2, width_in = ..3))  
 
-streamplot  <- filter(tbl_measure, file_type == "streamplot")
-spectrogram <- filter(tbl_measure, file_type == "spectrogram")
-anomaly     <- filter(tbl_measure, file_type == "anomaly")
-power_spec  <- filter(tbl_measure, file_type == "power_spec")
+streamplot  <- filter(tbl_measures, file_type == "streamplot")
+spectrogram <- filter(tbl_measures, file_type == "spectrogram")
+anomaly     <- filter(tbl_measures, file_type == "anomaly")
+power_spec  <- filter(tbl_measures, file_type == "power_spec")
 ```
 
 <div class='row'>
