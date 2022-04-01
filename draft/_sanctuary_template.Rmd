@@ -134,7 +134,7 @@ tbl_measures <- get_sheet("measures") %>%
 #   select(path_0, path_w, image_width_inches) %>% 
 #   pwalk(~img_convert(..1, ..2, width_in = ..3))  
 
-streamplot  <- filter(tbl_measures, file_type == "streamplot")
+above_median  <- filter(tbl_measures, file_type == "above_median")
 spectrogram <- filter(tbl_measures, file_type == "spectrogram")
 anomaly     <- filter(tbl_measures, file_type == "anomaly")
 power_spec  <- filter(tbl_measures, file_type == "power_spec")
@@ -151,7 +151,7 @@ power_spec  <- filter(tbl_measures, file_type == "power_spec")
 <div class='col-xs-6 well'>
   **Sound levels above median**: _loudness and contribution of different pitches_
   
-  `r with(streamplot, if (length(img_rel) == 1) glue("![{caption}]({img_rel})"))`
+  `r with(above_median, if (length(img_rel) == 1) glue("![{caption}]({img_rel})"))`
 </div>
 <div class='col-xs-6 well'>
   **Power spectrum**: _variability of loudness across pitch_
