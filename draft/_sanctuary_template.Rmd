@@ -25,7 +25,7 @@ knitr::knit_meta_add(list(rmarkdown::html_dependency_font_awesome()))
 
 ## {.tabset}
 
-### **What** did we hear?
+### What did we hear?
 
 <!-- `r shiny::icon("info-circle")` -->
 Click the icons in the scene below to listen and learn about the sounds we recorded in this sanctuary.
@@ -33,7 +33,9 @@ Click the icons in the scene below to listen and learn about the sounds we recor
 ```{r svg, child = '_svg-html_child.Rmd'}
 ```
 
-### **Where** did we listen?
+<br>
+
+### Where did we listen?
 
 Here is a map of listening device locations. Hover on a location to see its site id and click on it to see the rationale for its placement.
 <!-- `r shiny::icon("map")` -->
@@ -117,7 +119,7 @@ if (!is.na(d_s$where_chart_caption))
   cat(glue("<i class='fas fa-chart-bar'></i> <em>{d_s$where_chart_caption}</em>\n<br>\n"))
 ```
 
-### **What** did we measure?
+### What did we measure?
 
 ```{r}
 tbl_measures <- get_sheet("measures") %>% 
@@ -140,32 +142,34 @@ anomaly     <- filter(tbl_measures, file_type == "anomaly")
 power_spec  <- filter(tbl_measures, file_type == "power_spec")
 ```
 
-<div class='row'>
-<div class='col-xs-12 well'>
-  **Spectrogram**: _intensity of different pitches over time_
-  
-  `r with(spectrogram, if (length(img_rel) == 1) glue("![{caption}]({img_rel})"))`
-</div>
-</div>
-<div class='row'>
-<div class='col-xs-6 well'>
-  **Sound levels above median**: _loudness and contribution of different pitches_
-  
-  `r with(above_median, if (length(img_rel) == 1) glue("![{caption}]({img_rel})"))`
-</div>
-<div class='col-xs-6 well'>
-  **Power spectrum**: _variability of loudness across pitch_
-  
-  `r with(power_spec, if (length(img_rel) == 1) glue("![{caption}]({img_rel})"))`
-</div>
-</div>
-<div class='row'>
-<div class='col-xs-12 well'>
-  **Anomaly plot**: _deviation of loudness from average_
-  
-  `r with(anomaly, if (length(img_rel) == 1) glue("![{caption}]({img_rel})"))`
-</div>
-</div>
+```{r, results='asis', eval=length(spectrogram$img_rel) == 1}
+with(
+  spectrogram,
+  figure(
+    header  = "**Spectrogram**: _intensity of different pitches over time_",
+    img     = img_rel,
+    caption = caption, 
+    size    = "col-md-12"))
+```
+
+```{r, results='asis', eval=length(above_median$img_rel) == 1 && length(power_spec$img_rel) == 1}
+figure(
+  header  = c(
+    "**Sound levels above median**: _loudness and contribution of different pitches_",
+    "**Power spectrum**: _variability of loudness across pitch_"),
+  img     = c(above_median$img_rel, power_spec$img_rel),
+  caption = c(above_median$caption, power_spec$caption))
+```
+
+```{r, results='asis', eval=length(anomaly$img_rel) == 1}
+with(
+  anomaly,
+  figure(
+    header  = "**Anomaly plot**: _deviation of loudness from average_",
+    img     = img_rel,
+    caption = caption, 
+    size    = "col-md-12"))
+```
 
 `r shiny::icon("question-circle")` _[Click here](https://en.wikipedia.org/wiki/To_be_announced) to learn more about what we measured and how to read and understand these summary graphs._
  
@@ -173,7 +177,7 @@ power_spec  <- filter(tbl_measures, file_type == "power_spec")
 
 <!-- ![](./images/cinms_ex-what-measure.png) -->
 
-### **What** did we learn?
+### What did we learn?
 
 ```{r, results='asis'}
 

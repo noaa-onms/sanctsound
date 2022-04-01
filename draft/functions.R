@@ -48,7 +48,7 @@ sites_csv <- here("draft/data/nms_sites.csv")
 sites_geo <- here("draft/data/nms_sites.geojson")
 
 figure <- function(
-  img, caption="", alt="", align="center", size="col-md-6"){
+  img, caption="", alt="", align="center", size="col-md-6", header=""){
   
   stopifnot(align %in% c("center","left","right"))
   
@@ -66,18 +66,22 @@ figure <- function(
           data-enlargeable style='cursor: zoom-in'/>"))
   }
   
-  if (length(img) == 2){
+  if (length(img) == 2 && length(caption) == 1){
     if (length(alt) == 1)
       alt = c(alt, "")
+    if (length(header) == 1)
+      header = c(header, "")
     return(
       glue(
         "<!--html_preserve-->
         <figure class='figure col-md-12'>
           <div class='row'>
             <div class='col-md-6'>
+              {markdown::markdownToHTML(text = header[1], fragment.only=T)}
               {get_media_html(img[1], alt[1])}
             </div>
             <div class='col-md-6'>
+              {markdown::markdownToHTML(text = header[2], fragment.only=T)}
               {get_media_html(img[2], alt[2])}
             </div>
           </div>
@@ -87,12 +91,40 @@ figure <- function(
         </figure>
         <!--/html_preserve-->"))
   }
+  
+  if (length(img) == 2 && length(caption) == 2){
+    if (length(alt) == 1)
+      alt = c(alt, "")
+    return(
+      glue(
+        "<!--html_preserve-->
+        <figure class='figure col-md-12'>
+          <div class='row'>
+            <div class='col-md-6'>
+              {markdown::markdownToHTML(text = header[1], fragment.only=T)}
+              {get_media_html(img[1], alt[1])}
+              <figcaption class='figure-caption'>
+                {caption[1]}
+              </figcaption>
+            </div>
+            <div class='col-md-6'>
+              {markdown::markdownToHTML(text = header[2], fragment.only=T)}
+              {get_media_html(img[2], alt[2])}
+              <figcaption class='figure-caption'>
+                {caption[2]}
+              </figcaption>
+            </div>
+          </div>
+        </figure>
+        <!--/html_preserve-->"))
+  }
 
-  if (align == "center"){
+  if (length(img) != 2 && align == "center"){
     glue(
       "<!--html_preserve-->
       <center>
-        <figure class='figure'>
+        <figure class='figure {size}'>
+          {markdown::markdownToHTML(text = header, fragment.only=T)}
           {get_media_html(img, alt)}
           <figcaption class='figure-caption'>
             {caption}
@@ -104,6 +136,7 @@ figure <- function(
     glue(
       "<!--html_preserve-->
       <figure class='figure {size} clearfix' style='float:{align}'>
+        {markdown::markdownToHTML(text = header, fragment.only=T)}
         {get_media_html(img, alt)}
         <figcaption class='figure-caption'>
           {caption}
@@ -895,7 +928,7 @@ update_modal_imgs_snds <- function(modals_csv = modals_csv){
   
 }
 
-sight_sounds_md <- function(sight, sounds, type = "header"){
+sight_sounds_md <- function(sight, sounds, type = "header", show_sites = F){
   
   has_sight          = F
   has_sounds         = F
@@ -915,15 +948,19 @@ sight_sounds_md <- function(sight, sounds, type = "header"){
   #   </video>
   #   {sound$caption}")
   
-  sounds <- sounds %>% 
+  sounds_0 <- sounds
+  sounds <- sounds_0 %>% 
     mutate(
+      site_md = ifelse(!is.na(site_id), glue("\n\n### Site {site_id}\n", .trim = F), ""),
       md = glue("
+        {site_md}
         <video controls>
          <source src='{path_relative}' type='video/mp4'/>Your browser does not support the video tag.
         </video>
         <p>
         {caption}
-        </p>"),
+        </p>
+        "),
       md = ifelse(
         !is.na(sound_enhancement),
         glue("
@@ -959,7 +996,7 @@ sight_sounds_md <- function(sight, sounds, type = "header"){
 </div>
 
 <div class='col'>
-  {paste(sounds$md, collapse='\n')}
+  {paste(sounds$md, collapse='\n\n')}
 </div>
 
 </div></div>
@@ -973,11 +1010,15 @@ sight_sounds_md <- function(sight, sounds, type = "header"){
 {md_sight}
 ")
   
-  if (has_sounds & !has_sight)
+  if (has_sounds & !has_sight & !show_sites)
     md <- glue(
       "### Sounds\n\n",
       "{paste(sounds$md, collapse='\n<br>\n')}")
   # cat(md)
 
+  if (has_sounds & !has_sight & show_sites)
+    md <- glue(
+      "{paste(sounds$md, collapse='\n<br>\n')}")
+  
   md
 }

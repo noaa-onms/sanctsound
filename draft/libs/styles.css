@@ -326,8 +326,8 @@ figure {
 
 .figure_img {
   border-radius: 5px !important;
-  width: 100%;
-  max-width: 800px;
+  width: 100%; 
+  /* max-width: 800px; */
   margin-bottom: 0.5rem;
   line-height: 1;
   text-align: center !important;
