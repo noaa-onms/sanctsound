@@ -2,5 +2,6 @@ Package: placeholder
 Title: for renv::snapshot(type="explicit", prompt=F) Github Actions after ensuring all R packages in Imports are locally installed using librarian::shelf()
 Version: 0.0.1
 Imports: 
-  av, dplyr, DT, fs, glue, googledrive, here, htmltools, knitr, leaflet, 
-  purrr, readr, rmarkdown, sf, shiny, sp, stringr, tibble, tidyr, yaml
+  av, dplyr, DT, fs, glue, googledrive, here, htmltools, knitr, leaflet,
+  librarian, purrr, readr, rmarkdown, sf, shiny, sp, stringr, tibble, tidyr, 
+  yaml
