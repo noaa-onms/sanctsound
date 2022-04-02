@@ -21,34 +21,33 @@ Information of this size is hard to share and hard to make sense of. To support 
 ```{r, results='asis'}
 figure(
   img = "./images/questions/NCEI_mapviewer.png",
-  caption = "The NOAA National Centers for Environmental Information Passive Acoustic Data Archive manages and makes accessible data from SanctSound (orange circles) and other acoustic monitoring projects from around the country. Credit: NOAA",
+  caption = "The NOAA National Centers for Environmental Information Passive Acoustic Data Archive manages and makes accessible data from SanctSound (orange circles) and other acoustic monitoring projects from around the country.",
   alt = "")
 ```
+
+Sound can be described in a **[variety of different ways](https://dosits.org/science/sound/characterize-sounds/)**. Two key attributes of sound are intensity and frequency. Other attributes describe how the sound occurred over time: was it a short burst of sound or a long-lasting hum? Our measurements of “levels” of sounds summarize all these attributes: intensity, frequency, and duration.
 
 ::: { .overflow-auto}
 
 ```{r, results='asis'}
 figure(
   img = "./images/questions/Amplitude-Frequency.png",
-  caption = "",
-  alt = "",
-  align = "left")
+  caption = "Intensity or “loudness” is measured in decibels and describes how much pressure the sound contains (the amplitude); a low decibel or quiet sound contains less amplitude than a high amplitude or loud sound. Frequency is measured in hertz and provides information about tones that are contained in a sound.",
+  alt = "")
 ```
 
-Sound can be described in a variety of different ways **[see DOSITS characterizing sound](https://dosits.org/science/sound/characterize-sounds/)**. Two key attributes of sound are intensity and frequency. **Intensity** or “loudness” is measured in decibels and describes how much pressure the sound contains (the amplitude); a low decibel or quiet sound contains less amplitude than a high amplitude or loud sound. **Frequency** is measured in hertz and provides information about tones that are contained in a sound. Other attributes describe how the sound occurred over time: was it a short burst of sound or a long-lasting hum? Our measurements of “levels” of sounds summarize all these attributes: intensity, frequency, and duration.
-
-This web portal showcases the types of information that sound can provide to help us understand and protect our oceans and its inhabitants. Here you can explore acoustic features of each recording location with the U.S. National Marine Sanctuary System, and make comparisons among locations to better understand how similar or different they are from each other. To do this, we not only had to record sound information in a comparable way **[see Why and how did we listen?](https://sanctsound.ioos.us/draft/q_what-measure.html)**, we needed to make the same measurements from these recordings. 
+This web portal showcases the types of information that sound can provide to help us understand and protect our oceans and its inhabitants. Here you can explore acoustic features of each recording location with the U.S. National Marine Sanctuary System, and make comparisons among locations to better understand how similar or different they are from each other. To do this, we not only had to **[record sound information in a comparable way](https://sanctsound.ioos.us/draft/q_why-listen.html)**, we needed to make the same measurements from these recordings. 
 
 :::
 
 ## Spectrograms: Intensity of sound at different frequencies over time
 
-Sounds are visualized using a spectrogram. A spectrogram uses color to show the intensity (or loudness) of sound at various frequencies (or pitches) over time. Vertically you can see whether sound is more or less intense at different frequencies. Lower on the vertical axis are lower frequencies, higher on the vertical axis are higher frequencies. The composition of frequencies in the sound change as time advances from left to right on the horizontal axis. In this example spectrogram from a listening station in Stellwagen Bank National Marine Sanctuary, lower pitch sounds dominated the soundscape throughout the three year recording period (warmer colors at the bottom). Information about the quality of the sound data is included along the bottom of the plot with green indicating time periods of good quality data, yellow indicating periods with compromised data and data gaps shown with white. In the data portal, you can get more information about what frequencies of data are compromised during a time period by hovering over each yellow color bar.
+Sounds are visualized using a spectrogram. A spectrogram uses color to show the intensity (or loudness) of sound at various frequencies (or pitches) over time. Vertically you can see whether sound is more or less intense at different frequencies. Lower on the vertical axis are lower frequencies, higher on the vertical axis are higher frequencies. The composition of frequencies in the sound change as time advances from left to right on the horizontal axis. 
 
 ```{r, results='asis'}
 figure(
   img = "./images/questions/HR_Spectrogram_SB01.png",
-  caption = "",
+  caption = "In this example spectrogram from a listening station in Stellwagen Bank National Marine Sanctuary, lower pitch sounds dominated the soundscape throughout the three year recording period (warmer colors at the bottom). Information about the quality of the sound data is included along the bottom of the plot with green indicating time periods of good quality data, yellow indicating periods with compromised data and data gaps shown with white. In the data portal, you can get more information about what frequencies of data are compromised during a time period by hovering over each yellow color bar.",
   alt = "")
 ```
 
@@ -59,53 +58,43 @@ For long-term (multiple year) measurement projects, it can be useful to identify
 ```{r, results='asis'}
 figure(
   img = "./images/questions/Stacked_histogram_SB01.png",
-  caption = "",
+  caption = "For example, in this histogram showing above-median sound levels for the same listening station in Stellwagen Bank National Marine Sanctuary there is a clear seasonal pattern, with some sound levels higher in the winter and early spring than in the summer months.",
   alt = "")
 ```
 
-For example, in this histogram showing above-median sound levels for the same listening station in Stellwagen Bank National Marine Sanctuary there is a clear seasonal pattern, with some sound levels higher in the winter and early spring than in the summer months.
-
 ## Power spectrum plots: variability of loudness across tones
 
-When summarizing the soundscape of a location, power spectrum plots help us identify which frequencies (pitches) had the most sound intensity or loudness over the entire period of recording. The line in power spectrum plots shows the median loudness of sound at a specific frequency while the gray band shows the variability in loudness at that same frequency. In this example plot for the same listening site at Stellwagen Bank National Marine Sanctuary, lower pitched sounds had higher intensities fairly consistently throughout the study period (narrow gray band). Sounds with frequencies above 250 Hz were generally quieter, but also more variable over time (wider gray band).
+When summarizing the soundscape of a location, power spectrum plots help us identify which frequencies (pitches) had the most sound intensity or loudness over the entire period of recording. The line in power spectrum plots shows the median loudness of sound at a specific frequency while the gray band shows the variability in loudness at that same frequency.
 
 ```{r, results='asis'}
 figure(
   img = "./images/questions/Power_spectrogram_SB01.png",
-  caption = "",
+  caption = "In this example plot for the same listening site at Stellwagen Bank National Marine Sanctuary, lower pitched sounds had higher intensities fairly consistently throughout the study period (narrow gray band). Sounds with frequencies above 250 Hz were generally quieter, but also more variable over time (wider gray band).",
   alt = "")
 ```
 
 ## Anomaly plot:  Deviation of loudness from average
 
-To further visualize when loudness diverged from average during our recording period, we provide anomaly plots. For different frequencies (pitches) ranging from low to high, red shows when sounds of that frequency were louder than average while blue shows when they were quieter than average. White indicate times and frequencies that were close to averages. For the same listening site in Stellwagen Bank National Marine Sanctuary, we can see again the seasonal pattern noted in the stacked histogram. Here it is even clearer that frequencies of sound above 250 Hertz were generally higher in the winter than summer months.
+To further visualize when loudness diverged from average during our recording period, we provide anomaly plots. For different frequencies (pitches) ranging from low to high, red shows when sounds of that frequency were louder than average while blue shows when they were quieter than average. White indicate times and frequencies that were close to averages. 
 
 ```{r, results='asis'}
 figure(
   img = "./images/questions/Anomaly_plot_SB01.png",
-  caption = "",
+  caption = "For the same listening site in Stellwagen Bank National Marine Sanctuary, we can see again the seasonal pattern noted in the stacked histogram. Here it is even clearer that frequencies of sound above 250 Hertz were generally higher in the winter than summer months.",
   alt = "")
 ```
+
+## Bringing it all together
+
+These four ways of looking at sound levels recorded over long periods of time provide us with an initial idea of the patterns in a place's soundscape. Taken together, they can help us dive deeper into the recordings to better understand the drivers for these conditions. These four plot types - spectrogram, stacked histogram, power spectrum and anomaly - are displayed under the ‘What did we measure’ tab for each sanctuary on the website. For those interested in exploring the variability in the levels of sound we recorded at a specific listening station or comparing levels among different listening stations in more detail, head to the SanctSound data portal using the ‘Data Portal’ pull down in the Navigation Bar.
 
 ::: { .overflow-auto}
 
 ```{r, results='asis'}
 figure(
   img = "./images/questions/what-measure-bring-together.png",
-  caption = "",
-  alt = "",
-  align = "left")
+  caption = "For example, looking across these plots for a listening site in Stellwagen Bank National Marine Sanctuary, we understand that this soundscape has predictably louder conditions at very low frequencies. A closer examination of vessel sounds shows us that vessels are almost always present at this location. Identification of other specific sources will help us understand the seasonal changes we see at slightly higher frequencies. During the late fall to early spring months, several populations of fish and baleen whales produce calls at this sanctuary location.",
+  alt = "")
 ```
 
-## Bringing it all together
-
-These four ways of looking at sound levels recorded over long periods of time provide us with an initial idea of the patterns in a place's soundscape. Taken together, they can help us dive deeper into the recordings to better understand the drivers for these conditions. For example, looking across these plots for a listening site in Stellwagen Bank National Marine Sanctuary, we understand that this soundscape has predictably louder conditions at very low frequencies. A closer examination of vessel sounds shows us that vessels are almost always present at this location. Identification of other specific sources will help us understand the seasonal changes we see at slightly higher frequencies. During the late fall to early spring months, several populations of fish and baleen whales produce calls at this sanctuary location.
-
-These four plot types - spectrogram, stacked histogram, power spectrum and anomaly - are displayed under the ‘What did we measure’ tab for each sanctuary on the website. For those interested in exploring the variability in the levels of sound we recorded at a specific listening station or comparing levels among different listening stations in more detail, head to the SanctSound data portal using the ‘Statistics’ pull down in the Navigation Bar.
-
 :::
-
-
-
-
-
