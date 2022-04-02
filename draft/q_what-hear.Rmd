@@ -29,31 +29,22 @@ Under the “What did we hear” tab for each sanctuary, interactive infographic
 ```{r, results='asis'}
 figure(
   img = "./images/questions/Modals_optimized_snapshots.png",
-  caption = "",
-  alt = "",
-  align  = "right")
+  caption = "Some of the sounds that we recorded, like blue whale calls, extend below the frequencies that human ears can easily hear and that the speakers on typical electronic devices can reliably produce. For these cases, we have included the original sound clip recorded as well as a version of the clip optimized for human hearing. In addition to providing sound clips of specific sound sources, we also wanted to provide examples of what it sounds like when some of these sound sources co-occur. These “soundscape snapshots” help illustrate what the sanctuary sounds like in a certain place and time.",
+  alt = "")
 ```
-
-In addition to providing sound clips of specific sound sources, we also wanted to provide a few examples of what it sounds like when some of these sound sources co-occur. These “soundscape snapshots” help illustrate what the sanctuary actually sounds like in a certain place and time.
-
-Some of the sounds we recorded, like blue whale calls, extend below the frequencies that human ears can easily hear and that the speakers on typical electronic devices can reliably make. For these cases, we have included the original sound clip recorded as well as a version of the clip optimized for human hearing.
 
 :::
 
-One tool for better understanding the differences among different sounds is a spectrogram. A spectrogram uses color to show the intensity (or loudness) at different frequencies (or pitches) over time. In SanctSound spectrograms, louder sounds are shown in warmer colors. Vertically you can see whether sound is more or less intense at different frequencies. When you play a sound and view its pattern in a spectrogram, you get a better sense of a sound’s composition.
+One tool for better understanding the differences among different sounds is a spectrogram. A spectrogram uses color to show the intensity (or loudness) at different frequencies (or pitches) over time. In SanctSound spectrograms, louder sounds are shown in warmer colors. Vertically you can see whether sound is more or less intense at different frequencies. When you play a sound and view its pattern in a spectrogram, you get a better sense of a sound’s composition. 
 
 ::: { .overflow-auto}
 
 ```{r, results='asis'}
 figure(
   img = "./images/questions/4spectrograms_HIHWNMS.png",
-  caption = "",
-  alt = "",
-  align  = "left")
+  caption = "In these example spectrograms recorded in Hawaiian Islands Humpback Whale National Marine Sanctuary, you can see and hear the varied pitches and note types that make up humpback whale songs, the simpler and highly repetitive clicks made by sperm whales, the blurry underwater signature of rain on the ocean’s surface, and the lower frequency blade signature made by the propellor of a nearby vessel.",
+  alt = "")
 ```
-
-In these example spectrograms recorded in Hawaiian Islands Humpback Whale National Marine Sanctuary, you can see and hear the varied pitches and note types that make up humpback whale songs, the simpler and highly repetitive clicks made by sperm whales, the blurry underwater signature of rain on the ocean’s surface, and the lower frequency blade signature made by the propellor of a nearby vessel.
-
 :::
 
 ::: { .overflow-auto}
@@ -61,38 +52,37 @@ In these example spectrograms recorded in Hawaiian Islands Humpback Whale Nation
 ```{r, results='asis'}
 figure(
   img = "./images/questions/Foyer_example_sounds_screengrab.png",
-  caption = "",
-  alt = "",
-  align  = "left")
+  caption = "The ‘Sounds’ pull down in the Navigation Bar takes you to the **[Example Sounds](https://sanctsound.ioos.us/draft/sounds.html)** page, which contains all the sound clips available through the interactive infographics across all eight sanctuaries. 
+  
+  To access additional sound clips available in the SanctSound data portal, select ‘Sound Library’ under the ‘Data Portal’ pull down in the Navigation Bar.",
+  alt = "")
 ```
 
-The ‘Sounds’ pull down in the Navigation Bar takes you to the **[example sounds page](https://sanctsound.ioos.us/draft/sounds.html)**, which contains all the sound clips available through the interactive infographics across all eight sanctuaries. For a catalog of all the sound clips available for this entire project, head to the SanctSound data portal by selecting ‘Sound Library’ under the ‘Data Portal’ pull down in the Navigation Bar or by clicking **[here](https://sanctsound.portal.axds.co/#sanctsound/method-types/sounds)**.
-
-:::
-
 While there are many sounds of unknown origin in our data, sounds that are well described and relatively consistent can be “detected” by automated processes. Because computers aren’t perfect, scientists verify the automated detection results. This process allows us to determine how the automated detector performed in different places, including how well it worked in a louder environment or for specific types of sound. 
+
+There are many ways to showcase the contributions of known sounds detected at recording locations. Sounds produced by animals often peak during specific periods of the day, and during specific months or seasons based on the roles the sound plays in the animals’ reproductive, feeding or migratory activity. For many of the sound sources in a sanctuary, we show how frequently the sound was detected during the project’s 3 year recording period. For example, we can graph the number of times a certain sound was detected each month to determine when that sound is a more or less important component of the sanctuary soundscape throughout the year.
+
 
 ```{r, results='asis'}
 figure(
   img     = "./images/questions/what-hear-detections.png",
-  caption = "",
+  caption = "This plot shows the occurrence of dolphin sounds detected at a listening station in Florida Keys National Marine Sanctuary.",
   alt     = "")
 ```
 
-There are many ways to showcase the contributions of known sounds detected at recording locations. Sounds produced by animals often peak during specific periods of the day, and during specific months or seasons based on the roles the sound plays in the animals’ reproductive, feeding or migratory activity. For many of the sound sources in a sanctuary, we show how frequently the sound was detected during the project’s 3 year recording period. For example, we can graph the number of times a certain sound was detected each month to determine when that sound is a more or less important component of the sanctuary soundscape throughout the year. This plot shows the occurrence of dolphin sounds detected at a listening station in FKNMS.
+We can also visualize whether detections varied over the course of a day by counting how many times a sound is detected in each hour and plotting that on a graph that looks like a 24 hour clock. 
 
 ::: { .overflow-auto}
 
 ```{r, results='asis'}
 figure(
   img     = "./images/questions/what-hear-diurnal-detections.png",
-  caption = "",
-  alt     = "",
-  align   = "right")
+  caption = "For example, at this site in Florida Keys National Marine Sanctuary, vessel sounds are more commonly recorded during the late morning to afternoon hours, since that is the time of day when most people go out fishing and boating.",
+  alt     = "")
 ```
 
-We can also visualize whether detections varied over the course of a day by counting how many times a sound is detected in each hour and plotting that on a graph that looks like a 24 hour clock. For example, at this site in Florida Keys National Marine Sanctuary, vessel sounds are more commonly recorded during the late morning to afternoon hours, since that is the time of day when most people go out fishing and boating.
+These types of monthly and daily patterns are shown under the ‘What did we hear’ tab for many of the sound sources on a sanctuary’s interactive infographic. 
 
-These types of monthly and daily patterns are shown under the ‘What did we hear’ tab for many of the sound sources on a sanctuary’s interactive infographic. For those interested in a deeper exploration of detection patterns within and across sanctuaries, select ‘Home’ under the ‘Data Portal’ pull down in the Navigation Bar.
+For those interested in a deeper exploration of detection patterns within and across sanctuaries, select ‘Home’ from the ‘Data Portal’ pull down in the Navigation Bar.
 
 :::
