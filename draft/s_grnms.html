@@ -33,9 +33,9 @@
 <script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="site_libs/leaflet-binding-2.1.0/leaflet.js"></script>
+<script src="site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
 <script src="site_libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="site_libs/leaflet-providers-plugin-2.1.0/leaflet-providers-plugin.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
 <!--div class="custom-header">
   <div class="wrap">
     <div class="custom-logo">
@@ -585,6 +585,9 @@ $(document).ready(function () {
           <a href="sounds.html#vessels-grays-reef">Vessels (Gray's Reef)</a>
         </li>
         <li>
+          <a href="sounds.html#vessels-hawaiian-islands-humpback-whale">Vessels (Hawaiian Islands Humpback Whale)</a>
+        </li>
+        <li>
           <a href="sounds.html#vessels-monterey-bay">Vessels (Monterey Bay)</a>
         </li>
         <li>
@@ -924,8 +927,8 @@ $('#toggle-text').change(function() {
 <p>Here is a map of listening device locations. Hover on a location to
 see its site id and click on it to see the rationale for its placement.
 <!-- `<i class="fa fa-map" role="presentation" aria-label="map icon"></i>`{=html} --></p>
-<div id="htmlwidget-c0317254e7adbc1c64a1" style="width:100%;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c0317254e7adbc1c64a1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-80.921201,-80.8281449999999,-80.828143,-80.9212,-80.921201],"lat":[31.4210639912502,31.4210639912502,31.3627319912123,31.3627319912123,31.4210639912502]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[31.396417,31.376133,31.36749],[-80.8904,-80.839133,-80.895],10,null,null,{"interactive":true,"className":"","stroke":true,"color":"yellow","weight":5,"opacity":0.7,"fill":true,"fillColor":"yellow","fillOpacity":0.5},null,null,["<p><strong>GR01<\/strong>: A historical monitoring site with complex reef habitat that supports high densities of fish and is a destination for recreational fishing.<\/p>\n","<p><strong>GR02<\/strong>: A historical monitoring site with linear reef habitat inside in a research only area that prohibits fishing and supports ongoing scientific investigation and monitoring.<\/p>\n","<p><strong>GR03<\/strong>: Patch reef habitat in a research only area that prohibits fishing and supports ongoing scientific investigation and monitoring.<\/p>\n"],null,["GR01","GR02","GR03"],null,null]}],"limits":{"lat":[31.3627319912123,31.4210639912502],"lng":[-80.921201,-80.828143]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-eeab2a34cbb1cd21aa38" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-eeab2a34cbb1cd21aa38">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-80.921201,-80.8281449999999,-80.828143,-80.9212,-80.921201],"lat":[31.4210639912502,31.4210639912502,31.3627319912123,31.3627319912123,31.4210639912502]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[31.396417,31.376133,31.36749],[-80.8904,-80.839133,-80.895],10,null,null,{"interactive":true,"className":"","stroke":true,"color":"yellow","weight":5,"opacity":0.7,"fill":true,"fillColor":"yellow","fillOpacity":0.5},null,null,["<p><strong>GR01<\/strong>: A historical monitoring site with complex reef habitat that supports high densities of fish and is a destination for recreational fishing.<\/p>\n","<p><strong>GR02<\/strong>: A historical monitoring site with linear reef habitat inside in a research only area that prohibits fishing and supports ongoing scientific investigation and monitoring.<\/p>\n","<p><strong>GR03<\/strong>: Patch reef habitat in a research only area that prohibits fishing and supports ongoing scientific investigation and monitoring.<\/p>\n"],null,["GR01","GR02","GR03"],null,null]}],"limits":{"lat":[31.3627319912123,31.4210639912502],"lng":[-80.921201,-80.828143]}},"evals":[],"jsHooks":[]}</script>
 <!--div class='container'-->
 <div class="row">
 <div class="col-md-4">
@@ -946,13 +949,14 @@ see its site id and click on it to see the rationale for its placement.
 </div>
 </div>
 <!--/div-->
-<p><i class='fas fa-question-circle'></i> <em><a
-href="https://sanctsound.ioos.us/draft/q_where-listen.html">Click
-here</a> to learn more about how we listened to and recorded
-soundscapes.</em> <br><i class='fas fa-chart-bar'></i> <em><a
-href="https://sanctsound.portal.axds.co/#sanctsound/sanctuary/grays-reef/site/GR01/method_type/prop-model?grouping_tab=by_frequency">Click
-here</a> to see similar maps of the listening range for the other
-hydrophones in this sanctuary and in other sanctuaries.</em> <br></p>
+<p><i class='fas fa-question-circle'></i> <em>Learn more about how we
+<strong><a
+href="https://sanctsound.ioos.us/draft/q_where-listen.html">listened to
+and recorded soundscapes</a></strong>.</em>
+<br><i class='fas fa-chart-bar'></i> <em>See similar <strong><a
+href="https://sanctsound.portal.axds.co/#sanctsound/compare/prop-model">maps
+of the listening range</a></strong> for the other hydrophones in this
+and in other sanctuaries.</em> <br></p>
 </div>
 <div id="what-did-we-measure" class="section level3">
 <h3>What did we measure?</h3>
