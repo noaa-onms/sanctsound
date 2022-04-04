@@ -41,7 +41,7 @@ At each SanctSound location, sound was recorded using an underwater microphone (
 figure(
   img = c(
     "./images/questions/Equip_FKNMS_04_small.mp4",
-    "./images/questions/OC-01 Video 02Nov2019_creditKathyHough_small.mp4")
+    "./images/questions/OC-01 Video 02Nov2019_creditKathyHough_small.mp4"),
   caption = c(
     "At shallower recording locations, like those in Florida Keys National Marine Sanctuary, equipment was placed and retrieved by divers.  Photo Credit: NOAA.",
     "At deeper recording locations, such as those in Olympic Coast National Marine Sanctuary, equipment was deployed over the side of sanctuary research vessels and allowed to sink to the seafloor using an anchored mooring line. Each mooring line had a release system between the recording equipment and anchor to remotely release the gear for recovery. After release, the recording equipment rose to the surface and was picked up by scientists on the research vessel. Video Credit: NOAA."))
@@ -54,10 +54,10 @@ Although most of SanctSound’s listening took place at specific locations, auto
 figure(
   img = c(
     "./images/questions/Eqiup_SBNMS_NOAA_McGuire_03.jpeg",
-    "./images/questions/PIR_PMNM_AlongForTheGlide.jpeg"))
-  #caption = c(
-    "**[Read more](https://sanctuaries.noaa.gov/news/mar21/listening-during-quarantine.html)** about the use of these torpedo-shaped gliders that dive up and down listening for whales and other species in Stellwagen Bank National Marine Sanctuary. Photo Credit: NOAA."
-    "**[Read more](https://sanctuaries.noaa.gov/news/jul21/along-for-the-glide.html) about the use of these wave gliders that resemble surf boards as they listen for whales and other sounds in the Papahānaumokuākea Marine National Monument. Photo Credit: Jupiter Research.))
+    "./images/questions/PIR_PMNM_AlongForTheGlide.jpeg"),
+  caption = c(
+    "**[Read more](https://sanctuaries.noaa.gov/news/mar21/listening-during-quarantine.html)** about the use of these torpedo-shaped gliders that dive up and down listening for whales and other species in Stellwagen Bank National Marine Sanctuary. Photo Credit: NOAA.",
+    "**[Read more](https://sanctuaries.noaa.gov/news/jul21/along-for-the-glide.html)** about the use of these wave gliders that resemble surf boards as they listen for whales and other sounds in the Papahānaumokuākea Marine National Monument. Photo Credit: Jupiter Research."))
 ```
 
 

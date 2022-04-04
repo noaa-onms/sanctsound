@@ -95,6 +95,8 @@ figure <- function(
   if (length(img) == 2 && length(caption) == 2){
     if (length(alt) == 1)
       alt = c(alt, "")
+    if (length(header) == 1)
+      header = c(header, "")
     return(
       glue(
         "<!--html_preserve-->
