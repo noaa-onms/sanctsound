@@ -34,8 +34,6 @@ When we compare and explore recordings, it’s important to know whether they re
 
 Under the “Where did we listen” tab for each sanctuary on the website, there is an example map showing the estimated listening range for one of the sanctuary’s listening stations. Use the ‘Statistics’ pull down in the Navigation Bar to access the SanctSound data portal’s sound propagation maps and models for more detailed exploration of listening ranges at a recording location, including how they change according to the frequencies and seasons of interest. You can also look at the variation across recording locations.
 
-::: { .overflow-auto}
-
 ```{r, results='asis'}
 figure(
   img     = "./images/questions/Propogation_CI01_CI05_50Hz.png",
