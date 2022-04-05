@@ -14,38 +14,44 @@ SanctSound is a nationally coordinated project co-led by NOAA’s Office of Nati
 
 SanctSound has relied on the efforts of over 75 people from all over the United States: vessel operators, engineers, researchers, data managers, web developers, graphic designers, program managers, financial and legal specialists and communication experts. During the global pandemic, this nationally-distributed team stayed coordinated virtually. Although not all team members are pictured here, we want to thank each and every member for their diverse contributions to this project. 
 
+# National Coordination Team
 ```{r, results='asis'}
 figure(
   img = "./images/SanctSound_NationalTeam_Photo.png",
-  caption = "National Coordination Team",
+  caption = "",
   alt = "")
 ```
 
+# Eastern Region Team
 ```{r, results='asis'}
 figure(
   img = "./images/SanctSound_EastCoastRegion_Photo.png",
-  caption = "Eastern Region Team",
+  caption = "",
   alt = "")
 ```
 
+
+# West Coast Region Team
 ```{r, results='asis'}
 figure(
   img = "./images/SanctSound_WestCoastRegion_TeamPhoto.png",
-  caption = "West Coast Region Team",
+  caption = "",
   alt = "")
 ```
 
+# Pacific Islands Region Team
 ```{r, results='asis'}
 figure(
   img = "./images/SanctSound_PacificIslandsRegion_Photo (2).png",
-  caption = "Pacific Islands Region Team",
+  caption = "",
   alt = "")
 ```
 
+# Website Design and Data Portal Team
 ```{r, results='asis'}
 figure(
   img = "./images/SanctSound_Portal_DataManagementTeam_Photo.png",
-  caption = "Website Design and Data Portal Team",
+  caption = "",
   alt = "")
 ```
 
