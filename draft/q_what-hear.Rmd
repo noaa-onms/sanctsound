@@ -47,8 +47,6 @@ figure(
 ```
 :::
 
-::: { .overflow-auto}
-
 ```{r, results='asis'}
 figure(
   img = "./images/questions/Foyer_example_sounds_screengrab.png",
