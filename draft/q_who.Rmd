@@ -14,56 +14,38 @@ SanctSound is a nationally coordinated project co-led by NOAA’s Office of Nati
 
 SanctSound has relied on the efforts of over 75 people from all over the United States: vessel operators, engineers, researchers, data managers, web developers, graphic designers, program managers, financial and legal specialists and communication experts. During the global pandemic, this nationally-distributed team stayed coordinated virtually. Although not all team members are pictured here, we want to thank each and every member for their diverse contributions to this project. 
 
-<center>
-![](**National Coordination Team**)
-</center>
-
 ```{r, results='asis'}
 figure(
   img = "./images/SanctSound_NationalTeam_Photo.png",
-  caption = "Images clockwise: National project leads, Eastern Regional team, West Coast Regional team, Pacific Islands Regional team, Data Management and Portal team.",
+  caption = "National Coordination Team",
   alt = "")
 ```
-<center>
-![](**Eastern Region Team**)
-</center>
 
 ```{r, results='asis'}
 figure(
   img = "./images/SanctSound_EastCoastRegion_Photo.png",
-  caption = "Images clockwise: National project leads, Eastern Regional team, West Coast Regional team, Pacific Islands Regional team, Data Management and Portal team.",
+  caption = "Eastern Region Team",
   alt = "")
 ```
-<center>
-![](**West Coast Region Team**)
-</center>
 
 ```{r, results='asis'}
 figure(
   img = "./images/SanctSound_WestCoastRegion_TeamPhoto.png",
-  caption = "SanctSound has relied on the efforts of over 75 people from all over the United States: vessel operators, engineers, researchers, data managers, web developers, graphic designers, program managers, financial and legal specialists and communication experts. During the global pandemic, this nationally-distributed team stayed coordinated virtually. Although not all team members are pictured here, we want to thank each and every member for their diverse contributions to this project. Images clockwise: National project leads, Eastern Regional team, West Coast Regional team, Pacific Islands Regional team, Data Management and Portal team.",
+  caption = "West Coast Region Team",
   alt = "")
 ```
-
-<center>
-![](**Pacific Islands Region Team**)
-</center>
 
 ```{r, results='asis'}
 figure(
   img = "./images/SanctSound_PacificIslandsRegion_Photo (2).png",
-  caption = "",
+  caption = "Pacific Islands Region Team",
   alt = "")
 ```
-
-<center>
-![](**Website Design and Data Portal Team**)
-</center>
 
 ```{r, results='asis'}
 figure(
   img = "./images/SanctSound_Portal_DataManagementTeam_Photo.png",
-  caption = "",
+  caption = "Website Design and Data Portal Team",
   alt = "")
 ```
 
