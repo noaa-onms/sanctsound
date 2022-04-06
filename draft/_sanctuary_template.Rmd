@@ -171,9 +171,9 @@ with(
     size    = "col-md-12"))
 ```
 
-`r shiny::icon("question-circle")` _[Click here](https://en.wikipedia.org/wiki/To_be_announced) to learn more about what we measured and how to read and understand these summary graphs._
+`r shiny::icon("question-circle")` _Learn more about **[what we measured and how to read and understand these summary graphs](https://sanctsound.ioos.us/draft/q_what-measure.html)**._
  
-`r shiny::icon("chart-bar")` _[Click here](https://en.wikipedia.org/wiki/To_be_announced) to see similar summary graphs for the other stations in this sanctuary and here for data available in other sanctuaries._
+`r shiny::icon("chart-bar")` _See similar **[summary graphs](https://sanctsound.portal.axds.co/#)** for the other stations in this sanctuary and here for data available in other sanctuaries._
 
 <!-- ![](./images/cinms_ex-what-measure.png) -->
 
@@ -200,11 +200,10 @@ if (nrow(snc_stories) > 0){
 }
 ```
 
-`r shiny::icon("question-circle")` _[Click here](https://sanctsound.ioos.us/draft/q_what-learn.html) 
-to learn about our collection of stories._
+`r shiny::icon("question-circle")` _Learn about our **[collection of stories](https://sanctsound.ioos.us/draft/q_what-learn.html)**._
 
-`r shiny::icon("newspaper-o")` _[Click here](https://sanctsound.ioos.us/draft/stories.html) to 
-read more SanctSound stories._
+`r shiny::icon("newspaper-o")` _Read more **[SanctSound stories](https://sanctsound.ioos.us/draft/stories.html)**. 
+._
 
 
 
