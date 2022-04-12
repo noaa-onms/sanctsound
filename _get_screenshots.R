@@ -11,7 +11,7 @@ if (!require("librarian")){
   library(librarian)
 }
 shelf(
-  chromote, here)
+  chromote, fs, glue, here)
 source(here::here("draft/functions.R"))
 # from functions.R:
 # modals  <- get_sheet("modals")
@@ -39,59 +39,112 @@ d_figs <- figures %>%
   select(dataportal_link, file_img)
 d_figs
 
-screensave <- function(dataportal_link, file_img, ...){
-  # i = 2
+screensave <- function(dataportal_link, file_img, sleep_seconds = 10, overwrite = T, ...){
+  # i = 9
   # dataportal_link <- d_figs$dataportal_link[i]
   # file_img        <- d_figs$file_img[i]
   
   message(glue("{basename(dataportal_link)}\n  -> {basename(file_img)}"))
   
   if (file.exists(file_img)){
-    message(glue("  file exists: {basename(file_img)}", .trim = F))
-    return()
+    message(glue("  image exists", .trim = F))
+    if (overwrite){
+      message("  overwriting")
+    } else {
+      message("  skipping")
+      return(T)
+    }
   }
   
   # get page with browser session
   b <- ChromoteSession$new()
-  b$default_timeout = 100 # in seconds
-  b$Page$navigate(dataportal_link, wait_ = FALSE)
-  p <- b$Page$loadEventFired(wait_ = FALSE)
-  str(b$wait_for(p))
-  Sys.sleep(200) # TODO: while loop if size output < 4KB, secs: 10,30,60,200
-  root_node <- b$DOM$getDocument()$root$nodeId
-  
+  b$default_timeout = sleep_seconds*1000 # in milliseconds?
+  message(glue("  Loading page", .trim = F))
+  b$Page$navigate(dataportal_link, wait_ = TRUE)
+  # p <- b$Page$loadEventFired(wait_ = FALSE)
+  # str(b$wait_for(p))
+  message(glue("  Sleeping for {secs_sleep[i_secs]} seconds", .trim = F))
+  Sys.sleep(sleep_seconds) # TODO: while loop if size output < 4KB, secs: 
+  root_node <- try(b$DOM$getDocument()$root$nodeId) # TODO: errors out here if page not loaded
+  if (!"integer" %in% class(root_node)){
+    message("  root_node error")
+    b$close()
+    return(FALSE)
+  } else {
+    message("  page_loaded")
+  }
+    
   # get selector
-  sel_res <- list(nodeIds = list()); selector = NULL
+  sel_res <- list(nodeIds = list()); 
+  selector = NULL
   i = 1
   selectors <- c(".chartLayout", ".chart")
   while (length(sel_res$nodeIds) == 0){
-    
-    if (i > length(selectors))
-      stop(glue("Doh! Ran out of selectors to be found at:\n  {dataportal_link}"))
-    
-    selector <- selectors[i]
-    
-    sel_res <- b$DOM$querySelectorAll(root_node, selector = selector)
-    message(glue("  selector {selector}: {c('NOT found','FOUND')[(length(sel_res$nodeIds) > 0) + 1]}", .trim=F))
-    
-    i = i + 1
+    if (i > length(selectors)){
+      #stop(glue("Doh! Ran out of selectors to be found at:\n  {dataportal_link}"))
+      message(glue("  Doh! Ran out of selectors to be found",trim = F))
+      b$close()
+      return(FALSE)
+    } else {
+      selector <- selectors[i]
+      sel_res <- b$DOM$querySelectorAll(root_node, selector = selector)
+      message(glue("  selector {selector}: {c('NOT found','FOUND')[(length(sel_res$nodeIds) > 0) + 1]}", .trim=F))
+      i = i + 1
+    }
   }
   
   # get screenshot
+  message(glue("  screenshot",trim = F))
   scr_res <- b$screenshot(
     filename = file_img,
     selector = selector,
     region   = "padding")
   
+  if (!file.exists(file_img)){
+    message("  !file.exists(file_img)")
+    b$close()
+    return(FALSE)
+  }
+  
   # close browser session
   b$close()
+  message("check file_img size")
+  sz <- fs::file_info(file_img) %>% pull(size)
+  if (sz < fs_bytes("5KB")){
+    return(FALSE) 
+  }
+  
+  return(TRUE)
 }
 
-d_figs %>% 
-  pwalk(screensave)
+secs_sleep_v <- c(10,30,60,200,400)
 
-d_measures %>% 
-  pwalk(screensave)
+d_screens <- bind_rows(
+  d_figs,
+  d_measures) %>% 
+  mutate(
+    is_done = FALSE)
+
+i_secs <- 1
+while(
+  sum(d_screens$is_done) != nrow(d_screens) &
+  i_secs <= length(secs_sleep_v)){
+  
+  secs_sleep <- secs_sleep_v[i_secs]
+  
+  d_screens %>% 
+    filter(!is_done) %>% 
+    mutate(
+      is_done = map2_lgl(
+        dataportal_link, file_img, function(x, y){
+          screensave(x, y, sleep_seconds = secs_sleep) }))
+  
+  i_secs <- i_secs + 1
+}
+
+# idx <- which(
+#   basename(d_figs$file_img) == "figures_sanctsound.CI01.detections.dolphin-detections.136980.hour.histogram.png")
+
 
 # crop ALL figure from Hourly-patterns.png
 library(magick)
