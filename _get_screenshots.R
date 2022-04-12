@@ -63,7 +63,7 @@ screensave <- function(dataportal_link, file_img, sleep_seconds = 10, overwrite 
   b$Page$navigate(dataportal_link, wait_ = TRUE)
   # p <- b$Page$loadEventFired(wait_ = FALSE)
   # str(b$wait_for(p))
-  message(glue("  Sleeping for {secs_sleep[i_secs]} seconds", .trim = F))
+  message(glue("  Sleeping for {sleep_seconds} seconds", .trim = F))
   Sys.sleep(sleep_seconds) # TODO: while loop if size output < 4KB, secs: 
   root_node <- try(b$DOM$getDocument()$root$nodeId) # TODO: errors out here if page not loaded
   if (!"integer" %in% class(root_node)){
@@ -108,12 +108,15 @@ screensave <- function(dataportal_link, file_img, sleep_seconds = 10, overwrite 
   
   # close browser session
   b$close()
-  message("check file_img size")
+  message("  check file_img size")
   sz <- fs::file_info(file_img) %>% pull(size)
   if (sz < fs_bytes("5KB")){
+    message("  file_img size < 5KB")
+    file_delete(file_img)
     return(FALSE) 
   }
   
+  message("  NEW all good :)")
   return(TRUE)
 }
 
@@ -137,10 +140,13 @@ while(
     mutate(
       is_done = map2_lgl(
         dataportal_link, file_img, function(x, y){
-          screensave(x, y, sleep_seconds = secs_sleep) }))
+          screensave(x, y, sleep_seconds = secs_sleep, overwrite = F) }))
   
   i_secs <- i_secs + 1
 }
+
+d_screens %>% 
+  filter(!is_done)
 
 # idx <- which(
 #   basename(d_figs$file_img) == "figures_sanctsound.CI01.detections.dolphin-detections.136980.hour.histogram.png")
