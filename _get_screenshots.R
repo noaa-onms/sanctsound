@@ -44,17 +44,9 @@ screensave <- function(dataportal_link, file_img, sleep_seconds = 10, overwrite 
   # dataportal_link <- d_figs$dataportal_link[i]
   # file_img        <- d_figs$file_img[i]
   
-  message(glue("{basename(dataportal_link)}\n  -> {basename(file_img)}"))
-  
-  if (file.exists(file_img)){
-    message(glue("  image exists", .trim = F))
-    if (overwrite){
-      message("  overwriting")
-    } else {
-      message("  skipping")
-      return(T)
-    }
-  }
+  if (file.exists(file_img) & !overwrite)
+    return(T)
+  message(glue("{basename(file_img)}"))
   
   # get page with browser session
   b <- ChromoteSession$new()
@@ -135,7 +127,7 @@ while(
   
   secs_sleep <- secs_sleep_v[i_secs]
   
-  d_screens %>% 
+  d_screens <- d_screens %>% 
     filter(!is_done) %>% 
     mutate(
       is_done = map2_lgl(
@@ -150,7 +142,6 @@ d_screens %>%
 
 # idx <- which(
 #   basename(d_figs$file_img) == "figures_sanctsound.CI01.detections.dolphin-detections.136980.hour.histogram.png")
-
 
 # crop ALL figure from Hourly-patterns.png
 library(magick)
