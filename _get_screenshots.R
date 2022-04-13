@@ -120,6 +120,13 @@ d_screens <- bind_rows(
   mutate(
     is_done = FALSE)
 
+# d_screens %>% 
+#   filter(str_detect(dataportal_link, "HI06")) %>% 
+#   select(dataportal_link, file_img) # %>% write_csv("tmp.csv")
+
+# idx <- which(
+#   basename(d_figs$file_img) == "figures_sanctsound.CI01.detections.dolphin-detections.136980.hour.histogram.png")
+
 i_secs <- 1
 while(
   sum(d_screens$is_done) != nrow(d_screens) &
@@ -127,21 +134,25 @@ while(
   
   secs_sleep <- secs_sleep_v[i_secs]
   
-  d_screens <- d_screens %>% 
+  d_screens_todo <- d_screens %>% 
     filter(!is_done) %>% 
     mutate(
-      is_done = map2_lgl(
+      is_done_todo = map2_lgl(
         dataportal_link, file_img, function(x, y){
           screensave(x, y, sleep_seconds = secs_sleep, overwrite = F) }))
+  
+  d_screens <- d_screens %>% 
+    left_join(
+      d_screens_todo %>% 
+        select(file_img, is_done_todo), 
+      by = "file_img") %>% 
+    mutate(
+      is_done = ifelse(is_done_todo, TRUE, is_done))
   
   i_secs <- i_secs + 1
 }
 
-d_screens %>% 
-  filter(!is_done)
-
-# idx <- which(
-#   basename(d_figs$file_img) == "figures_sanctsound.CI01.detections.dolphin-detections.136980.hour.histogram.png")
+stopifnot(d_screens %>% filter(!is_done) %>% sum() == 0)
 
 # crop ALL figure from Hourly-patterns.png
 library(magick)
