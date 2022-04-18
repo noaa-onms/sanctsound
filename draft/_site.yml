@@ -3,8 +3,8 @@ navbar:
   logo:
     image: ./images/SanctSound_logo_white-text.png
     href: https://sanctsound.ioos.us/draft
-  title: <img src='./images/SanctSound_logo_white-text_width-100px.png' width='100p' style='vertical-align:top'><!--
-    SanctSound -->
+  title: <img src='./images/SanctSound_logo_white-text_width-100px.png' width='100p'
+    style='vertical-align:top'><!-- SanctSound -->
   type: inverse
   left:
   - text: Questions
@@ -349,9 +349,6 @@ navbar:
         href: stories.html#west-coast
       - text: United in Song (Olympic Coast)
         href: stories.html#west-coast
-  # - text: Fun
-  #   icon: fa-grin
-  #   href: fun.html
   - text: Software
     icon: fa-code
     href: software.html
