@@ -451,7 +451,7 @@ map_sites <- function(){
       lbl = glue::glue("<a href='./s_{code}.html'><b>{name}</b></a>"))
   # to make clickable: add `.leaflet-tooltip { pointer-events: auto; }` to libs/styles.css
   site_labels <- sites$lbl %>% lapply(HTML)
-
+ 
   leaflet(
     data = sites, width = "100%") %>% 
     addProviderTiles(providers$Esri.OceanBasemap) %>% 
@@ -813,6 +813,9 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_p
   path_relative <- glue("{relative_pfx}files/{fname_ok}")
   message(glue("  fname_ok: {fname}"))
   
+  # TODO: Issue 50:
+  #   download if Google Drive timestamp newer than local filesystem
+  #   image sizing & date_mod (by dimension, ratio to other) to deal with two issues: 1) what if the same filename gets updated? fixed with date modified; 2) auto resize images so not unnecessarily large to speed up downloads. (Priority for Jenn's upcoming modal window images.)
   if (!file.exists(path) | redo)
     drive_download(as_id(gid), path, overwrite = T)
   
