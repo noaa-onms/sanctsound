@@ -71,17 +71,20 @@ figure <- function(
       alt = c(alt, "")
     if (length(header) == 1)
       header = c(header, "")
+    caption = markdown::markdownToHTML(text = caption, fragment.only=T)
+    header  = sapply(header,  function(x) markdown::markdownToHTML(text = x, fragment.only=T))
+
     return(
       glue(
         "<!--html_preserve-->
         <figure class='figure col-md-12'>
           <div class='row'>
             <div class='col-md-6'>
-              {markdown::markdownToHTML(text = header[1], fragment.only=T)}
+              {header[1]}
               {get_media_html(img[1], alt[1])}
             </div>
             <div class='col-md-6'>
-              {markdown::markdownToHTML(text = header[2], fragment.only=T)}
+              {header[2]}
               {get_media_html(img[2], alt[2])}
             </div>
           </div>
@@ -97,20 +100,24 @@ figure <- function(
       alt = c(alt, "")
     if (length(header) == 1)
       header = c(header, "")
+    
+    caption = sapply(caption, function(x) markdown::markdownToHTML(text = caption, fragment.only=T))
+    header  = sapply(header,  function(x) markdown::markdownToHTML(text = x, fragment.only=T))
+    
     return(
       glue(
         "<!--html_preserve-->
         <figure class='figure col-md-12'>
           <div class='row'>
             <div class='col-md-6'>
-              {markdown::markdownToHTML(text = header[1], fragment.only=T)}
+              {header[1]}
               {get_media_html(img[1], alt[1])}
               <figcaption class='figure-caption'>
                 {caption[1]}
               </figcaption>
             </div>
             <div class='col-md-6'>
-              {markdown::markdownToHTML(text = header[2], fragment.only=T)}
+              {header[2]}
               {get_media_html(img[2], alt[2])}
               <figcaption class='figure-caption'>
                 {caption[2]}
@@ -120,13 +127,16 @@ figure <- function(
         </figure>
         <!--/html_preserve-->"))
   }
-
+  
+  caption = markdown::markdownToHTML(text = caption, fragment.only=T)
+  header  = markdown::markdownToHTML(text = header, fragment.only=T)
+  
   if (length(img) != 2 && align == "center"){
     glue(
       "<!--html_preserve-->
       <center>
         <figure class='figure {size}'>
-          {markdown::markdownToHTML(text = header, fragment.only=T)}
+          {header}
           {get_media_html(img, alt)}
           <figcaption class='figure-caption'>
             {caption}
@@ -138,7 +148,7 @@ figure <- function(
     glue(
       "<!--html_preserve-->
       <figure class='figure {size} clearfix' style='float:{align}'>
-        {markdown::markdownToHTML(text = header, fragment.only=T)}
+        {header}
         {get_media_html(img, alt)}
         <figcaption class='figure-caption'>
           {caption}
@@ -447,7 +457,9 @@ map_sites <- function(){
     addProviderTiles(providers$Esri.OceanBasemap) %>% 
     addPolygons(
       label = site_labels, 
-      labelOptions = labelOptions(noHide = T))
+      labelOptions = labelOptions(
+        interactive = T,
+        permanent = T))
 
 }
 
@@ -508,6 +520,12 @@ render_page <- function(rmd){
 }
 
 audio_to_spectrogram_video <- function(path, path_mp4){
+  
+  # skip if running on Github since slow to generate, need to render on Mac laptop
+  if (Sys.getenv("GITHUB_ACTIONS") != ""){
+    message("Skipping audio_to_spectrogram_video() using ffmpeg since GITHUB_ACTIONS environmental variable is not empty")
+    return(NA)
+  }
   
   # install ffmpeg on Mac: brew install ffmpeg
   path_mp3 <- glue("{path_ext_remove(path)}_ffmpeg-clean.mp3")
