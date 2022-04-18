@@ -171,7 +171,7 @@ with(
     size    = "col-md-12"))
 ```
 
-`r shiny::icon("question-circle")` _Learn more about **[what we measured and how to read and understand these summary graphs](https://sanctsound.ioos.us/draft/q_what-measure.html)**._
+`r shiny::icon("question-circle")` _Learn more about **[what we measured and how to read and understand these summary graphs](./q_what-measure.html)**._
  
 `r shiny::icon("chart-bar")` _See similar **[summary graphs](https://sanctsound.portal.axds.co/#)** for the other stations in this sanctuary and here for data available in other sanctuaries._
 
@@ -200,10 +200,9 @@ if (nrow(snc_stories) > 0){
 }
 ```
 
-`r shiny::icon("question-circle")` _Learn about our **[collection of stories](https://sanctsound.ioos.us/draft/q_what-learn.html)**._
+`r shiny::icon("question-circle")` _Learn about our **[collection of stories](./q_what-learn.html)**._
 
-`r shiny::icon("newspaper-o")` _Read more **[SanctSound stories](https://sanctsound.ioos.us/draft/stories.html)**. 
-._
+`r shiny::icon("newspaper-o")` _Read more **[SanctSound stories](./stories.html)**._
 
 
 

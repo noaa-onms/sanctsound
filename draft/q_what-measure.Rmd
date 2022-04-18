@@ -36,7 +36,7 @@ figure(
   alt = "")
 ```
 
-This web portal showcases the types of information that sound can provide to help us understand and protect our oceans and its inhabitants. Here you can explore acoustic features of each recording location with the U.S. National Marine Sanctuary System, and make comparisons among locations to better understand how similar or different they are from each other. To do this, we not only had to **[record sound information in a comparable way](https://sanctsound.ioos.us/draft/q_why-listen.html)**, we needed to make the same measurements from these recordings. 
+This web portal showcases the types of information that sound can provide to help us understand and protect our oceans and its inhabitants. Here you can explore acoustic features of each recording location with the U.S. National Marine Sanctuary System, and make comparisons among locations to better understand how similar or different they are from each other. To do this, we not only had to **[record sound information in a comparable way](./q_why-listen.html)**, we needed to make the same measurements from these recordings. 
 
 :::
 

@@ -14,6 +14,7 @@ shelf(
 here <- here::here
 options(readr.show_col_types = F)
 
+base_url <- 'https://sanctsound.ioos.us/draft'
 skip_drive_auth <- F
 
 # authenticate to GoogleDrive using Google Service Account's secret JSON
@@ -495,7 +496,7 @@ render_sanctuary <- function(code, name, type, ...){
       site_code = code,
       # scenes tab in [sanctsound_website-content - Google Sheets](https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/edit#gid=0)                    
       # csv       = "https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/gviz/tq?tqx=out:csv&sheet=modals",
-      csv       = "https://sanctsound.ioos.us/draft/data/svg.csv",
+      csv       = glue("{base_url}/data/svg.csv"),
       svg       = glue("svg/{code}.svg")))
   }
 render_modal <- function(
