@@ -24,7 +24,7 @@ Under the Stories tab, you will find a **[collection of web stories and story ma
 
 ```{r, results='asis'}
 figure(
-  img     = "./images/questions/Stories_mockup.png",
+  img     = "./images/questions/Stories_page_final.png",
   caption = "SanctSound web stories span a range of geographic scales, from sanctuary-specific to national. Sanctuary-specific stories focus on what we learned about sound in that place, and how that information is helping answer questions that are important there. National level stories are focused on comparing patterns of sound among multiple national marine sanctuaries to help us examine similarities and differences across the system. ",
   alt     = "")
 ```
