@@ -36,7 +36,7 @@ Under the “Where did we listen” tab for each sanctuary on the website, there
 
 ```{r, results='asis'}
 figure(
-  img     = "./images/questions/Propogation_CI01_CI05_50Hz.png",
+  img     = "./images/questions/PropModel_CI01-CI05_63Hz_July_final.png",
   caption = "For example, these results predict that during the summer a sound with characteristics like those made by a large vessel (192 decibels at a frequency at 63 Hertz, located 20 meters below the ocean surface) can be heard north of our recorder off Santa Rosa Island in Channel Islands National Marine Sanctuary. The same sound is predicted to be heard over a much larger range south of our recorder near Anacapa Island due to less interruption by land and deeper offshore waters that allow sound to propagate unimpeded.",
   alt     = "")
 ```
@@ -84,7 +84,7 @@ Our goal was to collect sound information over three years at each site. However
 
 ```{r, results='asis'}
 figure(
-  img = "./images/questions/Recording_duration_8_sites.png",
+  img = "./images/questions/duration_project-wide_default=good.png",
   caption = "The SanctSound project used hydrophones to record the soundscape of seven national marine sanctuaries and one marine national monument. Green bars indicate when good quality data were recorded at one or more listening stations at a site. Due to technical or logistical issues, there were some gaps in recordings (white) or periods when data quality was compromised (yellow).",
   alt = "")
 ```
