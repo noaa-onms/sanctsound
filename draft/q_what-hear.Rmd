@@ -49,7 +49,7 @@ figure(
 
 ```{r, results='asis'}
 figure(
-  img = "./images/questions/Foyer_example_sounds_screengrab.png",
+  img = "./images/questions/Sound-library_example_dolphins.png",
   caption = "The ‘Sounds’ pull down in the Navigation Bar takes you to the **[Example Sounds](./sounds.html)** page, which contains all the sound clips available through the interactive infographics across all eight sanctuaries. 
   
   To access additional sound clips available in the SanctSound data portal, select ‘Sound Library’ under the ‘Data Portal’ pull down in the Navigation Bar.",
