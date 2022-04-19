@@ -62,7 +62,7 @@ figure(
   alt = "")
 ```
 
-## Power spectrum plots: variability of loudness across tones
+## Power spectrum plots: Variability of loudness across pitches
 
 When summarizing the soundscape of a location, power spectrum plots help us identify which frequencies (pitches) had the most sound intensity or loudness over the entire period of recording. The line in power spectrum plots shows the median loudness of sound at a specific frequency while the gray band shows the variability in loudness at that same frequency.
 
