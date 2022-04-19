@@ -155,7 +155,7 @@ with(
 ```{r, results='asis', eval=length(above_median$img_rel) == 1 && length(power_spec$img_rel) == 1}
 figure(
   header  = c(
-    "**Sound levels above median**: _loudness and contribution of different pitches_",
+    "**Sound levels above median**: _contribution of different pitches over time_",
     "**Power spectrum**: _variability of loudness across pitch_"),
   img     = c(above_median$img_rel, power_spec$img_rel),
   caption = c(above_median$caption, power_spec$caption))
