@@ -47,7 +47,7 @@ Sounds are visualized using a spectrogram. A spectrogram uses color to show the 
 ```{r, results='asis'}
 figure(
   img = "./images/questions/SB01_spectrogram_04122022_annotated_final.png",
-  caption = "In this example spectrogram from a listening station in Stellwagen Bank National Marine Sanctuary, lower pitch sounds dominated the soundscape throughout the three year recording period (warmer colors at the bottom). Information about the quality of the sound data is included along the bottom of the plot with green indicating time periods of good quality data, yellow indicating periods with compromised data and data gaps shown with white. In the data portal, you can get more information about what frequencies of data are compromised during a time period by hovering over each yellow color bar.",
+  caption = "In this example spectrogram from a listening station in Stellwagen Bank National Marine Sanctuary, low and medium pitch sounds dominated the soundscape throughout the three year recording period (warmer colors at the bottom). Information about the quality of the sound data is included along the bottom of the plot with green indicating time periods of good quality data, yellow indicating periods with compromised data and data gaps shown with white. In the data portal, you can get more information about what frequencies of data are compromised during a time period by hovering over each yellow color bar.",
   alt = "")
 ```
 
