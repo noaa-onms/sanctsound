@@ -69,7 +69,7 @@ When summarizing the soundscape of a location, power spectrum plots help us iden
 ```{r, results='asis'}
 figure(
   img = "./images/questions/SB01_power-spec_04122022_annotated_final.png",
-  caption = "In this example plot for the same listening site at Stellwagen Bank National Marine Sanctuary, lower pitched sounds had higher intensities fairly consistently throughout the study period (narrow gray band). Sounds with frequencies above 250 Hz were generally quieter, but also more variable over time (wider gray band).",
+  caption = "In this example plot for the same listening site at Stellwagen Bank National Marine Sanctuary, low pitched sounds (63-2,500 Hz) had the highest median intensities (black line) compared to other pitches. Across most pitches, sound levels were highly variable (wide gray band) due to weather events, vessel presence, and marine mammal vocal activity.",
   alt = "")
 ```
 
