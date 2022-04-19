@@ -46,7 +46,7 @@ Sounds are visualized using a spectrogram. A spectrogram uses color to show the 
 
 ```{r, results='asis'}
 figure(
-  img = "./images/questions/HR_Spectrogram_SB01.png",
+  img = "./images/questions/SB01_spectrogram_04122022_annotated_final.png",
   caption = "In this example spectrogram from a listening station in Stellwagen Bank National Marine Sanctuary, lower pitch sounds dominated the soundscape throughout the three year recording period (warmer colors at the bottom). Information about the quality of the sound data is included along the bottom of the plot with green indicating time periods of good quality data, yellow indicating periods with compromised data and data gaps shown with white. In the data portal, you can get more information about what frequencies of data are compromised during a time period by hovering over each yellow color bar.",
   alt = "")
 ```
@@ -57,7 +57,7 @@ For long-term (multiple year) measurement projects, it can be useful to identify
 
 ```{r, results='asis'}
 figure(
-  img = "./images/questions/Stacked_histogram_SB01.png",
+  img = "./images/questions/SB01_above-median_04122022_annotated_final.png",
   caption = "For example, in this histogram showing above-median sound levels for the same listening station in Stellwagen Bank National Marine Sanctuary there is a clear seasonal pattern, with some sound levels higher in the winter and early spring than in the summer months.",
   alt = "")
 ```
@@ -68,7 +68,7 @@ When summarizing the soundscape of a location, power spectrum plots help us iden
 
 ```{r, results='asis'}
 figure(
-  img = "./images/questions/Power_spectrogram_SB01.png",
+  img = "./images/questions/SB01_power-spec_04122022_annotated_final.png",
   caption = "In this example plot for the same listening site at Stellwagen Bank National Marine Sanctuary, lower pitched sounds had higher intensities fairly consistently throughout the study period (narrow gray band). Sounds with frequencies above 250 Hz were generally quieter, but also more variable over time (wider gray band).",
   alt = "")
 ```
@@ -79,7 +79,7 @@ To further visualize when loudness diverged from average during our recording pe
 
 ```{r, results='asis'}
 figure(
-  img = "./images/questions/Anomaly_plot_SB01.png",
+  img = "./images/questions/SB01_anomaly_04122022_annotated_final.png",
   caption = "For the same listening site in Stellwagen Bank National Marine Sanctuary, we can see again the seasonal pattern noted in the stacked histogram. Here it is even clearer that frequencies of sound above 250 Hertz were generally higher in the winter than summer months.",
   alt = "")
 ```
