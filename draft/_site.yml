@@ -384,6 +384,6 @@ output:
     lib_dir: site_libs
     mathjax: ~
     includes:
-      in_header: libs/header.html
+      in_header: libs/header.html  # IOOS style, Google Analytics
       after_body: libs/footer.html
 output_dir: '.'
