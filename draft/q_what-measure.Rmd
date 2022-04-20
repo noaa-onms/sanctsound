@@ -51,7 +51,7 @@ figure(
   alt = "")
 ```
 
-## Percent above median: Contribution of different pitches over time
+## Percent above median: Loudness and contribution of different pitches
 
 For long-term (multiple year) measurement projects, it can be useful to identify what the average conditions are as well when conditions diverged from average. When conditions change, we can further examine whether that happened for all frequencies (pitches) of sound, or whether a specific range of frequencies drove those changes. We use a stacked histogram to summarize these departures from average over time all in one image. 
 
