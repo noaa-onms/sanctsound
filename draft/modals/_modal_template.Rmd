@@ -5,12 +5,12 @@ output: html_document
 #   html_document:
 #     keep_md: yes
 params:
-  sanctuary_code: "CINMS"
+  sanctuary_code: "MBNMS"
   #modal_title: "Dolphins"
   #modal_title: "Humpback whales"
-  modal_title: "Bocaccio"
+  # modal_title: "Bocaccio"
   # modal_title: "Fin whales"
-  #modal_title: "Blue whales"
+  modal_title: "Blue whales"
   #modal_title: "Snapshots"
   # modal_title: "Bocaccio"
   #modal_title: "Seal bombs"
@@ -66,6 +66,19 @@ if (nrow(ts) == 1)
   ")
 ```
 
+```{r monthly, results = "asis"}
+monthly <- get_modal_file_tbl("Monthly patterns", params$sanctuary_code, params$modal_title)
+
+if (nrow(monthly) == 1)
+  glue("
+  ### Monthly Patterns 
+
+  <img src='{monthly$path_relative}' width='80%' class='mx-auto d-block'>
+  
+  {monthly$caption}
+  ")
+```
+
 ```{r daily, results = "asis"}
 daily <- get_modal_file_tbl("Daily patterns", params$sanctuary_code, params$modal_title)
 
@@ -87,19 +100,6 @@ if (nrow(hourly) == 1)
   <img src='{hourly$path_relative}' width='80%' class='mx-auto d-block'>
   
   {hourly$caption}
-  ")
-```
-
-```{r monthly, results = "asis"}
-monthly <- get_modal_file_tbl("Monthly patterns", params$sanctuary_code, params$modal_title)
-
-if (nrow(monthly) == 1)
-  glue("
-  ### Monthly Patterns 
-
-  <img src='{monthly$path_relative}' width='80%' class='mx-auto d-block'>
-  
-  {monthly$caption}
   ")
 ```
 

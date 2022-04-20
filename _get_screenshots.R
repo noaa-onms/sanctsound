@@ -1,10 +1,22 @@
 # I placed images given by the dataportal_link in folders with a naming scheme using uniquely identifiable tabs and fields from sanctsound website content:
 # - figures
-#   file naming scheme: house_figures_{modal_id}_{tab_name}.png
+#   file naming scheme: figures_{modal_id}_{tab_name}.png
 #   output folder: figures_detections_from_Ben
 # - measures
-#   file naming scheme: house_measures_{sanctuary_code}_{file_type}.png
+#   file naming scheme: measures_{sanctuary_code}_{file_type}.png
 #   output folder: measure_plots_from_Ben
+
+# measures_sanctsound.GR01.sound-levels.octave-level.hour.curtain_anomaly.png
+# Loading page
+# Sleeping for 30 seconds
+# [2022-04-20 10:02:08] [error] handle_read_frame error: websocketpp.transport:7 (End of File)
+
+# measures_sanctsound.PM01.sound-levels.high-resolution-spectrogram.hour.spectrogram.png
+# https://sanctsound.portal.axds.co/#sanctsound/chart/sanctsound.PM01.sound-levels.high-resolution-spectrogram.hour.spectrogram
+#   Loading page
+# Sleeping for 10 seconds
+# [2022-04-20 10:11:55] [error] handle_read_frame error: websocketpp.transport:7 (End of File)
+
 
 if (!require("librarian")){
   install.packages("librarian")
@@ -39,15 +51,20 @@ d_figs <- figures %>%
   select(dataportal_link, file_img)
 d_figs
 
-screensave <- function(dataportal_link, file_img, sleep_seconds = 10, overwrite = T, ...){
+screensave <- function(dataportal_link, file_img, sleep_seconds = 10, overwrite = F, ...){
   # i = 9
   # dataportal_link <- d_figs$dataportal_link[i]
   # file_img        <- d_figs$file_img[i]
   
   if (file.exists(file_img) & !overwrite)
     return(T)
-  message(glue("{basename(file_img)}"))
   
+  message(glue("{basename(file_img)}"))
+  message(glue("  {dataportal_link}", .trim = F))
+  
+  if (file.exists(file_img))
+    message("  overwriting existing image")
+    
   # get page with browser session
   b <- ChromoteSession$new()
   b$default_timeout = sleep_seconds*1000 # in milliseconds?
@@ -112,7 +129,7 @@ screensave <- function(dataportal_link, file_img, sleep_seconds = 10, overwrite 
   return(TRUE)
 }
 
-secs_sleep_v <- c(10,30,60,200,400)
+secs_sleep_v <- c(10,30,60,200,400,600)
 
 d_screens <- bind_rows(
   d_figs,
@@ -128,26 +145,28 @@ d_screens <- bind_rows(
 #   basename(d_figs$file_img) == "figures_sanctsound.CI01.detections.dolphin-detections.136980.hour.histogram.png")
 
 i_secs <- 1
+overwrite_all <- F
+if (!overwrite_all)
+  d_screens <- d_screens %>% 
+  mutate(
+    is_done = file.exists(file_img))
+message(glue("START nrow(d_screens): {nrow(d_screens)}"))
 while(
   sum(d_screens$is_done) != nrow(d_screens) &
   i_secs <= length(secs_sleep_v)){
   
   secs_sleep <- secs_sleep_v[i_secs]
-  
-  d_screens_todo <- d_screens %>% 
-    filter(!is_done) %>% 
-    mutate(
-      is_done_todo = map2_lgl(
-        dataportal_link, file_img, function(x, y){
-          screensave(x, y, sleep_seconds = secs_sleep, overwrite = F) }))
+  # secs_sleep <- 600 # 10 minutes
+  message(glue("WHILE i_secs: {i_secs} ({secs_sleep} seconds)"))
+  message(glue("  nrow(filter(d_screens, !is_done)): {nrow(filter(d_screens, !is_done))}"))
   
   d_screens <- d_screens %>% 
-    left_join(
-      d_screens_todo %>% 
-        select(file_img, is_done_todo), 
-      by = "file_img") %>% 
+    filter(!is_done) %>% 
+    # write_csv("portal_screenshots_failing.csv")
     mutate(
-      is_done = ifelse(is_done_todo, TRUE, is_done))
+      is_done = map2_lgl(
+        dataportal_link, file_img, function(x, y){
+          screensave(x, y, sleep_seconds = secs_sleep, overwrite = overwrite_all) }))
   
   i_secs <- i_secs + 1
 }
