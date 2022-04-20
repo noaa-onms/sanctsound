@@ -28,7 +28,7 @@ Under the “What did we hear” tab for each sanctuary, interactive infographic
 
 ```{r, results='asis'}
 figure(
-  img = "./images/questions/Modals_optimized_snapshots.png",
+  img = "./images/questions/Modals_optimized_snapshots_MBNMS.png",
   caption = "Some of the sounds that we recorded, like blue whale calls, extend below the frequencies that human ears can easily hear and that the speakers on typical electronic devices can reliably produce. For these cases, we have included the original sound clip recorded as well as a version of the clip optimized for human hearing. In addition to providing sound clips of specific sound sources, we also wanted to provide examples of what it sounds like when some of these sound sources co-occur. These “soundscape snapshots” help illustrate what the sanctuary sounds like in a certain place and time.",
   alt = "")
 ```
@@ -58,24 +58,35 @@ figure(
 
 While there are many sounds of unknown origin in our data, sounds that are well described and relatively consistent can be “detected” by automated processes. Because computers aren’t perfect, scientists verify the automated detection results. This process allows us to determine how the automated detector performed in different places, including how well it worked in a louder environment or for specific types of sound. 
 
-There are many ways to showcase the contributions of known sounds detected at recording locations. Sounds produced by animals often peak during specific periods of the day, and during specific months or seasons based on the roles the sound plays in the animals’ reproductive, feeding or migratory activity. For many of the sound sources in a sanctuary, we show how frequently the sound was detected during the project’s 3 year recording period. For example, we can graph the number of times a certain sound was detected each month to determine when that sound is a more or less important component of the sanctuary soundscape throughout the year.
+There are many ways to showcase the contributions of known sounds detected at recording locations. Sounds produced by animals often peak during specific periods of the day, and during specific months or seasons based on the roles the sound plays in the animals’ reproductive, feeding or migratory activity. For many of the sound sources in a sanctuary, we show how frequently the sound was detected during the project’s 3 year recording period. For example, we can graph the number of times a certain sound was detected to determine when that sound is a more or less important component of the sanctuary soundscape throughout the year.
 
 
 ```{r, results='asis'}
 figure(
   img     = "./images/questions/what-hear-detections.png",
-  caption = "This plot shows the occurrence of dolphin sounds detected at a listening station in Florida Keys National Marine Sanctuary.",
+  caption = "This plot shows the occurrence of dolphin sounds detected at a listening station in Gray’s Reef National Marine Sanctuary..",
   alt     = "")
 ```
 
-We can also visualize whether detections varied over the course of a day by counting how many times a sound is detected in each hour and plotting that on a graph that looks like a 24 hour clock. 
+We can also compare how detections varied over seasons by plotting that information on a graph that looks like a 12 hour clock.
 
 ::: { .overflow-auto}
 
 ```{r, results='asis'}
 figure(
-  img     = "./images/questions/what-hear-diurnal-detections.png",
-  caption = "For example, at this site in Florida Keys National Marine Sanctuary, vessel sounds are more commonly recorded during the late morning to afternoon hours, since that is the time of day when most people go out fishing and boating.",
+  img     = "./images/questions/detections_monthly_GR01_dolphin_tutorial.png",
+  caption = "For example, at this site in Gray’s Reef National Marine Sanctuary, dolphin sounds were recorded most often in the winter months with some degree of variability in all months (grey band) during the three years of recording effort.",
+  alt     = "")
+```
+
+We didn’t always collect information on detections within a day. For the sound sources that we looked for by hour, we can plot their occurrence on a graph that looks like a 24 hour clock. 
+
+::: { .overflow-auto}
+
+```{r, results='asis'}
+figure(
+  img     = "./images/questions/detections_hourly_GR01_dolphin_tutorial.png",
+  caption = "For example, at this site in Gray’s Reef National Marine Sanctuary, dolphin sounds were detected across all hours of the day but tended to be detected more during nighttime hours.",
   alt     = "")
 ```
 
