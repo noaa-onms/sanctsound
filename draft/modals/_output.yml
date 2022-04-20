@@ -8,3 +8,5 @@ html_document:
   lib_dir: modal_libs
   mathjax: ~
   css: _modal_styles.css
+  includes:
+    in_header: _header.html  # Google Analytics
