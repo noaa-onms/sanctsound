@@ -40,7 +40,7 @@ This web portal showcases the types of information that sound can provide to hel
 
 :::
 
-## Spectrograms: Intensity of sound at different frequencies over time
+## Spectrograms: Intensity of sound at different pitches over time
 
 Sounds are visualized using a spectrogram. A spectrogram uses color to show the intensity (or loudness) of sound at various frequencies (or pitches) over time. Vertically you can see whether sound is more or less intense at different frequencies. Lower on the vertical axis are lower frequencies, higher on the vertical axis are higher frequencies. The composition of frequencies in the sound change as time advances from left to right on the horizontal axis. 
 
