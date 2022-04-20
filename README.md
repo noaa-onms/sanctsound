@@ -1,3 +1,15 @@
+<form data-turbo="false" action="/noaa-onms/sanctsound/actions/manual" accept-charset="UTF-8" method="post">
+  <input type="hidden" name="authenticity_token" value="XUfRDi0IfQZRakxSNNCGVqaSEzSjmCkzJ2hf76sPvtiWJQsLRk7wZzCWSQAJA4gohadN1NVkVGju44e4ni0qzQ">
+  <input type="hidden" name="workflow" id="workflow" value=".github/workflows/render-website.yml" autocomplete="off" class="form-control">
+  <input type="hidden" name="branch" id="branch" value="master" autocomplete="off" class="form-control">
+  <input type="hidden" name="show_workflow_tip" id="show_workflow_tip" autocomplete="off" class="form-control">
+  <button type="submit" class="btn btn-primary btn-sm mt-2" autofocus="">Run workflow</button>
+</form>
+
+<button onclick="window.location.href='https://github.com/noaa-onms/sanctsound/actions/workflows/render-website.yml';" class="btn btn-primary btn-sm mt-2">Render website</button>
+
+such as after changes to [sanctsound website content - Google Sheets](https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/edit#gid=206020376)
+
 ## Create Website
 
 - [R Markdown Websites](https://rmarkdown.rstudio.com/lesson-13.html)
