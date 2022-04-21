@@ -40,7 +40,7 @@ jobs:
 
       - name: Render Rmarkdown website
         run: |
-          Rscript -e 'source("draft/render_site.R")'
+          Rscript -e 'source("render_site.R")'
 
       - name: Commit results
         run: |
