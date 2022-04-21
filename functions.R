@@ -789,6 +789,9 @@ update_stories_menu <- function(){
 
 gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_pfx = "../", redo = F, skip_spectrogram = F){
   
+  # if (gdrive_shareable_link == "https://drive.google.com/file/d/1Ua0hBD_mqx29uEiJ3g9tdF-3mzYTFoXa/view?usp=drivesdk")
+  #   browser("pmnm_snapping-shrimp - sound missing b/c filename")
+  
   # gdrive_shareable_link <- "https://drive.google.com/file/d/1_wWLplFmhEAEqmbsTA0D85yuAhmapc5a/view?usp=sharing"
   # gdrive_shareable_link <- tbl$gdrive_shareable_link; get_relative_path = T; redo = F
   # gdrive_shareable_link <- sound$sound_enhancement; get_relative_path = T; relative_pfx = "../", redo = F, skip_spectrogram = T; redo = F
@@ -817,6 +820,27 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_p
   # TODO: Issue 50:
   #   download if Google Drive timestamp newer than local filesystem
   #   image sizing & date_mod (by dimension, ratio to other) to deal with two issues: 1) what if the same filename gets updated? fixed with date modified; 2) auto resize images so not unnecessarily large to speed up downloads. (Priority for Jenn's upcoming modal window images.)
+  
+  ck_path_case <- function(path){
+    base_actual <- tibble(
+      base = list.files(dirname(path), fixed(basename(path)), ignore.case = T),
+      nchar = nchar(base)) %>% 
+      arrange(nchar) %>% 
+      slice(1) %>% 
+      pull(base)
+    if (base_actual != basename(path)){
+      message(glue("
+        renaming:
+          {base_actual}
+          {basename(path)}", .trim = F))
+      file.rename(glue("{dirname(path)}/{base_actual}"), "tmp.tmp")
+      file.rename("tmp.tmp", path)
+      return(T)
+    } else {
+      return(F)
+    }
+  }
+  v <- ck_path_case(path)
   if (!file.exists(path) | redo)
     drive_download(as_id(gid), path, overwrite = T)
   
@@ -834,6 +858,7 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_p
     # path = "/Users/bbest/github/sanctsound/files/output.mp3"
     path_mp4 <- path_ext_set(path, "mp4")
     
+    v <- ck_path_case(path_mp4)
     if (!file.exists(path_mp4) | redo)
       path_mp4 <- audio_to_spectrogram_video(path, path_mp4)
     
