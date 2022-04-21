@@ -10,3 +10,4 @@ html_document:
   css: _modal_styles.css
   includes:
     in_header: _header.html  # Google Analytics
+    after_body: _footer.html # open external sites in new browser tab
