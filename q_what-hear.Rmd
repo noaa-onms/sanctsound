@@ -70,8 +70,6 @@ figure(
 
 We can also compare how detections varied over seasons by plotting that information on a graph that looks like a 12 hour clock.
 
-::: { .overflow-auto}
-
 ```{r, results='asis'}
 figure(
   img     = "./images/questions/detections_monthly_GR01_dolphin_tutorial.png",
