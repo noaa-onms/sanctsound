@@ -63,8 +63,8 @@ There are many ways to showcase the contributions of known sounds detected at re
 
 ```{r, results='asis'}
 figure(
-  img     = "./images/questions/what-hear-detections.png",
-  caption = "This plot shows the occurrence of dolphin sounds detected at a listening station in Gray’s Reef National Marine Sanctuary..",
+  img     = "./images/questions/detections_timeseries_GR01_dolphin_tutorial.png",
+  caption = "This plot shows the occurrence of dolphin sounds detected at a listening station in Gray’s Reef National Marine Sanctuary.",
   alt     = "")
 ```
 
