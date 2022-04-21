@@ -92,7 +92,7 @@ These four ways of looking at sound levels recorded over long periods of time pr
 
 ```{r, results='asis'}
 figure(
-  img = "./images/Measure_4panel_SB01.png",
+  img = "./images/questions/Measure_4panel_SB01.png",
   caption = "For example, looking across these plots for a listening site in Stellwagen Bank National Marine Sanctuary, we understand that this soundscape has predictably louder conditions at very low frequencies. A closer examination of vessel sounds shows us that vessels are almost always present at this location. Identification of other specific sources will help us understand the seasonal changes we see at slightly higher frequencies. During the late fall to early spring months, several populations of fish and baleen whales produce calls at this sanctuary location.",
   alt = "")
 ```
