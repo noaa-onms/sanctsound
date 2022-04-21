@@ -5,7 +5,7 @@ output: html_document
 #   html_document:
 #     keep_md: yes
 params:
-  sanctuary_code: "MBNMS"
+  sanctuary_code: "CINMS"
   #modal_title: "Dolphins"
   #modal_title: "Humpback whales"
   # modal_title: "Bocaccio"
@@ -28,8 +28,8 @@ knitr::knit_meta_add(list(rmarkdown::html_dependency_font_awesome()))
 ```{r sight_sound, results = "asis"}
 # params <- list(
 #   sanctuary_code = "CINMS",
-#   modal_title = "Snapshots")
-  # modal_title = "Blue whales")
+#   # modal_title = "Snapshots")
+#   modal_title = "Blue whales")
 #   modal_title = "Fin whales")
 #   modal_title = "Bocaccio")
 #   modal_title = "Seal bombs")

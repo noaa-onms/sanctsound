@@ -186,25 +186,24 @@ pre code {
 <div class="figure">
 <img src="../files/whale_blue_NOAAPhotoLib_JessMorten_NOAA_CINMS.jpg"
 alt="" />
-<p class="caption">The endangered blue whale (<em>Balaenoptera
-musculus</em>) is the largest animal ever to live in our planet’s
-history. Blue whales have impressively loud voices with calls that can
-travel hundreds of miles in deep water. Photo: Jess Morten/NOAA
-CINMS</p>
+<p class="caption">Endangered blue whales (<em>Balaenoptera
+musculus</em>), one pictured here just north of the Channel Islands
+sanctuary, have impressively loud calls that can travel hundreds of
+miles in deep water. Photo: Jess Morten/NOAA CINMS</p>
 </div>
 </div>
 <div class="col">
 <video controls>
-<source src='../files/SanctSound_MB01_01_bluewhale_20181123T203257Z.mp4' type='video/mp4'/>
+<source src='../files/SanctSound_CI05_03_bluewhale_20190926T230959Z.mp4' type='video/mp4'/>
 Your browser does not support the video tag.
 </video>
 <p>
-Blue whale calls are close to the lower limits of human hearing. This
-one was recorded in Monterey Canyon in 2018 inside Monterey Bay
-sanctuary.
+Blue whale calls recorded in Channel Islands sanctuary are close to the
+lower limits of human hearing. This one was recorded east of Anacapa
+Island in 2019.
 </p>
 <p><i class='fas fa-assistive-listening-systems fa-3x'></i>
-<audio controls><source src='../files/SanctSound_MB01_01_bluewhale_20181123T203257Z_6xSpeed.wav' type='audio/wav'>
+<audio controls><source src='../files/SanctSound_CI05_03_bluewhale_20190926T230959Z_41dBgain_4xSpeed.wav' type='audio/wav'>
 Your browser does not support the audio element.</audio> Listen to the
 same sound clip optimized for human hearing. Many ocean animals can hear
 and produce sounds that humans cannot, learn more
@@ -216,26 +215,28 @@ and produce sounds that humans cannot, learn more
 <div id="time-series" class="section level3">
 <h3>Time series</h3>
 <div class="figure">
-<img src="../files/timeseries_MB01_blue-whale.png" alt="" />
-<p class="caption">In Monterey Bay sanctuary blue whale calls were
-seasonally detected in Monterey Canyon starting late summer and through
-December, longer into winter months of some years.</p>
+<img src="../files/CI04_timeseries_blue-whale.png" alt="" />
+<p class="caption">Blue whale calls were regularly detected on the
+backside (south) of Santa Rosa Island in Channel Islands sanctuary in
+fall and summer months 2019 through 2021, while not much in other
+months.</p>
 </div>
 </div>
 <div id="monthly-patterns" class="section level3">
 <h3>Monthly Patterns</h3>
-<p><img src='../files/monthly-pattern_MB01_blue-whale.png' width='80%' class='mx-auto d-block'></p>
-<p>Blue whale calls were detected in Monterey Canyon seasonally (late
-summer-winter) in Monterey Bay sanctuary, with the most variation around
-detections (wider grey band) during months with the most detections
-(October-December).</p>
+<p><img src='../files/CI04_monthly-patterns_blue-whale.png' width='80%' class='mx-auto d-block'></p>
+<p>On average (black line) blue whale calls were detected on the
+backside (south) of Santa Rosa Island in Channel Islands sanctuary in
+the summer and fall months during this project and much less, if at all,
+in winter and spring. Variation around monthly acoustic presence (grey
+band) was consistent across the time-series.</p>
 </div>
 <div id="hourly-patterns" class="section level3">
 <h3>Hourly Patterns</h3>
-<p><img src='../files/hourly-patterns_MB01_blue-whale.png' width='80%' class='mx-auto d-block'></p>
-<p>On average (black line) blue whale calls were evenly detected in
-Monterey Canyon in Monterey Bay sanctuary at all hours of the day and
-night.</p>
+<p><img src='../files/CI04_hourly-patterns_blue-whale.png' width='80%' class='mx-auto d-block'></p>
+<p>On average (black line) blue whale calls were evenly detected on the
+backside (south) of Santa Rosa Island in Channel Islands sanctuary at
+all hours of the day and night.</p>
 </div>
 </div>
 <div id="section-1" class="section level2">
@@ -254,6 +255,23 @@ sanctuaries. Listen to
 clips</a></strong> from other locations.</p>
 </div>
 
+
+<script>
+// force all external links to open in a new tab 
+// source: https://css-tricks.com/snippets/jquery/open-external-links-in-new-window
+$('a').each(function() {
+  console.log("a: " + this.href);
+  var a = new RegExp('/' + window.location.host + '/');
+  if(!a.test(this.href)) {
+    console.log("  yes: a.test");
+    $(this).click(function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      window.open(this.href, '_blank');
+    });
+  }
+});
+</script>
 
 
 

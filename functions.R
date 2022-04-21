@@ -828,6 +828,8 @@ gdrive2path <- function(gdrive_shareable_link, get_relative_path = T, relative_p
       arrange(nchar) %>% 
       slice(1) %>% 
       pull(base)
+    if (length(base_actual) == 0)
+      return(F)
     if (base_actual != basename(path)){
       message(glue("
         renaming:
