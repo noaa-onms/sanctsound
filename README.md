@@ -1,4 +1,7 @@
+The following button is for rendering the website:
+
 [![Github Action - render_website](https://img.shields.io/badge/SanctSound-render--website-green)](https://github.com/noaa-onms/sanctsound/actions/workflows/render-website.yml)
+
 - Then "Run workflow", assuming you are logged into Github with an account granted Collaborator status on this repository.
 - You might do this after making changes to [sanctsound website content - Google Sheets](https://docs.google.com/spreadsheets/d/1zmbqDv9KjWLYD9fasDHtPXpRh5ScJibsCHn56DYhTd0/edit#gid=206020376). 
 - Note that this Github Action gets run after every new commit.
