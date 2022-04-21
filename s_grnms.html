@@ -11,7 +11,7 @@
 
 
 
-<title>Sanctuary Soundscape Monitoring Project (SanctSound)</title>
+<title>Gray’s Reef National Marine Sanctuary</title>
 
 <script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -24,8 +24,18 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.15.3/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.15.3/css/v4-shims.min.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSQZTQ1DE0"></script>
 <script>
@@ -863,93 +873,194 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Sanctuary Soundscape Monitoring Project
-(SanctSound)</h1>
-<h3 class="subtitle">Exploring underwater sounds within U.S. national
-marine sanctuaries</h3>
+<h1 class="title toc-ignore">Gray’s Reef National Marine Sanctuary</h1>
 
 </div>
 
 
-<div class="container">
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<div id="section" class="section level2 tabset">
+<h2 class="tabset"></h2>
+<div id="what-did-we-hear" class="section level3">
+<h3>What did we hear?</h3>
+<!-- `<i class="fa fa-info-circle" role="presentation" aria-label="info-circle icon"></i>`{=html} -->
+<p>Click the icons in the scene below to listen and learn about the
+sounds we recorded in this sanctuary.</p>
+<script src = "libs/d3.v5.min.js"></script>
+<script src = "libs/infographiq.js"></script>
+<link href  = "libs/bootstrap-toggle.min.css" rel = "stylesheet">
+<script src = "libs/bootstrap-toggle.min.js"></script>
+<div class="row">
+<div class="col-md-9">
+<div id="svg">
+
+</div>
+</div>
+<div class="col-md-3">
+<!--Text: <input id="toggle-text" type="checkbox" data-toggle="toggle" data-size="mini">
+  <div id="toggle-text-event"></div-->
+<ul id="svg_list">
+</ul>
+</div>
+</div>
+<script>
+link_svg(svg = "svg/grnms.svg", csv = "https://sanctsound.ioos.us/data/svg.csv", debug = true);
+</script>
+<script>
+$(function() {
+$('#toggle-text').change(function() {
+  display = this.checked ? "inline" : "none";
+  d3.select("#text").attr("display", display);
+})
+})
+</script>
+<p><br></p>
+</div>
+<div id="where-did-we-listen" class="section level3">
+<h3>Where did we listen?</h3>
+<p>Here is a map of listening device locations. Hover on a location to
+see its site id and click on it to see the rationale for its placement.
+<!-- `<i class="fa fa-map" role="presentation" aria-label="map icon"></i>`{=html} --></p>
+<div id="htmlwidget-0421a1b2238baf3e9c65" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0421a1b2238baf3e9c65">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-80.921201,-80.8281449999999,-80.828143,-80.9212,-80.921201],"lat":[31.4210639912502,31.4210639912502,31.3627319912123,31.3627319912123,31.4210639912502]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[31.396417,31.376133,31.36749],[-80.8904,-80.839133,-80.895],10,null,null,{"interactive":true,"className":"","stroke":true,"color":"yellow","weight":5,"opacity":0.7,"fill":true,"fillColor":"yellow","fillOpacity":0.5},null,null,["<p><strong>GR01<\/strong>: A historical monitoring site with complex reef habitat that supports high densities of fish and is a destination for recreational fishing.<\/p>\n","<p><strong>GR02<\/strong>: A historical monitoring site with linear reef habitat inside in a research only area that prohibits fishing and supports ongoing scientific investigation and monitoring.<\/p>\n","<p><strong>GR03<\/strong>: Patch reef habitat in a research only area that prohibits fishing and supports ongoing scientific investigation and monitoring.<\/p>\n"],null,["GR01","GR02","GR03"],null,null]}],"limits":{"lat":[31.3627319912123,31.4210639912502],"lng":[-80.921201,-80.828143]}},"evals":[],"jsHooks":[]}</script>
+<!--div class='container'-->
+<div class="row">
+<div class="col-md-4">
+<figure class="figure">
+<img src='files/Propogation_model_GR01_April_300Hz_StoN_041322_final.png' alt='' width='100%'
+  class='figure_img' data-enlargeable style='cursor: zoom-in'/>
+<figcaption class="figure-caption">
+The listening range of a hydrophone is influenced by its location and
+seasonal changes in ocean conditions, and it is specific to a source of
+sound (intensity, frequency, placement in the water column). The peach
+shading in this map estimates the listening range off the coast of
+Georgia in Gray’s Reef sanctuary during April for a 165 decibel and 300
+Hertz sound source placed 1 meter below the surface.
+</figcaption>
+</figure>
+</div>
+<div class="col-md-8">
+<figure class="figure">
+<img src='files/duration_GRNMS-by-site.png' alt='' width='100%' 
+  class='figure_img' data-enlargeable style='cursor: zoom-in'/>
+<figcaption class="figure-caption">
+There were three SanctSound listening sites in Gray’s Reef sanctuary.
+Green bars indicate when good quality data were recorded. Due to
+logistical and technical difficulties, there were gaps in recordings
+(white) and periods with compromised data quality (yellow).
+</figcaption>
+</figure>
+</div>
+</div>
+<!--/div-->
+<p><i class='fas fa-question-circle'></i> <em>Learn more about how we
+<strong><a href="./q_where-listen.html">listened to and recorded
+soundscapes</a></strong>.</em> <br><i class='fas fa-chart-bar'></i>
+<em>See similar <strong><a
+href="https://sanctsound.portal.axds.co/#sanctsound/compare/prop-model">maps
+of the listening range</a></strong> for the other hydrophones in this
+and in other sanctuaries.</em> <br></p>
+</div>
+<div id="what-did-we-measure" class="section level3">
+<h3>What did we measure?</h3>
+
+<center>
+  <figure class='figure col-md-12'>
+    <p><strong>Spectrogram</strong>: <em>intensity of sound at different pitches over time</em></p>
+
+    <img src='files/GR01_spectrogram_04122022_annotated_final.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      <p>This example spectrogram from a listening station off the coast of Georgia in Gray&#39;s Reef sanctuary shows that sound levels were louder (warmer colors) at medium pitches and intermittently at lower pitches and quieter (cooler colors) at much higher pitches, reflecting continuous contributions of snapping shrimp and episodic contributions of fish and storm events to this biologically and weather driven soundscape. Information about the quality of the sound data is included along the bottom of the plot with green indicating time periods of good quality data, yellow indicating periods with compromised data, and data gaps shown with white. In the data portal, you can get more information about what frequencies of data are compromised during a time period by hovering over each yellow color bar.</p>
+
+    </figcaption>
+  </figure>
+</center>
+
+
+<figure class='figure col-md-12'>
+  <div class='row'>
+    <div class='col-md-6'>
+      <p><strong>Sound levels above median</strong>: <em>loudness and contribution of different pitches</em></p>
+
+      <img src='files/GR01_above-median_04122022_annotated_final.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+      <figcaption class='figure-caption'>
+        <p>This histogram of above-median sound levels for the northern-most station in Gray&#39;s Reef sanctuary shows inter-annual variability in the soundscape, with maximum overall sound levels dictated by increases at medium and lower pitches due to increases snapping shrimp activity outside of winter and prevalent fish chorusing in spring and fall. Decreases in biolgically driven sound levels in winter are interspersed with temporary increases associated with storm events. Data quality is shown in color as described above.
+This power spectrum plot for the northern-most listening site in Gray&#39;s Reef sanctuary shows that medium to high pitched sounds (2000-20,000 Hertz) had the highest median intensities (black line) and were consistently louder throughout the study period (narrow gray band). Sounds with frequencies below 2000 Hertz were generally quieter (black line), but also were more variable over time (wider gray band) due to the seasonal presence of pronounced fish choruses.</p>
+
+      </figcaption>
+    </div>
+    <div class='col-md-6'>
+      <p><strong>Power spectrum</strong>: <em>variability of loudness across pitch</em></p>
+
+      <img src='files/GR01_power-spec_04122022_annotated_final.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+      <figcaption class='figure-caption'>
+        <p>This histogram of above-median sound levels for the northern-most station in Gray&#39;s Reef sanctuary shows inter-annual variability in the soundscape, with maximum overall sound levels dictated by increases at medium and lower pitches due to increases snapping shrimp activity outside of winter and prevalent fish chorusing in spring and fall. Decreases in biolgically driven sound levels in winter are interspersed with temporary increases associated with storm events. Data quality is shown in color as described above.
+This power spectrum plot for the northern-most listening site in Gray&#39;s Reef sanctuary shows that medium to high pitched sounds (2000-20,000 Hertz) had the highest median intensities (black line) and were consistently louder throughout the study period (narrow gray band). Sounds with frequencies below 2000 Hertz were generally quieter (black line), but also were more variable over time (wider gray band) due to the seasonal presence of pronounced fish choruses.</p>
+
+      </figcaption>
+    </div>
+  </div>
+</figure>
+
+
+<center>
+  <figure class='figure col-md-12'>
+    <p><strong>Anomaly plot</strong>: <em>deviation of loudness from average</em></p>
+
+    <img src='files/GR01_anomaly_04122022_annotated_final.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      <p>This sound levels anomaly plot for the northern-most listening site in Gray&#39;s Reef sanctuary shows the same inter-annual variation seen in the histogram but more clearly identifies broad periods of increased sound levels at medium and high pitches from spring through early fall associated with snapping shrimp, extended periods of increased sound levels at lower pitches associated with fish sound production from spring through early fall, and brief periods of elevated sound levels at lower pitches during storm events in winter. Data quality is shown in color as described above.</p>
+
+    </figcaption>
+  </figure>
+</center>
+
+<p><i class="fa fa-question-circle" role="presentation" aria-label="question-circle icon"></i>
+<em>Learn more about <strong><a href="./q_what-measure.html">what we
+measured and how to read and understand these summary
+graphs</a></strong>.</em></p>
+<p><i class="fa fa-chart-bar" role="presentation" aria-label="chart-bar icon"></i>
+<em>See similar <strong><a
+href="https://sanctsound.portal.axds.co/#">summary graphs</a></strong>
+for the other stations in this sanctuary and here for data available in
+other sanctuaries.</em></p>
+<!-- ![](./images/cinms_ex-what-measure.png) -->
+</div>
+<div id="what-did-we-learn" class="section level3">
+<h3>What did we learn?</h3>
 <div class="card-columns">
-  
-  <div class="card card-img-wrap">
-    <img class="card-img" src="files/Why_Listen_small.jpg">
-    <a href="q_why-listen.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto black-white">
-        Why and how did we listen?
-      </h4>
-    </div>
-  </div>
-  
-  <div class="card card-img-wrap">
-    <img class="card-img" src="files/Where_Listen_small.png">
-    <a href="q_where-listen.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto black">
-        Where and when did we listen?
-      </h4>
-    </div>
-  </div>
-  
-  <div class="card card-img-wrap">
-    <img class="card-img" src="files/What_Measure_small.png"> 
-    <a href="q_what-measure.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto">
-        What did we measure?
-      </h4>
-    </div>
-  </div>
-  
-  <div class="card card-img-wrap">
-    <a href="q_what-hear.html" class="stretched-link"></a>
-    <img class="card-img" src="files/What_Hear_small.png">
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto">
-        What did we hear?
-      </h4>
-    </div>
-  </div>
-  
-  <div class="card card-img-wrap">
-    <img class="card-img" src="files/What_Learn_small.jpg">
-    <a href="q_what-learn.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto black-white">
-        What did we learn?
-      </h4>
-    </div>
-  </div>
-  
-   <div class="card card-img-wrap">
-    <img class="card-img" src="files/Who_small_transparency.png">
-    <a href="q_who.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto black">
-        Who are we?
-      </h4>
-    </div>
-  </div>
-  
+<div class="card card-img-wrap">
+<img class='card-img' src='files/ECR_GRNMS_StoryMap_Vessels.jpg'/>
+<a href='https://graysreef.noaa.gov/news/2021/observations-of-boat-visitation-at-grays-reef-nms.html' target='_blank' class='stretched-link'></a>
+<div class="card-img-overlay d-flex">
+<h4 class="card-title align-self-center mx-auto black-white">
+Boat Visitation
+</h4>
 </div>
 </div>
-
-<p>NOAA and the U.S. Navy are working to better understand underwater
-sound within the National Marine Sanctuary System. For the next few
-years, these agencies will work with numerous scientific partners to
-study sound within seven national marine sanctuaries and one marine
-national monument, which includes waters off Hawai’i and the east and
-west coasts. Standardized measurements will assess sounds produced by
-marine animals, physical processes (e.g., wind and waves), and human
-activities. Collectively, this information will help NOAA and the Navy
-measure sound levels and baseline acoustic conditions in sanctuaries.
-This work is a continuation of ongoing <a
-href="https://www.navy.mil">Navy</a> and NOAA monitoring and research,
-including efforts by <a href="https://sanctuaries.noaa.gov">NOAA’s
-Office of National Marine Sanctuaries</a>.</p>
+<div class="card card-img-wrap">
+<img class='card-img' src='files/ECR_GRNMS_FishingDiving.jpg'/>
+<a href='https://graysreef.noaa.gov/news/2021/estimating-fishing-diving-use-by-listening-to-boats.html' target='_blank' class='stretched-link'></a>
+<div class="card-img-overlay d-flex">
+<h4 class="card-title align-self-center mx-auto black-white">
+Estimating Fishing and Diving Use
+</h4>
+</div>
+</div>
+</div>
+<p><i class="fa fa-question-circle" role="presentation" aria-label="question-circle icon"></i>
+<em>Learn about our <strong><a href="./q_what-learn.html">collection of
+stories</a></strong>.</em></p>
+<p><i class="fa fa-newspaper-o" role="presentation" aria-label="newspaper-o icon"></i>
+<em>Read more <strong><a href="./stories.html">SanctSound
+stories</a></strong>.</em></p>
+</div>
+</div>
 
 <div class="clearfix"></div>
 <div id="footer">

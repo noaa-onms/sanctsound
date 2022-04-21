@@ -24,7 +24,7 @@ if (!require("librarian")){
 }
 shelf(
   chromote, fs, glue, here)
-source(here::here("draft/functions.R"))
+source(here::here("./functions.R"))
 # from functions.R:
 # modals  <- get_sheet("modals")
 # figures <- get_sheet("figures")

@@ -11,7 +11,7 @@
 
 
 
-<title>Sanctuary Soundscape Monitoring Project (SanctSound)</title>
+<title>What did we measure?</title>
 
 <script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -863,93 +863,219 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Sanctuary Soundscape Monitoring Project
-(SanctSound)</h1>
-<h3 class="subtitle">Exploring underwater sounds within U.S. national
-marine sanctuaries</h3>
+<h1 class="title toc-ignore">What did we measure?</h1>
 
 </div>
 
-
-<div class="container">
-<div class="card-columns">
-  
-  <div class="card card-img-wrap">
-    <img class="card-img" src="files/Why_Listen_small.jpg">
-    <a href="q_why-listen.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto black-white">
-        Why and how did we listen?
-      </h4>
-    </div>
-  </div>
-  
-  <div class="card card-img-wrap">
-    <img class="card-img" src="files/Where_Listen_small.png">
-    <a href="q_where-listen.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto black">
-        Where and when did we listen?
-      </h4>
-    </div>
-  </div>
-  
-  <div class="card card-img-wrap">
-    <img class="card-img" src="files/What_Measure_small.png"> 
-    <a href="q_what-measure.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto">
-        What did we measure?
-      </h4>
-    </div>
-  </div>
-  
-  <div class="card card-img-wrap">
-    <a href="q_what-hear.html" class="stretched-link"></a>
-    <img class="card-img" src="files/What_Hear_small.png">
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto">
-        What did we hear?
-      </h4>
-    </div>
-  </div>
-  
-  <div class="card card-img-wrap">
-    <img class="card-img" src="files/What_Learn_small.jpg">
-    <a href="q_what-learn.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto black-white">
-        What did we learn?
-      </h4>
-    </div>
-  </div>
-  
-   <div class="card card-img-wrap">
-    <img class="card-img" src="files/Who_small_transparency.png">
-    <a href="q_who.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto black">
-        Who are we?
-      </h4>
-    </div>
-  </div>
-  
-</div>
+<div id="TOC">
+<ul>
+<li><a
+href="#spectrograms-intensity-of-sound-at-different-pitches-over-time">Spectrograms:
+Intensity of sound at different pitches over time</a></li>
+<li><a
+href="#sound-levels-above-median-loudness-and-contribution-of-different-pitches">Sound
+levels above median: Loudness and contribution of different
+pitches</a></li>
+<li><a
+href="#power-spectrum-plots-variability-of-loudness-across-pitches">Power
+spectrum plots: Variability of loudness across pitches</a></li>
+<li><a href="#anomaly-plot-deviation-of-loudness-from-average">Anomaly
+plot: Deviation of loudness from average</a></li>
+<li><a href="#bringing-it-all-together">Bringing it all
+together</a></li>
+</ul>
 </div>
 
-<p>NOAA and the U.S. Navy are working to better understand underwater
-sound within the National Marine Sanctuary System. For the next few
-years, these agencies will work with numerous scientific partners to
-study sound within seven national marine sanctuaries and one marine
-national monument, which includes waters off Hawai’i and the east and
-west coasts. Standardized measurements will assess sounds produced by
-marine animals, physical processes (e.g., wind and waves), and human
-activities. Collectively, this information will help NOAA and the Navy
-measure sound levels and baseline acoustic conditions in sanctuaries.
-This work is a continuation of ongoing <a
-href="https://www.navy.mil">Navy</a> and NOAA monitoring and research,
-including efforts by <a href="https://sanctuaries.noaa.gov">NOAA’s
-Office of National Marine Sanctuaries</a>.</p>
+<p><em>Ever tried to negotiate where to sit at a concert with a friend
+who thinks it’s much louder up front than you do? Or wondered how cars
+are rated loud or quiet? What was it about what you heard, or didn’t
+hear, that you noticed? Standard measurement methods are key to being
+able to describe and make comparisons accurately across different
+listening experiences.</em></p>
+<!--img src="./images/image4.png" alt="amplitude and frequency" style="float:left;width:50%;padding:10px"-->
+<p>This project recorded underwater sound continuously throughout the
+day and night at 30 locations in the U.S. National Marine Sanctuary
+System over three years. This effort resulted in a very large amount of
+information. In fact, this project generated 300 terabytes of data. For
+context, approximately 500 hours’ worth of movies can fit in one
+terabyte. Information of this size is hard to share and hard to make
+sense of. To support sharing, all the project’s raw data are archived
+and accessible from the NOAA National Centers for Environmental
+Information (NCEI) <strong><a
+href="https://www.ncei.noaa.gov/maps/passive_acoustic_data/">Passive
+Acoustic Archive</a></strong>. To support understanding, the project
+extracted standard measurements from these recordings, which are also
+archived at NCEI and made accessible via <strong><a
+href="https://coastwatch.pfeg.noaa.gov/erddap/index.html">ERDDAP</a></strong>.</p>
+
+<center>
+  <figure class='figure col-md-6'>
+    
+    <img src='images/questions/NCEI_mapviewer.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      <p>The NOAA National Centers for Environmental Information Passive Acoustic Data Archive manages and makes accessible data from SanctSound (orange circles) and other acoustic monitoring projects from around the country.</p>
+
+    </figcaption>
+  </figure>
+</center>
+
+<p>Sound can be described in a <strong><a
+href="https://dosits.org/science/sound/characterize-sounds/">variety of
+different ways</a></strong>. Two key attributes of sound are intensity
+and frequency. Other attributes describe how the sound occurred over
+time: was it a short burst of sound or a long-lasting hum? Our
+measurements of “levels” of sounds summarize all these attributes:
+intensity, frequency, and duration.</p>
+<div class="overflow-auto">
+
+<center>
+  <figure class='figure col-md-6'>
+    
+    <img src='images/questions/Amplitude-Frequency.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      <p>Intensity or “loudness” is measured in decibels and describes how much pressure the sound contains (the amplitude); a low decibel or quiet sound contains less amplitude than a high amplitude or loud sound. Frequency is measured in hertz and provides information about tones that are contained in a sound.</p>
+
+    </figcaption>
+  </figure>
+</center>
+
+<p>This web portal showcases the types of information that sound can
+provide to help us understand and protect our oceans and its
+inhabitants. Here you can explore acoustic features of each recording
+location with the U.S. National Marine Sanctuary System, and make
+comparisons among locations to better understand how similar or
+different they are from each other. To do this, we not only had to
+<strong><a href="./q_why-listen.html">record sound information in a
+comparable way</a></strong>, we needed to make the same measurements
+from these recordings.</p>
+</div>
+<div id="spectrograms-intensity-of-sound-at-different-pitches-over-time"
+class="section level2">
+<h2>Spectrograms: Intensity of sound at different pitches over time</h2>
+<p>Sounds are visualized using a spectrogram. A spectrogram uses color
+to show the intensity (or loudness) of sound at various frequencies (or
+pitches) over time. Vertically you can see whether sound is more or less
+intense at different frequencies. Lower on the vertical axis are lower
+frequencies, higher on the vertical axis are higher frequencies. The
+composition of frequencies in the sound change as time advances from
+left to right on the horizontal axis.</p>
+
+<center>
+  <figure class='figure col-md-6'>
+    
+    <img src='images/questions/SB01_spectrogram_04122022_annotated_final.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      <p>In this example spectrogram from a listening station in Stellwagen Bank National Marine Sanctuary, low and medium pitch sounds dominated the soundscape throughout the three year recording period (warmer colors at the bottom). Information about the quality of the sound data is included along the bottom of the plot with green indicating time periods of good quality data, yellow indicating periods with compromised data and data gaps shown with white. In the data portal, you can get more information about what frequencies of data are compromised during a time period by hovering over each yellow color bar.</p>
+
+    </figcaption>
+  </figure>
+</center>
+
+</div>
+<div
+id="sound-levels-above-median-loudness-and-contribution-of-different-pitches"
+class="section level2">
+<h2>Sound levels above median: Loudness and contribution of different
+pitches</h2>
+<p>For long-term (multiple year) measurement projects, it can be useful
+to identify what the average conditions are as well when conditions
+diverged from average. When conditions change, we can further examine
+whether that happened for all frequencies (pitches) of sound, or whether
+a specific range of frequencies drove those changes. We use a stacked
+histogram to summarize these departures from average over time all in
+one image.</p>
+
+<center>
+  <figure class='figure col-md-6'>
+    
+    <img src='images/questions/SB01_above-median_04122022_annotated_final.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      <p>For example, in this histogram showing above-median sound levels for the same listening station in Stellwagen Bank National Marine Sanctuary there is a clear seasonal pattern, with some sound levels higher in the winter and early spring than in the summer months.</p>
+
+    </figcaption>
+  </figure>
+</center>
+
+</div>
+<div id="power-spectrum-plots-variability-of-loudness-across-pitches"
+class="section level2">
+<h2>Power spectrum plots: Variability of loudness across pitches</h2>
+<p>When summarizing the soundscape of a location, power spectrum plots
+help us identify which frequencies (pitches) had the most sound
+intensity or loudness over the entire period of recording. The line in
+power spectrum plots shows the median loudness of sound at a specific
+frequency while the gray band shows the variability in loudness at that
+same frequency.</p>
+
+<center>
+  <figure class='figure col-md-6'>
+    
+    <img src='images/questions/SB01_power-spec_04122022_annotated_final.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      <p>In this example plot for the same listening site at Stellwagen Bank National Marine Sanctuary, low pitched sounds (63-2,500 Hz) had the highest median intensities (black line) compared to other pitches. Across most pitches, sound levels were highly variable (wide gray band) due to weather events, vessel presence, and marine mammal vocal activity.</p>
+
+    </figcaption>
+  </figure>
+</center>
+
+</div>
+<div id="anomaly-plot-deviation-of-loudness-from-average"
+class="section level2">
+<h2>Anomaly plot: Deviation of loudness from average</h2>
+<p>To further visualize when loudness diverged from average during our
+recording period, we provide anomaly plots. For different frequencies
+(pitches) ranging from low to high, red shows when sounds of that
+frequency were louder than average while blue shows when they were
+quieter than average. White indicate times and frequencies that were
+close to averages.</p>
+
+<center>
+  <figure class='figure col-md-6'>
+    
+    <img src='images/questions/SB01_anomaly_04122022_annotated_final.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      <p>For the same listening site in Stellwagen Bank National Marine Sanctuary, we can see again the seasonal pattern noted in the stacked histogram. Here it is even clearer that frequencies of sound above 250 Hertz were generally higher in the winter than summer months.</p>
+
+    </figcaption>
+  </figure>
+</center>
+
+</div>
+<div id="bringing-it-all-together" class="section level2">
+<h2>Bringing it all together</h2>
+<p>These four ways of looking at sound levels recorded over long periods
+of time provide us with an initial idea of the patterns in a place’s
+soundscape. Taken together, they can help us dive deeper into the
+recordings to better understand the drivers for these conditions. These
+four plot types - spectrogram, stacked histogram, power spectrum and
+anomaly - are displayed under the ‘What did we measure’ tab for each
+sanctuary on the website. For those interested in exploring the
+variability in the levels of sound we recorded at a specific listening
+station or comparing levels among different listening stations in more
+detail, head to the SanctSound data portal using the ‘Data Portal’ pull
+down in the Navigation Bar.</p>
+<div class="overflow-auto">
+
+<center>
+  <figure class='figure col-md-6'>
+    
+    <img src='images/Measure_4panel_SB01.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      <p>For example, looking across these plots for a listening site in Stellwagen Bank National Marine Sanctuary, we understand that this soundscape has predictably louder conditions at very low frequencies. A closer examination of vessel sounds shows us that vessels are almost always present at this location. Identification of other specific sources will help us understand the seasonal changes we see at slightly higher frequencies. During the late fall to early spring months, several populations of fish and baleen whales produce calls at this sanctuary location.</p>
+
+    </figcaption>
+  </figure>
+</center>
+
+</div>
+</div>
 
 <div class="clearfix"></div>
 <div id="footer">

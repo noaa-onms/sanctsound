@@ -1,0 +1,31 @@
+---
+title: "What did we learn?"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
+source(here::here("functions.R"))
+```
+
+<!-- source text and layout: [Tutorial_V2_Oct2021 - Google Slides](https://docs.google.com/presentation/d/1ESA1om80tbmSphnJrmyZAfn5HtCIxm-G91Vf1J3c8Vc/edit#slide=id.gefd8a9cf27_0_34) -->
+
+_Ever tried to identify something by touching it while your eyes were blindfolded? Or tried to enjoy food with a congested nose? Like most animals, we gather information from a variety of sources to make sense of the world around us. Rarely do we experience input from any one source in isolation. Similarly, sound is one of many ways that marine animals experience their environments, and one of many ways that we can study those environments. We gain the most understanding when we add what we hear to other ways of understanding an ecosystem._
+
+SanctSound combined sound data with the other types of observations we make throughout the National Marine Sanctuary System in order to better understand these special places.
+
+```{r, results='asis'}
+figure(
+  img     = "./images/questions/Instrumentation.png",
+  caption = "Measurements from underwater sound recorders, both stationary and on autonomous underwater vehicles (in yellow), were examined with measurements from satellite and surface buoy ocean observation platforms, scuba surveys, animal telemetry (tagging) networks, vessel tracking systems and oceanographic research cruises (in white). ",
+  alt     = "")
+```
+
+Under the Stories tab, you will find a **[collection of web stories and story maps](https://sanctuaries.noaa.gov/science/monitoring/sound/)** that showcase what we have learned through combining this new acoustic information with other available information on marine animals, ocean conditions, and human activities in sanctuaries. Through photos, videos, maps and graphs, these stories bring to life some of the fascinating patterns we have discovered about how both animals and humans use our national marine sanctuaries and how those patterns help the people who are charged with managing them.
+
+```{r, results='asis'}
+figure(
+  img     = "./images/questions/Stories_page_final.png",
+  caption = "SanctSound web stories span a range of geographic scales, from sanctuary-specific to national. Sanctuary-specific stories focus on what we learned about sound in that place, and how that information is helping answer questions that are important there. National level stories are focused on comparing patterns of sound among multiple national marine sanctuaries to help us examine similarities and differences across the system. ",
+  alt     = "")
+```
+

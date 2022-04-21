@@ -11,7 +11,7 @@
 
 
 
-<title>Sanctuary Soundscape Monitoring Project (SanctSound)</title>
+<title>Stellwagen Bank National Marine Sanctuary</title>
 
 <script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -24,8 +24,18 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.15.3/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.15.3/css/v4-shims.min.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSQZTQ1DE0"></script>
 <script>
@@ -863,93 +873,195 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Sanctuary Soundscape Monitoring Project
-(SanctSound)</h1>
-<h3 class="subtitle">Exploring underwater sounds within U.S. national
-marine sanctuaries</h3>
+<h1 class="title toc-ignore">Stellwagen Bank National Marine
+Sanctuary</h1>
 
 </div>
 
 
-<div class="container">
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<div id="section" class="section level2 tabset">
+<h2 class="tabset"></h2>
+<div id="what-did-we-hear" class="section level3">
+<h3>What did we hear?</h3>
+<!-- `<i class="fa fa-info-circle" role="presentation" aria-label="info-circle icon"></i>`{=html} -->
+<p>Click the icons in the scene below to listen and learn about the
+sounds we recorded in this sanctuary.</p>
+<script src = "libs/d3.v5.min.js"></script>
+<script src = "libs/infographiq.js"></script>
+<link href  = "libs/bootstrap-toggle.min.css" rel = "stylesheet">
+<script src = "libs/bootstrap-toggle.min.js"></script>
+<div class="row">
+<div class="col-md-9">
+<div id="svg">
+
+</div>
+</div>
+<div class="col-md-3">
+<!--Text: <input id="toggle-text" type="checkbox" data-toggle="toggle" data-size="mini">
+  <div id="toggle-text-event"></div-->
+<ul id="svg_list">
+</ul>
+</div>
+</div>
+<script>
+link_svg(svg = "svg/sbnms.svg", csv = "https://sanctsound.ioos.us/data/svg.csv", debug = true);
+</script>
+<script>
+$(function() {
+$('#toggle-text').change(function() {
+  display = this.checked ? "inline" : "none";
+  d3.select("#text").attr("display", display);
+})
+})
+</script>
+<p><br></p>
+</div>
+<div id="where-did-we-listen" class="section level3">
+<h3>Where did we listen?</h3>
+<p>Here is a map of listening device locations. Hover on a location to
+see its site id and click on it to see the rationale for its placement.
+<!-- `<i class="fa fa-map" role="presentation" aria-label="map icon"></i>`{=html} --></p>
+<div id="htmlwidget-ab69d5fb76b4fb40f5d5" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ab69d5fb76b4fb40f5d5">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addPolygons","args":[[[[{"lng":[-70.2166402161427,-70.0350637207954,-70.0543430182693,-70.0670701164006,-70.0865842759506,-70.1060679302054,-70.1238849557436,-70.1400463265968,-70.1549660589103,-70.1729163405436,-70.1960471919708,-70.2170697366175,-70.2388922123962,-70.2558479494517,-70.2780037462046,-70.4704323410656,-70.5973663102739,-70.5869748228149,-70.5838775955699,-70.5725358024329,-70.5555771094719,-70.5417879616627,-70.5284293738702,-70.5158680975916,-70.5058763813936,-70.5013180918313,-70.5013015638658,-70.5026211638085,-70.2166402161427],"lat":[42.7667152239149,42.0932996466952,42.1051704520315,42.108303108231,42.1175187749471,42.1203798361712,42.1267547486849,42.1285269353494,42.1334185375076,42.1348101672552,42.1320990695115,42.1333907079638,42.1296990621911,42.1243491292171,42.1152326246524,42.1292384737109,42.5510749564745,42.5584964289772,42.5634686080956,42.5752213140129,42.580754672673,42.5878963377024,42.5950407719394,42.6065073861096,42.6210711744163,42.6331182904779,42.642445969862,42.6512291971351,42.7667152239149]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[42.436838,42.470793,42.25541],[-70.546958,-70.24294,-70.178607],10,null,null,{"interactive":true,"className":"","stroke":true,"color":"yellow","weight":5,"opacity":0.7,"fill":true,"fillColor":"yellow","fillOpacity":0.5},null,null,["<p><strong>SB01<\/strong>: A historical monitoring site that supports seasonally high abundances of Atlantic cod and is located near a region of elevated commercial vessel activity.<\/p>\n","<p><strong>SB02<\/strong>: A historical monitoring site situated in a deeper habitat that has been documented as an important location for haddock.<\/p>\n","<p><strong>SB03<\/strong>: A shallow sandy habitat situated on the bank that supports the foraging and social activities of marine mammals.<\/p>\n"],null,["SB01","SB02","SB03"],null,null]}],"limits":{"lat":[42.0932996466952,42.7667152239149],"lng":[-70.5973663102739,-70.0350637207954]}},"evals":[],"jsHooks":[]}</script>
+<!--div class='container'-->
+<div class="row">
+<div class="col-md-4">
+<figure class="figure">
+<img src='files/Propogation_model_SB01_April_300Hz_StoN_041322_final.png' alt='' width='100%'
+  class='figure_img' data-enlargeable style='cursor: zoom-in'/>
+<figcaption class="figure-caption">
+The listening range of a hydrophone is influenced by its location and
+seasonal changes in ocean conditions, and it is specific to a source of
+sound (intensity, frequency, placement in the water column). The peach
+shading in this map estimates the listening range east of Boston, MA in
+Stellwagen Bank sanctuary during April for a 165 decibel and 300 Hertz
+sound source placed 1 meter below the surface.
+</figcaption>
+</figure>
+</div>
+<div class="col-md-8">
+<figure class="figure">
+<img src='files/duration_SBNMS-by-site.png' alt='' width='100%' 
+  class='figure_img' data-enlargeable style='cursor: zoom-in'/>
+<figcaption class="figure-caption">
+There were three SanctSound listening sites in Stellwagen Bank
+sanctuary. Green bars indicate when good quality data were recorded. Due
+to logistical and technical difficulties, there were a few gaps in
+recordings (white) and periods with compromised data quality (yellow).
+</figcaption>
+</figure>
+</div>
+</div>
+<!--/div-->
+<p><i class='fas fa-question-circle'></i> <em>Learn more about how we
+<strong><a href="./q_where-listen.html">listened to and recorded
+soundscapes</a></strong>.</em> <br><i class='fas fa-chart-bar'></i>
+<em>See similar <strong><a
+href="https://sanctsound.portal.axds.co/#sanctsound/compare/prop-model">maps
+of the listening range</a></strong> for the other hydrophones in this
+and in other sanctuaries.</em> <br></p>
+</div>
+<div id="what-did-we-measure" class="section level3">
+<h3>What did we measure?</h3>
+
+<center>
+  <figure class='figure col-md-12'>
+    <p><strong>Spectrogram</strong>: <em>intensity of sound at different pitches over time</em></p>
+
+    <img src='files/SB01_spectrogram_04122022_annotated_final.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      <p>This example spectrogram from a listening station east of Boston, MA in Stellwagen Bank sanctuary shows that sound levels were louder (warmer colors) at low and medium pitches and quieter (cooler colors) at much higher pitches, reflecting near-continuous contributions of vessel traffic and weather associated sound to this human activity and weather driven soundscape. Some episodic increases at low frequencies correspond to marine mammal vocal activity but are largely obscured by these other sound sources. Information about the quality of the sound data is included along the bottom of the plot with green indicating time periods of good quality data and data gaps shown with white.</p>
+
+    </figcaption>
+  </figure>
+</center>
+
+
+<figure class='figure col-md-12'>
+  <div class='row'>
+    <div class='col-md-6'>
+      <p><strong>Sound levels above median</strong>: <em>loudness and contribution of different pitches</em></p>
+
+      <img src='files/SB01_above-median_04122022_annotated_final.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+      <figcaption class='figure-caption'>
+        <p>This histogram of above-median sound levels for a listening station east of Boston, MA in Stellwagen Bank sanctuary shows inter-annual variability in the soundscape, with increases in overall sound levels across all pitches in fall through spring due to the increased prevalence of wind and storm related sound combined with near-continous presence of vessel sound throughout the year. Data quality is shown in color as described above.
+This power spectrum plot for a listening site east of Boston, MA in Stellwagen Bank sanctuary shows that low to medium pitched sounds (63-2,500 Hertz) had the highest median intensities (black line) compared to other pitches. Across all pitches, sound levels were highly variable (wide gray band) due to weather events, vessel presence, and marine mammal vocal activity.</p>
+
+      </figcaption>
+    </div>
+    <div class='col-md-6'>
+      <p><strong>Power spectrum</strong>: <em>variability of loudness across pitch</em></p>
+
+      <img src='files/SB01_power-spec_04122022_annotated_final.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+      <figcaption class='figure-caption'>
+        <p>This histogram of above-median sound levels for a listening station east of Boston, MA in Stellwagen Bank sanctuary shows inter-annual variability in the soundscape, with increases in overall sound levels across all pitches in fall through spring due to the increased prevalence of wind and storm related sound combined with near-continous presence of vessel sound throughout the year. Data quality is shown in color as described above.
+This power spectrum plot for a listening site east of Boston, MA in Stellwagen Bank sanctuary shows that low to medium pitched sounds (63-2,500 Hertz) had the highest median intensities (black line) compared to other pitches. Across all pitches, sound levels were highly variable (wide gray band) due to weather events, vessel presence, and marine mammal vocal activity.</p>
+
+      </figcaption>
+    </div>
+  </div>
+</figure>
+
+
+<center>
+  <figure class='figure col-md-12'>
+    <p><strong>Anomaly plot</strong>: <em>deviation of loudness from average</em></p>
+
+    <img src='files/SB01_anomaly_04122022_annotated_final.png' alt='' class='figure_img'
+data-enlargeable style='cursor: zoom-in'/>
+    <figcaption class='figure-caption'>
+      <p>This sound levels anomaly plot for a listening site east of Boston, MA in Stellwagen Bank sanctuary shows the same inter-annual variation seen in the histogram but more clearly identifies broad periods of increased sound levels across all pitches in fall through spring associated with wind and storm conditions and ongoing vessel activity. Some episodic increases at low frequencies correspond to marine mammal vocal activity but are largely obscured by these other sound sources. During summer months, storm related sound is mimized allowing for vessel and marine mammal activity to be more visible in lower pitches. Data quality is shown in color as described above.</p>
+
+    </figcaption>
+  </figure>
+</center>
+
+<p><i class="fa fa-question-circle" role="presentation" aria-label="question-circle icon"></i>
+<em>Learn more about <strong><a href="./q_what-measure.html">what we
+measured and how to read and understand these summary
+graphs</a></strong>.</em></p>
+<p><i class="fa fa-chart-bar" role="presentation" aria-label="chart-bar icon"></i>
+<em>See similar <strong><a
+href="https://sanctsound.portal.axds.co/#">summary graphs</a></strong>
+for the other stations in this sanctuary and here for data available in
+other sanctuaries.</em></p>
+<!-- ![](./images/cinms_ex-what-measure.png) -->
+</div>
+<div id="what-did-we-learn" class="section level3">
+<h3>What did we learn?</h3>
 <div class="card-columns">
-  
-  <div class="card card-img-wrap">
-    <img class="card-img" src="files/Why_Listen_small.jpg">
-    <a href="q_why-listen.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto black-white">
-        Why and how did we listen?
-      </h4>
-    </div>
-  </div>
-  
-  <div class="card card-img-wrap">
-    <img class="card-img" src="files/Where_Listen_small.png">
-    <a href="q_where-listen.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto black">
-        Where and when did we listen?
-      </h4>
-    </div>
-  </div>
-  
-  <div class="card card-img-wrap">
-    <img class="card-img" src="files/What_Measure_small.png"> 
-    <a href="q_what-measure.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto">
-        What did we measure?
-      </h4>
-    </div>
-  </div>
-  
-  <div class="card card-img-wrap">
-    <a href="q_what-hear.html" class="stretched-link"></a>
-    <img class="card-img" src="files/What_Hear_small.png">
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto">
-        What did we hear?
-      </h4>
-    </div>
-  </div>
-  
-  <div class="card card-img-wrap">
-    <img class="card-img" src="files/What_Learn_small.jpg">
-    <a href="q_what-learn.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto black-white">
-        What did we learn?
-      </h4>
-    </div>
-  </div>
-  
-   <div class="card card-img-wrap">
-    <img class="card-img" src="files/Who_small_transparency.png">
-    <a href="q_who.html" class="stretched-link"></a>
-    <div class="card-img-overlay d-flex">
-      <h4 class="card-title align-self-center mx-auto black">
-        Who are we?
-      </h4>
-    </div>
-  </div>
-  
+<div class="card card-img-wrap">
+<img class='card-img' src='files/ECR_SBNMS_ListeningCOVID.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/mar21/listening-during-quarantine.html' target='_blank' class='stretched-link'></a>
+<div class="card-img-overlay d-flex">
+<h4 class="card-title align-self-center mx-auto black-white">
+Listening in the Time of COVID-19
+</h4>
 </div>
 </div>
-
-<p>NOAA and the U.S. Navy are working to better understand underwater
-sound within the National Marine Sanctuary System. For the next few
-years, these agencies will work with numerous scientific partners to
-study sound within seven national marine sanctuaries and one marine
-national monument, which includes waters off Hawai’i and the east and
-west coasts. Standardized measurements will assess sounds produced by
-marine animals, physical processes (e.g., wind and waves), and human
-activities. Collectively, this information will help NOAA and the Navy
-measure sound levels and baseline acoustic conditions in sanctuaries.
-This work is a continuation of ongoing <a
-href="https://www.navy.mil">Navy</a> and NOAA monitoring and research,
-including efforts by <a href="https://sanctuaries.noaa.gov">NOAA’s
-Office of National Marine Sanctuaries</a>.</p>
+<div class="card card-img-wrap">
+<img class='card-img' src='files/ECR_SBNMS_Year-Round_Whale.jpg'/>
+<a href='https://sanctuaries.noaa.gov/news/feb22/listening-closely.html' target='_blank' class='stretched-link'></a>
+<div class="card-img-overlay d-flex">
+<h4 class="card-title align-self-center mx-auto black-white">
+Year-Round Whale Presence
+</h4>
+</div>
+</div>
+</div>
+<p><i class="fa fa-question-circle" role="presentation" aria-label="question-circle icon"></i>
+<em>Learn about our <strong><a href="./q_what-learn.html">collection of
+stories</a></strong>.</em></p>
+<p><i class="fa fa-newspaper-o" role="presentation" aria-label="newspaper-o icon"></i>
+<em>Read more <strong><a href="./stories.html">SanctSound
+stories</a></strong>.</em></p>
+</div>
+</div>
 
 <div class="clearfix"></div>
 <div id="footer">
