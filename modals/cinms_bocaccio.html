@@ -251,6 +251,23 @@ clips</a></strong> from other locations.</p>
 </div>
 
 
+<script>
+// force all external links to open in a new tab 
+// source: https://css-tricks.com/snippets/jquery/open-external-links-in-new-window
+$('a').each(function() {
+  console.log("a: " + this.href);
+  var a = new RegExp('/' + window.location.host + '/');
+  if(!a.test(this.href)) {
+    console.log("  yes: a.test");
+    $(this).click(function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      window.open(this.href, '_blank');
+    });
+  }
+});
+</script>
+
 
 
 </div>
