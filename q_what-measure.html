@@ -1069,7 +1069,7 @@ down in the Navigation Bar.</p>
 <center>
   <figure class='figure col-md-6'>
     
-    <img src='./images/questions/Measure_4panel_SB01.png' alt='' class='figure_img'
+    <img src='images/questions/Measure_tab_SBNMS_final.png' alt='' class='figure_img'
 data-enlargeable style='cursor: zoom-in'/>
     <figcaption class='figure-caption'>
       <p>For example, looking across these plots for a listening site in Stellwagen Bank National Marine Sanctuary, we understand that this soundscape has predictably louder conditions at very low frequencies. A closer examination of vessel sounds shows us that vessels are almost always present at this location. Identification of other specific sources will help us understand the seasonal changes we see at slightly higher frequencies. During the late fall to early spring months, several populations of fish and baleen whales produce calls at this sanctuary location.</p>
@@ -1087,7 +1087,7 @@ data-enlargeable style='cursor: zoom-in'/>
     <div id="footer-col-2" class="col-sm-4">
       <h5>Useful Links</h5>
       <div>
-        <a href="http://www.ioos.noaa.gov/" target="_blank">ioos.noaa.gov</a>
+        <a href="https://www.ioos.noaa.gov/" target="_blank">ioos.noaa.gov</a>
       </div>
     </div>
     <div id="footer-col-3" class="col-sm-4">
@@ -1112,7 +1112,7 @@ data-enlargeable style='cursor: zoom-in'/>
       </a>
     </div>
     <div id="footer-col-4" class="col-sm-4">
-      <div itemscope="" itemtype="http://schema.org/GovernmentOrganization">
+      <div itemscope="" itemtype="https://schema.org/GovernmentOrganization">
         <p itemprop="name">U.S. Integrated Ocean Observing System Program</p>
         <p itemprop="address">
             1315 East-West Highway<br/>
@@ -1183,6 +1183,23 @@ $(function() {
     headerScroll()
   },
   headerScroll()
+});
+</script>
+
+<script>
+// force all external links to open in a new tab 
+// source: https://css-tricks.com/snippets/jquery/open-external-links-in-new-window
+$('a').each(function() {
+  console.log("a: " + this.href);
+  var a = new RegExp('/' + window.location.host + '/');
+  if(!a.test(this.href)) {
+    console.log("  yes: a.test");
+    $(this).click(function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      window.open(this.href, '_blank');
+    });
+  }
 });
 </script>
 
