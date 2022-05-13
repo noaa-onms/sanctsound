@@ -97,12 +97,13 @@ figure <- function(
   }
   
   if (length(img) == 2 && length(caption) == 2){
+    
     if (length(alt) == 1)
       alt = c(alt, "")
     if (length(header) == 1)
       header = c(header, "")
     
-    caption = sapply(caption, function(x) markdown::markdownToHTML(text = caption, fragment.only=T))
+    caption = sapply(caption, function(x) markdown::markdownToHTML(text = x, fragment.only=T))
     header  = sapply(header,  function(x) markdown::markdownToHTML(text = x, fragment.only=T))
     
     return(
