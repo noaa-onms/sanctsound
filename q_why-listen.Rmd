@@ -9,7 +9,7 @@ source("functions.R")
 
 *Have you ever tried to explain to a friend how noisy it was in a new, bustling restaurant? Or how silent it was during a hike in the wilderness? It is common to make comparisons in order to make your point: "it was louder than a fireworks show" or "it was as quiet as our campsite in the middle of the night." How do we ensure that such comparisons are accurate when made across marine protected areas hundreds of miles away from each other?*
 
-The goal of the SanctSound project was to understand how sound varies in the ocean by collecting the same information in national marine sanctuaries around the United States. To do this, 30 locations within seven national marine sanctuaries and one marine national monument were selected have sound recording devices placed in them so scientists could listen to the ocean, as continuously as possible, over a period of three years.
+The goal of the SanctSound project was to understand how sound varies in the ocean by collecting the same information in national marine sanctuaries around the United States. To do this, 30 locations within seven national marine sanctuaries and one marine national monument were selected to have sound recording devices placed in them so scientists could listen to the ocean, as continuously as possible, over a period of three years.
 
 We programmed all SanctSound recorders to collect information over the same range of frequencies or pitches - from 20 Hertz (low pitch) to 24,000 Hertz (high pitch). For reference, people hear sounds in air that range from 20 to 20,000 Hertz. The **[hearing systems of marine animals](https://dosits.org/animals/sound-reception/)** are tuned to hear specific sounds transmitted through water. 
 
