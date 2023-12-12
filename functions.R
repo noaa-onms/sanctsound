@@ -22,7 +22,7 @@ skip_drive_auth <- F
 if (Sys.getenv("GITHUB_ACTIONS") == ""){
   message("GITHUB_ACTIONS environmental variable is empty")
   # google_sa_json <- "/Users/bbest/My Drive (ben@ecoquants.com)/projects/nms-web/data/nms4gargle-774a9e9ec703.json"
-  google_sa_json <- "/Users/bbest/My Drive/projects/nms-web/data/nms4gargle-774a9e9ec703.json"
+  google_sa_json <- "/Users/bbest/My Drive/projects/noaa-onms/data/_tokens/nms4gargle-774a9e9ec703.json"
   stopifnot(file.exists(google_sa_json))
   gsa_json_text <- readLines(google_sa_json) %>% paste(sep="\n")
 } else {
@@ -420,8 +420,18 @@ map_site <- function(site_code, sites=NULL){
     st_set_geometry("geometry") %>%
     st_set_crs(4326)  
   
-  map <- leaflet(width = "100%") %>% 
-    addProviderTiles(providers$Esri.OceanBasemap) %>% 
+  map <- leaflet(width = "100%") |> 
+    # add base: blue bathymetry and light brown/green topography
+    addProviderTiles(
+      "Esri.OceanBasemap",
+      options = providerTileOptions(
+        variant = "Ocean/World_Ocean_Base")) |>
+    # add reference: placename labels and borders
+    addProviderTiles(
+      "Esri.OceanBasemap",
+      options = providerTileOptions(
+        variant = "Ocean/World_Ocean_Reference")) |> 
+    # add polygons
     addPolygons(data = site)
   
   if (nrow(sensors) > 0){
@@ -453,16 +463,25 @@ map_sites <- function(){
       lbl = glue::glue("<a href='./s_{code}.html'><b>{name}</b></a>"))
   # to make clickable: add `.leaflet-tooltip { pointer-events: auto; }` to libs/styles.css
   site_labels <- sites$lbl %>% lapply(HTML)
- 
+  
   leaflet(
-    data = sites, width = "100%") %>% 
-    addProviderTiles(providers$Esri.OceanBasemap) %>% 
+    data = sites, width = "100%") |>
+    # add base: blue bathymetry and light brown/green topography
+    addProviderTiles(
+      "Esri.OceanBasemap",
+      options = providerTileOptions(
+        variant = "Ocean/World_Ocean_Base")) |>
+    # add reference: placename labels and borders
+    addProviderTiles(
+      "Esri.OceanBasemap",
+      options = providerTileOptions(
+        variant = "Ocean/World_Ocean_Reference")) |> 
+    # add polygons
     addPolygons(
       label = site_labels, 
       labelOptions = labelOptions(
         interactive = T,
         permanent = T))
-
 }
 
 modal_title_to_html_path <- function(sanctuary_code, modal_title, pfx = here("./modals")){

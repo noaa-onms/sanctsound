@@ -6,7 +6,7 @@ shelf(here)
 
 source(here::here("functions.R"))
 skip_drive_auth <- F
-redo_modals     <- T
+redo_modals     <- F
 
 # nav menus in _site.yml ----
 update_sounds_menu()

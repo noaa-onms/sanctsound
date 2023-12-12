@@ -47,8 +47,6 @@ source(here::here("./functions.R"))
 # params = list(site_code = "hihwnms", main = "Hawaiian Islands Humpback Whale National Marine Sanctuary")
 sanctuary_code = toupper(params$site_code)
 
-map_site(params$site_code)
-
 # soundprop_wms_url <- "https://data.axds.co/gs/sanctsound/wms?styles=&reusetiles=true&unloadInvisibleTiles=true&ENV=min:-72.55591730004457;max:86.51321488678781&STYLES=sanctsound:sanctsound_sound_propagation"
 # 
 # map_site(params$site_code) %>% 
@@ -64,6 +62,7 @@ map_site(params$site_code)
 #     # baseGroups = c("Ocean Basemap", "Toner Lite"),
 #     overlayGroups = c("Sound Propogation"),
 #     options = layersControlOptions(collapsed = F))
+map_site(params$site_code)
 ```
 
 
