@@ -60,3 +60,4 @@ figure(
   img = "./images/who.png",
   caption = "These institutional logos represent the large team of people who support the SanctSound monitoring project’s data collection, analysis, archive, and product distribution.",
   alt = "This image shows the logos for the NOAA Office of National Marine Sanctuaries and U.S. Navy, along with 23 additional institutional logos representing the large team of people who support the SanctSound monitoring project’s data collection, analysis, archive, and product distribution. ")
+```
