@@ -3,7 +3,7 @@ name: render-website
 on:
   push:
   schedule:            
-  - cron: '0 0 * * 0' # once per week, Sundays 0:00
+  - cron: '0 0 1 * *' # run on first day of every month at midnight
   workflow_dispatch:
 
 jobs:
