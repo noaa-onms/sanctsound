@@ -156,6 +156,10 @@ header>.container-fluid a img {
     background-color: #122b4d
 }
 
+.navbar-inverse .dropdown-item, .dropdown-menu>li>a {
+    color: rgba(255,255,255,0.7);
+}
+
 .navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>li>a:focus {
     background-color: #122b4d
 }
