@@ -201,7 +201,7 @@ if (nrow(snc_stories) > 0){
 
 `r shiny::icon("question-circle")` _Learn about our **[collection of stories](./q_what-learn.html)**._
 
-`r shiny::icon("newspaper-o")` _Read more **[SanctSound stories](./stories.html)**._
+`r shiny::icon("newspaper")` _Read more **[SanctSound stories](./stories.html)**._
 
 
 

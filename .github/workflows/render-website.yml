@@ -25,10 +25,9 @@ jobs:
       
       - uses: r-lib/actions/setup-renv@v2
 
-      # - name: Install spatial dependencies for terra
-      #   run: |
-      #     brew install gdal proj
-      # 
+      - name: Install spatial dependencies for terra
+        run: |
+          brew install gdal proj
       # - name: Set RENV_PATHS_ROOT
       #   shell: bash
       #   run: |
