@@ -1,57 +1,74 @@
-if (!require("librarian")){
+if (!require("librarian")) {
   install.packages("librarian")
   library(librarian)
 }
-shelf(here)
+shelf(
+  ggplot2movies,
+  here,
+  highcharter,
+  magick,
+  markdown,
+  rmarkdown,
+  hrbrmstr / streamgraph,
+  vembedr
+)
+# renv::snapshot()  # 2026-02-18
 
 source(here::here("functions.R"))
-skip_drive_auth <- F
-redo_modals     <- F
+skip_drive_auth <- T
+redo_modals <- F
+redo_menus <- F
+redo_svg_csv <- F
 
 # nav menus in _site.yml ----
-update_sounds_menu()
-update_stories_menu()
+if (redo_menus) {
+  update_sounds_menu()
+  update_stories_menu()
+}
 
 # sanctuaries ----
-create_svg_csv()
+if (redo_svg_csv) {
+  create_svg_csv()
+}
 sites <- read_csv(here("data/nms_sites.csv"), col_types = cols()) %>%
   arrange(code)
 sites %>%
-  #filter(code %in% c("cinms","fknms","hihwnms")) %>% 
-  # filter(code %in% c("cinms")) %>% 
+  #filter(code %in% c("cinms","fknms","hihwnms")) %>%
+  # filter(code %in% c("cinms")) %>%
   pwalk(render_sanctuary)
 
 # modals ----
-modals <- get_sheet("modals", redo = redo_modals)
-modal_pages <- modals %>% 
-  select(sanctuary_code, modal_title, modal_id) %>% 
-  mutate(
-    modal_html  = map_chr(modal_id, path_ext_set, "html")) %>% 
-  arrange(modal_html)
+if (redo_modals) {
+  modals <- get_sheet("modals", redo = redo_modals)
+  modal_pages <- modals %>%
+    select(sanctuary_code, modal_title, modal_id) %>%
+    mutate(
+      modal_html = map_chr(modal_id, path_ext_set, "html")
+    ) %>%
+    arrange(modal_html)
 
-if (redo_modals){
   modal_pages %>%
-    # filter(str_ends(modal_id, "snapshots")) %>% 
+    # filter(str_ends(modal_id, "snapshots")) %>%
     # filter(modal_id == "cinms_fin-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(modal_id == "cinms_blue-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(modal_id == "pmnm_minke-whales") %>% # pmnm_humpback-whales pmnm_minke-whales
     # filter(modal_id %in% c(
-    #   "ocnms_echosounders", 
-    #   "hihwnms_vessels", 
-    #   "ocnms_gray-whales", 
-    #   "hihwnms_fish-chorus", 
-    #   "cinms_wind-and-waves", 
+    #   "ocnms_echosounders",
+    #   "hihwnms_vessels",
+    #   "ocnms_gray-whales",
+    #   "hihwnms_fish-chorus",
+    #   "cinms_wind-and-waves",
     #   "ocnms_blue-whales")) %>% # pmnm_humpback-whales pmnm_minke-whales
     # View()
     # TODO: ∆ _modal_template to have chart-/question-captions like Blue whales; multiple Tabs like Vessels
     pwalk(render_modal)
 }
-  
+
 # tiles ----
-# tiles <- get_sheet("tiles", redo = F) %>% 
+# tiles <- get_sheet("tiles", redo = F) %>%
 #   mutate(
 #     path_relative = map_chr(gdrive_shareable_link, gdrive2path))
-# for now manually added into _cards.html for index.Rmd 
+# for now manually added into _cards.html for index.Rmd
 
 # *.Rmd's ----
 rmarkdown::render_site(here::here(""))
@@ -59,4 +76,3 @@ rmarkdown::render_site(here::here(""))
 
 # servr::httd(here::here(""))
 # servr::daemon_stop(1)
-
