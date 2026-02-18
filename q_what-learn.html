@@ -26,25 +26,16 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Google Analytics (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSQZTQ1DE0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-ZSQZTQ1DE0');
 </script>
-<!-- IOOS.us style -->
-<header style="position: static; top: 0px;">
-  <div class="container-fluid">
-    <a href="https://ioos.us" style="visibility: visible;">
-      <img src="https://ioos.us/images/IOOS_Emblem_Tertiary_B_RGB.png">
-    </a>
-  </div>
-</header>
-
-
+<!-- IOOS UI Web Components -->
+<script src="https://dgd6r9iiqa8y9.cloudfront.net/ioos-ui-components.min.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -914,64 +905,22 @@ data-enlargeable style='cursor: zoom-in'/>
 </center>
 
 
-<div class="clearfix"></div>
-<div id="footer">
-  <div class="row w-80">
-    <div id="footer-col-2" class="col-sm-4">
-      <h5>Useful Links</h5>
-      <div>
-        <a href="https://www.ioos.noaa.gov/" target="_blank">ioos.noaa.gov</a>
-      </div>
-    </div>
-    <div id="footer-col-3" class="col-sm-4">
-      <h5>Our Social Ocean</h5>
-      <a href="https://www.facebook.com/usioosgov" target="_blank">
-        <div class="ggt-icon-border animate-icon">
-          <svg viewBox="0 0 512 512"><path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"></path></svg>
-        </div>
-        <div class="txt">
-          facebook.com/<br/>
-          usioosgov
-        </div>
-      </a>
-      <a href="https://www.twitter.com/usioosgov" target="_blank">
-        <div class="ggt-icon-border animate-icon">
-          <svg viewBox="0 0 512 512"><path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z"></path></svg>
-        </div>
-        <div class="txt">
-            twitter.com/<br>
-            usioosgov
-        </div>
-      </a>
-    </div>
-    <div id="footer-col-4" class="col-sm-4">
-      <div itemscope="" itemtype="https://schema.org/GovernmentOrganization">
-        <p itemprop="name">U.S. Integrated Ocean Observing System Program</p>
-        <p itemprop="address">
-            1315 East-West Highway<br/>
-            SSMC3, 2nd Floor<br/>
-            Silver Spring, MD 20910
-        </p>
-        <p itemprop="telephone"><a href="tel:240-533-9444"> (240) 533-9444</a></p>
-      </div>
-      <a class="btn" href="mailto:webmaster.ioos.us@noaa.gov" itemprop="email">
-        <div>Contact Us</div>
-      </a>
-    </div>
-  </div>
-</div>
+<ioos-footer></ioos-footer>
 
 <script>
 $(function() {
-  // move header and navbar outside main-container for full width
-  $('.main-container').after($('#footer'));
+  // prepend IOOS header to top of body
+  $('body').prepend('<ioos-header></ioos-header>');
+
+  // move navbar and footer outside main-container for full width
+  $('.main-container').after($('ioos-footer'));
   $('.main-container').before($('.navbar'));
 
   // image zoom
   $('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
     var src = $(this).attr('src');
     var modal;
-  
+
     function removeModal() {
       modal.remove();
       $('body').off('keyup.modal-close');
@@ -989,27 +938,28 @@ $(function() {
     }).click(function() {
       removeModal();
     }).appendTo('body');
-    //handling ESC
+    // handling ESC
     $('body').on('keyup.modal-close', function(e) {
       if (e.key === 'Escape') {
         removeModal();
       }
     });
   });
-  
-  // header scroll
+
+  // header scroll: fix SanctSound navbar when user scrolls past IOOS header
   headerScroll = function() {
-    75 > $(this).scrollTop() ? (
-      // if scrolled up [initial]
-      $("header > div > a").css("visibility", "visible"),
-      $(".navbar").css({ position: "static", top: "0" }),
-      $(".main-container").css("margin-top", "0px"),
-      $(".navbar").css("top", "75px")) : (
-      // if scrolled down [after]
-      $("header > div > a").css("visibility", "hidden"),
-      $(".navbar").css("position", "fixed"),
-      $(".main-container").css("margin-top", "75px"),
-      $(".navbar").css("top", "0px"))
+    var ioosHeader = document.querySelector('ioos-header');
+    var headerHeight = ioosHeader ? ioosHeader.offsetHeight : 0;
+
+    if ($(this).scrollTop() <= headerHeight) {
+      // scrolled to top: navbar flows naturally below IOOS header
+      $(".navbar").css({ position: "static", top: "0" });
+      $(".main-container").css("margin-top", "0px");
+    } else {
+      // scrolled past IOOS header: fix navbar to viewport top
+      $(".navbar").css({ position: "fixed", top: "0" });
+      $(".main-container").css("margin-top", $(".navbar").outerHeight() + "px");
+    }
   },
   $(document).scroll(headerScroll),
   window.onresize = function(e) {
@@ -1020,7 +970,7 @@ $(function() {
 </script>
 
 <script>
-// force all external links to open in a new tab 
+// force all external links to open in a new tab
 // source: https://css-tricks.com/snippets/jquery/open-external-links-in-new-window
 $('a').each(function() {
   console.log("a: " + this.href);
